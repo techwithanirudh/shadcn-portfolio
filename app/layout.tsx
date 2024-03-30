@@ -25,7 +25,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div id="blob" className="blob"></div>
+          <div id="blur" className="blur"></div>
+          <div className="z-10 absolute">{children}</div>
         </ThemeProvider>
       </body>
     </html>

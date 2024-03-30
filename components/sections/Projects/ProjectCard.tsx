@@ -26,8 +26,8 @@ function ProjectCard({
             src={thumbnail || "/placeholder.svg"}
             alt={title || "Project Title"}
             sizes="100vw"
-            width={500} 
-            height={300} 
+            width={500}
+            height={300}
             className="w-full h-48 object-cover rounded-md"
           />
           <h3 className="text-xl font-bold">{title || "Project Title"}</h3>

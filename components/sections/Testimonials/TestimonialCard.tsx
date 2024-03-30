@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from 'next/image';
+import Image from "next/image";
 
 interface TestimonialCardProps {
   image?: string;
@@ -32,7 +32,7 @@ function TestimonialCard({
           <p className="text-sm text-gray-500">@{username || "username"}</p>
         </div>
       </div>
-      <CardContent className="p-4 border-t">
+      <CardContent className="p-4 border-t border-gray-200 dark:border-gray-700">
         <p className="text-sm leading-loose">
           {testimonial || "No testimonial provided."}
         </p>

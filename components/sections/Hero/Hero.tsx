@@ -1,6 +1,6 @@
 import React from "react";
 import MotionWrap from "@/components/MotionWrap";
-import Image from 'next/image';
+import Image from "next/image";
 
 function Hero() {
   return (

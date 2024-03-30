@@ -14,14 +14,15 @@ function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) { // Adjust 768 to your actual mobile breakpoint
+      if (window.innerWidth > 768) {
+        // Adjust 768 to your actual mobile breakpoint
         setIsOpen(false);
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const menuVariants = {
@@ -147,8 +148,9 @@ function Header() {
             >
               Contact
             </Link>
-            <div className="flex items-center justify-end w-full"><ModeToggle /></div>
-
+            <div className="flex items-center justify-end w-full">
+              <ModeToggle />
+            </div>
           </div>
         </motion.div>
       </div>
