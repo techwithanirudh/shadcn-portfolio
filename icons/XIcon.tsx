@@ -1,4 +1,6 @@
-export default function CodeIcon(props) {
+import React from "react";
+
+export default function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -12,8 +14,8 @@ export default function CodeIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
     </svg>
   );
 }

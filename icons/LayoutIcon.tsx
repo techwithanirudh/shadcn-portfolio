@@ -1,4 +1,6 @@
-export default function DatabaseIcon(props) {
+import React from "react";
+
+export default function LayoutIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -12,9 +14,9 @@ export default function DatabaseIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <ellipse cx="12" cy="5" rx="9" ry="3" />
-      <path d="M3 5V19A9 3 0 0 0 21 19V5" />
-      <path d="M3 12A9 3 0 0 0 21 12" />
+      <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+      <line x1="3" x2="21" y1="9" y2="9" />
+      <line x1="9" x2="9" y1="21" y2="9" />
     </svg>
   );
 }

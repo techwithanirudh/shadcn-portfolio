@@ -1,4 +1,6 @@
-export default function MenuIcon(props) {
+import React from "react";
+
+export default function DatabaseIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -12,9 +14,9 @@ export default function MenuIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
+      <ellipse cx="12" cy="5" rx="9" ry="3" />
+      <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+      <path d="M3 12A9 3 0 0 0 21 12" />
     </svg>
   );
 }

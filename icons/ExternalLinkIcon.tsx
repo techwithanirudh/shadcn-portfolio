@@ -1,4 +1,6 @@
-export default function SmartphoneIcon(props) {
+import React from "react";
+
+export default function ExternalLinkIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -12,8 +14,9 @@ export default function SmartphoneIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
-      <path d="M12 18h.01" />
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      <polyline points="15 3 21 3 21 9" />
+      <line x1="10" x2="21" y1="14" y2="3" />
     </svg>
   );
 }

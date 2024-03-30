@@ -1,4 +1,6 @@
-export default function LayoutIcon(props) {
+import React from "react";
+
+export default function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -12,9 +14,9 @@ export default function LayoutIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-      <line x1="3" x2="21" y1="9" y2="9" />
-      <line x1="9" x2="9" y1="21" y2="9" />
+      <line x1="4" x2="20" y1="12" y2="12" />
+      <line x1="4" x2="20" y1="6" y2="6" />
+      <line x1="4" x2="20" y1="18" y2="18" />
     </svg>
   );
 }
