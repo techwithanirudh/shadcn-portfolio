@@ -8,10 +8,16 @@ function Footer() {
         © 2024 Sriram Balaji. All rights reserved.
       </p>
       <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-        <Link className="text-xs hover:underline underline-offset-4" href="https://blog.srirambalaji.com">
+        <Link
+          className="text-xs hover:underline underline-offset-4"
+          href="https://blog.srirambalaji.com"
+        >
           Blog
         </Link>
-        <Link className="text-xs hover:underline underline-offset-4" href="https://newsletter.srirambalaji.com">
+        <Link
+          className="text-xs hover:underline underline-offset-4"
+          href="https://newsletter.srirambalaji.com"
+        >
           Newsletter
         </Link>
       </nav>
