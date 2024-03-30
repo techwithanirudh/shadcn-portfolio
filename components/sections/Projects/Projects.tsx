@@ -6,7 +6,7 @@ import MotionWrap from "@/components/MotionWrap";
 function Projects() {
   return (
     <MotionWrap
-      className="w-full py-12 md:py-24 lg:py-32 border-t"
+      className="w-full py-12 md:py-24 lg:py-32 border-t border-gray-200 dark:border-gray-700"
       id="projects"
     >
       <div className=" px-4 md:px-6">

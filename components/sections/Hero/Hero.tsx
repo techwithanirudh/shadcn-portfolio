@@ -3,7 +3,7 @@ import MotionWrap from "@/components/MotionWrap";
 
 function Hero() {
   return (
-    <MotionWrap className="w-full mt-2 py-12 md:py-24 lg:py-32 xl:py-48">
+    <MotionWrap className="w-full mt-14 py-12 md:py-24 md:mt-0 lg:py-32 xl:py-48">
       <div className=" grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
         <div className="space-y-3">
           <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
@@ -16,6 +16,13 @@ function Hero() {
             I design and build beautiful websites. Welcome to my portfolio.
           </p>
         </div>
+        <img
+          alt="Image"
+          className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
+          height="450"
+          src="/placeholder.svg"
+          width="800"
+        />
       </div>
     </MotionWrap>
   );
