@@ -1,4 +1,11 @@
-import { Hero, About, Skills, Projects, Contact } from "@/components/sections";
+import {
+  Hero,
+  About,
+  Skills,
+  Testimonials,
+  Projects,
+  Contact,
+} from "@/components/sections";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,6 +19,7 @@ export default function Home() {
         <Projects />
         <About />
         <Skills />
+        <Testimonials />
         <Contact />
         <Footer />
       </main>

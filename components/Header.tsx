@@ -54,6 +54,12 @@ function Header() {
             >
               Skills
             </Link>
+            <Link
+              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              href="#testimonials"
+            >
+              Testimonials
+            </Link>
             <a
               className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
               target="_blank"

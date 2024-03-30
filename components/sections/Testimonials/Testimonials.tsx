@@ -1,9 +1,5 @@
 import React from "react";
-import { CardContent, CardFooter, Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import MotionWrap from "@/components/MotionWrap";
-import ProjectCard from "./ProjectCard";
-
 import {
   Carousel,
   CarouselContent,
@@ -11,38 +7,37 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import TestimonialCard from "@/components/sections/Testimonials/TestimonialCard";
 
-function Projects() {
+function Testimonials() {
   return (
     <MotionWrap
       className="w-full py-12 md:py-24 lg:py-32 border-t border-gray-200 dark:border-gray-700"
-      id="projects"
+      id="testimonials"
     >
-      <div className=" px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-              My Projects
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl/none">
+              My Testimonials
             </h2>
             <p className="text-gray-500 dark:text-gray-400">
-              Here are some of my featured projects.
+              Here are some of my testimonials.
             </p>
           </div>
-          <div className="max-w-xl md:max-w-4xl lg:max-w-2xl overflow-hidden lg:px-12 flex items-center justify-center">
-            <Carousel
-              opts={{
-                align: "start",
-              }}
-              className="w-full max-w-xl"
-            >
+
+          <div className="max-w-xl md:max-w-5xl lg:max-w-2xl overflow-hidden lg:px-12 flex items-center justify-center">
+            <Carousel className="w-full">
               <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="md:basis-1/2 lg:basis-full	xl:basis-1/2"
-                  >
+                  <CarouselItem key={index}>
                     <div className="p-1">
-                      <ProjectCard title="PT1" description="Desc" />
+                      <TestimonialCard
+                        name="John Doe"
+                        image="/john-doe.jpg"
+                        username="johndoe"
+                        testimonial="This service changed my life! Highly recommend to anyone looking for quality."
+                      />
                     </div>
                   </CarouselItem>
                 ))}
@@ -57,4 +52,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default Testimonials;
