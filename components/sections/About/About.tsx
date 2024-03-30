@@ -1,5 +1,6 @@
 import React from "react";
 import MotionWrap from "@/components/MotionWrap";
+import Image from 'next/image';
 
 function About() {
   return (
@@ -21,11 +22,12 @@ function About() {
             </p>
           </div>
           <div className="grid gap-4 sm:gap-6">
-            <img
+            <Image
               alt="Image"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
               height="310"
               src="/hero.jpg"
+              layout="responsive"
               width="550"
             />
           </div>

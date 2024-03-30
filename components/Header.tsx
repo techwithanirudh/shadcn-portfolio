@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CodeIcon, ExternalLinkIcon, MenuIcon, XIcon } from "@/icons";
@@ -11,6 +11,18 @@ function Header() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) { // Adjust 768 to your actual mobile breakpoint
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const menuVariants = {
     open: { opacity: 1, y: 0, display: "block" },
@@ -63,14 +75,14 @@ function Header() {
             <a
               className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
               target="_blank"
-              href="https://blog.srirambalaji.com"
+              href="https://blog.example.com"
             >
               Blog <ExternalLinkIcon className="ml-1 h-4 w-4" />
             </a>
             <a
               className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
               target="_blank"
-              href="https://newsletter.srirambalaji.com"
+              href="https://newsletter.example.com"
             >
               Newsletter <ExternalLinkIcon className="ml-1 h-4 w-4" />
             </a>
@@ -114,7 +126,7 @@ function Header() {
             </Link>
             <a
               className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
-              href="https://blog.srirambalaji.com"
+              href="https://blog.example.com"
               target="_blank"
               onClick={toggleMenu}
             >
@@ -123,7 +135,7 @@ function Header() {
             <a
               className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
               target="_blank"
-              href="https://newsletter.srirambalaji.com"
+              href="https://newsletter.example.com"
               onClick={toggleMenu}
             >
               Newsletter <ExternalLinkIcon className="ml-1 h-4 w-4" />
@@ -135,6 +147,8 @@ function Header() {
             >
               Contact
             </Link>
+            <div className="flex items-center justify-end w-full"><ModeToggle /></div>
+
           </div>
         </motion.div>
       </div>
