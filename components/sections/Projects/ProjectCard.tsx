@@ -25,7 +25,7 @@ function ProjectCard({
           <Image
             src={thumbnail || "/placeholder.svg"}
             alt={title || "Project Title"}
-            layout="responsive"
+            sizes="100vw"
             width={500} 
             height={300} 
             className="w-full h-48 object-cover rounded-md"

@@ -21,7 +21,7 @@ function Hero() {
           alt="Image"
           className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
           height="450"
-          layout="responsive"
+          sizes="100vw"
           src={"/hero.jpg"}
           width="800"
         />

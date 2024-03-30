@@ -27,7 +27,7 @@ function About() {
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
               height="310"
               src="/hero.jpg"
-              layout="responsive"
+              sizes="100vw"
               width="550"
             />
           </div>
