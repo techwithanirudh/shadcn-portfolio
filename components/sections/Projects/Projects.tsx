@@ -28,12 +28,12 @@ function Projects() {
               Here are some of my featured projects.
             </p>
           </div>
-          <div className="max-w-xl md:max-w-4xl lg:max-w-2xl overflow-hidden lg:px-12 flex items-center justify-center">
+          <div className="lg:max-w-2xl overflow-hidden lg:px-12 flex items-center justify-center">
             <Carousel
               opts={{
                 align: "start",
               }}
-              className="w-full max-w-xl"
+              className="w-full max-w-xl md:max-w-3xl"
             >
               <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -42,7 +42,7 @@ function Projects() {
                     className="md:basis-1/2 lg:basis-full	xl:basis-1/2"
                   >
                     <div className="p-1">
-                      <ProjectCard title="PT1" description="Desc" />
+                      <ProjectCard thumbnail={"/laptop.jpg"} title={`Project ${index + 1}`} description={`A very interesting project which is ${index + 1} times better than the other one.`} />
                     </div>
                   </CarouselItem>
                 ))}

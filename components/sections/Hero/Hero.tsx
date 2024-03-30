@@ -10,7 +10,7 @@ function Hero() {
             Designer & Developer
           </div>
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-            Hi, I'm Sriram Balaji
+            Hi, I'm John Doe
           </h1>
           <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
             I design and build beautiful websites. Welcome to my portfolio.
@@ -20,7 +20,7 @@ function Hero() {
           alt="Image"
           className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
           height="450"
-          src="/placeholder.svg"
+          src="/hero.jpg"
           width="800"
         />
       </div>

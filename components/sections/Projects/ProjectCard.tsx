@@ -3,6 +3,7 @@ import { CardContent, CardFooter, Card } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title?: string;
@@ -21,9 +22,12 @@ function ProjectCard({
     <Card>
       <CardContent className="p-4 md:p-6">
         <div className="grid gap-2">
-          <img
+          <Image
             src={thumbnail || "/placeholder.svg"}
-            alt={title}
+            alt={title || "Project Title"}
+            layout="responsive"
+            width={500} 
+            height={300} 
             className="w-full h-48 object-cover rounded-md"
           />
           <h3 className="text-xl font-bold">{title || "Project Title"}</h3>

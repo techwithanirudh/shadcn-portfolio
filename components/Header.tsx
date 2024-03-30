@@ -22,7 +22,7 @@ function Header() {
       <div className="flex items-center justify-between h-14 px-4 md:px-6">
         <Link href="#" className="flex items-center justify-center">
           <CodeIcon className="h-6 w-6" />
-          <span className="sr-only">Sriram Balaji</span>
+          <span className="sr-only">John Doe</span>
         </Link>
         {/* Hamburger Button */}
         <button className="md:hidden" onClick={toggleMenu}>

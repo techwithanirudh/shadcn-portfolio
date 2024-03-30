@@ -26,17 +26,17 @@ function Testimonials() {
             </p>
           </div>
 
-          <div className="max-w-xl md:max-w-5xl lg:max-w-2xl overflow-hidden lg:px-12 flex items-center justify-center">
+          <div className="lg:max-w-2xl overflow-hidden lg:px-12 flex items-center justify-center">
             <Carousel className="w-full">
               <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem key={index}>
                     <div className="p-1">
                       <TestimonialCard
-                        name="John Doe"
-                        image="/john-doe.jpg"
-                        username="johndoe"
-                        testimonial="This service changed my life! Highly recommend to anyone looking for quality."
+                        name={`Jane Doe (${index + 1})`}
+                        image="/person.jpg"
+                        username={`janedoe${index + 1}`}
+                        testimonial={`This service helps me ${index + 2} times a day! Highly recommend to anyone looking for quality.`}
                       />
                     </div>
                   </CarouselItem>

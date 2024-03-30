@@ -25,7 +25,7 @@ function About() {
               alt="Image"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
               height="310"
-              src="/placeholder.svg"
+              src="/hero.jpg"
               width="550"
             />
           </div>

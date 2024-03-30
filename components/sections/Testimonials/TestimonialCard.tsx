@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from 'next/image';
 
 interface TestimonialCardProps {
   image?: string;
@@ -18,12 +19,12 @@ function TestimonialCard({
     <Card className="w-full md:max-w-4xl lg:max-w-xl rounded-xl">
       <div className="flex items-center p-4">
         <div className="rounded-full overflow-hidden border-2 border-white w-12 h-12">
-          <img
-            alt={name}
+          <Image
+            alt={name || "Anonymous"}
             className="rounded-full aspect-square"
             height={48}
-            src={image || "/placeholder.svg"}
             width={48}
+            src={image || "/placeholder.svg"}
           />
         </div>
         <div className="ml-4">
