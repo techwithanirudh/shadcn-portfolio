@@ -27,7 +27,7 @@ export default function RootLayout({
         >
           <div id="blob" className="blob"></div>
           <div id="blur" className="blur"></div>
-          <div className="z-10 absolute">{children}</div>
+          <div className="z-10 absolute w-full h-full">{children}</div>
         </ThemeProvider>
       </body>
     </html>
