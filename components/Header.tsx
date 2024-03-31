@@ -30,8 +30,9 @@ function Header() {
     closed: { opacity: 0, y: "-100%", transitionEnd: { display: "none" } },
   };
 
+  // TODO: Figure out if bg-white/90 dark:bg-black/90 or the current one is better (the current one)
   return (
-    <header className="fixed inset-x-0 top-0 z-10 backdrop-blur-lg bg-opacity-80 bg-white/90 dark:bg-black/90">
+    <header className="fixed inset-x-0 top-0 z-10 backdrop-blur-lg bg-opacity-10 bg-white/20 dark:bg-black/20">
       <div className="flex items-center justify-between h-14 px-4 md:px-6">
         <Link href="#" className="flex items-center justify-center">
           <CodeIcon className="h-6 w-6" />
