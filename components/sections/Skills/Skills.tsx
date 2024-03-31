@@ -1,6 +1,11 @@
 import React from "react";
 import { CardContent, Card } from "@/components/ui/card";
-import { CodeIcon, DatabaseIcon, LayoutIcon, SmartphoneIcon } from "@/icons";
+import {
+  CodeIcon,
+  DatabaseIcon,
+  LayoutIcon,
+  SmartphoneIcon,
+} from "lucide-react";
 import MotionWrap from "@/components/MotionWrap";
 
 function Skills() {

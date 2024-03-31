@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { BackgroundGradientAnimation } from "@/components/bg-gradient";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +26,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div id="blob" className="blob"></div>
-          <div id="blur" className="blur"></div>
-          <div className="z-10 absolute w-full h-full">{children}</div>
+          <BackgroundGradientAnimation interactive={false}>
+            <div className="z-50 inset-0 absolute w-full h-full">
+              {children}
+            </div>
+          </BackgroundGradientAnimation>
         </ThemeProvider>
       </body>
     </html>

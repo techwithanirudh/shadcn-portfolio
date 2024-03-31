@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { CodeIcon, ExternalLinkIcon, MenuIcon, XIcon } from "@/icons";
+import { CodeIcon, ExternalLinkIcon, MenuIcon, XIcon } from "lucide-react";
 import ModeToggle from "@/components/mode-toggle";
 
 function Header() {
