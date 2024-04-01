@@ -15,10 +15,12 @@ function About() {
               About Me
             </h2>
             <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              I am a passionate and creative Web Developer with a love for
-              beautiful and functional websites. I have experience working with
-              a variety of web technologies and frameworks and I am always eager
-              to learn new things and take on new challenges.
+            I am a YouTuber,speaker and blogger.Throughout my 25+ years career, have been deeply involved with Microsoft technologies,particularly the Power Platform,Dynamics 365 CE and Azure. Lately I have been playing with Microsoft Copilots and OpenAI GPTs.
+
+            </p>
+            <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            My passion is to share my knowledge and learnings around Power Platform,Power Apps, Power Automate, Power Pages,Copilot Studio, Dynamics 365, Microsoft Copilots and Microsoft AI.
+
             </p>
           </div>
           <div className="grid gap-4 sm:gap-6">

@@ -36,7 +36,7 @@ function Header() {
       <div className="flex items-center justify-between h-14 px-4 md:px-6">
         <Link href="#" className="flex items-center justify-center">
           <CodeIcon className="h-6 w-6" />
-          <span className="sr-only">John Doe</span>
+          <span className="sr-only">Sriram Balaji</span>
         </Link>
         {/* Hamburger Button */}
         <button className="md:hidden" onClick={toggleMenu}>
@@ -50,11 +50,11 @@ function Header() {
         {/* Navigation Menu */}
         <div className="hidden md:flex md:items-center md:w-auto">
           <nav className="flex gap-4 lg:gap-6">
-            <Link
+          <Link
               className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
-              href="#projects"
+              href="#"
             >
-              Projects
+              Home
             </Link>
             <Link
               className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
@@ -62,7 +62,21 @@ function Header() {
             >
               About
             </Link>
-            <Link
+            <a
+              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              target="_blank"
+              href="https://blog.srirambalaji.com"
+            >
+              Blog <ExternalLinkIcon className="ml-1 h-4 w-4" />
+            </a>
+            <a
+              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              target="_blank"
+              href="https://ageofcopilots.substack.com"
+            >
+              Newsletter <ExternalLinkIcon className="ml-1 h-4 w-4" />
+            </a>
+            {/* <Link
               className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
               href="#skills"
             >
@@ -73,21 +87,14 @@ function Header() {
               href="#testimonials"
             >
               Testimonials
+            </Link> */}
+            
+            <Link
+              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              href="#projects"
+            >
+              Tools
             </Link>
-            <a
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
-              target="_blank"
-              href="https://blog.example.com"
-            >
-              Blog <ExternalLinkIcon className="ml-1 h-4 w-4" />
-            </a>
-            <a
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
-              target="_blank"
-              href="https://newsletter.example.com"
-            >
-              Newsletter <ExternalLinkIcon className="ml-1 h-4 w-4" />
-            </a>
             <Link
               className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
               href="#contact"

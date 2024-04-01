@@ -75,7 +75,7 @@ export const BackgroundGradientAnimation = ({
   }
 
   useEffect(() => {
-    applyTheme(typedTheme)
+    applyTheme(typedTheme === "light" ? "light" : "dark")
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
   }, [theme]);

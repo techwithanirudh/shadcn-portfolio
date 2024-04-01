@@ -8,8 +8,8 @@ import { BackgroundGradientAnimation } from "@/components/bg-gradient";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "John Doe - Portfolio",
-  description: "A portfolio website about me! John Doe",
+  title: "Sriram Balaji",
+  description: "Sriram Balaji's website",
 };
 
 export default function RootLayout({
