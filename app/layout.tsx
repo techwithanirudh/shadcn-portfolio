@@ -29,12 +29,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <MFC />
-          <BackgroundGradientAnimation interactive={false}>
+          
+          {/* <BackgroundGradientAnimation interactive={false}>
             <div className="absolute inset-0 z-50 h-full w-full">
               {children}
             </div>
-          </BackgroundGradientAnimation>
+          </BackgroundGradientAnimation> */}
         </ThemeProvider>
       </body>
     </html>
