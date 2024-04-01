@@ -15,7 +15,7 @@ import {
 function Projects() {
   return (
     <MotionWrap
-      className="w-full py-12 md:py-24 lg:py-32 border-t border-gray-200 dark:border-gray-700"
+      className="w-full border-t border-gray-200 py-12 md:py-24 lg:py-32 dark:border-gray-700"
       id="projects"
     >
       <div className=" px-4 md:px-6">
@@ -28,7 +28,7 @@ function Projects() {
               Here are some of my featured projects.
             </p>
           </div>
-          <div className="lg:max-w-2xl overflow-hidden lg:px-12 flex items-center justify-center">
+          <div className="flex items-center justify-center overflow-hidden lg:max-w-2xl lg:px-12">
             <Carousel
               opts={{
                 align: "start",

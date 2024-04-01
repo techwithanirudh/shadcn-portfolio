@@ -28,7 +28,7 @@ function ProjectCard({
             sizes="100vw"
             width={500}
             height={300}
-            className="w-full h-48 object-cover rounded-md"
+            className="h-48 w-full rounded-md object-cover"
           />
           <h3 className="text-xl font-bold">{title || "Project Title"}</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">

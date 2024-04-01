@@ -32,8 +32,8 @@ function Header() {
 
   // TODO: Figure out if bg-white/90 dark:bg-black/90 or the current one is better (the current one)
   return (
-    <header className="fixed inset-x-0 top-0 z-10 backdrop-blur-lg bg-opacity-20 bg-white/30 dark:bg-black/30">
-      <div className="flex items-center justify-between h-14 px-4 md:px-6">
+    <header className="fixed inset-x-0 top-0 z-10 bg-white/30 bg-opacity-20 backdrop-blur-lg dark:bg-black/30">
+      <div className="flex h-14 items-center justify-between px-4 md:px-6">
         <Link href="#" className="flex items-center justify-center">
           <CodeIcon className="h-6 w-6" />
           <span className="sr-only">John Doe</span>
@@ -48,48 +48,48 @@ function Header() {
           )}
         </button>
         {/* Navigation Menu */}
-        <div className="hidden md:flex md:items-center md:w-auto">
+        <div className="hidden md:flex md:w-auto md:items-center">
           <nav className="flex gap-4 lg:gap-6">
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href="#projects"
             >
               Projects
             </Link>
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href="#about"
             >
               About
             </Link>
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href="#skills"
             >
               Skills
             </Link>
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href="#testimonials"
             >
               Testimonials
             </Link>
             <a
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               target="_blank"
               href="https://blog.example.com"
             >
               Blog <ExternalLinkIcon className="ml-1 h-4 w-4" />
             </a>
             <a
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               target="_blank"
               href="https://newsletter.example.com"
             >
               Newsletter <ExternalLinkIcon className="ml-1 h-4 w-4" />
             </a>
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href="#contact"
             >
               Contact
@@ -102,32 +102,32 @@ function Header() {
           initial="closed"
           animate={isOpen ? "open" : "closed"}
           transition={{ duration: 0.3 }}
-          className="absolute md:hidden top-full left-0 w-full bg-white dark:bg-black"
+          className="absolute left-0 top-full w-full bg-white md:hidden dark:bg-black"
         >
           <div className="flex flex-col gap-4 p-4">
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href="#projects"
               onClick={toggleMenu}
             >
               Projects
             </Link>
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href="#about"
               onClick={toggleMenu}
             >
               About
             </Link>
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href="#skills"
               onClick={toggleMenu}
             >
               Skills
             </Link>
             <a
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href="https://blog.example.com"
               target="_blank"
               onClick={toggleMenu}
@@ -135,7 +135,7 @@ function Header() {
               Blog <ExternalLinkIcon className="ml-1 h-4 w-4" />
             </a>
             <a
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               target="_blank"
               href="https://newsletter.example.com"
               onClick={toggleMenu}
@@ -143,13 +143,13 @@ function Header() {
               Newsletter <ExternalLinkIcon className="ml-1 h-4 w-4" />
             </a>
             <Link
-              className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
+              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href="#contact"
               onClick={toggleMenu}
             >
               Contact
             </Link>
-            <div className="flex items-center justify-end w-full">
+            <div className="flex w-full items-center justify-end">
               <ModeToggle />
             </div>
           </div>
