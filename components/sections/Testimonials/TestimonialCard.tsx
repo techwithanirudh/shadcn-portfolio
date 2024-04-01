@@ -16,12 +16,12 @@ function TestimonialCard({
   testimonial,
 }: TestimonialCardProps) {
   return (
-    <Card className="w-full md:max-w-4xl lg:max-w-xl rounded-xl">
+    <Card className="w-full rounded-xl md:max-w-4xl lg:max-w-xl">
       <div className="flex items-center p-4">
-        <div className="rounded-full overflow-hidden border-2 border-white w-12 h-12">
+        <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white">
           <Image
             alt={name || "Anonymous"}
-            className="rounded-full aspect-square"
+            className="aspect-square rounded-full"
             height={48}
             width={48}
             src={image || "/placeholder.svg"}
@@ -32,7 +32,7 @@ function TestimonialCard({
           <p className="text-sm text-gray-500">@{username || "username"}</p>
         </div>
       </div>
-      <CardContent className="p-4 border-t border-gray-200 dark:border-gray-700">
+      <CardContent className="border-t border-gray-200 p-4 dark:border-gray-700">
         <p className="text-sm leading-loose">
           {testimonial || "No testimonial provided."}
         </p>

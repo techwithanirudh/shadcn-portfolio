@@ -5,7 +5,7 @@ import Image from "next/image";
 function About() {
   return (
     <MotionWrap
-      className="w-full py-12 md:py-24 lg:py-32 border-t border-gray-200 dark:border-gray-700"
+      className="w-full border-t border-gray-200 py-12 md:py-24 lg:py-32 dark:border-gray-700"
       id="about"
     >
       <div className=" px-4 md:px-6">

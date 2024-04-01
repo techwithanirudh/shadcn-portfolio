@@ -3,19 +3,19 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-gray-200 dark:border-gray-700">
+    <footer className="flex w-full shrink-0 flex-col items-center gap-2 border-t border-gray-200 px-4 py-6 sm:flex-row md:px-6 dark:border-gray-700">
       <p className="text-xs text-gray-500 dark:text-gray-400">
         © 2024 John Doe. All rights reserved.
       </p>
-      <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+      <nav className="flex gap-4 sm:ml-auto sm:gap-6">
         <Link
-          className="text-xs hover:underline underline-offset-4"
+          className="text-xs underline-offset-4 hover:underline"
           href="https://blog.example.com"
         >
           Blog
         </Link>
         <Link
-          className="text-xs hover:underline underline-offset-4"
+          className="text-xs underline-offset-4 hover:underline"
           href="https://newsletter.example.com"
         >
           Newsletter
