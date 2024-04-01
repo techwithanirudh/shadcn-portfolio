@@ -52,7 +52,7 @@ function Header() {
           <nav className="flex gap-4 lg:gap-6">
             <Link
               className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
-              href="#projects"
+              href="#"
             >
               Home
             </Link>
@@ -62,19 +62,7 @@ function Header() {
             >
               About
             </Link>
-            <Link
-              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
-              href="#skills"
-            >
-              Skills
-            </Link>
-            <Link
-              className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
-              href="#testimonials"
-            >
-              Testimonials
-            </Link> */}
-            
+          
             <Link
               className="text-sm font-medium hover:underline underline-offset-4 flex items-center"
               href="#projects"
@@ -84,14 +72,14 @@ function Header() {
             <a
               className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               target="_blank"
-              href="https://blog.example.com"
+              href="https://blog.srirambalaji.com"
             >
               Blog <ExternalLinkIcon className="ml-1 h-4 w-4" />
             </a>
             <a
               className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               target="_blank"
-              href="https://newsletter.example.com"
+              href="https://ageofcopilots.substack.com"
             >
               Newsletter <ExternalLinkIcon className="ml-1 h-4 w-4" />
             </a>
