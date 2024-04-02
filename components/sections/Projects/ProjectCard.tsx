@@ -22,12 +22,8 @@ function ProjectCard({
     <Card>
       <CardContent className="p-4 md:p-6">
         <div className="grid gap-2">
-          <Image
+          <iframe
             src={thumbnail || "/placeholder.svg"}
-            alt={title || "Project Title"}
-            sizes="100vw"
-            width={500}
-            height={300}
             className="h-48 w-full rounded-md object-cover"
           />
           <h3 className="text-xl font-bold">{title || "Project Title"}</h3>

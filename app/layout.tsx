@@ -4,9 +4,6 @@ import "./globals.css";
 import "./cursor.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import { BackgroundGradientAnimation } from "@/components/bg-gradient";
-
-import MFC from "@/components/MouseFollower";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,12 +26,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          
-          {/* <BackgroundGradientAnimation interactive={false}>
-            <div className="absolute inset-0 z-50 h-full w-full">
+           <div className=" h-full w-full">
               {children}
             </div>
-          </BackgroundGradientAnimation> */}
         </ThemeProvider>
       </body>
     </html>

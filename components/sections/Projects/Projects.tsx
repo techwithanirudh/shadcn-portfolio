@@ -36,20 +36,29 @@ function Projects() {
               className="w-full max-w-xl md:max-w-3xl"
             >
               <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
                   <CarouselItem
-                    key={index}
+                    
                     className="md:basis-1/2 lg:basis-full	xl:basis-1/2"
                   >
                     <div className="p-1">
                       <ProjectCard
-                        thumbnail={"/laptop.jpg"}
-                        title={`Project ${index + 1}`}
-                        description={`A very interesting project which is ${index + 1} times better than the other one.`}
-                      />
+                        thumbnail={"https://www.youtube.com/embed/xiWEX-AvlAk"}
+                        title={`Project A`}
+                        description={`A very interesting project which is  times better than the other one.`}
+                      />  
                     </div>
+                   
                   </CarouselItem>
-                ))}
+                  <CarouselItem>
+                  <div  className="p-1">
+                        <ProjectCard
+                        thumbnail={"https://www.youtube.com/embed/xiWEX-AvlAk"}
+                        title={`Project A`}
+                        description={`A very interesting project which is  times better than the other one.`}
+                      />
+                      </div>
+                  </CarouselItem>
+                
               </CarouselContent>
               <CarouselPrevious />
               <CarouselNext />
