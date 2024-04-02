@@ -34,7 +34,7 @@ function Testimonials() {
                     <div className="p-1">
                       <TestimonialCard
                         name={`Jane Doe (${index + 1})`}
-                        image="/person.jpg"
+                        image="/images/person.jpg"
                         username={`janedoe${index + 1}`}
                         testimonial={`This service helps me ${index + 2} times a day! Highly recommend to anyone looking for quality.`}
                       />

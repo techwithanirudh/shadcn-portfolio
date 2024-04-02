@@ -43,7 +43,7 @@ function Projects() {
                   >
                     <div className="p-1">
                       <ProjectCard
-                        thumbnail={"/laptop.jpg"}
+                        thumbnail={"/images/laptop.jpg"}
                         title={`Project ${index + 1}`}
                         description={`A very interesting project which is ${index + 1} times better than the other one.`}
                       />
