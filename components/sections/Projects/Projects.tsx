@@ -28,12 +28,12 @@ function Projects() {
               Here are some of my featured projects.
             </p>
           </div>
-          <div className="flex items-center justify-center overflow-hidden lg:max-w-2xl lg:px-12">
+          <div className="flex items-center justify-center overflow-hidden lg:px-12">
             <Carousel
               opts={{
                 align: "start",
               }}
-              className="w-full max-w-xl md:max-w-3xl"
+              className="w-full"
             >
               <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (

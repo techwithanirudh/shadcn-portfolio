@@ -16,7 +16,7 @@ function TestimonialCard({
   testimonial,
 }: TestimonialCardProps) {
   return (
-    <Card className="w-full rounded-xl md:max-w-4xl lg:max-w-xl">
+    <Card className="w-full rounded-xl">
       <div className="flex items-center p-4">
         <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white">
           <Image
