@@ -113,6 +113,15 @@ export const BackgroundGradientAnimation = ({
     setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
   }, []);
 
+  useEffect(() => {
+    const eventHandler = (e: MouseEvent) => handleMouseMove(e as unknown as React.MouseEvent<HTMLDivElement>);
+    document.addEventListener('mousemove', eventHandler);
+  
+    return () => {
+      document.removeEventListener('mousemove', eventHandler);
+    };
+  }, []);
+
   return (
     <div
       className={cn(
