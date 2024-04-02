@@ -26,7 +26,7 @@ function Testimonials() {
             </p>
           </div>
 
-          <div className="flex items-center justify-center overflow-hidden lg:max-w-2xl lg:px-12">
+          <div className="flex items-center justify-center overflow-hidden lg:px-12">
             <Carousel className="w-full">
               <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -34,7 +34,7 @@ function Testimonials() {
                     <div className="p-1">
                       <TestimonialCard
                         name={`Jane Doe (${index + 1})`}
-                        image="/person.jpg"
+                        image="/images/person.jpg"
                         username={`janedoe${index + 1}`}
                         testimonial={`This service helps me ${index + 2} times a day! Highly recommend to anyone looking for quality.`}
                       />

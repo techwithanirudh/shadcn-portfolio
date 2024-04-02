@@ -26,9 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-           <div className=" h-full w-full">
-              {children}
-            </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

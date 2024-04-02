@@ -28,12 +28,12 @@ function Projects() {
               Here are some of my featured tools that I created.
             </p>
           </div>
-          <div className="flex items-center justify-center overflow-hidden lg:max-w-2xl lg:px-12">
+          <div className="flex items-center justify-center overflow-hidden lg:px-12">
             <Carousel
               opts={{
                 align: "start",
               }}
-              className="w-full max-w-xl md:max-w-3xl"
+              className="w-full"
             >
               <CarouselContent>
                   <CarouselItem
@@ -46,6 +46,7 @@ function Projects() {
                         title={`Power Platform Developer Copilot`}
                         description={`Power Platform Developer Copilot is a  tool to assist Power Platform developers. It helps in creating PowerFX expresssions, create FetchXML based on natural language, explain FetchXML, convert SQL to FetchXML, get queryexpresssion for FetchXML, generate Liquid code and create PCF Controls, Dynamics 365 Plugins and custom workflows using a prompt.`}
                       />  
+
                     </div>
                    
                   </CarouselItem>
