@@ -9,7 +9,7 @@ interface ProjectCardProps {
   title?: string;
   description?: string;
   thumbnail?: string;
-  link?: string; // Added link prop
+  link?: string;
 }
 
 function ProjectCard({
