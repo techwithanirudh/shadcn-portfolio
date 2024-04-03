@@ -109,11 +109,12 @@ export const BackgroundGradientAnimation = ({
   };
 
   useEffect(() => {
-    const eventHandler = (e: MouseEvent) => handleMouseMove(e as unknown as React.MouseEvent<HTMLDivElement>);
-    document.addEventListener('mousemove', eventHandler);
-  
+    const eventHandler = (e: MouseEvent) =>
+      handleMouseMove(e as unknown as React.MouseEvent<HTMLDivElement>);
+    document.addEventListener("mousemove", eventHandler);
+
     return () => {
-      document.removeEventListener('mousemove', eventHandler);
+      document.removeEventListener("mousemove", eventHandler);
     };
   }, []);
 
