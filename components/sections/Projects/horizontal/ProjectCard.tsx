@@ -20,14 +20,14 @@ function ProjectCard({
 }: ProjectCardProps) {
   return (
     <Card className="overflow-hidden rounded-md">
-      <CardContent className="w-full p-0">
+      <CardContent className="w-full p-0 inline-block overflow-hidden">
         <Image
           src={thumbnail || "/placeholder.svg"}
           alt={title || "Project Title"}
           width="0"
           height="0"
           sizes="100vw"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hover:scale-110 duration-200 transition-transform"
         />
       </CardContent>
       <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:grid-cols-2 md:p-6">
