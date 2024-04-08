@@ -35,6 +35,7 @@ function Header() {
     <header className="fixed inset-x-0 top-0 z-10 bg-white/30 bg-opacity-20 backdrop-blur-lg dark:bg-black/30">
       <div className="flex h-14 items-center justify-between px-4 md:px-6">
         <Link href="#" className="flex items-center justify-center">
+          {/* TODO: Swap this out with a good icon */}
           <CodeIcon className="h-6 w-6" />
           <span className="sr-only">John Doe</span>
         </Link>

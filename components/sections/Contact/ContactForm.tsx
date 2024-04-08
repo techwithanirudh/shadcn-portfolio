@@ -1,112 +1,69 @@
-"use client"
-
-import Link from "next/link"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useFieldArray, useForm } from "react-hook-form"
-import { z } from "zod"
+'use client';
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
+import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/components/ui/use-toast"
 
-const contactFormSchema = z.object({
-    name: z
-    .string()
-    .min(2, {
-      message: "Name must be at least 2 characters.",
-    })
-    .max(30, {
-      message: "Name must not be longer than 30 characters.",
-    }),
-  email: z
-    .string({
-      required_error: "Please enter a valid email.",
-    })
-    .email(),
-  message: z.string().max(380).min(4),
-})
+import { contactSubmit } from "@/app/actions";
 
-type ContactFormValues = z.infer<typeof contactFormSchema>
-
-// This can come from your database or API.
-const defaultValues: Partial<ContactFormValues> = {}
+import { useFormState } from 'react-dom';
+import { useEffect } from "react";
+ 
+const initialState = {
+  errors: {},
+  message: '',
+}
 
 export default function ContactForm() {
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues,
-    mode: "onChange",
-  })
+  const [state, formAction] = useFormState(contactSubmit, initialState)
 
-  function onSubmit(data: ContactFormValues) {
+  useEffect(() => {
+    if (state?.message === '') return;
+    
     toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
+      title: state?.message
     })
-  }
+  }, [state])
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="John Doe" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-         <FormField
-          control={form.control}
+    <form action={formAction} className="grid gap-4">
+      <div className="grid gap-3">
+        <Label htmlFor="name" className={cn("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70", state?.errors?.name && 'text-red-500 dark:text-red-900')}>Name</Label>
+        <Input id="name" name="name" placeholder="John Doe" required />
+        <p className="text-sm font-medium text-red-500 dark:text-red-900">
+          {state?.errors?.name}
+        </p>
+      </div>
+      <div className="grid gap-3">
+        <Label htmlFor="email" className={cn("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70", state?.errors?.email && 'text-red-500 dark:text-red-900')}>Email</Label>
+        <Input
+          id="email"
           name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="hello@example.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
+          placeholder="john@example.com"
+          required
+          type="email"
         />
-        <FormField
-          control={form.control}
+        <p className="text-sm font-medium text-red-500 dark:text-red-900">
+          {state?.errors?.email}
+        </p>
+      </div>
+      <div className="grid gap-3">
+        <Label htmlFor="message" className={cn("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70", state?.errors?.message && 'text-red-500 dark:text-red-900')}>Message</Label>
+        <Textarea
+          id="message"
           name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Hello, John Doe!"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
+          placeholder={'Hello!\n\nThis is John Doe, from Example. Just wanted to say hi!'}
+          required
         />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+        <p className="text-sm font-medium text-red-500 dark:text-red-900">
+          {state?.errors?.message}
+        </p>
+      </div>
+      
+      <Button type="submit">Submit</Button>
+    </form>
   )
 }
