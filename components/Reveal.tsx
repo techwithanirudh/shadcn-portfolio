@@ -1,10 +1,10 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import React, { useEffect, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 interface RevealProps {
-    children: React.ReactNode;
-    width?: "fit-content" | '100%';
+  children: React.ReactNode;
+  width?: "fit-content" | "100%";
 }
 
 const Reveal = ({ children, width = "fit-content" }: RevealProps) => {
@@ -14,7 +14,7 @@ const Reveal = ({ children, width = "fit-content" }: RevealProps) => {
   const mainControls = useAnimation();
 
   useEffect(() => {
-    console.log(isInView)
+    console.log(isInView);
     if (isInView) {
       mainControls.start("visible");
     } else {
@@ -27,7 +27,7 @@ const Reveal = ({ children, width = "fit-content" }: RevealProps) => {
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 }
+          visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
         animate={mainControls}

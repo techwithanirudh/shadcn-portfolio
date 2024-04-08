@@ -66,8 +66,7 @@ export const ContactEmail = ({ name, email, message }: ContactEmailProps) => {
             </Text>
 
             <Text className="text-[14px] leading-[24px] text-black">
-              This is the message sent:{" "}
-              {message}
+              This is the message sent: {message}
             </Text>
             <Hr className="mx-0 my-[26px] w-full border border-solid border-[#eaeaea]" />
             <Text className="text-[12px] leading-[24px] text-[#666666]">
@@ -82,12 +81,12 @@ export const ContactEmail = ({ name, email, message }: ContactEmailProps) => {
 };
 
 ContactEmail.PreviewProps = {
-  name: 'John Doe',
-  email: 'john@example.com',
+  name: "John Doe",
+  email: "john@example.com",
   message: `Hello!
 
   This is John Doe, from Example. Just wanted to say hi!
-  `
+  `,
 } as ContactEmailProps;
 
 export default ContactEmail;
