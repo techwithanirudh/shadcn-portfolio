@@ -41,7 +41,7 @@ export const ContactEmail = ({ name, email, message }: ContactEmailProps) => {
             <Section className="mt-[32px]">
               {/* TODO: Swap this out with a good icon */}
               <Img
-                src={`${baseUrl}/images/code.svg`}
+                src={`${baseUrl}/images/code.png`}
                 width="40"
                 height="37"
                 alt="Logo"
