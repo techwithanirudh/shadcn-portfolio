@@ -9,6 +9,27 @@ import {
 } from "@/components/ui/carousel";
 import TestimonialCard from "@/components/sections/Testimonials/TestimonialCard";
 
+const testimonials = [
+  {
+    name: 'Jane Doe',
+    image: '/images/person/1.jpg',
+    username: 'johndoe',
+    testimonial: 'Absolutely fantastic! This service is a lifesaver.'
+  },
+  {
+    name: 'Emily Smith',
+    image: '/images/person/2.jpg',
+    username: 'emilysmith',
+    testimonial: 'Very helpful and easy to use. Great customer service too.'
+  },
+  {
+    name: 'Michael Johnson',
+    image: '/images/person/3.jpg',
+    username: 'michaeljohnson',
+    testimonial: 'Absolutely love this service! It has streamlined my workflow like nothing else.'
+  },
+];
+
 function Testimonials() {
   return (
     <MotionWrap
@@ -29,14 +50,14 @@ function Testimonials() {
           <div className="flex items-center justify-center overflow-hidden lg:px-12">
             <Carousel className="w-full">
               <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
+                {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index}>
                     <div className="p-1">
                       <TestimonialCard
-                        name={`Jane Doe (${index + 1})`}
-                        image="/images/person.jpg"
-                        username={`janedoe${index + 1}`}
-                        testimonial={`This service helps me ${index + 2} times a day! Highly recommend to anyone looking for quality.`}
+                        name={testimonial.name}
+                        image={testimonial.image}
+                        username={testimonial.username}
+                        testimonial={testimonial.testimonial}
                       />
                     </div>
                   </CarouselItem>

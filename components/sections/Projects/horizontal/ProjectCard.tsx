@@ -24,8 +24,8 @@ function ProjectCard({
         <Image
           src={thumbnail || "/placeholder.svg"}
           alt={title || "Project Title"}
-          width="0"
-          height="0"
+          width={0}
+          height={0}
           sizes="100vw"
           className="h-full w-full object-cover transition-transform duration-200 hover:scale-110"
         />

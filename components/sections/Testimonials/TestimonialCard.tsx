@@ -21,9 +21,9 @@ function TestimonialCard({
         <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white">
           <Image
             alt={name || "Anonymous"}
-            className="aspect-square rounded-full"
-            height={48}
-            width={48}
+            className="aspect-square rounded-full w-full h-auto object-cover"
+            height={0}
+            width={0}
             src={image || "/placeholder.svg"}
           />
         </div>
