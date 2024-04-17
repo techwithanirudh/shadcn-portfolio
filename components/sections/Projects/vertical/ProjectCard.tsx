@@ -12,6 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 interface Link {
   type: "github" | "live";
@@ -20,19 +21,23 @@ interface Link {
 
 interface ProjectCardProps {
   name?: string;
+  minH?: number;
   description?: string;
   thumbnail?: string;
   links?: Link[];
+  className?: string;
 }
 
 function ProjectCard({
   name,
+  minH,
   description,
   thumbnail,
   links,
+  className
 }: ProjectCardProps) {
   return (
-    <Card className="flex flex-col">
+    <Card className={cn("flex flex-col justify-between", className)} style={{minHeight: minH}}>
       <CardContent className="p-4 md:p-6">
         <div className="grid gap-2">
           <Image
@@ -43,7 +48,7 @@ function ProjectCard({
             height={300}
             className="h-48 w-full rounded-md object-cover"
           />
-          <h3 className="text-xl font-bold">{name || "Project Title"}</h3>
+          <h3 className="text-xl font-bold">{name || "Unnamed Project"}</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             {description || ""}
           </p>
