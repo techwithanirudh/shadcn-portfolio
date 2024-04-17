@@ -14,7 +14,7 @@ import { BackgroundGradientAnimation } from "@/components/bg-gradient";
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      <BackgroundGradientAnimation>
+      {/* <BackgroundGradientAnimation> */}
         <div className="absolute inset-0 z-50 h-full w-full">
           <div className="flex min-h-[100dvh] flex-col">
             <Header />
@@ -29,7 +29,7 @@ export default function Home() {
             </main>
           </div>
         </div>
-      </BackgroundGradientAnimation>
+      {/* </BackgroundGradientAnimation> */}
     </div>
   );
 }
