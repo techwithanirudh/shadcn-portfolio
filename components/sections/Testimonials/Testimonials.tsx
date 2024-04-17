@@ -9,7 +9,14 @@ import {
 } from "@/components/ui/carousel";
 import TestimonialCard from "@/components/sections/Testimonials/TestimonialCard";
 
-const testimonials = [
+interface Testimonial {
+  image?: string;
+  name?: string;
+  username?: string;
+  testimonial?: string;
+}
+
+const testimonials: Testimonial[] = [
   {
     name: 'Jane Doe',
     image: '/images/person/1.jpg',
