@@ -75,15 +75,16 @@ function ProjectCard({
                   key={index}
                 >
                   <TooltipTrigger asChild>
-                    <Link
+                    <a
                       className={buttonVariants({
                         variant: "outline",
                         className: "ml-2",
                       })}
                       href={link.url}
+                      target="_blank"
                     >
                       <Icon />
-                    </Link>
+                    </a>
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>{link.type === "github" ? "GitHub" : "External"} Link</p> 
