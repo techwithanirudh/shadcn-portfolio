@@ -125,7 +125,7 @@ const projects: Project[] = [
 function Projects() {
   const [tallestCH, setTallestCH] = useState(0);
 
-  const carouselItemRefs = useRef([]);
+  const carouselItemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const height = carouselItemRefs.current.reduce((max, current) => {
@@ -164,7 +164,7 @@ function Projects() {
                     className="md:basis-1/2 lg:basis-full	xl:basis-1/2"
                   >
                     <div
-                      ref={(el) => (carouselItemRefs.current[index] = el)}
+                      ref={(el) => { carouselItemRefs.current[index] = el; }}
                       key={index}
                     >
                       <ProjectCard
