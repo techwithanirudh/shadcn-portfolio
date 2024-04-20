@@ -40,14 +40,14 @@ function ProjectCard({
           className="h-auto max-h-96 w-full object-cover transition-transform duration-200 hover:scale-110"
         />
       </CardContent>
-      <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:grid-cols-2 md:p-6">
+      <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 lg:grid-cols-2 md:p-6">
         <div>
           <h3 className="text-xl font-bold">{name || "Unnamed Project"}</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             {description || ""}
           </p>
         </div>
-        <div className="flex items-center justify-end p-4 md:p-6">
+        <div className="flex items-center justify-end">
           <TooltipProvider>
             {links &&
               links.map((link, index) => {
