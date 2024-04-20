@@ -6,25 +6,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { GithubIcon, GlobeIcon } from "lucide-react";
 
+import { Project } from "@/types";
+
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+
 import { cn } from "@/lib/utils";
 
-interface Link {
-  type: "github" | "live";
-  url: string;
-}
-
-interface ProjectCardProps {
-  name?: string;
+interface ProjectCardProps extends Project {
   minH?: number;
-  description?: string;
-  thumbnail?: string;
-  links?: Link[];
   className?: string;
 }
 

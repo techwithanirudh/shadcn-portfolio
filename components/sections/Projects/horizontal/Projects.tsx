@@ -6,6 +6,8 @@ import ProjectCard from "./ProjectCard";
 
 import Reveal from "@/components/Reveal";
 
+import { projects } from "../config";
+
 function Projects() {
   return (
     <div
@@ -32,12 +34,13 @@ function Projects() {
           </p>
         </div>
         <div className="mt-6 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          {Array.from({ length: 4 }).map((_, index) => (
+          {projects.map((project, index) => (
             <ProjectCard
               key={index}
-              thumbnail="/images/laptop.jpg"
-              title={`Project ${index + 1}`}
-              description="Category Name" // Replace with your category
+              name={project.name}
+              description={project.description}
+              thumbnail={project.thumbnail}
+              links={project.links}
             />
           ))}
         </div>
