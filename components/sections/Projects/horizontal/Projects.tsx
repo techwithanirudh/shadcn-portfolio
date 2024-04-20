@@ -13,7 +13,7 @@ function Projects() {
     >
       <div className="space-y-4 px-4 md:space-y-6 md:px-6 lg:space-y-10">
         <div className="flex w-full flex-col items-center justify-center text-center lg:flex-row lg:justify-between lg:text-left">
-          <div className="flex flex-col items-center lg:items-left">
+          <div className="flex flex-col items-center lg:items-start">
             <Reveal>
               <h2 className="text-4xl font-bold uppercase tracking-tighter sm:text-5xl md:text-5xl lg:text-6xl">
                 My
