@@ -1,1 +1,1 @@
-A buggy shadcn-ui based portfolio
+A WIP shadcn-ui based portfolio template.
