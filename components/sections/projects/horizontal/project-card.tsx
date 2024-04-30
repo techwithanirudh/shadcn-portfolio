@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 
-import { Project } from "@/types";
+import { Project } from "@/types/project";
 import { GithubIcon, GlobeIcon } from "lucide-react";
 
 import {

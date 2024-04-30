@@ -1,5 +1,5 @@
 import React from "react";
-import MotionWrap from "@/components/MotionWrap";
+import MotionWrap from "@/components/motion-wrap";
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import TestimonialCard from "@/components/sections/Testimonials/TestimonialCard";
+import TestimonialCard from "@/components/sections/testimonials/testimonial-card";
 
 interface Testimonial {
   image?: string;

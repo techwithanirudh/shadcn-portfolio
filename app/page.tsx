@@ -1,14 +1,14 @@
 import {
+  Header,
   Hero,
   About,
   Skills,
   Testimonials,
   Projects,
   Contact,
+  Footer
 } from "@/components/sections";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { BackgroundGradientAnimation } from "@/components/bg-gradient";
 
 export default function Home() {

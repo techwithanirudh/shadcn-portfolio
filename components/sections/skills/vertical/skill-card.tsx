@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CodeIcon } from "lucide-react";
 
-import { Skill } from "@/types";
+import { Skill } from "@/types/skill";
 
 import { cn } from "@/lib/utils";
 

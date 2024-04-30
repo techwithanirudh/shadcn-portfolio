@@ -1,5 +1,5 @@
 import React from "react";
-import MotionWrap from "@/components/MotionWrap";
+import MotionWrap from "@/components/motion-wrap";
 import Image from "next/image";
 
 function About() {

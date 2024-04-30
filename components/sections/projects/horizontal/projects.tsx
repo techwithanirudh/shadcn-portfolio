@@ -1,7 +1,7 @@
 import React from "react";
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "./project-card";
 
-import Reveal from "@/components/Reveal";
+import Reveal from "@/components/reveal";
 
 import { projects } from "../config";
 

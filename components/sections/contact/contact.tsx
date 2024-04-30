@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import MotionWrap from "@/components/MotionWrap";
+import MotionWrap from "@/components/motion-wrap";
 
 import {
   YoutubeIcon,
@@ -8,7 +8,7 @@ import {
   LinkedinIcon,
   TwitterIcon,
 } from "lucide-react";
-import ContactForm from "./ContactForm";
+import ContactForm from "./contact-form";
 
 function Contact() {
   return (

@@ -1,4 +1,4 @@
-import { Skill } from '@/types';
+import { Skill } from '@/types/skill';
 import { CodeIcon, DatabaseIcon, LayoutIcon, SmartphoneIcon } from 'lucide-react';
 
 const skills: Skill[] = [

@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { GithubIcon, GlobeIcon } from "lucide-react";
 
-import { Project } from "@/types";
+import { Project } from "@/types/project";
 
 import {
   Tooltip,

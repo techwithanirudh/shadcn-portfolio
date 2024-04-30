@@ -1,7 +1,7 @@
 import React from "react";
 
-import MotionWrap from "@/components/MotionWrap";
-import SkillCard from "./SkillCard";
+import MotionWrap from "@/components/motion-wrap";
+import SkillCard from "./skill-card";
 
 import { skills } from "../config";
 

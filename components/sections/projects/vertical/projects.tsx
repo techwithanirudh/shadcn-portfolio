@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
-import MotionWrap from "@/components/MotionWrap";
-import ProjectCard from "./ProjectCard";
+import MotionWrap from "@/components/motion-wrap";
+import ProjectCard from "./project-card";
 
 import {
   Carousel,

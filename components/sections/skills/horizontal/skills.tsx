@@ -1,7 +1,7 @@
 import React from "react";
-import SkillCard from "./SkillCard";
+import SkillCard from "./skill-card";
 
-import Reveal from "@/components/Reveal";
+import Reveal from "@/components/reveal";
 
 import { skills } from "../config";
 
