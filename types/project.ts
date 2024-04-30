@@ -4,7 +4,7 @@ export interface Link {
 }
 
 export interface Project {
-  name?: string;
+  name: string;
   description?: string;
   thumbnail?: string;
   links?: Link[];

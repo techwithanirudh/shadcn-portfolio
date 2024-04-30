@@ -33,7 +33,7 @@ function ProjectCard({
       <CardContent className="inline-block w-full overflow-hidden p-0">
         <Image
           src={thumbnail || "/placeholder.svg"}
-          alt={name || "Project Image"}
+          alt={`Image of ${name}`}
           width={0}
           height={0}
           sizes="100vw"
@@ -42,7 +42,7 @@ function ProjectCard({
       </CardContent>
       <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 lg:grid-cols-2 md:p-6">
         <div>
-          <h3 className="text-xl font-bold">{name || "Unnamed Project"}</h3>
+          <h3 className="text-xl font-bold">{name}</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             {description || ""}
           </p>

@@ -36,13 +36,13 @@ function ProjectCard({
         <div className="grid gap-2">
           <Image
             src={thumbnail || "/placeholder.svg"}
-            alt={name || "Project Image"}
+            alt={`Image of ${name}`}
             sizes="100vw"
             width={500}
             height={300}
             className="h-48 w-full rounded-md object-cover"
           />
-          <h3 className="text-xl font-bold">{name || "Unnamed Project"}</h3>
+          <h3 className="text-xl font-bold">{name}</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             {description || ""}
           </p>
