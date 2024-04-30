@@ -1,0 +1,49 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+
+interface TestimonialCardProps {
+  image?: string;
+  name?: string;
+  username?: string;
+  testimonial?: string;
+  className?: string;
+}
+
+function TestimonialCard({
+  image,
+  name,
+  username,
+  testimonial,
+  className
+}: TestimonialCardProps) {
+  return (
+    <Card className={cn("w-full rounded-xl", className)}>
+      <div className="flex items-center p-4">
+        <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white">
+          <Image
+            src={image || "/placeholder.svg"}
+            alt={name || "Anonymous"}
+            className="aspect-square rounded-full w-full h-auto object-cover"
+            height={40}
+            width={40}
+          />
+        </div>
+        <div className="ml-4">
+          <p className="font-semibold">{name || "Anonymous"}</p>
+          {username && (
+            <p className="text-sm text-gray-500">{username}</p>
+          )}
+        </div>
+      </div>
+      <CardContent className="border-t border-gray-200 p-4 dark:border-gray-700">
+        <p className="text-sm leading-loose">
+          {testimonial || "No testimonial provided."}
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
+
+export default TestimonialCard;
