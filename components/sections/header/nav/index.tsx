@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './style.module.scss';
 import { height } from '../anim';
-import Body from './body';
-import Footer from './footer';
-import Image from './image';
+import Body from './body/body';
+import Footer from './footer/footer';
+import Image from './image/image';
 
 interface Link {
   title: string;
