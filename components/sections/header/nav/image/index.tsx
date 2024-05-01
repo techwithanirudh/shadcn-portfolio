@@ -17,7 +17,7 @@ const Index: React.FC<IndexProps> = ({ src, isActive }) => {
       animate={isActive ? 'open' : 'closed'}
       className={styles.imageContainer}
     >
-      <Image src={`/images/nav/${src}`} fill={true} alt="image" />
+      <Image src={`/images/nav/${src}`} fill={true} alt={"An image to describe the selected link"} />
     </motion.div>
   );
 };
