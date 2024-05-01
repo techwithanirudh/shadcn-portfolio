@@ -18,8 +18,8 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-email/components": "0.0.16",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
-    "embla-carousel-react": "^8.0.0",
+    "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.0.2",
     "framer-motion": "^11.0.24",
     "lenis": "^1.0.45",
     "lucide-react": "^0.363.0",
@@ -28,11 +28,11 @@
     "react": "^18",
     "react-dom": "^18",
     "react-email": "2.1.1",
-    "react-hook-form": "^7.51.2",
+    "react-hook-form": "^7.51.3",
     "resend": "^3.2.0",
-    "tailwind-merge": "^2.2.2",
+    "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.22.4"
+    "zod": "^3.23.5"
   },
   "devDependencies": {
     "@types/node": "^20",
