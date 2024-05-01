@@ -1,4 +1,5 @@
-// according to a github issue it is not reccomended to do it in a layout rather, have a wrapper component which does it each render
+// according to a github issue it is not reccomended to render this in a layout rather, have a wrapper component which does it each render
+// https://github.com/darkroomengineering/lenis/issues/319
 'use client'
 
 import React from 'react';
@@ -14,7 +15,9 @@ function SmoothScroll({children}: LenisProps) {
   })
 
   return (
-    <ReactLenis root>
+    <ReactLenis root options={{
+      duration: 2,
+    }}>
       {children}
     </ReactLenis>
   )
