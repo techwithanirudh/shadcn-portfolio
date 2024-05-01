@@ -1,14 +1,14 @@
 "use client";
-import styles from "./style.module.scss";
-import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { CodeIcon } from "lucide-react";
+import styles from "./style.module.scss";
 import { opacity, background } from "./anim";
 import Nav from "./nav";
-import { CodeIcon } from "lucide-react";
 
-export default function index() {
-  const [isActive, setIsActive] = useState(false);
+const Header: React.FC = () => {
+  const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
     <div className={styles.header}>
@@ -17,12 +17,7 @@ export default function index() {
           <CodeIcon className="h-6 w-6" />
           <span className="sr-only">John Doe</span>
         </Link>
-        <div
-          onClick={() => {
-            setIsActive(!isActive);
-          }}
-          className={styles.el}
-        >
+        <div onClick={() => setIsActive(!isActive)} className={styles.el}>
           <div
             className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}
           ></div>
@@ -45,7 +40,11 @@ export default function index() {
         animate={isActive ? "open" : "closed"}
         className={styles.background}
       ></motion.div>
-      <AnimatePresence mode="wait">{isActive && <Nav setIsActive={setIsActive} />}</AnimatePresence>
+      <AnimatePresence mode="wait">
+        {isActive && <Nav setIsActive={setIsActive} />}
+      </AnimatePresence>
     </div>
   );
-}
+};
+
+export default Header;
