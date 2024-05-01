@@ -7,7 +7,7 @@
   padding: 10px;
 
   .background {
-    background-color: black;
+    background-color: hsl(var(--foreground));
     opacity: 0.5;
     height: 100%;
     width: 100%;
@@ -30,7 +30,7 @@
 
     a {
       text-decoration: none;
-      color: black;
+      color: hsl(var(--foreground));
       position: absolute;
       left: 0;
     }
@@ -76,7 +76,7 @@
           content: "";
           height: 1px;
           width: 100%;
-          background-color: black;
+          background-color: hsl(var(--foreground));
           position: relative;
           display: block;
           transition: all 1s cubic-bezier(0.76, 0, 0.24, 1);

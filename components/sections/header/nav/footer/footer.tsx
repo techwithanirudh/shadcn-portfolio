@@ -13,7 +13,8 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Made by:</span>Studio Lumio
+          {/* space */}
+          <span>Made by:</span> Studio Lumio
         </motion.li>
       </ul>
       <ul>
@@ -35,7 +36,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Images:</span> Freepik, Envato
+          <span>Images:</span> Unsplash
         </motion.li>
       </ul>
       <ul>

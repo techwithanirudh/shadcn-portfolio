@@ -5,6 +5,7 @@ import { height } from '../anim';
 import Body from './body/body';
 import Footer from './footer/footer';
 import Image from './image/image';
+import ModeToggle from '@/components/mode-toggle';
 
 interface Link {
   title: string;
@@ -87,6 +88,9 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           src={links[selectedLink.index].src}
           isActive={selectedLink.isActive}
         />
+        <div className='absolute bottom-0 right-0'>
+          <ModeToggle />
+        </div>
       </div>
     </motion.div>
   );
