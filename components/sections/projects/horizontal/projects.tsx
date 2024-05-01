@@ -8,7 +8,7 @@ import { projects } from "../config";
 function Projects() {
   return (
     <div
-      className="w-full border-t border-gray-200 py-12 md:py-24 lg:py-32 dark:border-gray-700"
+      className="w-full border-t border-gray-200 py-12 dark:border-gray-700 md:py-24 lg:py-32"
       id="projects"
     >
       <div className="space-y-4 px-4 md:space-y-6 md:px-6 lg:space-y-10">
@@ -25,7 +25,7 @@ function Projects() {
               </h2>
             </Reveal>
           </div>
-          <p className="mt-4 hidden text-gray-500 lg:mt-0 lg:block lg:w-[35%] dark:text-gray-400">
+          <p className="mt-4 hidden text-gray-500 dark:text-gray-400 lg:mt-0 lg:block lg:w-[35%]">
             Here are some of my projects where I&apos;ve turned code into cool,
             functional stuff.
           </p>

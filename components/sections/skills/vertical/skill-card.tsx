@@ -14,12 +14,7 @@ interface SkillCardProps extends Skill {
   className?: string;
 }
 
-function SkillCard({
-  name,
-  description,
-  Icon,
-  className
-}: SkillCardProps) {
+function SkillCard({ name, description, Icon, className }: SkillCardProps) {
   return (
     <Card className={className}>
       <CardContent className="p-4 md:p-6">

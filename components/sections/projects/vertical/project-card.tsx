@@ -28,10 +28,13 @@ function ProjectCard({
   description,
   thumbnail,
   links,
-  className
+  className,
 }: ProjectCardProps) {
   return (
-    <Card className={cn("flex flex-col justify-between", className)} style={{minHeight: minH}}>
+    <Card
+      className={cn("flex flex-col justify-between", className)}
+      style={{ minHeight: minH }}
+    >
       <CardContent className="p-4 md:p-6">
         <div className="grid gap-2">
           <Image
@@ -65,9 +68,7 @@ function ProjectCard({
               }
 
               return Icon ? (
-                <Tooltip 
-                  key={index}
-                >
+                <Tooltip key={index}>
                   <TooltipTrigger asChild>
                     <a
                       className={buttonVariants({
@@ -81,7 +82,7 @@ function ProjectCard({
                     </a>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>{link.type === "github" ? "GitHub" : "External"} Link</p> 
+                    <p>{link.type === "github" ? "GitHub" : "External"} Link</p>
                   </TooltipContent>
                 </Tooltip>
               ) : null;

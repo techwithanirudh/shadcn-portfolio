@@ -20,7 +20,7 @@ function SkillCard({
   description,
   Icon,
   index,
-  className
+  className,
 }: SkillCardProps) {
   return (
     <Card className={className}>
@@ -30,10 +30,10 @@ function SkillCard({
           {Icon ? <Icon className="h-8 w-8" /> : <CodeIcon />}
         </div>
         <div className="grid gap-0.5">
-          <h3 className="mt-2 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
-          <p className="mt-2 text-base text-gray-500">
-            {description || ""}
-          </p>
+          <h3 className="mt-2 text-2xl font-bold leading-8 tracking-tight">
+            {name}
+          </h3>
+          <p className="mt-2 text-base text-gray-500">{description || ""}</p>
         </div>
       </CardContent>
     </Card>

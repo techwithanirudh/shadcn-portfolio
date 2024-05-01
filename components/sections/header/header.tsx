@@ -103,7 +103,7 @@ function Header() {
           initial="closed"
           animate={isOpen ? "open" : "closed"}
           transition={{ duration: 0.3 }}
-          className="absolute left-0 top-full w-full bg-white md:hidden dark:bg-black"
+          className="absolute left-0 top-full w-full bg-white dark:bg-black md:hidden"
         >
           <div className="flex flex-col gap-4 p-4">
             <Link

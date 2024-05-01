@@ -13,7 +13,7 @@ import ContactForm from "./contact-form";
 function Contact() {
   return (
     <MotionWrap
-      className="w-full border-t border-gray-200 py-12 md:py-24 lg:py-32 dark:border-gray-700"
+      className="w-full border-t border-gray-200 py-12 dark:border-gray-700 md:py-24 lg:py-32"
       id="contact"
     >
       <div className=" px-4 md:px-6">
@@ -22,7 +22,7 @@ function Contact() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Contact Me
             </h2>
-            <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Have a question or want to work together? Send me a message using
               the form below.
             </p>
