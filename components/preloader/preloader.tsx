@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 
-import Preloader from "./loader";
+import Loader from "./loader";
 
-function Index() {
+function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -18,8 +18,8 @@ function Index() {
   }, []);
 
   return (
-    <AnimatePresence mode="wait">{isLoading && <Preloader />}</AnimatePresence>
+    <AnimatePresence mode="wait">{isLoading && <Loader />}</AnimatePresence>
   );
 }
 
-export default Index;
+export default Preloader;
