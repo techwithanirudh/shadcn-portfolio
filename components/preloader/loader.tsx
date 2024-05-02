@@ -4,15 +4,17 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { opacity, slideUp } from "./anim";
 
-const words = [
-  "Hello",
-  "Bonjour",
-  "Ciao",
-  "Olà",
-  "やあ",
-  "Hallå",
-  "Guten tag",
-  "Hallo",
+const steps = [
+  "10%",
+  "20%",
+  "30%",
+  "40%",
+  "50%",
+  "60%",
+  "70%",
+  "80%",
+  "90%",
+  "100%",
 ];
 
 export default function Index() {
@@ -24,7 +26,7 @@ export default function Index() {
   }, []);
 
   useEffect(() => {
-    if (index == words.length - 1) return;
+    if (index == steps.length - 1) return;
     setTimeout(
       () => {
         setIndex(index + 1);
@@ -57,8 +59,7 @@ export default function Index() {
       {dimension.width > 0 && (
         <>
           <motion.p variants={opacity} initial="initial" animate="enter">
-            <span></span>
-            {words[index]}
+            {steps[index]}
           </motion.p>
           <svg>
             <motion.path

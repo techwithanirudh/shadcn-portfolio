@@ -2,8 +2,10 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-inline: 60px;
+  padding-bottom: 30px;
   position: fixed;
   z-index: 99;
   // TODO: Add a better color instead of just the background to make it pop more
@@ -20,17 +22,9 @@
   p {
     display: flex;
     color: hsl(var(--foreground));
-    font-size: 42px;
+    font-size: 72px;
     align-items: center;
     position: absolute;
     z-index: 1;
-    span {
-      display: block;
-      width: 10px;
-      height: 10px;
-      background-color: hsl(var(--foreground));
-      border-radius: 50%;
-      margin-right: 10px;
-    }
   }
 }
