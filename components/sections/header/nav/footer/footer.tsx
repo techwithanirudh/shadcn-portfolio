@@ -14,7 +14,7 @@ export default function Footer() {
           exit="exit"
         >
           {/* space */}
-          <span>Made by:</span> Studio Lumio
+          <span>Inspired by:</span> Studio Lumio
         </motion.li>
       </ul>
       <ul>
@@ -25,7 +25,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          <span>Typography:</span> Google Fonts
+          <span>Typography:</span> Inter
         </motion.li>
       </ul>
       <ul>
@@ -47,7 +47,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          Privacy Policy
+          Blog
         </motion.li>
         <motion.li
           custom={[0.3, 0]}
@@ -56,7 +56,7 @@ export default function Footer() {
           animate="enter"
           exit="exit"
         >
-          Terms & Conditions
+          Newsletter
         </motion.li>
       </ul>
     </div>

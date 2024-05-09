@@ -88,7 +88,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           src={links[selectedLink.index].src}
           isActive={selectedLink.isActive}
         />
-        <div className='absolute bottom-0 right-0'>
+        <div className='absolute bottom-0 right-0 -mb-20 md:mb-auto'>
           <ModeToggle />
         </div>
       </div>
