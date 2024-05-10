@@ -4,10 +4,11 @@ import ProjectCard from "./project-card";
 import Reveal from "@/components/reveal";
 
 import { projects } from "../config";
+import MotionWrap from "@/components/motion-wrap";
 
 function Projects() {
   return (
-    <div
+    <MotionWrap
       className="w-full border-t border-gray-200 py-12 dark:border-gray-700 md:py-24 lg:py-32"
       id="projects"
     >
@@ -42,7 +43,7 @@ function Projects() {
           ))}
         </div>
       </div>
-    </div>
+    </MotionWrap>
   );
 }
 
