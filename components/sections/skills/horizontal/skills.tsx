@@ -4,11 +4,12 @@ import SkillCard from "./skill-card";
 import Reveal from "@/components/reveal";
 
 import { skills } from "../config";
+import MotionWrap from "@/components/motion-wrap";
 
 function Skills() {
   return (
-    <div
-      className="w-full border-t border-gray-200 py-12 md:py-24 lg:py-32 dark:border-gray-700"
+    <MotionWrap
+      className="w-full border-t border-gray-200 py-12 dark:border-gray-700 md:py-24 lg:py-32"
       id="skills"
     >
       <div className="px-4 md:px-6">
@@ -36,7 +37,7 @@ function Skills() {
           ))}
         </div>
       </div>
-    </div>
+    </MotionWrap>
   );
 }
 

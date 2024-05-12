@@ -8,7 +8,7 @@ import { skills } from "../config";
 function Skills() {
   return (
     <MotionWrap
-      className="w-full border-t border-gray-200 py-12 md:py-24 lg:py-32 dark:border-gray-700"
+      className="w-full border-t border-gray-200 py-12 dark:border-gray-700 md:py-24 lg:py-32"
       id="skills"
     >
       <div className="px-4 md:px-6">

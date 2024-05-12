@@ -12,7 +12,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import { projects } from '../config';
+import { projects } from "../config";
 
 function Projects() {
   const [tallestCH, setTallestCH] = useState(0);
@@ -29,7 +29,7 @@ function Projects() {
 
   return (
     <MotionWrap
-      className="w-full border-t border-gray-200 py-12 md:py-24 lg:py-32 dark:border-gray-700"
+      className="w-full border-t border-gray-200 py-12 dark:border-gray-700 md:py-24 lg:py-32"
       id="projects"
     >
       <div className="px-4 md:px-6">
@@ -56,7 +56,9 @@ function Projects() {
                     className="md:basis-1/2 lg:basis-full	xl:basis-1/2"
                   >
                     <div
-                      ref={(el) => { carouselItemRefs.current[index] = el; }}
+                      ref={(el) => {
+                        carouselItemRefs.current[index] = el;
+                      }}
                       key={index}
                     >
                       <ProjectCard

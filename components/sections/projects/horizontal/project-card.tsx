@@ -29,7 +29,12 @@ function ProjectCard({
   className,
 }: ProjectCardProps) {
   return (
-    <Card className={cn("flex flex-col justify-between overflow-hidden rounded-md", className)}>
+    <Card
+      className={cn(
+        "flex flex-col justify-between overflow-hidden rounded-md",
+        className,
+      )}
+    >
       <CardContent className="inline-block w-full overflow-hidden p-0">
         <Image
           src={thumbnail || "/placeholder.svg"}
@@ -40,7 +45,7 @@ function ProjectCard({
           className="h-auto max-h-96 w-full object-cover transition-transform duration-200 hover:scale-110"
         />
       </CardContent>
-      <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 lg:grid-cols-2 md:p-6">
+      <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6 lg:grid-cols-2">
         <div>
           <h3 className="text-xl font-bold">{name}</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">

@@ -16,7 +16,7 @@ function TestimonialCard({
   name,
   username,
   testimonial,
-  className
+  className,
 }: TestimonialCardProps) {
   return (
     <Card className={cn("w-full rounded-xl", className)}>
@@ -25,16 +25,14 @@ function TestimonialCard({
           <Image
             src={image || "/placeholder.svg"}
             alt={name || "Anonymous"}
-            className="aspect-square rounded-full w-full h-auto object-cover"
+            className="aspect-square h-auto w-full rounded-full object-cover"
             height={40}
             width={40}
           />
         </div>
         <div className="ml-4">
           <p className="font-semibold">{name || "Anonymous"}</p>
-          {username && (
-            <p className="text-sm text-gray-500">{username}</p>
-          )}
+          {username && <p className="text-sm text-gray-500">{username}</p>}
         </div>
       </div>
       <CardContent className="border-t border-gray-200 p-4 dark:border-gray-700">
