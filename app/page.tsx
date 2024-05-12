@@ -20,8 +20,8 @@ export default function Home() {
           <Header />
           <main className="flex-1">
             <Hero />
-            <Projects />
             <About />
+            <Projects />
             <Skills />
             <Testimonials />
             <Contact />
