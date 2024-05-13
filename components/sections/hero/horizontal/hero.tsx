@@ -5,6 +5,7 @@ import Image from "next/image";
 function Hero() {
   return (
     <MotionWrap className="mt-14 w-full py-12 md:mt-0 md:py-24 lg:py-32 xl:py-48">
+      {/* TODO: Add a bigger and more modern hero section */}
       <div className=" grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
         <div className="space-y-3">
           <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">

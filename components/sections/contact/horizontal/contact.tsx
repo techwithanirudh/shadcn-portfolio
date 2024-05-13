@@ -16,6 +16,7 @@ function Contact() {
       className="w-full border-t border-gray-200 py-12 dark:border-gray-700 md:py-24 lg:py-32"
       id="contact"
     >
+      {/* TODO: Redesign for horizontal */}
       <div className=" px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="space-y-3">
