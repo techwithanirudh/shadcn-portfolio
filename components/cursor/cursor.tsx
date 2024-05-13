@@ -43,10 +43,10 @@ export default function Cursor() {
     setIsPressed(false);
   };
 
-  // Adding and removing event listeners based on component lifecycle
   useEffect(() => {
-    mouse.x.set(-1000);
-    mouse.x.set(-1000);
+    mouse.x.set(-999);
+    mouse.y.set(-999);
+
     window.addEventListener("mousemove", manageMouseMove);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
