@@ -45,6 +45,8 @@ export default function Cursor() {
 
   // Adding and removing event listeners based on component lifecycle
   useEffect(() => {
+    mouse.x.set(-1000);
+    mouse.x.set(-1000);
     window.addEventListener("mousemove", manageMouseMove);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
