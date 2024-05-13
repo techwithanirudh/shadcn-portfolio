@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import TestimonialCard from "@/components/sections/testimonials/testimonial-card";
+import TestimonialCard from "./testimonial-card";
 
 interface Testimonial {
   image?: string;
