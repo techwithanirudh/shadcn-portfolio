@@ -10,6 +10,7 @@ import {
 } from "@/components/sections";
 
 import Preloader from '@/components/preloader/preloader';
+import Cursor from '@/components/cursor/cursor'
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
             <Footer />
           </main>
         </div>
+        <Cursor />
       </div>
     </div>
   );
