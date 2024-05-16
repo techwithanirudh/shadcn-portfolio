@@ -16,7 +16,7 @@ interface Distance {
 export default function Cursor() {
   const [isPressed, setIsPressed] = useState<boolean>(false);
   const cursor = useRef<HTMLDivElement>(null);
-  const cursorSize = isPressed ? 25 : 15;
+  const cursorSize = isPressed ? 18 : 12;
 
   const mouse: { x: MotionValue<number>; y: MotionValue<number> } = {
     x: useMotionValue(0),
