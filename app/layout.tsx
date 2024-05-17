@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import "@/styles/globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
-import SmoothScroll from "@/components/smooth-scroll";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Instrument_Sans({ subsets: ["latin"] });
 
 export const metadata = {
   title: "John Doe - Portfolio",
@@ -27,10 +26,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SmoothScroll>
-            {children}
-            <Toaster />
-          </SmoothScroll>
+          {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

@@ -1,6 +1,11 @@
 .imageContainer {
   display: none;
+  // transform: rotateX(30deg) rotateY(-10deg);
 }
+
+// .imageContainer > img {
+//   border-radius: var(--radius);
+// }
 
 @media only screen and (min-width: 1000px) {
   .imageContainer {
