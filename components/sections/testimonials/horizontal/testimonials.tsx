@@ -9,34 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import TestimonialCard from "./testimonial-card";
 
-interface Testimonial {
-  image?: string;
-  name?: string;
-  username?: string;
-  testimonial?: string;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    name: "Jane Doe",
-    image: "/images/person/1.jpg",
-    username: "johndoe",
-    testimonial: "Absolutely fantastic! This service is a lifesaver.",
-  },
-  {
-    name: "Emily Smith",
-    image: "/images/person/2.jpg",
-    username: "emilysmith",
-    testimonial: "Very helpful and easy to use. Great customer service too.",
-  },
-  {
-    name: "Michael Johnson",
-    image: "/images/person/3.jpg",
-    username: "michaeljohnson",
-    testimonial:
-      "Absolutely love this service! It has streamlined my workflow like nothing else.",
-  },
-];
+import { testimonials } from "../config";
 
 function Testimonials() {
   return (
