@@ -29,7 +29,7 @@ function Projects() {
 
   return (
     <MotionWrap
-      className="w-full border-t border-gray-200 py-12 dark:border-gray-700 md:py-24 lg:py-32"
+      className="w-full border-t border-gray-200  dark:border-gray-700 py-24 lg:py-32"
       id="projects"
     >
       <div className="px-4 md:px-6">
