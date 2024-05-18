@@ -1,16 +1,15 @@
-import { Metadata } from '@/types/metadata'
+import { Metadata } from '@/types/metadata';
 
 const metadata: Metadata = {
   author: {
     name: 'John Doe',
     username: 'johndoe',
-    label: 'Designer & Developer',
-    email: 'john.doe@example.com'
+    label: 'Designer & Developer'
   },
   site: {
     title: 'John Doe - Portfolio Website',
     description: 'Portfolio of web & UI designer/developer John Doe.',
-    ogImage: 'twitter-card.png',
+    ogImage: '/images/og.png',
     url: 'https://www.example.com',
     keywords: [
       'web design',
@@ -22,6 +21,6 @@ const metadata: Metadata = {
     language: 'en',
     charset: 'UTF-8'
   }
-}
+};
 
-export { metadata }
+export { metadata };

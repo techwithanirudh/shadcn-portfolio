@@ -1,8 +1,9 @@
-import React from 'react'
-import MotionWrap from '@/components/motion-wrap'
-import Image from 'next/image'
+import React from 'react';
+import MotionWrap from '@/components/motion-wrap';
+import Image from 'next/image';
 
-import { metadata as meta } from '@/app/config'
+import { metadata as meta } from '@/app/config';
+import { hero } from '../config';
 
 function Hero() {
   return (
@@ -10,13 +11,13 @@ function Hero() {
       <div className=" grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
         <div className="space-y-3">
           <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-            Designer & Developer
+            {hero.label}
           </div>
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-            Hi, I&apos;m {meta.author.name}
+            Hi, I&apos;m {hero.name}
           </h1>
           <p className="mx-auto max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            I design and build beautiful websites. Welcome to my portfolio.
+            {hero.description}
           </p>
         </div>
         <Image
@@ -29,7 +30,7 @@ function Hero() {
         />
       </div>
     </MotionWrap>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
