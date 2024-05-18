@@ -2,6 +2,8 @@ import React from "react";
 import MotionWrap from "@/components/motion-wrap";
 import Image from "next/image";
 
+import { metadata as meta } from "@/app/config";
+
 function Hero() {
   return (
     <MotionWrap className="mt-14 w-full  md:mt-0 py-24 lg:py-32 xl:py-48">
@@ -11,7 +13,7 @@ function Hero() {
             Designer & Developer
           </div>
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-            Hi, I&apos;m John Doe
+            Hi, I&apos;m {meta.author.name}
           </h1>
           <p className="mx-auto max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             I design and build beautiful websites. Welcome to my portfolio.

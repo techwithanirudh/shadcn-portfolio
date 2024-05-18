@@ -81,11 +81,11 @@ export const ContactEmail = ({ name, email, message }: ContactEmailProps) => {
 };
 
 ContactEmail.PreviewProps = {
-  name: "John Doe",
-  email: "john@example.com",
+  name: "Jane Doe",
+  email: "jane@example.com",
   message: `Hello!
 
-  This is John Doe, from Example. Just wanted to say hi!
+  This is Jane Doe, from Example. Just wanted to say hi!
   `,
 } as ContactEmailProps;
 

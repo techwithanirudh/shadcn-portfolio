@@ -17,6 +17,7 @@ export default function Cursor() {
   const [isPressed, setIsPressed] = useState<boolean>(false);
   const cursor = useRef<HTMLDivElement>(null);
   const cursorSize = isPressed ? 18 : 12;
+  const [isVisible, setIsVisible] = useState(false);
 
   const mouse: { x: MotionValue<number>; y: MotionValue<number> } = {
     x: useMotionValue(0),
@@ -30,9 +31,14 @@ export default function Cursor() {
   };
 
   const manageMouseMove = (e: MouseMoveEvent) => {
+    setIsVisible(true);
     const { clientX, clientY } = e;
     mouse.x.set(clientX - cursorSize / 2);
     mouse.y.set(clientY - cursorSize / 2);
+  };
+
+  const manageMouseLeave = () => {
+    setIsVisible(false);
   };
 
   const handleMouseDown = () => {
@@ -44,14 +50,13 @@ export default function Cursor() {
   };
 
   useEffect(() => {
-    mouse.x.set(-999);
-    mouse.y.set(-999);
-
+    document.body.addEventListener("mouseleave", manageMouseLeave, {passive: true});
     window.addEventListener("mousemove", manageMouseMove);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
+      window.removeEventListener("mouseleave", manageMouseLeave);
       window.removeEventListener("mousemove", manageMouseMove);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
@@ -78,7 +83,7 @@ export default function Cursor() {
           width: cursorSize,
           height: cursorSize
         }}
-        className={styles.cursor}
+        className={`${styles.cursor} ${isVisible ? styles.visible : styles.hidden}`}
         ref={cursor}
       >
       </motion.div>
