@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: meta.site.name,
+    title: meta.author.name, // or meta.site.title
     description: meta.site.description,
     // site: '@username',
     // siteId: 'id',
