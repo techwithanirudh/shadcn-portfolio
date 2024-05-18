@@ -1,10 +1,10 @@
-import React from 'react'
-import ProjectCard from './project-card'
+import React from 'react';
+import ProjectCard from './project-card';
 
-import Reveal from '@/components/reveal'
+import Reveal from '@/components/reveal';
 
-import { projects } from '../config'
-import MotionWrap from '@/components/motion-wrap'
+import { projects } from '../config';
+import MotionWrap from '@/components/motion-wrap';
 
 function Projects() {
   return (
@@ -44,7 +44,7 @@ function Projects() {
         </div>
       </div>
     </MotionWrap>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

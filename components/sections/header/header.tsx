@@ -1,16 +1,16 @@
-'use client'
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Link from 'next/link'
-import { CodeIcon } from 'lucide-react'
-import styles from './style.module.scss'
-import { opacity, background } from './anim'
-import Nav from './nav'
+'use client';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import { CodeIcon } from 'lucide-react';
+import styles from './style.module.scss';
+import { opacity, background } from './anim';
+import Nav from './nav';
 
-import { metadata as meta } from '@/app/config'
+import { metadata as meta } from '@/app/config';
 
 const Header: React.FC = () => {
-  const [isActive, setIsActive] = useState<boolean>(false)
+  const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
     <div className={styles.header}>
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
         {isActive && <Nav setIsActive={setIsActive} />}
       </AnimatePresence>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

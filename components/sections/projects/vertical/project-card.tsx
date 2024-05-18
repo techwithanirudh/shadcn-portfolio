@@ -1,25 +1,25 @@
-import React from 'react'
-import { CardContent, CardFooter, Card } from '@/components/ui/card'
-import { buttonVariants } from '@/components/ui/button'
+import React from 'react';
+import { CardContent, CardFooter, Card } from '@/components/ui/card';
+import { buttonVariants } from '@/components/ui/button';
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { GithubIcon, GlobeIcon } from 'lucide-react'
+import Link from 'next/link';
+import Image from 'next/image';
+import { GithubIcon, GlobeIcon } from 'lucide-react';
 
-import { Project } from '@/types/project'
+import { Project } from '@/types/project';
 
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from '@/components/ui/tooltip'
+} from '@/components/ui/tooltip';
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
 
 interface ProjectCardProps extends Project {
-  minH?: number
-  className?: string
+  minH?: number;
+  className?: string;
 }
 
 function ProjectCard({
@@ -55,16 +55,16 @@ function ProjectCard({
         <TooltipProvider>
           {links &&
             links.map((link, index) => {
-              let Icon
+              let Icon;
               switch (link.type) {
                 case 'github':
-                  Icon = GithubIcon
-                  break
+                  Icon = GithubIcon;
+                  break;
                 case 'live':
-                  Icon = GlobeIcon
-                  break
+                  Icon = GlobeIcon;
+                  break;
                 default:
-                  Icon = null
+                  Icon = null;
               }
 
               return Icon ? (
@@ -85,12 +85,12 @@ function ProjectCard({
                     <p>{link.type === 'github' ? 'GitHub' : 'External'} Link</p>
                   </TooltipContent>
                 </Tooltip>
-              ) : null
+              ) : null;
             })}
         </TooltipProvider>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
-export default ProjectCard
+export default ProjectCard;

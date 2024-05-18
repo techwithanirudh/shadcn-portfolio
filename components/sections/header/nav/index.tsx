@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import styles from './style.module.scss'
-import { height } from '../anim'
-import Body from './body/body'
-import Footer from './footer/footer'
-import Image from './image/image'
-import ModeToggle from '@/components/mode-toggle'
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import styles from './style.module.scss';
+import { height } from '../anim';
+import Body from './body/body';
+import Footer from './footer/footer';
+import Image from './image/image';
+import ModeToggle from '@/components/mode-toggle';
 
 interface Link {
-  title: string
-  href: string
-  src: string
+  title: string;
+  href: string;
+  src: string;
 }
 
 const links: Link[] = [
@@ -49,22 +49,22 @@ const links: Link[] = [
     href: '#contact',
     src: 'contact.jpg'
   }
-]
+];
 
 interface IndexProps {
-  setIsActive: (isActive: boolean) => void
+  setIsActive: (isActive: boolean) => void;
 }
 
 interface SelectedLinkState {
-  isActive: boolean
-  index: number
+  isActive: boolean;
+  index: number;
 }
 
 const Index: React.FC<IndexProps> = ({ setIsActive }) => {
   const [selectedLink, setSelectedLink] = useState<SelectedLinkState>({
     isActive: false,
     index: 0
-  })
+  });
 
   return (
     <motion.div
@@ -93,7 +93,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

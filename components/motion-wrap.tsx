@@ -1,13 +1,13 @@
-'use client'
-import React, { ReactNode } from 'react'
-import { motion, MotionProps } from 'framer-motion'
-import { cn } from '@/lib/utils'
+'use client';
+import React, { ReactNode } from 'react';
+import { motion, MotionProps } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 type MotionWrapProps = {
-  children: ReactNode
-  className?: string
-  id?: string
-} & MotionProps
+  children: ReactNode;
+  className?: string;
+  id?: string;
+} & MotionProps;
 
 const MotionWrap: React.FC<MotionWrapProps> = ({
   children,
@@ -23,7 +23,7 @@ const MotionWrap: React.FC<MotionWrapProps> = ({
     >
       {children}
     </motion.section>
-  )
-}
+  );
+};
 
-export default MotionWrap
+export default MotionWrap;

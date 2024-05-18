@@ -1,6 +1,6 @@
-import React from 'react'
-import Link from 'next/link'
-import { metadata as meta } from '@/app/config'
+import React from 'react';
+import Link from 'next/link';
+import { metadata as meta } from '@/app/config';
 
 function Footer() {
   return (
@@ -23,7 +23,7 @@ function Footer() {
         </Link>
       </nav>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

@@ -1,32 +1,32 @@
-'use client'
+'use client';
 
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { toast } from '@/components/ui/use-toast'
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from '@/components/ui/use-toast';
 
-import { contactSubmit } from '@/app/actions'
+import { contactSubmit } from '@/app/actions';
 
-import { useFormState } from 'react-dom'
-import { useEffect } from 'react'
+import { useFormState } from 'react-dom';
+import { useEffect } from 'react';
 
 const initialState = {
   errors: {},
   message: ''
-}
+};
 
 export default function ContactForm() {
-  const [state, formAction] = useFormState(contactSubmit, initialState)
+  const [state, formAction] = useFormState(contactSubmit, initialState);
 
   useEffect(() => {
-    if (state?.message === '') return
+    if (state?.message === '') return;
 
     toast({
       title: state?.message
-    })
-  }, [state])
+    });
+  }, [state]);
 
   return (
     <form action={formAction} className="grid gap-4">
@@ -91,5 +91,5 @@ export default function ContactForm() {
 
       <Button type="submit">Submit</Button>
     </form>
-  )
+  );
 }

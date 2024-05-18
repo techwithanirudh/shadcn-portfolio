@@ -1,14 +1,14 @@
-import React from 'react'
-import { Button } from '@/components/ui/button'
-import MotionWrap from '@/components/motion-wrap'
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import MotionWrap from '@/components/motion-wrap';
 
 import {
   YoutubeIcon,
   GithubIcon,
   LinkedinIcon,
   TwitterIcon
-} from 'lucide-react'
-import ContactForm from './contact-form'
+} from 'lucide-react';
+import ContactForm from './contact-form';
 
 function Contact() {
   return (
@@ -56,7 +56,7 @@ function Contact() {
         </div>
       </div>
     </MotionWrap>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

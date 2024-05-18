@@ -1,17 +1,17 @@
-import React from 'react'
-import { CardContent, CardFooter, Card } from '@/components/ui/card'
-import { buttonVariants } from '@/components/ui/button'
+import React from 'react';
+import { CardContent, CardFooter, Card } from '@/components/ui/card';
+import { buttonVariants } from '@/components/ui/button';
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { CodeIcon } from 'lucide-react'
+import Link from 'next/link';
+import Image from 'next/image';
+import { CodeIcon } from 'lucide-react';
 
-import { Skill } from '@/types/skill'
+import { Skill } from '@/types/skill';
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
 
 interface SkillCardProps extends Skill {
-  className?: string
+  className?: string;
 }
 
 function SkillCard({ name, description, Icon, className }: SkillCardProps) {
@@ -29,7 +29,7 @@ function SkillCard({ name, description, Icon, className }: SkillCardProps) {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
-export default SkillCard
+export default SkillCard;

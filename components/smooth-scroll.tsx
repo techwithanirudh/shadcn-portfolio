@@ -1,25 +1,25 @@
 // according to a github issue it is not reccomended to render this in a layout rather, have a wrapper component which does it each render
 // https://github.com/darkroomengineering/lenis/issues/319
-'use client'
+'use client';
 
-import React, { useEffect } from 'react'
-import { ReactLenis, useLenis } from '@/lib/lenis'
+import React, { useEffect } from 'react';
+import { ReactLenis, useLenis } from '@/lib/lenis';
 
 interface LenisProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 function SmoothScroll({ children }: LenisProps) {
   const lenis = useLenis(({ scroll }) => {
     // called every scroll
-  })
+  });
 
   useEffect(() => {
     document.addEventListener('DOMContentLoaded', () => {
-      lenis?.stop()
-      lenis?.start()
-    })
-  }, [])
+      lenis?.stop();
+      lenis?.start();
+    });
+  }, []);
 
   return (
     <ReactLenis
@@ -30,7 +30,7 @@ function SmoothScroll({ children }: LenisProps) {
     >
       {children}
     </ReactLenis>
-  )
+  );
 }
 
-export default SmoothScroll
+export default SmoothScroll;

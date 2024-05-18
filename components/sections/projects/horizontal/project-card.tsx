@@ -1,24 +1,24 @@
-import React from 'react'
-import { CardContent, CardFooter, Card } from '@/components/ui/card'
-import { buttonVariants } from '@/components/ui/button'
+import React from 'react';
+import { CardContent, CardFooter, Card } from '@/components/ui/card';
+import { buttonVariants } from '@/components/ui/button';
 
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
 
-import { Project } from '@/types/project'
-import { GithubIcon, GlobeIcon } from 'lucide-react'
+import { Project } from '@/types/project';
+import { GithubIcon, GlobeIcon } from 'lucide-react';
 
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from '@/components/ui/tooltip'
+} from '@/components/ui/tooltip';
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
 
 interface ProjectCardProps extends Project {
-  className?: string
+  className?: string;
 }
 
 function ProjectCard({
@@ -56,16 +56,16 @@ function ProjectCard({
           <TooltipProvider>
             {links &&
               links.map((link, index) => {
-                let Icon
+                let Icon;
                 switch (link.type) {
                   case 'github':
-                    Icon = GithubIcon
-                    break
+                    Icon = GithubIcon;
+                    break;
                   case 'live':
-                    Icon = GlobeIcon
-                    break
+                    Icon = GlobeIcon;
+                    break;
                   default:
-                    Icon = null
+                    Icon = null;
                 }
 
                 return Icon ? (
@@ -88,13 +88,13 @@ function ProjectCard({
                       </p>
                     </TooltipContent>
                   </Tooltip>
-                ) : null
+                ) : null;
               })}
           </TooltipProvider>
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }
 
-export default ProjectCard
+export default ProjectCard;

@@ -1,10 +1,10 @@
-import React from 'react'
-import SkillCard from './skill-card'
+import React from 'react';
+import SkillCard from './skill-card';
 
-import Reveal from '@/components/reveal'
+import Reveal from '@/components/reveal';
 
-import { skills } from '../config'
-import MotionWrap from '@/components/motion-wrap'
+import { skills } from '../config';
+import MotionWrap from '@/components/motion-wrap';
 
 function Skills() {
   return (
@@ -38,7 +38,7 @@ function Skills() {
         </div>
       </div>
     </MotionWrap>
-  )
+  );
 }
 
-export default Skills
+export default Skills;
