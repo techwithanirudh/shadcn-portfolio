@@ -1,13 +1,13 @@
-import type { Metadata } from 'next'
-import { Instrument_Sans } from 'next/font/google'
-import '@/styles/globals.css'
+import type { Metadata } from 'next';
+import { Instrument_Sans } from 'next/font/google';
+import '@/styles/globals.css';
 
-import { ThemeProvider } from '@/components/theme-provider'
-import { Toaster } from '@/components/ui/toaster'
+import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui/toaster';
 
-import { metadata as meta } from './config'
+import { metadata as meta } from './config';
 
-const inter = Instrument_Sans({ subsets: ['latin'] })
+const inter = Instrument_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(meta.site.url),
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     locale: 'en-US',
     images: [
       {
-        url: '/images/og.png',
+        url: meta.site.ogImage,
         width: 1200,
         height: 630,
         alt: meta.site.description,
@@ -88,12 +88,12 @@ export const metadata: Metadata = {
       }
     ]
   }
-}
+};
 
 export default function RootLayout({
   children
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -109,5 +109,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
