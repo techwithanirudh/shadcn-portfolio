@@ -7,7 +7,9 @@
   padding: 10px;
 
   .background {
-    background-color: hsl(240 10% 3.9%); // constant color instead of using a css variable
+    background-color: hsl(
+      240 10% 3.9%
+    ); // constant color instead of using a css variable
     opacity: 0.5;
     height: 100%;
     width: 100%;

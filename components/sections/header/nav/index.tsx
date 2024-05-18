@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import styles from './style.module.scss';
-import { height } from '../anim';
-import Body from './body/body';
-import Footer from './footer/footer';
-import Image from './image/image';
-import ModeToggle from '@/components/mode-toggle';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import styles from "./style.module.scss";
+import { height } from "../anim";
+import Body from "./body/body";
+import Footer from "./footer/footer";
+import Image from "./image/image";
+import ModeToggle from "@/components/mode-toggle";
 
 interface Link {
   title: string;
@@ -15,39 +15,39 @@ interface Link {
 
 const links: Link[] = [
   {
-    title: 'Home',
-    href: '/',
-    src: 'home.jpg',
+    title: "Home",
+    href: "/",
+    src: "home.jpg",
   },
   {
-    title: 'About',
-    href: '#about',
-    src: 'about.jpg',
+    title: "About",
+    href: "#about",
+    src: "about.jpg",
   },
   {
-    title: 'Projects',
-    href: '#projects',
-    src: 'projects.jpg',
+    title: "Projects",
+    href: "#projects",
+    src: "projects.jpg",
   },
   {
-    title: 'Skills',
-    href: '#skills',
-    src: 'skills.jpg',
+    title: "Skills",
+    href: "#skills",
+    src: "skills.jpg",
   },
   {
-    title: 'Testimonials',
-    href: '#testimonials',
-    src: 'testimonials.jpg',
+    title: "Testimonials",
+    href: "#testimonials",
+    src: "testimonials.jpg",
   },
   {
-    title: 'Blog',
-    href: 'https://blog.example.com',
-    src: 'blog.jpg',
+    title: "Blog",
+    href: "https://blog.example.com",
+    src: "blog.jpg",
   },
   {
-    title: 'Contact',
-    href: '#contact',
-    src: 'contact.jpg',
+    title: "Contact",
+    href: "#contact",
+    src: "contact.jpg",
   },
 ];
 
@@ -69,9 +69,9 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
   return (
     <motion.div
       variants={height}
-      initial='initial'
-      animate='enter'
-      exit='exit'
+      initial="initial"
+      animate="enter"
+      exit="exit"
       className={styles.nav}
     >
       <div className={styles.wrapper}>
@@ -88,7 +88,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           src={links[selectedLink.index].src}
           isActive={selectedLink.isActive}
         />
-        <div className='absolute bottom-0 right-0 -mb-20 md:mb-auto'>
+        <div className="absolute bottom-0 right-0 -mb-20 md:mb-auto">
           <ModeToggle />
         </div>
       </div>

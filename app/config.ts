@@ -3,7 +3,7 @@ import { Metadata } from "@/types/metadata";
 const metadata: Metadata = {
   author: {
     name: "John Doe",
-    username: 'johndoe',
+    username: "johndoe",
     label: "Designer & Developer",
     email: "john.doe@example.com",
   },
@@ -21,7 +21,7 @@ const metadata: Metadata = {
     ],
     language: "en",
     charset: "UTF-8",
-  }
+  },
 };
 
 export { metadata };

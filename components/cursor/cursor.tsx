@@ -1,7 +1,14 @@
-'use client'
-import React, { useEffect, useState, useRef } from 'react';
-import styles from './style.module.scss';
-import { motion, useMotionValue, useSpring, MotionValue, SpringOptions, AnimationControls } from 'framer-motion';
+"use client";
+import React, { useEffect, useState, useRef } from "react";
+import styles from "./style.module.scss";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  MotionValue,
+  SpringOptions,
+  AnimationControls,
+} from "framer-motion";
 
 interface MouseMoveEvent {
   clientX: number;
@@ -21,13 +28,17 @@ export default function Cursor() {
 
   const mouse: { x: MotionValue<number>; y: MotionValue<number> } = {
     x: useMotionValue(0),
-    y: useMotionValue(0)
+    y: useMotionValue(0),
   };
 
-  const smoothOptions: SpringOptions = { damping: 20, stiffness: 300, mass: 0.5 };
+  const smoothOptions: SpringOptions = {
+    damping: 20,
+    stiffness: 300,
+    mass: 0.5,
+  };
   const smoothMouse = {
     x: useSpring(mouse.x, smoothOptions),
-    y: useSpring(mouse.y, smoothOptions)
+    y: useSpring(mouse.y, smoothOptions),
   };
 
   const manageMouseMove = (e: MouseMoveEvent) => {
@@ -50,7 +61,9 @@ export default function Cursor() {
   };
 
   useEffect(() => {
-    document.body.addEventListener("mouseleave", manageMouseLeave, {passive: true});
+    document.body.addEventListener("mouseleave", manageMouseLeave, {
+      passive: true,
+    });
     window.addEventListener("mousemove", manageMouseMove);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
@@ -63,7 +76,15 @@ export default function Cursor() {
     };
   }, []);
 
-  const template = ({ rotate, scaleX, scaleY }: { rotate: number; scaleX: number; scaleY: number }) => {
+  const template = ({
+    rotate,
+    scaleX,
+    scaleY,
+  }: {
+    rotate: number;
+    scaleX: number;
+    scaleY: number;
+  }) => {
     return `rotate(${rotate}deg) scaleX(${scaleX}) scaleY(${scaleY})`;
   };
 
@@ -71,22 +92,21 @@ export default function Cursor() {
     <div className={styles.cursorContainer}>
       {/* TODO: Instead of setting a high x & y, use hidden and show the cursor when moved */}
       {/* TODO: Hide the whole cursor and make this the way to use the cursor */}
-      <motion.div 
+      <motion.div
         transformTemplate={template}
         style={{
-          left: smoothMouse.x, 
+          left: smoothMouse.x,
           top: smoothMouse.y,
           scaleX: mouse.x,
           scaleY: mouse.y,
-        }} 
+        }}
         animate={{
           width: cursorSize,
-          height: cursorSize
+          height: cursorSize,
         }}
         className={`${styles.cursor} ${isVisible ? styles.visible : styles.hidden}`}
         ref={cursor}
-      >
-      </motion.div>
+      ></motion.div>
     </div>
   );
 }
