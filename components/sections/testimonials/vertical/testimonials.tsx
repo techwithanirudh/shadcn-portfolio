@@ -7,41 +7,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import TestimonialCard from "@/components/sections/testimonials/testimonial-card";
+import TestimonialCard from "./testimonial-card";
 
-interface Testimonial {
-  image?: string;
-  name?: string;
-  username?: string;
-  testimonial?: string;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    name: "Jane Doe",
-    image: "/images/person/1.jpg",
-    username: "johndoe",
-    testimonial: "Absolutely fantastic! This service is a lifesaver.",
-  },
-  {
-    name: "Emily Smith",
-    image: "/images/person/2.jpg",
-    username: "emilysmith",
-    testimonial: "Very helpful and easy to use. Great customer service too.",
-  },
-  {
-    name: "Michael Johnson",
-    image: "/images/person/3.jpg",
-    username: "michaeljohnson",
-    testimonial:
-      "Absolutely love this service! It has streamlined my workflow like nothing else.",
-  },
-];
+import { testimonials } from "../config";
 
 function Testimonials() {
   return (
     <MotionWrap
-      className="w-full border-t border-gray-200 py-12 dark:border-gray-700 md:py-24 lg:py-32"
+      className="w-full border-t border-gray-200  dark:border-gray-700 py-24 lg:py-32"
       id="testimonials"
     >
       <div className="px-4 md:px-6">
