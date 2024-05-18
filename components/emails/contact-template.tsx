@@ -12,23 +12,23 @@ import {
   Preview,
   Row,
   Section,
-  Text,
-} from "@react-email/components";
-import { Tailwind } from "@react-email/tailwind";
-import * as React from "react";
+  Text
+} from '@react-email/components'
+import { Tailwind } from '@react-email/tailwind'
+import * as React from 'react'
 
 interface ContactEmailProps {
-  name: string;
-  email: string;
-  message: string;
+  name: string
+  email: string
+  message: string
 }
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
-  : "";
+  : ''
 
 export const ContactEmail = ({ name, email, message }: ContactEmailProps) => {
-  const previewText = `Message from ${name} on Portfolio`;
+  const previewText = `Message from ${name} on Portfolio`
 
   // TODO: Make a custom design, instead of the template
   return (
@@ -77,16 +77,16 @@ export const ContactEmail = ({ name, email, message }: ContactEmailProps) => {
         </Body>
       </Tailwind>
     </Html>
-  );
-};
+  )
+}
 
 ContactEmail.PreviewProps = {
-  name: "Jane Doe",
-  email: "jane@example.com",
+  name: 'Jane Doe',
+  email: 'jane@example.com',
   message: `Hello!
 
   This is Jane Doe, from Example. Just wanted to say hi!
-  `,
-} as ContactEmailProps;
+  `
+} as ContactEmailProps
 
-export default ContactEmail;
+export default ContactEmail

@@ -1,31 +1,31 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
 
-import MotionWrap from "@/components/motion-wrap";
-import ProjectCard from "./project-card";
+import MotionWrap from '@/components/motion-wrap'
+import ProjectCard from './project-card'
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+  CarouselPrevious
+} from '@/components/ui/carousel'
 
-import { projects } from "../config";
+import { projects } from '../config'
 
 function Projects() {
-  const [tallestCH, setTallestCH] = useState(0);
+  const [tallestCH, setTallestCH] = useState(0)
 
-  const carouselItemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const carouselItemRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     const height = carouselItemRefs.current.reduce((max, current) => {
-      return Math.max(max, current?.offsetHeight || 0);
-    }, 0);
+      return Math.max(max, current?.offsetHeight || 0)
+    }, 0)
 
-    setTallestCH(height);
-  }, []);
+    setTallestCH(height)
+  }, [])
 
   return (
     <MotionWrap
@@ -45,7 +45,7 @@ function Projects() {
           <div className="flex items-center justify-center overflow-hidden lg:px-12">
             <Carousel
               opts={{
-                align: "start",
+                align: 'start'
               }}
               className="w-full"
             >
@@ -57,7 +57,7 @@ function Projects() {
                   >
                     <div
                       ref={(el) => {
-                        carouselItemRefs.current[index] = el;
+                        carouselItemRefs.current[index] = el
                       }}
                       key={index}
                     >
@@ -79,7 +79,7 @@ function Projects() {
         </div>
       </div>
     </MotionWrap>
-  );
+  )
 }
 
-export default Projects;
+export default Projects

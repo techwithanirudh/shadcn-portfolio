@@ -1,12 +1,12 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import styles from "./style.module.scss";
-import { opacity } from "../../anim";
+import React from 'react'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import styles from './style.module.scss'
+import { opacity } from '../../anim'
 
 interface IndexProps {
-  src: string;
-  isActive: boolean;
+  src: string
+  isActive: boolean
 }
 
 const Index: React.FC<IndexProps> = ({ src, isActive }) => {
@@ -14,16 +14,16 @@ const Index: React.FC<IndexProps> = ({ src, isActive }) => {
     <motion.div
       variants={opacity}
       initial="initial"
-      animate={isActive ? "open" : "closed"}
+      animate={isActive ? 'open' : 'closed'}
       className={styles.imageContainer}
     >
       <Image
         src={`/images/nav/${src}`}
         fill={true}
-        alt={"An image to describe the selected link"}
+        alt={'An image to describe the selected link'}
       />
     </motion.div>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

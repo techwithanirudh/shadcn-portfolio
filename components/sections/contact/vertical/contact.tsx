@@ -1,14 +1,14 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import MotionWrap from "@/components/motion-wrap";
+import React from 'react'
+import { Button } from '@/components/ui/button'
+import MotionWrap from '@/components/motion-wrap'
 
 import {
   YoutubeIcon,
   GithubIcon,
   LinkedinIcon,
-  TwitterIcon,
-} from "lucide-react";
-import ContactForm from "./contact-form";
+  TwitterIcon
+} from 'lucide-react'
+import ContactForm from './contact-form'
 
 function Contact() {
   return (
@@ -34,7 +34,7 @@ function Contact() {
               </Button>
               <Button variant="outline" size="icon" asChild>
                 <a target="_blank" href="https://twitter.com">
-                  <TwitterIcon className="h-4 w-4" />{" "}
+                  <TwitterIcon className="h-4 w-4" />{' '}
                   {/* good 'ol twitter icon */}
                 </a>
               </Button>
@@ -56,7 +56,7 @@ function Contact() {
         </div>
       </div>
     </MotionWrap>
-  );
+  )
 }
 
-export default Contact;
+export default Contact

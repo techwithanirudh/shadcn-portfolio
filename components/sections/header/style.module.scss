@@ -75,7 +75,7 @@
 
         &::after,
         &::before {
-          content: "";
+          content: '';
           height: 1px;
           width: 100%;
           background-color: hsl(var(--foreground));

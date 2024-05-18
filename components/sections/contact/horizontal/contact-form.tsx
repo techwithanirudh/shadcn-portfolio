@@ -1,32 +1,32 @@
-"use client";
+'use client'
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/components/ui/use-toast";
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { toast } from '@/components/ui/use-toast'
 
-import { contactSubmit } from "@/app/actions";
+import { contactSubmit } from '@/app/actions'
 
-import { useFormState } from "react-dom";
-import { useEffect } from "react";
+import { useFormState } from 'react-dom'
+import { useEffect } from 'react'
 
 const initialState = {
   errors: {},
-  message: "",
-};
+  message: ''
+}
 
 export default function ContactForm() {
-  const [state, formAction] = useFormState(contactSubmit, initialState);
+  const [state, formAction] = useFormState(contactSubmit, initialState)
 
   useEffect(() => {
-    if (state?.message === "") return;
+    if (state?.message === '') return
 
     toast({
-      title: state?.message,
-    });
-  }, [state]);
+      title: state?.message
+    })
+  }, [state])
 
   return (
     <form action={formAction} className="grid gap-4">
@@ -34,8 +34,8 @@ export default function ContactForm() {
         <Label
           htmlFor="name"
           className={cn(
-            "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
-            state?.errors?.name && "text-red-500 dark:text-red-900",
+            'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+            state?.errors?.name && 'text-red-500 dark:text-red-900'
           )}
         >
           Name
@@ -49,8 +49,8 @@ export default function ContactForm() {
         <Label
           htmlFor="email"
           className={cn(
-            "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
-            state?.errors?.email && "text-red-500 dark:text-red-900",
+            'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+            state?.errors?.email && 'text-red-500 dark:text-red-900'
           )}
         >
           Email
@@ -70,8 +70,8 @@ export default function ContactForm() {
         <Label
           htmlFor="message"
           className={cn(
-            "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
-            state?.errors?.message && "text-red-500 dark:text-red-900",
+            'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+            state?.errors?.message && 'text-red-500 dark:text-red-900'
           )}
         >
           Message
@@ -80,7 +80,7 @@ export default function ContactForm() {
           id="message"
           name="message"
           placeholder={
-            "Hello!\n\nThis is Jane Doe, from Example. Just wanted to say hi!"
+            'Hello!\n\nThis is Jane Doe, from Example. Just wanted to say hi!'
           }
           required
         />
@@ -91,5 +91,5 @@ export default function ContactForm() {
 
       <Button type="submit">Submit</Button>
     </form>
-  );
+  )
 }

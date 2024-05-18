@@ -1,92 +1,92 @@
-"use client";
-import React, { useEffect, useState, useRef } from "react";
-import styles from "./style.module.scss";
+'use client'
+import React, { useEffect, useState, useRef } from 'react'
+import styles from './style.module.scss'
 import {
   motion,
   useMotionValue,
   useSpring,
   MotionValue,
   SpringOptions,
-  AnimationControls,
-} from "framer-motion";
+  AnimationControls
+} from 'framer-motion'
 
 interface MouseMoveEvent {
-  clientX: number;
-  clientY: number;
+  clientX: number
+  clientY: number
 }
 
 interface Distance {
-  x: number;
-  y: number;
+  x: number
+  y: number
 }
 
 export default function Cursor() {
-  const [isPressed, setIsPressed] = useState<boolean>(false);
-  const cursor = useRef<HTMLDivElement>(null);
-  const cursorSize = isPressed ? 18 : 12;
-  const [isVisible, setIsVisible] = useState(false);
+  const [isPressed, setIsPressed] = useState<boolean>(false)
+  const cursor = useRef<HTMLDivElement>(null)
+  const cursorSize = isPressed ? 18 : 12
+  const [isVisible, setIsVisible] = useState(false)
 
   const mouse: { x: MotionValue<number>; y: MotionValue<number> } = {
     x: useMotionValue(0),
-    y: useMotionValue(0),
-  };
+    y: useMotionValue(0)
+  }
 
   const smoothOptions: SpringOptions = {
     damping: 20,
     stiffness: 300,
-    mass: 0.5,
-  };
+    mass: 0.5
+  }
   const smoothMouse = {
     x: useSpring(mouse.x, smoothOptions),
-    y: useSpring(mouse.y, smoothOptions),
-  };
+    y: useSpring(mouse.y, smoothOptions)
+  }
 
   const manageMouseMove = (e: MouseMoveEvent) => {
-    setIsVisible(true);
-    const { clientX, clientY } = e;
-    mouse.x.set(clientX - cursorSize / 2);
-    mouse.y.set(clientY - cursorSize / 2);
-  };
+    setIsVisible(true)
+    const { clientX, clientY } = e
+    mouse.x.set(clientX - cursorSize / 2)
+    mouse.y.set(clientY - cursorSize / 2)
+  }
 
   const manageMouseLeave = () => {
-    setIsVisible(false);
-  };
+    setIsVisible(false)
+  }
 
   const handleMouseDown = () => {
-    setIsPressed(true);
-  };
+    setIsPressed(true)
+  }
 
   const handleMouseUp = () => {
-    setIsPressed(false);
-  };
+    setIsPressed(false)
+  }
 
   useEffect(() => {
-    document.body.addEventListener("mouseleave", manageMouseLeave, {
-      passive: true,
-    });
-    window.addEventListener("mousemove", manageMouseMove);
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mouseup", handleMouseUp);
+    document.body.addEventListener('mouseleave', manageMouseLeave, {
+      passive: true
+    })
+    window.addEventListener('mousemove', manageMouseMove)
+    window.addEventListener('mousedown', handleMouseDown)
+    window.addEventListener('mouseup', handleMouseUp)
 
     return () => {
-      window.removeEventListener("mouseleave", manageMouseLeave);
-      window.removeEventListener("mousemove", manageMouseMove);
-      window.removeEventListener("mousedown", handleMouseDown);
-      window.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, []);
+      window.removeEventListener('mouseleave', manageMouseLeave)
+      window.removeEventListener('mousemove', manageMouseMove)
+      window.removeEventListener('mousedown', handleMouseDown)
+      window.removeEventListener('mouseup', handleMouseUp)
+    }
+  }, [])
 
   const template = ({
     rotate,
     scaleX,
-    scaleY,
+    scaleY
   }: {
-    rotate: number;
-    scaleX: number;
-    scaleY: number;
+    rotate: number
+    scaleX: number
+    scaleY: number
   }) => {
-    return `rotate(${rotate}deg) scaleX(${scaleX}) scaleY(${scaleY})`;
-  };
+    return `rotate(${rotate}deg) scaleX(${scaleX}) scaleY(${scaleY})`
+  }
 
   return (
     <div className={styles.cursorContainer}>
@@ -98,15 +98,15 @@ export default function Cursor() {
           left: smoothMouse.x,
           top: smoothMouse.y,
           scaleX: mouse.x,
-          scaleY: mouse.y,
+          scaleY: mouse.y
         }}
         animate={{
           width: cursorSize,
-          height: cursorSize,
+          height: cursorSize
         }}
         className={`${styles.cursor} ${isVisible ? styles.visible : styles.hidden}`}
         ref={cursor}
       ></motion.div>
     </div>
-  );
+  )
 }

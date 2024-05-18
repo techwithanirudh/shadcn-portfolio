@@ -1,8 +1,8 @@
-import React from "react";
-import MotionWrap from "@/components/motion-wrap";
-import Image from "next/image";
+import React from 'react'
+import MotionWrap from '@/components/motion-wrap'
+import Image from 'next/image'
 
-import { metadata as meta } from "@/app/config";
+import { metadata as meta } from '@/app/config'
 
 function Hero() {
   return (
@@ -24,12 +24,12 @@ function Hero() {
           className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
           height="450"
           sizes="100vw"
-          src={"/images/hero.jpg"}
+          src={'/images/hero.jpg'}
           width="800"
         />
       </div>
     </MotionWrap>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

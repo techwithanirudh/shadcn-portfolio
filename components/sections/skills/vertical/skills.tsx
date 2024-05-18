@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 
-import MotionWrap from "@/components/motion-wrap";
-import SkillCard from "./skill-card";
+import MotionWrap from '@/components/motion-wrap'
+import SkillCard from './skill-card'
 
-import { skills } from "../config";
+import { skills } from '../config'
 
 function Skills() {
   return (
@@ -34,7 +34,7 @@ function Skills() {
         </div>
       </div>
     </MotionWrap>
-  );
+  )
 }
 
-export default Skills;
+export default Skills
