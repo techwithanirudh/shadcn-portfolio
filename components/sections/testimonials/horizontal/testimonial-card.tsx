@@ -1,14 +1,14 @@
-import React from 'react'
-import { Card, CardContent } from '@/components/ui/card'
-import Image from 'next/image'
-import { cn } from '@/lib/utils'
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface TestimonialCardProps {
-  image?: string
-  name?: string
-  username?: string
-  testimonial?: string
-  className?: string
+  image?: string;
+  name?: string;
+  username?: string;
+  testimonial?: string;
+  className?: string;
 }
 
 function TestimonialCard({
@@ -41,7 +41,7 @@ function TestimonialCard({
         </p>
       </CardContent>
     </Card>
-  )
+  );
 }
 
-export default TestimonialCard
+export default TestimonialCard;

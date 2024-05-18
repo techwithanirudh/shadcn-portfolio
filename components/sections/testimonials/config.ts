@@ -1,4 +1,4 @@
-import { Testimonial } from '@/types/testimonial'
+import { Testimonial } from '@/types/testimonial';
 
 const testimonials: Testimonial[] = [
   {
@@ -22,6 +22,6 @@ const testimonials: Testimonial[] = [
     testimonial:
       "John's innovative approach and technical proficiency were key to the success of our project. Highly recommend working with him."
   }
-]
+];
 
-export { testimonials }
+export { testimonials };

@@ -1,4 +1,4 @@
-const transition = { duration: 1, ease: [0.76, 0, 0.24, 1] }
+const transition = { duration: 1, ease: [0.76, 0, 0.24, 1] };
 
 export const opacity = {
   initial: {
@@ -12,7 +12,7 @@ export const opacity = {
     opacity: 0,
     transition: { duration: 0.35 }
   }
-}
+};
 
 export const height = {
   initial: {
@@ -26,7 +26,7 @@ export const height = {
     height: 0,
     transition
   }
-}
+};
 
 export const background = {
   initial: {
@@ -40,7 +40,7 @@ export const background = {
     height: 0,
     transition
   }
-}
+};
 
 export const blur = {
   initial: {
@@ -57,7 +57,7 @@ export const blur = {
     opacity: 1,
     transition: { duration: 0.3 }
   }
-}
+};
 
 export const translate = {
   initial: {
@@ -74,4 +74,4 @@ export const translate = {
     opacity: 0,
     transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: i[1] }
   })
-}
+};

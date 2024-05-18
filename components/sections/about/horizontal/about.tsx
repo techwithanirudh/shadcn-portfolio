@@ -1,7 +1,7 @@
-import React from 'react'
-import MotionWrap from '@/components/motion-wrap'
-import Image from 'next/image'
-import Reveal from '@/components/reveal'
+import React from 'react';
+import MotionWrap from '@/components/motion-wrap';
+import Image from 'next/image';
+import Reveal from '@/components/reveal';
 
 function About() {
   return (
@@ -33,7 +33,7 @@ function About() {
         </div>
       </div>
     </MotionWrap>
-  )
+  );
 }
 
-export default About
+export default About;

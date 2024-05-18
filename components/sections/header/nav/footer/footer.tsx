@@ -1,6 +1,6 @@
-import styles from './style.module.scss'
-import { translate } from '../../anim'
-import { motion } from 'framer-motion'
+import styles from './style.module.scss';
+import { translate } from '../../anim';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
@@ -60,5 +60,5 @@ export default function Footer() {
         </motion.li>
       </ul>
     </div>
-  )
+  );
 }

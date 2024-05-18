@@ -1,5 +1,5 @@
-import remarkGfm from 'remark-gfm'
-import createMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm';
+import createMDX from '@next/mdx';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,7 +9,7 @@ const nextConfig = {
       allowedOrigins: ['localhost:3000']
     }
   }
-}
+};
 
 // TODO: Add more plugins like rehype & properly use it
 const withMDX = createMDX({
@@ -17,6 +17,6 @@ const withMDX = createMDX({
     remarkPlugins: [remarkGfm],
     rehypePlugins: []
   }
-})
+});
 
-export default withMDX(nextConfig)
+export default withMDX(nextConfig);

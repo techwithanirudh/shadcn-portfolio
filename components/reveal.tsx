@@ -1,26 +1,26 @@
-'use client'
-import React, { useEffect, useRef } from 'react'
-import { motion, useInView, useAnimation } from 'framer-motion'
+'use client';
+import React, { useEffect, useRef } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
 
 interface RevealProps {
-  children: React.ReactNode
-  width?: 'fit-content' | '100%'
+  children: React.ReactNode;
+  width?: 'fit-content' | '100%';
 }
 
 const Reveal = ({ children, width = 'fit-content' }: RevealProps) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: false })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
 
-  const mainControls = useAnimation()
+  const mainControls = useAnimation();
 
   useEffect(() => {
-    console.log(isInView)
+    console.log(isInView);
     if (isInView) {
-      mainControls.start('visible')
+      mainControls.start('visible');
     } else {
-      mainControls.start('hidden')
+      mainControls.start('hidden');
     }
-  }, [isInView])
+  }, [isInView]);
 
   return (
     <div ref={ref} style={{ position: 'relative', width, overflow: 'hidden' }}>
@@ -37,7 +37,7 @@ const Reveal = ({ children, width = 'fit-content' }: RevealProps) => {
       </motion.div>
       {/* TODO: Add slide div thingy */}
     </div>
-  )
-}
+  );
+};
 
-export default Reveal
+export default Reveal;

@@ -1,10 +1,10 @@
-import { Skill } from '@/types/skill'
+import { Skill } from '@/types/skill';
 import {
   CodeIcon,
   DatabaseIcon,
   LayoutIcon,
   SmartphoneIcon
-} from 'lucide-react'
+} from 'lucide-react';
 
 const skills: Skill[] = [
   {
@@ -27,6 +27,6 @@ const skills: Skill[] = [
     description: 'Crafting apps for smartphones and tablets.',
     Icon: SmartphoneIcon
   }
-]
+];
 
-export { skills }
+export { skills };

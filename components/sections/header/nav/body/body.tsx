@@ -1,23 +1,23 @@
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import styles from './style.module.scss'
-import { blur, translate } from '../../anim'
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import styles from './style.module.scss';
+import { blur, translate } from '../../anim';
 
 interface LinkType {
-  title: string
-  href: string
+  title: string;
+  href: string;
 }
 
 interface SelectedLink {
-  isActive: boolean
-  index: number
+  isActive: boolean;
+  index: number;
 }
 
 interface BodyProps {
-  links: LinkType[]
-  selectedLink: SelectedLink
-  setSelectedLink: (selectedLink: SelectedLink) => void
-  setIsActive: (isActive: boolean) => void
+  links: LinkType[];
+  selectedLink: SelectedLink;
+  setSelectedLink: (selectedLink: SelectedLink) => void;
+  setIsActive: (isActive: boolean) => void;
 }
 
 export default function Body({
@@ -27,7 +27,7 @@ export default function Body({
   setIsActive
 }: BodyProps) {
   const getChars = (word: string) => {
-    let chars: JSX.Element[] = []
+    let chars: JSX.Element[] = [];
     word.split('').forEach((char, i) => {
       chars.push(
         <motion.span
@@ -40,15 +40,15 @@ export default function Body({
         >
           {char}
         </motion.span>
-      )
-    })
-    return chars
-  }
+      );
+    });
+    return chars;
+  };
 
   return (
     <div className={styles.body}>
       {links.map((link, index) => {
-        const { title, href } = link
+        const { title, href } = link;
         return (
           <Link key={`l_${index}`} href={href}>
             <motion.p
@@ -65,8 +65,8 @@ export default function Body({
               {getChars(title)}
             </motion.p>
           </Link>
-        )
+        );
       })}
     </div>
-  )
+  );
 }
