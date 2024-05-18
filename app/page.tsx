@@ -6,18 +6,18 @@ import {
   Testimonials,
   Projects,
   Contact,
-  Footer,
-} from "@/components/sections";
+  Footer
+} from '@/components/sections'
 
-import Preloader from "@/components/preloader/preloader";
-import Cursor from "@/components/cursor/cursor";
-import SmoothScroll from "@/components/smooth-scroll";
+import Preloader from '@/components/preloader/preloader'
+import Cursor from '@/components/cursor/cursor'
+import SmoothScroll from '@/components/smooth-scroll'
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
-      <div className="absolute inset-0 z-50 h-full w-full">
-        <SmoothScroll>
+    <SmoothScroll>
+      <div className="overflow-hidden">
+        <div className="absolute inset-0 z-50 h-full w-full">
           <Preloader />
           <div className="flex min-h-[100dvh] flex-col">
             <Header />
@@ -32,8 +32,8 @@ export default function Home() {
             </main>
           </div>
           <Cursor />
-        </SmoothScroll>
+        </div>
       </div>
-    </div>
-  );
+    </SmoothScroll>
+  )
 }

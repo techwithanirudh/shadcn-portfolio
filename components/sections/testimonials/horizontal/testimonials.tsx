@@ -1,20 +1,20 @@
-import React from "react";
-import MotionWrap from "@/components/motion-wrap";
+import React from 'react'
+import MotionWrap from '@/components/motion-wrap'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import TestimonialCard from "./testimonial-card";
+  CarouselPrevious
+} from '@/components/ui/carousel'
+import TestimonialCard from './testimonial-card'
 
-import { testimonials } from "../config";
+import { testimonials } from '../config'
 
 function Testimonials() {
   return (
     <MotionWrap
-      className="w-full border-t border-gray-200  dark:border-gray-700 py-24 lg:py-32"
+      className="w-full border-t border-gray-200  py-24 dark:border-gray-700 lg:py-32"
       id="testimonials"
     >
       {/* TODO: Redesign for horizontal */}
@@ -52,7 +52,7 @@ function Testimonials() {
         </div>
       </div>
     </MotionWrap>
-  );
+  )
 }
 
-export default Testimonials;
+export default Testimonials

@@ -1,24 +1,24 @@
-import React from "react";
-import { CardContent, CardFooter, Card } from "@/components/ui/card";
-import { buttonVariants } from "@/components/ui/button";
+import React from 'react'
+import { CardContent, CardFooter, Card } from '@/components/ui/card'
+import { buttonVariants } from '@/components/ui/button'
 
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
 
-import { Project } from "@/types/project";
-import { GithubIcon, GlobeIcon } from "lucide-react";
+import { Project } from '@/types/project'
+import { GithubIcon, GlobeIcon } from 'lucide-react'
 
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  TooltipTrigger
+} from '@/components/ui/tooltip'
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 interface ProjectCardProps extends Project {
-  className?: string;
+  className?: string
 }
 
 function ProjectCard({
@@ -26,18 +26,18 @@ function ProjectCard({
   description,
   thumbnail,
   links,
-  className,
+  className
 }: ProjectCardProps) {
   return (
     <Card
       className={cn(
-        "flex flex-col justify-between overflow-hidden rounded-md",
-        className,
+        'flex flex-col justify-between overflow-hidden rounded-md',
+        className
       )}
     >
       <CardContent className="inline-block w-full overflow-hidden p-0">
         <Image
-          src={thumbnail || "/placeholder.svg"}
+          src={thumbnail || '/placeholder.svg'}
           alt={`Image of ${name}`}
           width={0}
           height={0}
@@ -49,23 +49,23 @@ function ProjectCard({
         <div>
           <h3 className="text-xl font-bold">{name}</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            {description || ""}
+            {description || ''}
           </p>
         </div>
         <div className="flex items-center justify-end">
           <TooltipProvider>
             {links &&
               links.map((link, index) => {
-                let Icon;
+                let Icon
                 switch (link.type) {
-                  case "github":
-                    Icon = GithubIcon;
-                    break;
-                  case "live":
-                    Icon = GlobeIcon;
-                    break;
+                  case 'github':
+                    Icon = GithubIcon
+                    break
+                  case 'live':
+                    Icon = GlobeIcon
+                    break
                   default:
-                    Icon = null;
+                    Icon = null
                 }
 
                 return Icon ? (
@@ -73,8 +73,8 @@ function ProjectCard({
                     <TooltipTrigger asChild>
                       <a
                         className={buttonVariants({
-                          variant: "outline",
-                          className: "ml-2 justify-self-end",
+                          variant: 'outline',
+                          className: 'ml-2 justify-self-end'
                         })}
                         href={link.url}
                         target="_blank"
@@ -84,17 +84,17 @@ function ProjectCard({
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>
-                        {link.type === "github" ? "GitHub" : "External"} Link
+                        {link.type === 'github' ? 'GitHub' : 'External'} Link
                       </p>
                     </TooltipContent>
                   </Tooltip>
-                ) : null;
+                ) : null
               })}
           </TooltipProvider>
         </div>
       </CardFooter>
     </Card>
-  );
+  )
 }
 
-export default ProjectCard;
+export default ProjectCard

@@ -49,7 +49,6 @@
   }
 }
 
-
 @layer base {
   * {
     @apply m-0 box-border border-border p-0;

@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 
-import MotionWrap from "@/components/motion-wrap";
-import SkillCard from "./skill-card";
+import MotionWrap from '@/components/motion-wrap'
+import SkillCard from './skill-card'
 
-import { skills } from "../config";
+import { skills } from '../config'
 
 function Skills() {
   return (
     <MotionWrap
-      className="w-full border-t border-gray-200  dark:border-gray-700 py-24 lg:py-32"
+      className="w-full border-t border-gray-200  py-24 dark:border-gray-700 lg:py-32"
       id="skills"
     >
       <div className="px-4 md:px-6">
@@ -34,7 +34,7 @@ function Skills() {
         </div>
       </div>
     </MotionWrap>
-  );
+  )
 }
 
-export default Skills;
+export default Skills

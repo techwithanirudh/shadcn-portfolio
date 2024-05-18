@@ -1,15 +1,15 @@
-import React from "react";
-import ProjectCard from "./project-card";
+import React from 'react'
+import ProjectCard from './project-card'
 
-import Reveal from "@/components/reveal";
+import Reveal from '@/components/reveal'
 
-import { projects } from "../config";
-import MotionWrap from "@/components/motion-wrap";
+import { projects } from '../config'
+import MotionWrap from '@/components/motion-wrap'
 
 function Projects() {
   return (
     <MotionWrap
-      className="w-full border-t border-gray-200  dark:border-gray-700 py-24 lg:py-32"
+      className="w-full border-t border-gray-200  py-24 dark:border-gray-700 lg:py-32"
       id="projects"
     >
       <div className="space-y-4 px-4 md:space-y-6 md:px-6 lg:space-y-10">
@@ -44,7 +44,7 @@ function Projects() {
         </div>
       </div>
     </MotionWrap>
-  );
+  )
 }
 
-export default Projects;
+export default Projects
