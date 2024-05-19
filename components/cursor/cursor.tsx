@@ -42,6 +42,9 @@ export default function Cursor() {
   };
 
   const manageMouseMove = (e: MouseMoveEvent) => {
+    const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+    if (!isFinePointer) return;
+
     if (!isVisible) setIsVisible(true);
     const { clientX, clientY } = e;
     mouse.x.set(clientX - cursorSize / 2);
