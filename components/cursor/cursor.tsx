@@ -42,7 +42,7 @@ export default function Cursor() {
   };
 
   const manageMouseMove = (e: MouseMoveEvent) => {
-    setIsVisible(true);
+    if (!isVisible) setIsVisible(true);
     const { clientX, clientY } = e;
     mouse.x.set(clientX - cursorSize / 2);
     mouse.y.set(clientY - cursorSize / 2);
