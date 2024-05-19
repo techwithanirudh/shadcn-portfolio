@@ -41,7 +41,7 @@ export const ContactEmail = ({ name, email, message }: ContactEmailProps) => {
             <Section className="mt-[32px]">
               {/* TODO: Swap this out with a good icon */}
               <Img
-                src={`${baseUrl}/images/code.png`}
+                src={`${baseUrl}/favicon/android-chrome-512x512.png`}
                 width="40"
                 height="37"
                 alt="Logo"
