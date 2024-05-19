@@ -41,14 +41,22 @@ export default function Cursor() {
     y: useSpring(mouse.y, smoothOptions)
   };
 
+  const manageResize = () => {
+    const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+    if (!isFinePointer) {
+      setIsVisible(false);
+      return;
+    }
+  };
+
   const manageMouseMove = (e: MouseMoveEvent) => {
     const isFinePointer = window.matchMedia('(pointer: fine)').matches;
     if (!isFinePointer) {
       setIsVisible(false);
       return;
     }
-
     if (!isVisible) setIsVisible(true);
+
     const { clientX, clientY } = e;
     mouse.x.set(clientX - cursorSize / 2);
     mouse.y.set(clientY - cursorSize / 2);
@@ -67,6 +75,8 @@ export default function Cursor() {
   };
 
   useEffect(() => {
+    window.addEventListener('resize', manageResize);
+
     document.body.addEventListener('mouseleave', manageMouseLeave, {
       passive: true
     });
@@ -75,6 +85,8 @@ export default function Cursor() {
     window.addEventListener('mouseup', handleMouseUp);
 
     return () => {
+      window.removeEventListener('resize', manageResize);
+
       window.removeEventListener('mouseleave', manageMouseLeave);
       window.removeEventListener('mousemove', manageMouseMove);
       window.removeEventListener('mousedown', handleMouseDown);
