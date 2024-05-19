@@ -80,9 +80,15 @@ export default function Cursor() {
     document.body.addEventListener('mouseleave', manageMouseLeave, {
       passive: true
     });
-    window.addEventListener('mousemove', manageMouseMove);
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('mousemove', manageMouseMove, {
+      passive: true
+    });
+    window.addEventListener('mousedown', handleMouseDown, {
+      passive: true
+    });
+    window.addEventListener('mouseup', handleMouseUp, {
+      passive: true
+    });
 
     return () => {
       window.removeEventListener('resize', manageResize);
