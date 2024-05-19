@@ -1,10 +1,11 @@
 .header {
   z-index: 10;
-  background-color: hsl(var(--background));
+  background-color: hsl(var(--background) / .8);
   position: fixed;
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
+  backdrop-filter: blur(12px);
 
   .background {
     background-color: hsl(
