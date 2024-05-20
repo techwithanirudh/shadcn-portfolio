@@ -12,7 +12,8 @@ function Preloader() {
       setTimeout(() => {
         setIsLoading(false);
         document.body.style.cursor = 'default';
-        window.scrollTo(0, 0);
+        // observe: this change has not been observed for errors.
+        // window.scrollTo(0, 0);
       }, 2500);
     })();
   }, []);
