@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
-    <div className={styles.header}>
+    <motion.div className={styles.header} initial="hidden" animate="visible">
       <div className={styles.bar}>
         <Link href="/" className="flex items-center justify-center">
           <CodeIcon className="h-6 w-6" />
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
       <AnimatePresence mode="wait">
         {isActive && <Nav setIsActive={setIsActive} />}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 
