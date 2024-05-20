@@ -3,13 +3,7 @@ import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { getAllPages, getPage, type ProjectMetadata } from '@/lib/mdx';
-
-import { Header as NavHeader } from '@/components/sections';
-
 import Header from './header';
-import Preloader from '@/components/preloader/preloader';
-import Cursor from '@/components/cursor/cursor';
-import SmoothScroll from '@/components/smooth-scroll';
 
 type ProjectPageProps = {
   params: {
