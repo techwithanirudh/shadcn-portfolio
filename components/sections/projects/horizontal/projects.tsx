@@ -39,7 +39,6 @@ function Projects() {
               name={project.name}
               description={project.description}
               thumbnail={project.thumbnail}
-              links={project.links}
             />
           ))}
         </div>

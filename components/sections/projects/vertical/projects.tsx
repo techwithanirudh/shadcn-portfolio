@@ -66,7 +66,6 @@ function Projects() {
                         slug={project.slug}
                         description={project.description}
                         thumbnail={project.thumbnail}
-                        links={project.links}
                         minH={tallestCH}
                       />
                     </div>

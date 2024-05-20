@@ -21,7 +21,7 @@ const animation = {
 type ProjectMetadata = {
   name: string;
   description: string;
-  homepage: string;
+  website: string;
   github: string;
   techstack: Array<{ label: string }>;
   selected: boolean;
@@ -34,7 +34,7 @@ type HeaderProps = {
 
 const Header = (props: HeaderProps) => {
   const {
-    metadata: { name, description, homepage, github }
+    metadata: { name, description, website, github }
   } = props;
 
   return (
@@ -55,16 +55,18 @@ const Header = (props: HeaderProps) => {
         animate={animation.show}
         transition={{ delay: 0.1 }}
       >
-        {homepage && (
-          <Link href={homepage} className={cn(buttonVariants(), 'group')}>
+        {website && (
+          <Link href={website} className={cn(buttonVariants(), 'group')}>
             Visit Website
             <ArrowUpRightIcon className="ml-2 size-5 transition-transform group-hover:-rotate-12" />
           </Link>
         )}
-        <Link href={github} className={cn(buttonVariants(), 'group')}>
-          Github
-          <ArrowUpRightIcon className="ml-2 size-5 transition-transform group-hover:-rotate-12" />
-        </Link>
+        {github && (
+          <Link href={github} className={cn(buttonVariants(), 'group')}>
+            Github
+            <ArrowUpRightIcon className="ml-2 size-5 transition-transform group-hover:-rotate-12" />
+          </Link>
+        )}
       </motion.div>
     </div>
   );

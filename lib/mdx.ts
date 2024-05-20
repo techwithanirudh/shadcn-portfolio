@@ -5,7 +5,7 @@ import path from 'node:path';
 export type ProjectMetadata = {
   name: string;
   description: string;
-  homepage: string;
+  website: string;
   github: string;
   techstack: Array<{ label: string }>;
   selected: boolean;
