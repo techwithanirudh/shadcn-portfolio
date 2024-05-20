@@ -45,7 +45,7 @@ const Header = (props: HeaderProps) => {
         animate={animation.show}
       >
         <div className="flex flex-col gap-3">
-          <div className="text-2xl font-bold">{name}</div>
+          <div className="text-3xl font-bold">{name}</div>
           <div>{description}</div>
         </div>
       </motion.div>

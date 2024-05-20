@@ -4,7 +4,7 @@ import { buttonVariants } from '@/components/ui/button';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { GithubIcon, GlobeIcon } from 'lucide-react';
+import { GithubIcon, GlobeIcon, InfoIcon } from 'lucide-react';
 
 import { Project } from '@/types/project';
 
@@ -28,6 +28,7 @@ function ProjectCard({
   description,
   thumbnail,
   links,
+  slug,
   className
 }: ProjectCardProps) {
   return (
@@ -53,6 +54,22 @@ function ProjectCard({
       </CardContent>
       <CardFooter className="flex items-center justify-end p-4 md:p-6">
         <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                className={buttonVariants({
+                  variant: 'outline',
+                  className: 'ml-2 justify-self-end'
+                })}
+                href={'/project/' + slug}
+              >
+                <InfoIcon />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>More Details</p>
+            </TooltipContent>
+          </Tooltip>
           {links &&
             links.map((link, index) => {
               let Icon;
