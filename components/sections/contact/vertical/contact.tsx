@@ -24,7 +24,7 @@ function Contact() {
             </h2>
             <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Have a question or want to work together? Send me a message using
-              the form below.
+              the form.
             </p>
             <div className="flex space-x-1">
               <Button variant="outline" size="icon" asChild>

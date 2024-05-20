@@ -7,49 +7,7 @@ import Footer from './footer/footer';
 import Image from './image/image';
 import ModeToggle from '@/components/mode-toggle';
 
-interface Link {
-  title: string;
-  href: string;
-  src: string;
-}
-
-const links: Link[] = [
-  {
-    title: 'Home',
-    href: '/',
-    src: 'home.jpg'
-  },
-  {
-    title: 'About',
-    href: '#about',
-    src: 'about.jpg'
-  },
-  {
-    title: 'Projects',
-    href: '#projects',
-    src: 'projects.jpg'
-  },
-  {
-    title: 'Skills',
-    href: '#skills',
-    src: 'skills.jpg'
-  },
-  {
-    title: 'Testimonials',
-    href: '#testimonials',
-    src: 'testimonials.jpg'
-  },
-  {
-    title: 'Blog',
-    href: 'https://blog.example.com',
-    src: 'blog.jpg'
-  },
-  {
-    title: 'Contact',
-    href: '#contact',
-    src: 'contact.jpg'
-  }
-];
+import { links } from '../config';
 
 interface IndexProps {
   setIsActive: (isActive: boolean) => void;
@@ -85,7 +43,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           {/* <Footer /> */}
         </div>
         <Image
-          src={links[selectedLink.index].src}
+          src={links[selectedLink.index].thumbnail}
           isActive={selectedLink.isActive}
         />
         <div className="absolute bottom-0 right-0 mb-auto">
