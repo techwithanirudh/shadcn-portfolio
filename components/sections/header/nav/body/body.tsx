@@ -2,11 +2,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styles from './style.module.scss';
 import { blur, translate } from '../../anim';
-
-interface LinkType {
-  title: string;
-  href: string;
-}
+import { Link as LinkType } from '@/types/link';
 
 interface SelectedLink {
   isActive: boolean;
@@ -48,9 +44,10 @@ export default function Body({
   return (
     <div className={styles.body}>
       {links.map((link, index) => {
-        const { title, href } = link;
+        const { title, href, target } = link;
+
         return (
-          <Link key={`l_${index}`} href={href}>
+          <Link key={`l_${index}`} href={href} target={target}>
             <motion.p
               onClick={() => setIsActive(false)}
               onMouseOver={() => setSelectedLink({ isActive: true, index })}
