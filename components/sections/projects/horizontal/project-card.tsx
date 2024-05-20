@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Project } from '@/types/project';
-import { GithubIcon, GlobeIcon } from 'lucide-react';
+import { GithubIcon, GlobeIcon, InfoIcon } from 'lucide-react';
 
 import {
   Tooltip,
@@ -26,6 +26,7 @@ function ProjectCard({
   description,
   thumbnail,
   links,
+  slug,
   className
 }: ProjectCardProps) {
   return (
@@ -54,6 +55,22 @@ function ProjectCard({
         </div>
         <div className="flex items-center justify-end">
           <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  className={buttonVariants({
+                    variant: 'outline',
+                    className: 'ml-2 justify-self-end'
+                  })}
+                  href={'/project/' + slug}
+                >
+                  <InfoIcon />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>More Details</p>
+              </TooltipContent>
+            </Tooltip>
             {links &&
               links.map((link, index) => {
                 let Icon;

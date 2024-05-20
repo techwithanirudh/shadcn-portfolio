@@ -35,6 +35,7 @@ function Projects() {
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
+              slug={project.slug}
               name={project.name}
               description={project.description}
               thumbnail={project.thumbnail}

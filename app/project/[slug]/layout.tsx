@@ -1,7 +1,24 @@
-export default function MdxLayout({ children }: { children: React.ReactNode }) {
+import type { Metadata } from 'next';
+
+import { Header } from '@/components/sections';
+
+import Preloader from '@/components/preloader/preloader';
+import Cursor from '@/components/cursor/cursor';
+import SmoothScroll from '@/components/smooth-scroll';
+
+export default function ProjectLayout({
+  children
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <div className="prose p-2 prose-headings:mt-8 prose-headings:font-semibold prose-headings:text-black prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg dark:prose-headings:text-white">
-      {children}
-    </div>
+    <SmoothScroll>
+      <Preloader />
+      <div className="flex min-h-[100dvh] flex-col">
+        <Header />
+        <main className="my-14 flex-1">{children}</main>
+      </div>
+      <Cursor />
+    </SmoothScroll>
   );
 }
