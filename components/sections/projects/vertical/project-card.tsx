@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardContent, CardFooter, Card } from '@/components/ui/card';
-import { buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -53,24 +53,18 @@ function ProjectCard({
           </div>
         </CardContent>
         <CardFooter className="flex items-center justify-end p-4 md:p-6">
-          {/* <TooltipProvider>
+          <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Link
-                  className={buttonVariants({
-                    variant: 'outline',
-                    className: 'ml-2 justify-self-end'
-                  })}
-                  href={'/project/' + slug}
-                >
+                <Button variant="outline">
                   <InfoIcon />
-                </Link>
+                </Button>
               </TooltipTrigger>
               <TooltipContent>
                 <p>More Details</p>
               </TooltipContent>
             </Tooltip>
-          </TooltipProvider> */}
+          </TooltipProvider>
         </CardFooter>
       </Card>
     </Link>

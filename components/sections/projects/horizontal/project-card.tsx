@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardContent, CardFooter, Card } from '@/components/ui/card';
-import { buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -32,7 +32,7 @@ function ProjectCard({
     <Link href={'/project/' + slug}>
       <Card
         className={cn(
-          'flex flex-col justify-between overflow-hidden rounded-md',
+          'group flex flex-col justify-between overflow-hidden rounded-md',
           className
         )}
       >
@@ -54,24 +54,18 @@ function ProjectCard({
             </p>
           </div>
           <div className="flex items-center justify-end">
-            {/* <TooltipProvider>
+            <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link
-                    className={buttonVariants({
-                      variant: 'outline',
-                      className: 'ml-2 justify-self-end'
-                    })}
-                    href={'/project/' + slug}
-                  >
+                  <Button variant="outline">
                     <InfoIcon />
-                  </Link>
+                  </Button>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>More Details</p>
                 </TooltipContent>
               </Tooltip>
-            </TooltipProvider> */}
+            </TooltipProvider>
           </div>
         </CardFooter>
       </Card>
