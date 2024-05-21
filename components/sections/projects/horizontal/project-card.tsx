@@ -54,7 +54,7 @@ function ProjectCard({
             </p>
           </div>
           <div className="flex items-center justify-end">
-            <TooltipProvider>
+            {/* <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
@@ -71,7 +71,7 @@ function ProjectCard({
                   <p>More Details</p>
                 </TooltipContent>
               </Tooltip>
-            </TooltipProvider>
+            </TooltipProvider> */}
           </div>
         </CardFooter>
       </Card>
