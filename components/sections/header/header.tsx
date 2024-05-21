@@ -16,7 +16,7 @@ const Header: React.FC = () => {
     <motion.header
       className={styles.header}
       initial={{
-        y: -50
+        y: -80
       }}
       animate={{
         y: 0
