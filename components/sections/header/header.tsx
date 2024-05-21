@@ -13,7 +13,19 @@ const Header: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
-    <motion.div className={styles.header} initial="hidden" animate="visible">
+    <motion.header
+      className={styles.header}
+      initial={{
+        y: -50
+      }}
+      animate={{
+        y: 0
+      }}
+      transition={{
+        delay: 0.5,
+        duration: 0.8
+      }}
+    >
       <div className={styles.bar}>
         <Link href="/" className="flex items-center justify-center">
           <CodeIcon className="h-6 w-6" />
@@ -45,7 +57,7 @@ const Header: React.FC = () => {
       <AnimatePresence mode="wait">
         {isActive && <Nav setIsActive={setIsActive} />}
       </AnimatePresence>
-    </motion.div>
+    </motion.header>
   );
 };
 
