@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         y: 0
       }}
       transition={{
-        delay: 0.5,
+        delay: 3.5, // 3.5 for loading, .5 can be added for delay
         duration: 0.8
       }}
     >
