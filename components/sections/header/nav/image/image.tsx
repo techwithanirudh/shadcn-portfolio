@@ -21,6 +21,7 @@ const Index: React.FC<IndexProps> = ({ src, isActive }) => {
         src={`/images/nav/${src}`}
         fill={true}
         alt={'An image to describe the selected link'}
+        // priority={true}
       />
     </motion.div>
   );
