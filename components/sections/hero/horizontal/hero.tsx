@@ -10,10 +10,10 @@ function Hero() {
   return (
     <MotionWrap className="relative mt-14 w-full overflow-hidden bg-background/[0.96] py-24 md:mt-0 lg:py-32 xl:py-48">
       {/* TODO: Add a bigger and more modern hero section */}
-      <Spotlight
+      {/* <Spotlight
         className="-top-40 left-0 [animation-delay:_6s] md:-top-20 md:left-60"
         fill="hsl(var(--foreground))"
-      />
+      /> */}
       <div className="relative z-[5] mx-auto w-full">
         <div className=" grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
           <div className="space-y-3">

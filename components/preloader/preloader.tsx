@@ -13,7 +13,7 @@ function Preloader() {
         setIsLoading(false);
         document.body.style.cursor = 'default';
         // observe: this change has not been observed for errors.
-        window.scrollTo(0, 0);
+        // window.scrollTo(0, 0);
       }, 2500);
     })();
   }, []);
