@@ -9,7 +9,11 @@ import Nav from './nav';
 
 import { metadata as meta } from '@/app/config';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  loader?: boolean;
+}
+
+const Header = ({ loader }: HeaderProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
@@ -22,7 +26,7 @@ const Header: React.FC = () => {
         y: 0
       }}
       transition={{
-        delay: 3.5, // 3.5 for loading, .5 can be added for delay
+        delay: loader ? 3.5 : 0, // 3.5 for loading, .5 can be added for delay
         duration: 0.8
       }}
     >
