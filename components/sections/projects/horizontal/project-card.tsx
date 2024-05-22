@@ -29,13 +29,13 @@ function ProjectCard({
   className
 }: ProjectCardProps) {
   return (
-    <Link href={'/project/' + slug}>
-      <Card
-        className={cn(
-          'group flex flex-col justify-between overflow-hidden rounded-md',
-          className
-        )}
-      >
+    <Card
+      className={cn(
+        'group flex flex-col justify-between overflow-hidden rounded-md',
+        className
+      )}
+    >
+      <Link href={'/project/' + slug}>
         <CardContent className="inline-block w-full overflow-hidden p-0">
           <Image
             src={thumbnail || '/placeholder.svg'}
@@ -68,8 +68,8 @@ function ProjectCard({
             </TooltipProvider>
           </div>
         </CardFooter>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   );
 }
 

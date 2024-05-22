@@ -31,11 +31,11 @@ function ProjectCard({
   className
 }: ProjectCardProps) {
   return (
-    <Link href={'/project/' + slug}>
-      <Card
-        className={cn('flex flex-col justify-between', className)}
-        style={{ minHeight: minH }}
-      >
+    <Card
+      className={cn('flex flex-col justify-between', className)}
+      style={{ minHeight: minH }}
+    >
+      <Link href={'/project/' + slug}>
         <CardContent className="p-4 md:p-6">
           <div className="grid gap-2">
             <Image
@@ -66,8 +66,8 @@ function ProjectCard({
             </Tooltip>
           </TooltipProvider>
         </CardFooter>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   );
 }
 
