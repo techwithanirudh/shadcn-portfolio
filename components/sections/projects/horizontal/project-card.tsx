@@ -1,12 +1,12 @@
 import React from 'react';
 import { CardContent, CardFooter, Card } from '@/components/ui/card';
-import { buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 
 import Link from 'next/link';
 import Image from 'next/image';
 
 import { Project } from '@/types/project';
-import { GithubIcon, GlobeIcon } from 'lucide-react';
+import { GithubIcon, GlobeIcon, InfoIcon } from 'lucide-react';
 
 import {
   Tooltip,
@@ -25,13 +25,13 @@ function ProjectCard({
   name,
   description,
   thumbnail,
-  links,
+  slug,
   className
 }: ProjectCardProps) {
   return (
     <Card
       className={cn(
-        'flex flex-col justify-between overflow-hidden rounded-md',
+        'group relative flex flex-col justify-between overflow-hidden rounded-md',
         className
       )}
     >
@@ -54,45 +54,22 @@ function ProjectCard({
         </div>
         <div className="flex items-center justify-end">
           <TooltipProvider>
-            {links &&
-              links.map((link, index) => {
-                let Icon;
-                switch (link.type) {
-                  case 'github':
-                    Icon = GithubIcon;
-                    break;
-                  case 'live':
-                    Icon = GlobeIcon;
-                    break;
-                  default:
-                    Icon = null;
-                }
-
-                return Icon ? (
-                  <Tooltip key={index}>
-                    <TooltipTrigger asChild>
-                      <a
-                        className={buttonVariants({
-                          variant: 'outline',
-                          className: 'ml-2 justify-self-end'
-                        })}
-                        href={link.url}
-                        target="_blank"
-                      >
-                        <Icon />
-                      </a>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>
-                        {link.type === 'github' ? 'GitHub' : 'External'} Link
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                ) : null;
-              })}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline" className="z-[2]" asChild>
+                  <Link href={'/project/' + slug}>
+                    <InfoIcon />
+                  </Link>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>More Details</p>
+              </TooltipContent>
+            </Tooltip>
           </TooltipProvider>
         </div>
       </CardFooter>
+      <Link href={'/project/' + slug} className="z-1 absolute inset-0 block" />
     </Card>
   );
 }

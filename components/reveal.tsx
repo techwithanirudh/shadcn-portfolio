@@ -7,7 +7,7 @@ interface RevealProps {
   width?: 'fit-content' | '100%';
 }
 
-const Reveal = ({ children, width = 'fit-content' }: RevealProps) => {
+const Reveal = ({ children, width = '100%' }: RevealProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
 

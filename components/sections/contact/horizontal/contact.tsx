@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import ContactForm from './contact-form';
 
+import { contact } from '../config';
+
 function Contact() {
   return (
     <MotionWrap
@@ -27,28 +29,42 @@ function Contact() {
               Have a question or want to work together? Send me a message using
               the form.
             </p>
+            <p className="text-muted-foreground">
+              Email:{' '}
+              <a className="hover:underline" href="mailto:john@example.com">
+                john@example.com
+              </a>
+            </p>
             <div className="flex space-x-1">
-              <Button variant="outline" size="icon" asChild>
-                <a target="_blank" href="https://youtube.com">
-                  <YoutubeIcon className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a target="_blank" href="https://twitter.com">
-                  <TwitterIcon className="h-4 w-4" />{' '}
-                  {/* good 'ol twitter icon */}
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a target="_blank" href="https://github.com">
-                  <GithubIcon className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <a target="_blank" href="https://linkedin.com">
-                  <LinkedinIcon className="h-4 w-4" />
-                </a>
-              </Button>
+              {contact.socials?.github && (
+                <Button variant="outline" size="icon" asChild>
+                  <a target="_blank" href={contact.socials.youtube}>
+                    <YoutubeIcon className="h-4 w-4" />
+                  </a>
+                </Button>
+              )}
+              {contact.socials?.twitter && (
+                <Button variant="outline" size="icon" asChild>
+                  <a target="_blank" href={contact.socials.twitter}>
+                    <TwitterIcon className="h-4 w-4" />{' '}
+                    {/* good 'ol twitter icon */}
+                  </a>
+                </Button>
+              )}
+              {contact.socials?.github && (
+                <Button variant="outline" size="icon" asChild>
+                  <a target="_blank" href={contact.socials.github}>
+                    <GithubIcon className="h-4 w-4" />
+                  </a>
+                </Button>
+              )}
+              {contact.socials?.linkedin && (
+                <Button variant="outline" size="icon" asChild>
+                  <a target="_blank" href={contact.socials.linkedin}>
+                    <LinkedinIcon className="h-4 w-4" />
+                  </a>
+                </Button>
+              )}
             </div>
           </div>
           <div className="grid gap-4">

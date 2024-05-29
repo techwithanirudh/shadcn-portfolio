@@ -9,11 +9,27 @@ import Nav from './nav';
 
 import { metadata as meta } from '@/app/config';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  loader?: boolean;
+}
+
+const Header = ({ loader }: HeaderProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (
-    <div className={styles.header}>
+    <motion.header
+      className={styles.header}
+      initial={{
+        y: -80
+      }}
+      animate={{
+        y: 0
+      }}
+      transition={{
+        delay: loader ? 3.5 : 0, // 3.5 for loading, .5 can be added for delay
+        duration: 0.8
+      }}
+    >
       <div className={styles.bar}>
         <Link href="/" className="flex items-center justify-center">
           <CodeIcon className="h-6 w-6" />
@@ -45,7 +61,7 @@ const Header: React.FC = () => {
       <AnimatePresence mode="wait">
         {isActive && <Nav setIsActive={setIsActive} />}
       </AnimatePresence>
-    </div>
+    </motion.header>
   );
 };
 

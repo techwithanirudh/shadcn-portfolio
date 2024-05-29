@@ -63,9 +63,9 @@ function Projects() {
                     >
                       <ProjectCard
                         name={project.name}
+                        slug={project.slug}
                         description={project.description}
                         thumbnail={project.thumbnail}
-                        links={project.links}
                         minH={tallestCH}
                       />
                     </div>
