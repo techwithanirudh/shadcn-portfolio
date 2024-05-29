@@ -46,7 +46,7 @@ This is a portfolio template built using Next.JS, Framer Motion and Shadcn/UI. I
 - 🗺 Sitemap (WIP)
 - 📊 Sentry (setup required)
 - 🎨 Animations - using Framer Motion
-- 🏠 LightHouse score of 100
+- 🏠 LightHouse score near 100
 - 🔨 Husky & Lint Staged - lint and format code before committing
 - ✅ Conventional commit lint - make sure commit messages follow the conventional commit format (WIP)
 - 💄 Prettier - code formatting

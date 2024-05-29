@@ -31,44 +31,45 @@ function ProjectCard({
   return (
     <Card
       className={cn(
-        'group flex flex-col justify-between overflow-hidden rounded-md',
+        'group relative flex flex-col justify-between overflow-hidden rounded-md',
         className
       )}
     >
-      <Link href={'/project/' + slug}>
-        <CardContent className="inline-block w-full overflow-hidden p-0">
-          <Image
-            src={thumbnail || '/placeholder.svg'}
-            alt={`Image of ${name}`}
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="h-auto max-h-96 w-full object-cover transition-transform duration-200 hover:scale-110"
-          />
-        </CardContent>
-        <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6 lg:grid-cols-2">
-          <div>
-            <h3 className="text-xl font-bold">{name}</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              {description || ''}
-            </p>
-          </div>
-          <div className="flex items-center justify-end">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="outline">
+      <CardContent className="inline-block w-full overflow-hidden p-0">
+        <Image
+          src={thumbnail || '/placeholder.svg'}
+          alt={`Image of ${name}`}
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="h-auto max-h-96 w-full object-cover transition-transform duration-200 hover:scale-110"
+        />
+      </CardContent>
+      <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6 lg:grid-cols-2">
+        <div>
+          <h3 className="text-xl font-bold">{name}</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {description || ''}
+          </p>
+        </div>
+        <div className="flex items-center justify-end">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline" className="z-[2]" asChild>
+                  <Link href={'/project/' + slug}>
                     <InfoIcon />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>More Details</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-        </CardFooter>
-      </Link>
+                  </Link>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>More Details</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+      </CardFooter>
+      <Link href={'/project/' + slug} className="z-1 absolute inset-0 block" />
     </Card>
   );
 }

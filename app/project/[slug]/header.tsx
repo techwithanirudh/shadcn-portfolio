@@ -58,13 +58,13 @@ const Header = (props: HeaderProps) => {
         {website && (
           <Link href={website} className={cn(buttonVariants(), 'group')}>
             Visit Website
-            <ArrowUpRightIcon className="ml-2 size-5 transition-transform group-hover:-rotate-12" />
+            <ArrowUpRightIcon className="ml-2 size-5" />
           </Link>
         )}
         {github && (
           <Link href={github} className={cn(buttonVariants(), 'group')}>
             Github
-            <ArrowUpRightIcon className="ml-2 size-5 transition-transform group-hover:-rotate-12" />
+            <ArrowUpRightIcon className="ml-2 size-5" />
           </Link>
         )}
       </motion.div>
