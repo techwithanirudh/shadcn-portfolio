@@ -30,8 +30,8 @@ function Contact() {
             </p>
             <p className="text-muted-foreground">
               Email:{' '}
-              <a className="hover:underline" href="mailto:john@example.com">
-                john@example.com
+              <a className="hover:underline" href={`mailto:${contact.email}`}>
+                {contact.email}
               </a>
             </p>
             <div className="flex space-x-1">
