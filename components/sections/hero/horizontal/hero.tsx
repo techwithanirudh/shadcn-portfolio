@@ -17,18 +17,18 @@ function Hero() {
       <div className="relative z-[5] mx-auto w-full">
         <div className="flex flex-col items-start">
           <div className="md:py-26 lg:py-30 xl:py-46 flex h-full w-full flex-col justify-center px-4 py-24 text-[6.5vw] md:px-28 lg:-mt-14 lg:px-32 xl:py-48">
-            <p>A frontend dev</p>
-            <div className="flex gap-4">
+            <p>A developer</p>
+            <div className="flex items-center gap-4">
               <p>Who</p>
-              <div className="relative aspect-[4/2] h-[7.5vw] overflow-hidden rounded-full">
+              <div className="relative aspect-[4/2] h-[7.5vw] overflow-hidden rounded-full bg-[#f8cdd5]">
                 <Image
-                  src={'/images/hero.jpg'}
-                  style={{ objectFit: 'cover' }}
+                  src={'/images/hearts-ornament.png'}
+                  style={{ objectFit: 'scale-down' }}
                   alt="img"
                   fill
                 />
               </div>
-              <p>codes</p>
+              <p>to code</p>
             </div>
           </div>
           <div className="relative aspect-[4/2] w-screen">
