@@ -25,8 +25,8 @@ function About() {
             </Reveal>
           </div>
           <p className="mt-4 hidden text-gray-500 dark:text-gray-400 lg:mt-0 lg:block lg:w-[35%]">
-            Here are some of my projects where I&apos;ve turned code into cool,
-            functional stuff.
+            Here&apos;s where I share my journey through tech, highlighting the
+            experiences and passions that drive my innovative pursuits.
           </p>
         </div>
         <p className="mt-6 max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">

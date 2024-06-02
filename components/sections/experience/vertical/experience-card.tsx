@@ -11,7 +11,6 @@ import { Experience } from '@/types/experience';
 import { cn } from '@/lib/utils';
 
 interface ExperienceCardProps extends Experience {
-  index: number;
   className?: string;
 }
 
@@ -19,21 +18,19 @@ function ExperienceCard({
   name,
   description,
   Icon,
-  index,
   className
 }: ExperienceCardProps) {
   return (
     <Card className={cn('bg-muted/40', className)}>
-      <CardContent className="flex flex-col items-start p-6">
-        <div className="flex w-full items-center justify-between">
-          <span className="text-lg font-semibold">({index})</span>
+      <CardContent className="p-4 md:p-6">
+        <div className="flex items-center gap-4">
           {Icon ? <Icon className="h-8 w-8" /> : <CodeIcon />}
-        </div>
-        <div className="grid gap-0.5">
-          <h3 className="mt-2 text-2xl font-bold leading-8 tracking-tight">
-            {name}
-          </h3>
-          <p className="mt-2 text-base text-gray-500">{description || ''}</p>
+          <div className="grid gap-0.5">
+            <h3 className="text-xl font-semibold">{name}</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {description || ''}
+            </p>
+          </div>
         </div>
       </CardContent>
     </Card>
