@@ -16,7 +16,7 @@ function Hero() {
       /> */}
       <div className="relative z-[5] mx-auto w-full">
         <div className="flex flex-col items-start">
-          <div className="flex h-full w-full flex-col justify-center px-4 py-24 text-[6.5vw] md:px-28 lg:py-32 xl:py-48">
+          <div className="md:py-26 lg:py-30 xl:py-46 flex h-full w-full flex-col justify-center px-4 py-24 text-[6.5vw] md:px-28 lg:-mt-14 lg:px-32 xl:py-48">
             <p>A frontend dev</p>
             <div className="flex gap-4">
               <p>Who</p>
@@ -31,7 +31,7 @@ function Hero() {
               <p>codes</p>
             </div>
           </div>
-          <div className="relative h-screen w-screen">
+          <div className="relative aspect-[4/2] w-screen">
             <Image
               src={'/images/hero.jpg'}
               style={{ objectFit: 'cover' }}
