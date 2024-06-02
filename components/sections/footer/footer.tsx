@@ -9,6 +9,7 @@ function Footer() {
         © 2024-future {meta.author.name}. All rights reserved.
       </p>
       <nav className="flex gap-4 sm:ml-auto sm:gap-6">
+        {/* TODO: Add this to config */}
         <Link
           className="text-xs underline-offset-4 hover:underline"
           href="https://blog.example.com"
