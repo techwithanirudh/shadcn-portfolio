@@ -22,12 +22,12 @@ function Skills() {
             </p>
           </div>
           <div className="grid gap-4">
-            {skills.map((project, index) => (
+            {skills.map((skill, index) => (
               <SkillCard
                 key={index}
-                name={project.name}
-                description={project.description}
-                Icon={project.Icon}
+                name={skill.name}
+                description={skill.description}
+                Icon={skill.Icon}
               />
             ))}
           </div>

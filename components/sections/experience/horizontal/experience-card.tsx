@@ -6,24 +6,24 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CodeIcon } from 'lucide-react';
 
-import { Skill } from '@/types/skill';
+import { Experience } from '@/types/experience';
 
 import { cn } from '@/lib/utils';
 
-interface SkillCardProps extends Skill {
+interface ExperienceCardProps extends Experience {
   index: number;
   className?: string;
 }
 
-function SkillCard({
+function ExperienceCard({
   name,
   description,
   Icon,
   index,
   className
-}: SkillCardProps) {
+}: ExperienceCardProps) {
   return (
-    <Card className={className}>
+    <Card className={cn('bg-muted/40', className)}>
       <CardContent className="flex flex-col items-start p-6">
         <div className="flex w-full items-center justify-between">
           <span className="text-lg font-semibold">({index})</span>
@@ -40,4 +40,4 @@ function SkillCard({
   );
 }
 
-export default SkillCard;
+export default ExperienceCard;

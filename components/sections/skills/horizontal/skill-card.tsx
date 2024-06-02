@@ -23,7 +23,7 @@ function SkillCard({
   className
 }: SkillCardProps) {
   return (
-    <Card className={className}>
+    <Card className={cn('bg-muted/40', className)}>
       <CardContent className="flex flex-col items-start p-6">
         <div className="flex w-full items-center justify-between">
           <span className="text-lg font-semibold">({index})</span>

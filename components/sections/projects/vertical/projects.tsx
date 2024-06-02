@@ -42,13 +42,7 @@ function Projects() {
                     key={index}
                     className="md:basis-1/2 lg:basis-full	xl:basis-1/2"
                   >
-                    <div
-                      className="h-full"
-                      opts={{
-                        align: 'start'
-                      }}
-                      key={index}
-                    >
+                    <div className="h-full" key={index}>
                       <ProjectCard
                         name={project.name}
                         slug={project.slug}

@@ -26,13 +26,13 @@ function Skills() {
           </Reveal>
         </div>
         <div className="mt-6 space-y-4">
-          {skills.map((project, index) => (
+          {skills.map((skill, index) => (
             <SkillCard
               key={index}
               index={index + 1}
-              name={project.name}
-              description={project.description}
-              Icon={project.Icon}
+              name={skill.name}
+              description={skill.description}
+              Icon={skill.Icon}
             />
           ))}
         </div>

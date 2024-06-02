@@ -6,7 +6,7 @@ import {
   SmartphoneIcon
 } from 'lucide-react';
 
-const skills: Skill[] = [
+const experiences: Skill[] = [
   {
     name: 'Web Development',
     description: 'Building beautiful and functional websites.',
@@ -29,4 +29,4 @@ const skills: Skill[] = [
   }
 ];
 
-export { skills };
+export { experiences };

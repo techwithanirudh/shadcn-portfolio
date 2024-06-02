@@ -1,16 +1,16 @@
 import React from 'react';
-import SkillCard from './skill-card';
+import SkillCard from './experience-card';
 
 import Reveal from '@/components/reveal';
 
-import { skills } from '../config';
+import { experiences } from '../config';
 import MotionWrap from '@/components/motion-wrap';
 
 function Skills() {
   return (
     <MotionWrap
       className="w-full border-t border-gray-200  py-24 dark:border-gray-700 lg:py-32"
-      id="skills"
+      id="experiences"
     >
       <div className="space-y-4 px-4 md:px-6 lg:space-y-10">
         <div className="flex flex-col items-center lg:items-start">
@@ -26,13 +26,13 @@ function Skills() {
           </Reveal>
         </div>
         <div className="mt-6 space-y-4">
-          {skills.map((project, index) => (
+          {experiences.map((experience, index) => (
             <SkillCard
               key={index}
               index={index + 1}
-              name={project.name}
-              description={project.description}
-              Icon={project.Icon}
+              name={experience.name}
+              description={experience.description}
+              Icon={experience.Icon}
             />
           ))}
         </div>

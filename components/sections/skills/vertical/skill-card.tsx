@@ -16,7 +16,7 @@ interface SkillCardProps extends Skill {
 
 function SkillCard({ name, description, Icon, className }: SkillCardProps) {
   return (
-    <Card className={cn('bg-mutedmuted', className)}>
+    <Card className={cn('bg-muted/40', className)}>
       <CardContent className="p-4 md:p-6">
         <div className="flex items-center gap-4">
           {Icon ? <Icon className="h-8 w-8" /> : <CodeIcon />}

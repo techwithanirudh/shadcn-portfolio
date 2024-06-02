@@ -1,15 +1,15 @@
 import React from 'react';
 
 import MotionWrap from '@/components/motion-wrap';
-import SkillCard from './skill-card';
+import ExperienceCard from './experience-card';
 
-import { skills } from '../config';
+import { experiences } from '../config';
 
-function Skills() {
+function Experiences() {
   return (
     <MotionWrap
       className="w-full border-t border-gray-200  py-24 dark:border-gray-700 lg:py-32"
-      id="skills"
+      id="experiences"
     >
       <div className="px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
@@ -22,12 +22,12 @@ function Skills() {
             </p>
           </div>
           <div className="grid gap-4">
-            {skills.map((project, index) => (
-              <SkillCard
+            {experiences.map((experience, index) => (
+              <ExperienceCard
                 key={index}
-                name={project.name}
-                description={project.description}
-                Icon={project.Icon}
+                name={experience.name}
+                description={experience.description}
+                Icon={experience.Icon}
               />
             ))}
           </div>
@@ -37,4 +37,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default Experiences;
