@@ -24,7 +24,7 @@
 4. 📚 [Getting Started](#getting-started)
 
 ## <a name="introduction">🤖 Introduction</a>
-This is a portfolio template built using Next.JS, Framer Motion and Shadcn/UI. It's still a work-in-progress.
+This is a **Work In Progress** portfolio template built using Next.JS, Framer Motion and Shadcn/UI. It's still a work-in-progress.
 
 ## <a name="tech-stack">🚀 Tech Stack</a>
 
