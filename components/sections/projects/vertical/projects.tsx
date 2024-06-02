@@ -26,7 +26,8 @@ function Projects() {
               My Projects
             </h2>
             <p className="text-gray-500 dark:text-gray-400">
-              Here are some of my featured projects.
+              Here are some of my projects where I&apos;ve turned code into
+              cool, functional stuff.
             </p>
           </div>
           <div className="flex items-center justify-center overflow-hidden lg:px-12">

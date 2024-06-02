@@ -18,7 +18,8 @@ function Skills() {
               My Skills
             </h2>
             <p className="text-gray-500 dark:text-gray-400">
-              Here are some of my skills.
+              Here are some of my skills where I&apos;ve turned knowledge into
+              expertise, making things happen.
             </p>
           </div>
           <div className="grid gap-4">

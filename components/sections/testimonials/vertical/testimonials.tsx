@@ -24,7 +24,8 @@ function Testimonials() {
               My Testimonials
             </h2>
             <p className="text-gray-500 dark:text-gray-400">
-              Here are some of my testimonials.
+              Here are some of my testimonials where clients and colleagues
+              share their experiences of working with me.
             </p>
           </div>
 

@@ -23,8 +23,8 @@ const contactFormSchema = z.object({
   message: z.string().max(380).min(4)
 });
 
-const FROM_EMAIL = 'contact@example.com';
-const TO_EMAIL = 'personal@personal.com';
+const EMAIL_FROM = process.env.EMAIL_FROM;
+const EMAIL_TO = process.env.EMAIL_TO;
 
 export async function contactSubmit(prevState: any, formData: FormData) {
   try {
@@ -43,9 +43,15 @@ export async function contactSubmit(prevState: any, formData: FormData) {
 
     const { name, email, message } = validatedFields.data;
 
+    if (!EMAIL_FROM || !EMAIL_TO) {
+      return {
+        message: 'Oops! There went wrong. Please try again later.'
+      };
+    }
+
     const { data: res, error } = await resend.emails.send({
-      from: FROM_EMAIL,
-      to: TO_EMAIL,
+      from: EMAIL_FROM,
+      to: EMAIL_TO,
       subject: `Message from ${name} on Portfolio`,
       react: ContactEmail({ name, email, message })
     });
