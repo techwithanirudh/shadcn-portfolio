@@ -1,5 +1,4 @@
-'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
 import MotionWrap from '@/components/motion-wrap';
 import ProjectCard from './project-card';
@@ -15,18 +14,6 @@ import {
 import { projects } from '../config';
 
 function Projects() {
-  const [tallestCH, setTallestCH] = useState(0);
-
-  const carouselItemRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const height = carouselItemRefs.current.reduce((max, current) => {
-      return Math.max(max, current?.offsetHeight || 0);
-    }, 0);
-
-    setTallestCH(height);
-  }, []);
-
   return (
     <MotionWrap
       className="w-full border-t border-gray-200  py-24 dark:border-gray-700 lg:py-32"
@@ -56,8 +43,9 @@ function Projects() {
                     className="md:basis-1/2 lg:basis-full	xl:basis-1/2"
                   >
                     <div
-                      ref={(el) => {
-                        carouselItemRefs.current[index] = el;
+                      className="h-full"
+                      opts={{
+                        align: 'start'
                       }}
                       key={index}
                     >
@@ -66,7 +54,6 @@ function Projects() {
                         slug={project.slug}
                         description={project.description}
                         thumbnail={project.thumbnail}
-                        minH={tallestCH}
                       />
                     </div>
                   </CarouselItem>

@@ -3,11 +3,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
-interface TestimonialCardProps {
-  image?: string;
-  name?: string;
-  username?: string;
-  testimonial?: string;
+import { Testimonial } from '@/types/testimonial';
+
+interface TestimonialCardProps extends Testimonial {
   className?: string;
 }
 
@@ -19,7 +17,7 @@ function TestimonialCard({
   className
 }: TestimonialCardProps) {
   return (
-    <Card className={cn('w-full rounded-xl', className)}>
+    <Card className={cn('h-full w-full rounded-xl', className)}>
       <div className="flex items-center p-4">
         <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white">
           <Image
