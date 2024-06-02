@@ -35,7 +35,7 @@ function ProjectCard({
         className
       )}
     >
-      <CardContent className="inline-block w-full overflow-hidden p-0">
+      <CardContent className="z-[2] inline-block w-full overflow-hidden p-0">
         <Image
           src={thumbnail || '/placeholder.svg'}
           alt={`Image of ${name}`}
