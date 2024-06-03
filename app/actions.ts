@@ -4,8 +4,6 @@ import { ContactEmail } from '@/components/emails/contact-template';
 
 import { z } from 'zod';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const contactFormSchema = z.object({
   name: z
     .string()
@@ -28,6 +26,7 @@ const EMAIL_TO = process.env.EMAIL_TO;
 
 export async function contactSubmit(prevState: any, formData: FormData) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const validatedFields = contactFormSchema.safeParse({
       name: formData.get('name'),
       email: formData.get('email'),
