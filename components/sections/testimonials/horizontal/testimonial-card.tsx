@@ -33,7 +33,7 @@ function TestimonialCard({
           {username && <p className="text-sm text-gray-500">{username}</p>}
         </div>
       </div>
-      <CardContent className="border-t border-gray-200 p-4 dark:border-gray-700">
+      <CardContent className="p-4">
         <p className="text-sm leading-loose">
           {testimonial || 'No testimonial provided.'}
         </p>
