@@ -15,23 +15,22 @@ interface ExperienceCardProps extends Experience {
 }
 
 function ExperienceCard({
+  company,
   name,
+  duration,
   description,
-  Icon,
   className
 }: ExperienceCardProps) {
   return (
-    <Card className={cn('bg-muted/40', className)}>
-      <CardContent className="p-4 md:p-6">
-        <div className="flex items-center gap-4">
-          {Icon ? <Icon className="h-8 w-8" /> : <CodeIcon />}
-          <div className="grid gap-0.5">
-            <h3 className="text-xl font-semibold">{name}</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              {description || ''}
-            </p>
-          </div>
+    <Card className={cn('border-none bg-transparent', className)}>
+      <CardContent className="p-1">
+        <div className="flex items-baseline justify-between">
+          <h3 className="text-2xl font-semibold">{company}</h3>
+          <span className="text-sm font-medium">{duration}</span>
         </div>
+        <h4 className="mt-2 text-lg font-medium uppercase">{name}</h4>
+        <p className="mt-2">{description}</p>
+        <hr className="my-6 border-t border-border" />
       </CardContent>
     </Card>
   );

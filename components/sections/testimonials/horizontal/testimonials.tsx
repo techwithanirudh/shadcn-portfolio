@@ -16,10 +16,7 @@ import { testimonials } from '../config';
 
 function Testimonials() {
   return (
-    <MotionWrap
-      className="w-full border-t border-gray-200  py-24 dark:border-gray-700 lg:py-32"
-      id="testimonials"
-    >
+    <MotionWrap className="w-full py-24 lg:py-32" id="testimonials">
       {/* TODO: Redesign for horizontal */}
       <div className="px-4 md:px-6">
         <div className="grid gap-10">

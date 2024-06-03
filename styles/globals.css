@@ -83,10 +83,6 @@
 }
 
 @layer utilities {
-  .border-t {
-    /* todo: cleanup css */
-    @apply border-none;
-  }
 
   .shadow-sm {
     /* todo: cleanup css */
