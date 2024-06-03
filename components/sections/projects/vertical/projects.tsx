@@ -1,5 +1,4 @@
-'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
 import MotionWrap from '@/components/motion-wrap';
 import ProjectCard from './project-card';
@@ -15,23 +14,8 @@ import {
 import { projects } from '../config';
 
 function Projects() {
-  const [tallestCH, setTallestCH] = useState(0);
-
-  const carouselItemRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const height = carouselItemRefs.current.reduce((max, current) => {
-      return Math.max(max, current?.offsetHeight || 0);
-    }, 0);
-
-    setTallestCH(height);
-  }, []);
-
   return (
-    <MotionWrap
-      className="w-full border-t border-gray-200  py-24 dark:border-gray-700 lg:py-32"
-      id="projects"
-    >
+    <MotionWrap className="w-full py-24 lg:py-32" id="projects">
       <div className="px-4 md:px-6">
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <div className="space-y-4">
@@ -39,7 +23,8 @@ function Projects() {
               My Projects
             </h2>
             <p className="text-gray-500 dark:text-gray-400">
-              Here are some of my featured projects.
+              Here are some of my projects where I&apos;ve turned code into
+              cool, functional stuff.
             </p>
           </div>
           <div className="flex items-center justify-center overflow-hidden lg:px-12">
@@ -55,18 +40,12 @@ function Projects() {
                     key={index}
                     className="md:basis-1/2 lg:basis-full	xl:basis-1/2"
                   >
-                    <div
-                      ref={(el) => {
-                        carouselItemRefs.current[index] = el;
-                      }}
-                      key={index}
-                    >
+                    <div className="h-full" key={index}>
                       <ProjectCard
                         name={project.name}
                         slug={project.slug}
                         description={project.description}
                         thumbnail={project.thumbnail}
-                        minH={tallestCH}
                       />
                     </div>
                   </CarouselItem>

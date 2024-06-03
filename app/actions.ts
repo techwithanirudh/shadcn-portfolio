@@ -4,8 +4,6 @@ import { ContactEmail } from '@/components/emails/contact-template';
 
 import { z } from 'zod';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const contactFormSchema = z.object({
   name: z
     .string()
@@ -23,11 +21,12 @@ const contactFormSchema = z.object({
   message: z.string().max(380).min(4)
 });
 
-const FROM_EMAIL = 'contact@example.com';
-const TO_EMAIL = 'personal@personal.com';
+const EMAIL_FROM = process.env.EMAIL_FROM;
+const EMAIL_TO = process.env.EMAIL_TO;
 
 export async function contactSubmit(prevState: any, formData: FormData) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const validatedFields = contactFormSchema.safeParse({
       name: formData.get('name'),
       email: formData.get('email'),
@@ -36,6 +35,7 @@ export async function contactSubmit(prevState: any, formData: FormData) {
 
     if (!validatedFields.success) {
       return {
+        success: false,
         errors: validatedFields.error.flatten().fieldErrors,
         message: 'Please check your entries and try again.'
       };
@@ -43,24 +43,34 @@ export async function contactSubmit(prevState: any, formData: FormData) {
 
     const { name, email, message } = validatedFields.data;
 
+    if (!EMAIL_FROM || !EMAIL_TO) {
+      return {
+        success: false,
+        message: 'Oops! There went wrong. Please try again later.'
+      };
+    }
+
     const { data: res, error } = await resend.emails.send({
-      from: FROM_EMAIL,
-      to: TO_EMAIL,
+      from: EMAIL_FROM,
+      to: EMAIL_TO,
       subject: `Message from ${name} on Portfolio`,
       react: ContactEmail({ name, email, message })
     });
 
     if (error) {
       return {
+        success: false,
         message: 'Oops! Something went wrong. Please try again later.'
       };
     }
 
     return {
+      success: true,
       message: 'Thank you for reaching out! Your message has been sent.'
     };
   } catch (error) {
     return {
+      success: false,
       message: 'Oops! Something went wrong. Please try again later.'
     };
   }

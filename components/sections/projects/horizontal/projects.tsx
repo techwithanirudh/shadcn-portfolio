@@ -8,10 +8,7 @@ import MotionWrap from '@/components/motion-wrap';
 
 function Projects() {
   return (
-    <MotionWrap
-      className="w-full border-t border-gray-200  py-24 dark:border-gray-700 lg:py-32"
-      id="projects"
-    >
+    <MotionWrap className="w-full py-24 lg:py-32" id="projects">
       <div className="space-y-4 px-4 md:space-y-6 md:px-6 lg:space-y-10">
         <div className="flex w-full flex-col items-center justify-center text-center lg:flex-row lg:justify-between lg:text-left">
           <div className="flex flex-col items-center lg:items-start">

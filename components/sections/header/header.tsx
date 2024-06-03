@@ -32,8 +32,9 @@ const Header = ({ loader }: HeaderProps) => {
     >
       <div className={styles.bar}>
         <Link href="/" className="flex items-center justify-center">
-          <CodeIcon className="h-6 w-6" />
-          <span className="sr-only">{meta.author.name}</span>
+          <span className="text-md font-semibold transition-transform hover:translate-x-1 hover:translate-y-1">
+            {meta.author.name}
+          </span>
         </Link>
         <div onClick={() => setIsActive(!isActive)} className={styles.el}>
           <div className={styles.label}>

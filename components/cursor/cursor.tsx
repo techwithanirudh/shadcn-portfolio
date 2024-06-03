@@ -66,7 +66,10 @@ export default function Cursor() {
     setIsVisible(false);
   };
 
-  const handleMouseDown = () => {
+  const handleMouseDown = (e: MouseEvent) => {
+    // prevent right click to trigger pressed
+    if (e.button === 2) return;
+
     setIsPressed(true);
   };
 

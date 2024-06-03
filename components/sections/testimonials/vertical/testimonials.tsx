@@ -13,10 +13,7 @@ import { testimonials } from '../config';
 
 function Testimonials() {
   return (
-    <MotionWrap
-      className="w-full border-t border-gray-200  py-24 dark:border-gray-700 lg:py-32"
-      id="testimonials"
-    >
+    <MotionWrap className="w-full py-24 lg:py-32" id="testimonials">
       <div className="px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="space-y-4">
@@ -24,7 +21,8 @@ function Testimonials() {
               My Testimonials
             </h2>
             <p className="text-gray-500 dark:text-gray-400">
-              Here are some of my testimonials.
+              Here are some of my testimonials where clients and colleagues
+              share their experiences of working with me.
             </p>
           </div>
 
@@ -33,7 +31,7 @@ function Testimonials() {
               <CarouselContent>
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index}>
-                    <div className="p-1">
+                    <div className="h-full p-1">
                       <TestimonialCard
                         name={testimonial.name}
                         image={testimonial.image}
