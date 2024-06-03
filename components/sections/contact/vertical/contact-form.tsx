@@ -5,31 +5,29 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { toast } from '@/components/ui/use-toast';
 
-import { contactSubmit } from '@/app/actions';
+import { LoaderCircleIcon, PlusIcon } from 'lucide-react';
+import { useFormState, useFormStatus } from 'react-dom';
 
-import { useFormState } from 'react-dom';
-import { useEffect } from 'react';
+interface ValidationErrors {
+  success: boolean;
+  message: string;
+  errors?: {
+    name?: string[] | undefined;
+    email?: string[] | undefined;
+    message?: string[] | undefined;
+  };
+}
 
-const initialState = {
-  errors: {},
-  message: ''
-};
+interface ContactFormProps extends React.HTMLAttributes<HTMLDivElement> {
+  state: ValidationErrors;
+}
 
-export default function ContactForm() {
-  const [state, formAction] = useFormState(contactSubmit, initialState);
-
-  useEffect(() => {
-    if (state?.message === '') return;
-
-    toast({
-      title: state?.message
-    });
-  }, [state]);
+export default function ContactForm({ state }: ContactFormProps) {
+  const { pending } = useFormStatus();
 
   return (
-    <form action={formAction} className="grid gap-4">
+    <>
       <div className="grid gap-3">
         <Label
           htmlFor="name"
@@ -40,7 +38,13 @@ export default function ContactForm() {
         >
           Name
         </Label>
-        <Input id="name" name="name" placeholder="Jane Doe" required />
+        <Input
+          id="name"
+          name="name"
+          placeholder="Jane Doe"
+          required
+          disabled={pending}
+        />
         <p className="text-sm font-medium text-red-500 dark:text-red-900">
           {state?.errors?.name}
         </p>
@@ -61,6 +65,7 @@ export default function ContactForm() {
           placeholder="jane@example.com"
           required
           type="email"
+          disabled={pending}
         />
         <p className="text-sm font-medium text-red-500 dark:text-red-900">
           {state?.errors?.email}
@@ -83,13 +88,17 @@ export default function ContactForm() {
             'Hello!\n\nThis is Jane Doe, from Example. Just wanted to say hi!'
           }
           required
+          disabled={pending}
         />
         <p className="text-sm font-medium text-red-500 dark:text-red-900">
           {state?.errors?.message}
         </p>
       </div>
 
-      <Button type="submit">Submit</Button>
-    </form>
+      <Button type="submit" disabled={pending}>
+        {pending && <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />}
+        Submit
+      </Button>
+    </>
   );
 }
