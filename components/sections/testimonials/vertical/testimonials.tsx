@@ -34,7 +34,7 @@ function Testimonials() {
               <CarouselContent>
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem key={index}>
-                    <div className="p-1">
+                    <div className="h-full p-1">
                       <TestimonialCard
                         name={testimonial.name}
                         image={testimonial.image}
