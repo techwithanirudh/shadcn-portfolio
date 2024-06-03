@@ -36,6 +36,7 @@ export async function contactSubmit(prevState: any, formData: FormData) {
 
     if (!validatedFields.success) {
       return {
+        success: false,
         errors: validatedFields.error.flatten().fieldErrors,
         message: 'Please check your entries and try again.'
       };
@@ -45,6 +46,7 @@ export async function contactSubmit(prevState: any, formData: FormData) {
 
     if (!EMAIL_FROM || !EMAIL_TO) {
       return {
+        success: false,
         message: 'Oops! There went wrong. Please try again later.'
       };
     }
@@ -58,15 +60,18 @@ export async function contactSubmit(prevState: any, formData: FormData) {
 
     if (error) {
       return {
+        success: false,
         message: 'Oops! Something went wrong. Please try again later.'
       };
     }
 
     return {
+      success: true,
       message: 'Thank you for reaching out! Your message has been sent.'
     };
   } catch (error) {
     return {
+      success: false,
       message: 'Oops! Something went wrong. Please try again later.'
     };
   }
