@@ -12,7 +12,7 @@ import TestimonialCard from './testimonial-card';
 
 import Reveal from '@/components/reveal';
 
-import { testimonials } from '../config';
+import { testimonials } from '@/components/sections/testimonials/config';
 
 function Testimonials() {
   return (

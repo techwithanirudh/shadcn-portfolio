@@ -3,7 +3,7 @@ import ProjectCard from './project-card';
 
 import Reveal from '@/components/reveal';
 
-import { projects } from '../config';
+import { projects } from '@/components/sections/projects/config';
 import MotionWrap from '@/components/motion-wrap';
 
 function Projects() {

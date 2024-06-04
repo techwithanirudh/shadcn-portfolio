@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import ContactForm from './contact-form';
 
-import { contact } from '../config';
+import { contact } from '@/components/sections/contact/config';
 
 import { contactSubmit } from '@/app/actions';
 

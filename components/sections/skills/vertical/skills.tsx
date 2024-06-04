@@ -3,7 +3,7 @@ import React from 'react';
 import MotionWrap from '@/components/motion-wrap';
 import SkillCard from './skill-card';
 
-import { skills } from '../config';
+import { skills } from '@/components/sections/skills/config';
 
 function Skills() {
   return (

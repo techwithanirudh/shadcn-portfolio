@@ -3,7 +3,7 @@ import React from 'react';
 import MotionWrap from '@/components/motion-wrap';
 import ExperienceCard from './experience-card';
 
-import { experiences } from '../config';
+import { experiences } from '@/components/sections/experience/config';
 
 function Experiences() {
   return (
