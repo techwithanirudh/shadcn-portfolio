@@ -3,7 +3,7 @@ import MotionWrap from '@/components/motion-wrap';
 import Image from 'next/image';
 
 import { metadata as meta } from '@/app/config';
-import { hero } from '../config';
+import { hero } from '@/components/sections/hero/config';
 
 function Hero() {
   return (

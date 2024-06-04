@@ -7,7 +7,7 @@ import Footer from './footer/footer';
 import Image from './image/image';
 import ModeToggle from '@/components/mode-toggle';
 
-import { links } from '../config';
+import { links } from '@/components/sections/header/config';
 
 interface IndexProps {
   setIsActive: (isActive: boolean) => void;

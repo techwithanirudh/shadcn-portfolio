@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/carousel';
 import TestimonialCard from './testimonial-card';
 
-import { testimonials } from '../config';
+import { testimonials } from '@/components/sections/testimonials/config';
 
 function Testimonials() {
   return (

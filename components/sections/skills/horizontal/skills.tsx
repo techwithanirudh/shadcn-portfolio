@@ -3,7 +3,7 @@ import SkillCard from './skill-card';
 
 import Reveal from '@/components/reveal';
 
-import { skills } from '../config';
+import { skills } from '@/components/sections/skills/config';
 import MotionWrap from '@/components/motion-wrap';
 
 function Skills() {

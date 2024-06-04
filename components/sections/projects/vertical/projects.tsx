@@ -11,7 +11,7 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel';
 
-import { projects } from '../config';
+import { projects } from '@/components/sections/projects/config';
 
 function Projects() {
   return (
