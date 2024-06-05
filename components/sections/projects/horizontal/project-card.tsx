@@ -57,7 +57,7 @@ function ProjectCard({
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="outline" className="z-[2]" asChild>
-                  <Link href={'/project/' + slug}>
+                  <Link href={'/projects/' + slug}>
                     <InfoIcon />
                   </Link>
                 </Button>
@@ -69,7 +69,7 @@ function ProjectCard({
           </TooltipProvider>
         </div>
       </CardFooter>
-      <Link href={'/project/' + slug} className="z-1 absolute inset-0 block" />
+      <Link href={'/projects/' + slug} className="z-1 absolute inset-0 block" />
     </Card>
   );
 }
