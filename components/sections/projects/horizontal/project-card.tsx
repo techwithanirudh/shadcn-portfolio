@@ -58,7 +58,7 @@ function ProjectCard({
               <TooltipTrigger asChild>
                 <Button
                   variant="outline"
-                  className="z-[2] rounded-full border bg-muted hover:bg-foreground/5"
+                  className="z-[2] rounded-full border bg-muted hover:bg-foreground/10"
                   asChild
                 >
                   <Link href={'/projects/' + slug}>
