@@ -29,7 +29,12 @@ function ProjectCard({
   className
 }: ProjectCardProps) {
   return (
-    <Card className={cn('flex h-full flex-col justify-between', className)}>
+    <Card
+      className={cn(
+        'flex h-full flex-col justify-between bg-muted/40',
+        className
+      )}
+    >
       <CardContent className="p-4 md:p-6">
         <div className="grid gap-2">
           <Image
@@ -50,7 +55,11 @@ function ProjectCard({
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button variant="outline" className="z-[2]" asChild>
+              <Button
+                variant="outline"
+                className="z-[2] rounded-full border bg-muted hover:bg-foreground/10"
+                asChild
+              >
                 <Link href={'/projects/' + slug}>
                   <InfoIcon />
                 </Link>

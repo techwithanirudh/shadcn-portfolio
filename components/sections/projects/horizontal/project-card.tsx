@@ -31,7 +31,7 @@ function ProjectCard({
   return (
     <Card
       className={cn(
-        'group relative flex flex-col justify-between overflow-hidden rounded-md',
+        'group relative flex flex-col justify-between overflow-hidden rounded-md bg-muted/40',
         className
       )}
     >
@@ -42,7 +42,7 @@ function ProjectCard({
           width={0}
           height={0}
           sizes="100vw"
-          className="h-auto max-h-96 w-full object-cover transition-transform duration-200 hover:scale-110"
+          className="h-auto max-h-96 w-full object-cover transition-transform duration-300 hover:scale-105"
         />
       </CardContent>
       <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6 lg:grid-cols-2">
@@ -56,7 +56,11 @@ function ProjectCard({
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="outline" className="z-[2]" asChild>
+                <Button
+                  variant="outline"
+                  className="z-[2] rounded-full border bg-muted hover:bg-foreground/10"
+                  asChild
+                >
                   <Link href={'/projects/' + slug}>
                     <InfoIcon />
                   </Link>
