@@ -15,7 +15,6 @@ function About() {
               About Me
             </h2>
             <div className="space-y-4">
-              {' '}
               <p className="max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 I am a passionate and creative Web Developer with a love for
                 beautiful and functional websites. I have experience working
