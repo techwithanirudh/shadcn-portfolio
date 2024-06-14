@@ -9,14 +9,14 @@
   position: fixed;
   z-index: 99;
   // TODO: Add a better color instead of just the background to make it pop more
-  background-color: hsl(var(--background));
+  background-color: hsl(var(--muted));
   svg {
     position: absolute;
     top: 0;
     width: 100%;
     height: calc(100% + 300px);
     path {
-      fill: hsl(var(--background));
+      fill: hsl(var(--muted));
     }
   }
   p {
