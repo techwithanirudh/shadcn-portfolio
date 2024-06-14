@@ -56,13 +56,21 @@ const Header = (props: HeaderProps) => {
         transition={{ delay: 0.1 }}
       >
         {website && (
-          <Link href={website} className={cn(buttonVariants(), 'group')}>
+          <Link
+            href={website}
+            className={cn(buttonVariants(), 'group')}
+            target="_blank"
+          >
             Visit Website
             <ArrowUpRightIcon className="ml-2 size-5" />
           </Link>
         )}
         {github && (
-          <Link href={github} className={cn(buttonVariants(), 'group')}>
+          <Link
+            href={github}
+            className={cn(buttonVariants(), 'group')}
+            target="_blank"
+          >
             Github
             <ArrowUpRightIcon className="ml-2 size-5" />
           </Link>

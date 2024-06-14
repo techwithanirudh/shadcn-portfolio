@@ -18,7 +18,7 @@ function Hero() {
       /> */}
       <div className="relative z-[5] mx-auto w-full">
         <div className="flex flex-col items-start">
-          <div className="md:py-26 lg:py-30 xl:py-46 flex h-full w-full flex-col justify-center px-4 py-24 text-[6.5vw] md:px-28 lg:-mt-14 lg:px-32 xl:py-48">
+          <div className="md:py-26 lg:py-30 xl:py-46 flex h-full w-full flex-col justify-center gap-8 px-4 py-24 text-4xl font-light leading-[89%] tracking-[-.04em] sm:text-5xl md:px-28 md:text-6xl lg:px-32 lg:text-7xl xl:py-48 xl:text-8xl">
             <p>A developer</p>
             <div className="flex items-center gap-2 md:gap-4">
               <p>Who</p>
