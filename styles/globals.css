@@ -83,7 +83,6 @@
 }
 
 @layer utilities {
-
   .shadow-sm {
     /* todo: cleanup css */
     @apply shadow-none;
