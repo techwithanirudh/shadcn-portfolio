@@ -30,7 +30,7 @@ const projects: Project[] = [
     thumbnail: '/images/projects/fitness_tracker/cover.jpg'
   },
   {
-    name: 'Eco-friendly#F5F5F7 Marketplace',
+    name: 'Eco-friendly Marketplace',
     slug: 'eco_marketplace',
     description:
       'An e-commerce platform dedicated to eco-friendly products where users can buy, sell, and learn about sustainable living.',
