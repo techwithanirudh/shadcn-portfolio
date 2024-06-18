@@ -1,47 +1,34 @@
-// Credit: Cuberto
-
 import React from 'react';
 import MotionWrap from '@/components/motion-wrap';
 import Image from 'next/image';
 
 import { metadata as meta } from '@/app/config';
-import { hero } from '../config';
-import { Spotlight } from '@/components/ui/spotlight';
+import { hero } from '@/components/sections/hero/config';
 
 function Hero() {
   return (
-    <MotionWrap className="relative w-full overflow-hidden bg-background/[0.96]">
-      {/* TODO: Add a bigger and more modern hero section */}
-      {/* <Spotlight
-        className="-top-40 left-0 [animation-delay:_6s] md:-top-20 md:left-60"
-        fill="hsl(var(--foreground))"
-      /> */}
-      <div className="relative z-[5] mx-auto w-full">
-        <div className="flex flex-col items-start">
-          <div className="md:py-26 lg:py-30 xl:py-46 flex h-full w-full flex-col justify-center gap-8 px-4 py-24 text-4xl font-light leading-[89%] tracking-[-.04em] sm:text-5xl md:px-28 md:text-6xl lg:px-32 lg:text-7xl xl:py-48 xl:text-8xl">
-            <p>A developer</p>
-            <div className="flex items-center gap-2 md:gap-4">
-              <p>Who</p>
-              <div className="relative aspect-[4/2] h-[7.5vw] overflow-hidden rounded-full bg-[#f8cdd5]">
-                <Image
-                  src={'/images/hearts-ornament.png'}
-                  style={{ objectFit: 'scale-down' }}
-                  alt="img"
-                  fill
-                />
-              </div>
-              <p>to code</p>
-            </div>
+    <MotionWrap className="mt-14 flex h-[calc(100dvh-62.5px-56px)] w-full items-center justify-center">
+      <div className="grid items-start justify-center gap-4 px-4 md:grid-cols-2 md:px-6 lg:gap-10">
+        <div className="space-y-3 text-left">
+          <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-foreground/10">
+            {hero.label}
           </div>
-          <div className="relative aspect-[4/2] w-screen">
-            <Image
-              src={'/images/hero.jpg'}
-              style={{ objectFit: 'cover' }}
-              alt="img"
-              fill
-            />
-          </div>
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+            Hi, I&apos;m {hero.name}
+          </h1>
+          <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            {hero.description}
+          </p>
         </div>
+        <Image
+          alt="Image"
+          className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center"
+          height="450"
+          sizes="100vw"
+          src={'/images/hero.jpg'}
+          width="800"
+          priority={true}
+        />
       </div>
     </MotionWrap>
   );
