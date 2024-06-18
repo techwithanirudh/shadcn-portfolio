@@ -4,7 +4,7 @@ import Hero from './hero/compact/hero';
 import About from './about/cozy/about';
 import Skills from './skills/cozy/skills';
 import Experience from './experience/cozy/experience';
-import Projects from './projects/horizontal/projects';
+import Projects from './projects/cozy/projects';
 import Contact from './contact/cozy/contact';
 import Testimonials from './testimonials/cozy/testimonials';
 import Footer from './footer/footer';
