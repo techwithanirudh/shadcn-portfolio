@@ -1,12 +1,12 @@
 import Header from './header/header';
 // todo: decide abt this
 import Hero from './hero/compact/hero';
-import About from './about/horizontal/about';
-import Skills from './skills/horizontal/skills';
-import Experience from './experience/horizontal/experience';
+import About from './about/cozy/about';
+import Skills from './skills/cozy/skills';
+import Experience from './experience/cozy/experience';
 import Projects from './projects/horizontal/projects';
-import Contact from './contact/horizontal/contact';
-import Testimonials from './testimonials/horizontal/testimonials';
+import Contact from './contact/cozy/contact';
+import Testimonials from './testimonials/cozy/testimonials';
 import Footer from './footer/footer';
 
 export {
