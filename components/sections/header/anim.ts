@@ -33,7 +33,7 @@ export const background = {
     height: 0
   },
   open: {
-    height: '100vh',
+    height: '100dvh',
     transition
   },
   closed: {
