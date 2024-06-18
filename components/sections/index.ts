@@ -1,6 +1,6 @@
 import Header from './header/header';
 // todo: decide abt this
-import Hero from './hero/vertical/hero';
+import Hero from './hero/compact/hero';
 import About from './about/horizontal/about';
 import Skills from './skills/horizontal/skills';
 import Experience from './experience/horizontal/experience';
