@@ -24,7 +24,7 @@ export type PageMetadata = {
   slug: string;
 };
 
-const mdxFilesRootDirectory = path.join(process.cwd(), 'content');
+const mdxFilesRootDirectory = path.join(process.cwd(), 'src', 'content');
 
 const readFile = (filePath: string) => {
   return fs.readFileSync(filePath, 'utf8');
