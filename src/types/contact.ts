@@ -1,11 +1,10 @@
 export interface Socials {
-  github?: string;
-  youtube?: string;
-  twitter?: string;
-  linkedin?: string;
+  name: string;
+  href: string;
+  Icon?: React.ComponentType<{ className?: string }>;
 }
 
 export interface Contact {
   email: string;
-  socials: Socials;
+  socials: Socials[];
 }

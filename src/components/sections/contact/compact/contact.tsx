@@ -1,16 +1,10 @@
 'use client';
 import React from 'react';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import MotionWrap from '@/components/motion-wrap';
 
 import { toast } from '@/components/ui/use-toast';
 
-import {
-  SiYoutube,
-  SiGithub,
-  SiLinkedin,
-  SiX
-} from '@icons-pack/react-simple-icons';
 import ContactForm from './contact-form';
 
 import { contact } from '@/components/sections/contact/config';
@@ -19,6 +13,7 @@ import { contactSubmit } from '@/app/actions';
 
 import { useFormState } from 'react-dom';
 import { useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
 interface ValidationErrors {
   success: boolean;
@@ -54,7 +49,7 @@ function Contact() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Contact Me
             </h2>
-            <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Have a question or want to work together? Send me a message using
               the form.
             </p>
@@ -65,34 +60,19 @@ function Contact() {
               </a>
             </p>
             <div className="flex space-x-1">
-              {contact.socials?.github && (
-                <Button variant="outline" size="icon" asChild>
-                  <a target="_blank" href={contact.socials.youtube}>
-                    <SiYoutube className="h-4 w-4" />
-                  </a>
-                </Button>
-              )}
-              {contact.socials?.twitter && (
-                <Button variant="outline" size="icon" asChild>
-                  <a target="_blank" href={contact.socials.twitter}>
-                    <SiX className="h-4 w-4" /> {/* good 'ol twitter icon */}
-                  </a>
-                </Button>
-              )}
-              {contact.socials?.github && (
-                <Button variant="outline" size="icon" asChild>
-                  <a target="_blank" href={contact.socials.github}>
-                    <SiGithub className="h-4 w-4" />
-                  </a>
-                </Button>
-              )}
-              {contact.socials?.linkedin && (
-                <Button variant="outline" size="icon" asChild>
-                  <a target="_blank" href={contact.socials.linkedin}>
-                    <SiLinkedin className="h-4 w-4" />
-                  </a>
-                </Button>
-              )}
+              {contact.socials.map(({ Icon, href }, index) => (
+                <a
+                  target="_blank"
+                  href={href}
+                  className={cn(
+                    buttonVariants({ variant: 'outline', size: 'icon' }),
+                    'text-md gap-1'
+                  )}
+                  key={index}
+                >
+                  {Icon && <Icon className="h-4 w-4" />}
+                </a>
+              ))}
             </div>
           </div>
           <form action={formAction} className="grid gap-4">
