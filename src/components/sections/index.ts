@@ -1,4 +1,4 @@
-import Header from './header/header';
+import Header from './header/cozy/header';
 // todo: decide abt this
 import Hero from './hero/cozy/hero';
 import About from './about/cozy/about';
