@@ -1,0 +1,2 @@
+- [ ] Replace name: or title: with either name or title
+- [x] Switch to PNPM from NPM
