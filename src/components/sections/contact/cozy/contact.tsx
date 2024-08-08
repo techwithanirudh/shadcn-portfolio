@@ -44,7 +44,7 @@ function Contact() {
     <MotionWrap className="w-full py-24 lg:py-32" id="contact">
       {/* TODO: Redesign for horizontal */}
       <div className="px-4 md:px-6">
-        <div className="py-3 lg:px-2">
+        <div className="py-3">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Contact Me
           </h2>
@@ -54,7 +54,7 @@ function Contact() {
           </p>
         </div>
         <div className="flex flex-wrap">
-          <div className="flex w-full flex-col gap-4 py-3 lg:order-2 lg:w-1/4 lg:px-2 lg:pl-3">
+          <div className="flex w-full flex-col gap-4 py-3 lg:order-2 lg:w-1/4 lg:pl-3">
             <div>
               <p className="text-sm text-muted-foreground">Email</p>
               <a
@@ -87,7 +87,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div className="flex w-full flex-col gap-4 py-3 lg:w-3/4 lg:px-2 lg:pr-3">
+          <div className="flex w-full flex-col gap-4 py-3 lg:w-3/4 lg:pr-3">
             <form action={formAction} className="grid gap-4">
               <ContactForm state={state} />
             </form>
