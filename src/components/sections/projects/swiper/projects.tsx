@@ -40,7 +40,6 @@ function Projects() {
           </div>
 
           <div className="flex items-center justify-center overflow-hidden lg:px-12">
-            {/* <div className="flex items-center justify-center overflow-hidden lg:px-12"> */}
             <Carousel
               opts={{
                 align: 'start'
@@ -64,6 +63,10 @@ function Projects() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
+
+              {/* todo: look for a nicer design, remove px-12 to see the new design */}
+              {/* <CarouselPrevious className='z-[999] left-0 rounded' variant={"default"} />
+              <CarouselNext className='z-[999] right-0 rounded' variant={"default"} /> */}
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>
