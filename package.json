@@ -1,6 +1,6 @@
 {
   "name": "shadcn-portfolio",
-  "version": "0.1.1",
+  "version": "0.9.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -24,6 +24,7 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-email/components": "^0.0.17",
+    "@react-email/tailwind": "^0.0.19",
     "@tailwindcss/typography": "^0.5.13",
     "@types/mdx": "^2.0.13",
     "class-variance-authority": "^0.7.0",
