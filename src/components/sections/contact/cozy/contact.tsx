@@ -6,11 +6,11 @@ import MotionWrap from '@/components/motion-wrap';
 import { toast } from '@/components/ui/use-toast';
 
 import {
-  YoutubeIcon,
-  GithubIcon,
-  LinkedinIcon,
-  TwitterIcon
-} from 'lucide-react';
+  SiYoutube,
+  SiGithub,
+  SiLinkedin,
+  SiX
+} from '@icons-pack/react-simple-icons';
 import ContactForm from './contact-form';
 
 import { contact } from '@/components/sections/contact/config';
@@ -68,29 +68,28 @@ function Contact() {
               {contact.socials?.github && (
                 <Button variant="outline" size="icon" asChild>
                   <a target="_blank" href={contact.socials.youtube}>
-                    <YoutubeIcon className="h-4 w-4" />
+                    <SiYoutube className="h-4 w-4" />
                   </a>
                 </Button>
               )}
               {contact.socials?.twitter && (
                 <Button variant="outline" size="icon" asChild>
                   <a target="_blank" href={contact.socials.twitter}>
-                    <TwitterIcon className="h-4 w-4" />{' '}
-                    {/* good 'ol twitter icon */}
+                    <SiX className="h-4 w-4" /> {/* good 'ol twitter icon */}
                   </a>
                 </Button>
               )}
               {contact.socials?.github && (
                 <Button variant="outline" size="icon" asChild>
                   <a target="_blank" href={contact.socials.github}>
-                    <GithubIcon className="h-4 w-4" />
+                    <SiGithub className="h-4 w-4" />
                   </a>
                 </Button>
               )}
               {contact.socials?.linkedin && (
                 <Button variant="outline" size="icon" asChild>
                   <a target="_blank" href={contact.socials.linkedin}>
-                    <LinkedinIcon className="h-4 w-4" />
+                    <SiLinkedin className="h-4 w-4" />
                   </a>
                 </Button>
               )}
