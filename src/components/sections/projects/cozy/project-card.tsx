@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/tooltip';
 
 import { cn } from '@/lib/utils';
+import { Badge } from '@/components/ui/badge';
 
 interface ProjectCardProps extends Project {
   className?: string;
@@ -26,6 +27,7 @@ function ProjectCard({
   description,
   thumbnail,
   slug,
+  tags,
   className
 }: ProjectCardProps) {
   return (
@@ -51,6 +53,9 @@ function ProjectCard({
           <p className="text-sm text-gray-500 dark:text-gray-400">
             {description || ''}
           </p>
+          <div className="mt-2 flex gap-2">
+            {tags?.map((tag, index) => <Badge key={index}>{tag}</Badge>)}
+          </div>
         </div>
         <div className="flex items-center justify-end">
           <TooltipProvider>

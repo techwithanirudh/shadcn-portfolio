@@ -3,4 +3,5 @@ export interface Project {
   slug: string;
   description?: string;
   thumbnail?: string;
+  tags?: string[];
 }

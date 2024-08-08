@@ -45,6 +45,7 @@ function Projects() {
                         name={project.name}
                         slug={project.slug}
                         description={project.description}
+                        tags={project.tags}
                         thumbnail={project.thumbnail}
                       />
                     </div>

@@ -4,7 +4,7 @@ import { Button, buttonVariants } from '@/components/ui/button';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { GithubIcon, GlobeIcon, InfoIcon } from 'lucide-react';
+import { Badge, GithubIcon, GlobeIcon, InfoIcon } from 'lucide-react';
 
 import { Project } from '@/types/project';
 
@@ -26,6 +26,7 @@ function ProjectCard({
   description,
   thumbnail,
   slug,
+  tags,
   className
 }: ProjectCardProps) {
   return (
@@ -49,6 +50,9 @@ function ProjectCard({
           <p className="text-sm text-gray-500 dark:text-gray-400">
             {description || ''}
           </p>
+          <div className="mt-2 flex gap-2">
+            {tags?.map((tag, index) => <Badge key={index}>{tag}</Badge>)}
+          </div>
         </div>
       </CardContent>
       <CardFooter className="flex items-center justify-end p-4 md:p-6">
