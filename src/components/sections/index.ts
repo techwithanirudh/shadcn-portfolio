@@ -7,7 +7,7 @@ import Skills from './skills/cozy/skills';
 import Experience from './experience/cozy/experience';
 import Projects from './projects/swiper/projects';
 import Contact from './contact/cozy/contact';
-import Testimonials from './testimonials/cozy/testimonials';
+import Testimonials from './testimonials/modern/testimonials';
 import Footer from './footer/footer';
 
 export {
