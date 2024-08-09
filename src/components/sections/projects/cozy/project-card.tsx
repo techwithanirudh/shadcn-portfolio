@@ -17,6 +17,7 @@ import {
 
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
+import RevealText from '@/components/reveal-text';
 
 interface ProjectCardProps extends Project {
   className?: string;
@@ -49,9 +50,11 @@ function ProjectCard({
       </CardContent>
       <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6 lg:grid-cols-2">
         <div>
-          <h3 className="text-xl font-bold">{name}</h3>
+          <h3 className="text-xl font-bold">
+            <RevealText delay={0.1}>{name}</RevealText>
+          </h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            {description || ''}
+            <RevealText delay={0.01}>{description || ''}</RevealText>
           </p>
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => <Badge key={index}>{tag}</Badge>)}

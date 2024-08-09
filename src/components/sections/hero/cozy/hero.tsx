@@ -17,12 +17,9 @@ function Hero() {
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
             Hi, I&apos;m <RevealText delay={0.1}>{hero.name}</RevealText>
           </h1>
-          <RevealText
-            className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
-            delay={0.02}
-          >
-            {hero.description}
-          </RevealText>
+          <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <RevealText delay={0.01}>{hero.description}</RevealText>
+          </p>
         </div>
         <Image
           alt="Image"
