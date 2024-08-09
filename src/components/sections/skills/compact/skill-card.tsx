@@ -19,7 +19,7 @@ function SkillCard({ name, description, Icon, className }: SkillCardProps) {
     <Card className={cn('bg-muted/40', className)}>
       <CardContent className="p-4 md:p-6">
         <div className="flex items-center gap-4">
-          {Icon ? <Icon className="h-8 w-8" /> : <CodeIcon />}
+          {Icon ? <Icon className="min-h-8 min-w-8" /> : <CodeIcon />}
           <div className="grid gap-0.5">
             <h3 className="text-xl font-semibold">{name}</h3>
             <p className="text-sm text-gray-500 dark:text-gray-400">
