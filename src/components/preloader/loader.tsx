@@ -1,5 +1,4 @@
 'use client';
-import styles from './style.module.scss';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { opacity, slideUp } from './anim';
@@ -54,18 +53,24 @@ export default function Index() {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className={styles.introduction}
+      className="fixed z-[99] flex h-[100dvh] w-[100dvw] cursor-wait items-end justify-end bg-background px-[60px] pb-[40px]"
     >
       {dimension.width > 0 && (
         <>
-          <motion.p variants={opacity} initial="initial" animate="enter">
+          <motion.p
+            variants={opacity}
+            initial="initial"
+            animate="enter"
+            className="absolute z-[1] flex	items-center text-7xl text-foreground"
+          >
             {steps[index]}
           </motion.p>
-          <svg>
+          <svg className="absolute top-0 h-[calc(100%+300px)] w-full">
             <motion.path
               variants={curve}
               initial="initial"
               exit="exit"
+              className={'fill-background'}
             ></motion.path>
           </svg>
         </>

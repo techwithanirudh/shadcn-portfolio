@@ -2,8 +2,9 @@ import React from 'react';
 import MotionWrap from '@/components/motion-wrap';
 import Image from 'next/image';
 
-import { metadata as meta } from '@/app/config';
+// import { metadata as meta } from '@/app/config';
 import { hero } from '@/components/sections/hero/config';
+import RevealText from '@/components/reveal-text';
 
 function Hero() {
   return (
@@ -14,11 +15,14 @@ function Hero() {
             {hero.label}
           </div>
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-            Hi, I&apos;m {hero.name}
+            Hi, I&apos;m <RevealText delay={0.1}>{hero.name}</RevealText>
           </h1>
-          <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          <RevealText
+            className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+            delay={0.02}
+          >
             {hero.description}
-          </p>
+          </RevealText>
         </div>
         <Image
           alt="Image"
