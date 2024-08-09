@@ -7,7 +7,7 @@ import {
   HTMLMotionProps
 } from 'framer-motion';
 
-interface RevealProps extends HTMLMotionProps<any> {
+interface RevealProps extends HTMLMotionProps<'span'> {
   children: React.ReactNode;
   width?: 'fit-content' | '100%';
 }
