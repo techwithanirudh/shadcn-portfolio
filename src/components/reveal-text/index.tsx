@@ -8,15 +8,15 @@ import {
 } from 'framer-motion';
 
 import Reveal from '@/components/reveal';
-import styles from '@/components/reveal/style.module.scss';
+import styles from './style.module.scss';
 
-interface RevealProps extends HTMLMotionProps<any> {
+interface RevealTextProps extends HTMLMotionProps<any> {
   text: string;
-  delay: number;
+  delay?: number;
   width?: 'fit-content' | '100%';
 }
 
-const RevealText = (props: RevealProps) => {
+const RevealText = (props: RevealTextProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
 
@@ -36,7 +36,8 @@ const RevealText = (props: RevealProps) => {
         return (
           <Reveal
             key={index}
-            transition={{ duration: 0.5, delay: (props.delay || 0.25) * index }}
+            transition={{ duration: 0.5, delay: 0.25 * index }}
+            width={props.width}
           >
             {word}
           </Reveal>
