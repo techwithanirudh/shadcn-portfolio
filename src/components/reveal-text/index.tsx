@@ -17,19 +17,6 @@ interface RevealTextProps extends HTMLMotionProps<any> {
 }
 
 const RevealText = (props: RevealTextProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
-
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-    } else {
-      mainControls.start('hidden');
-    }
-  }, [isInView]);
-
   return (
     <p className={styles.p}>
       {props.text.split(' ').map((word, index) => {
