@@ -1,5 +1,9 @@
 import { Link } from '@/types/link';
 
+// This is a setting for the compact header
+const linkLimit = 4;
+//
+
 const links: Link[] = [
   {
     title: 'Home',
@@ -39,4 +43,4 @@ const links: Link[] = [
   }
 ];
 
-export { links };
+export { linkLimit, links };

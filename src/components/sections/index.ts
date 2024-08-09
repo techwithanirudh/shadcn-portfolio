@@ -2,7 +2,9 @@ import Header from './header/compact/header';
 // todo: decide abt this
 import Hero from './hero/cozy/hero';
 import About from './about/cozy/about';
+// todo: fix smol icons skills
 import Skills from './skills/cozy/skills';
+// todo: add spline hero section
 import Experience from './experience/cozy/experience';
 import Projects from './projects/swiper/projects';
 import Contact from './contact/cozy/contact';

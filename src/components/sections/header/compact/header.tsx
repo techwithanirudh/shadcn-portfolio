@@ -2,11 +2,19 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { CodeIcon, MenuIcon, XIcon } from 'lucide-react';
+import { CodeIcon, EllipsisIcon, MenuIcon, XIcon } from 'lucide-react';
 import ThemeToggle from '@/components/mode-toggle';
-import { links } from '@/components/sections/header/config';
+import { linkLimit, links } from '@/components/sections/header/config';
 
 import { metadata as meta } from '@/app/config';
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 
 interface HeaderProps {
   loader?: boolean;
@@ -89,9 +97,9 @@ const Header = ({ loader }: HeaderProps) => {
             )}
           </button>
           <div className="hidden md:flex md:w-auto md:items-center">
-            <nav className="flex gap-4 lg:gap-6">
+            <nav className="flex items-center gap-4 lg:gap-6">
               {/* todo: add more menu if a certian length is exceeded */}
-              {links.map(({ title, href }, index) => (
+              {links.slice(0, linkLimit).map(({ title, href }, index) => (
                 <Link
                   className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
                   href={href}
@@ -100,6 +108,24 @@ const Header = ({ loader }: HeaderProps) => {
                   {title}
                 </Link>
               ))}
+
+              {links.length > linkLimit && (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                      <EllipsisIcon className="h-4 w-4" />
+                      <span className="sr-only">Toggle menu</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    {links.slice(linkLimit).map(({ title, href }, index) => (
+                      <DropdownMenuItem key={index} asChild>
+                        <Link href={href}>{title}</Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              )}
               <ThemeToggle />
             </nav>
           </div>
