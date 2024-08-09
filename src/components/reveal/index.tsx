@@ -27,14 +27,27 @@ const Reveal = (props: RevealProps) => {
   }, [isInView]);
 
   return (
-    <div
+    <span
       ref={ref}
-      style={{ position: 'relative', width: props.width, overflow: 'hidden' }}
+      style={{
+        display: 'inline-flex',
+        position: 'relative',
+        width: props.width,
+        overflow: 'hidden'
+      }}
     >
-      <motion.div
+      <motion.span
         variants={{
-          hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 }
+          hidden: {
+            opacity: 0,
+            y: 100
+            // transition: { duration: 0.5 }
+          },
+          visible: {
+            opacity: 1,
+            y: 0
+            // transition: { duration: 0.5, delay: 0.01 }
+          }
         }}
         initial="hidden"
         animate={mainControls}
@@ -42,9 +55,9 @@ const Reveal = (props: RevealProps) => {
         {...props}
       >
         {props.children}
-      </motion.div>
+      </motion.span>
       {/* TODO: Add slide div thingy */}
-    </div>
+    </span>
   );
 };
 
