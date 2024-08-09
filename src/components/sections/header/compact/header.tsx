@@ -8,7 +8,11 @@ import { links } from '@/components/sections/header/config';
 
 import { metadata as meta } from '@/app/config';
 
-function Header() {
+interface HeaderProps {
+  loader?: boolean;
+}
+
+const Header = ({ loader }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -55,7 +59,19 @@ function Header() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-10 bg-background/80 backdrop-blur-lg">
+    <motion.header
+      className="fixed z-10 w-full bg-background/80 backdrop-blur-lg"
+      initial={{
+        y: -80
+      }}
+      animate={{
+        y: 0
+      }}
+      transition={{
+        delay: loader ? 3.5 : 0, // 3.5 for loading, .5 can be added for delay
+        duration: 0.8
+      }}
+    >
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex w-full justify-between">
           <Link href="/" className="flex items-center justify-center">
@@ -111,8 +127,8 @@ function Header() {
           </div>
         </div>
       </motion.div>
-    </header>
+    </motion.header>
   );
-}
+};
 
 export default Header;
