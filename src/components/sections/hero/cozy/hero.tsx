@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import { metadata as meta } from '@/app/config';
 import { hero } from '@/components/sections/hero/config';
+import Reveal from '@/components/reveal';
 
 function Hero() {
   return (
@@ -14,7 +15,23 @@ function Hero() {
             {hero.label}
           </div>
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-            Hi, I&apos;m {hero.name}
+            Hi, I&apos;m{' '}
+            <Reveal
+              transition={{
+                duration: 0.5,
+                delay: 3.5
+              }}
+            >
+              {hero.name.split(' ')[0]}
+            </Reveal>
+            <Reveal
+              transition={{
+                duration: 0.5,
+                delay: 3.6
+              }}
+            >
+              {hero.name.split(' ')[1]}
+            </Reveal>
           </h1>
           <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             {hero.description}
