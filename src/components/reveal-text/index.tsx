@@ -23,8 +23,9 @@ interface RevealTextProps extends HTMLMotionProps<'span'> {
 const RevealText = (props: RevealTextProps) => {
   const text = ReactDOMServer.renderToStaticMarkup(props.children);
 
+  // todo: think of a better way to do this
   return (
-    <p className={cn(styles.p, props.className)}>
+    <span className={cn(styles.p, props.className)}>
       {text.split(' ').map((word, index) => {
         return (
           <Reveal
@@ -36,7 +37,7 @@ const RevealText = (props: RevealTextProps) => {
           </Reveal>
         );
       })}
-    </p>
+    </span>
   );
 };
 

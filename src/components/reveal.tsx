@@ -14,7 +14,7 @@ interface RevealProps extends HTMLMotionProps<'span'> {
 
 const Reveal = (props: RevealProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
 
   const mainControls = useAnimation();
 
