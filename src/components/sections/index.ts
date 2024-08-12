@@ -1,6 +1,6 @@
 import Header from './header/cozy/header';
 // todo: decide abt this
-import Hero from './hero/cozy/hero';
+import Hero from './hero/modern/hero';
 import About from './about/cozy/about';
 import Skills from './skills/cozy/skills';
 // todo: add spline hero section
