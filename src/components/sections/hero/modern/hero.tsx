@@ -24,7 +24,7 @@ function Hero() {
       className="relative w-full overflow-hidden bg-background/[0.96]"
       ref={container}
     >
-      <div className="relative z-10 h-[50rem] md:h-[68rem] md:min-h-[50dvh]">
+      <div className="relative z-10 -mt-28 h-[50rem] md:h-[68rem] md:min-h-[50dvh]">
         <div className="relative flex h-full flex-col items-center justify-center">
           <div className="w-full px-[10.625vw]">
             <div className="text-4xl font-light leading-[89%] tracking-[-.04em] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
