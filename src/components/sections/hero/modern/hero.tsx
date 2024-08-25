@@ -1,16 +1,27 @@
+'use client';
 // Credit: Cuberto
 
 import React from 'react';
-import MotionWrap from '@/components/motion-wrap';
 import Image from 'next/image';
 
-import { metadata as meta } from '@/app/config';
-import { hero } from '../config';
-import { Spotlight } from '@/components/ui/spotlight';
+import { useScroll, useTransform, motion } from 'framer-motion';
+import { useRef } from 'react';
 
 function Hero() {
+  const container = useRef<HTMLInputElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start end', 'end start']
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+
   return (
-    <MotionWrap className="relative w-full overflow-hidden bg-background/[0.96]">
+    <div
+      className="relative w-full overflow-hidden bg-background/[0.96]"
+      ref={container}
+    >
       {/* TODO: Add a bigger and more modern hero section */}
       {/* <Spotlight
         className="-top-40 left-0 [animation-delay:_6s] md:-top-20 md:left-60"
@@ -22,28 +33,31 @@ function Hero() {
             <p>A developer</p>
             <div className="flex items-center gap-2 md:gap-4">
               <p>Who</p>
-              <div className="relative aspect-[4/2] h-[7.5vw] overflow-hidden rounded-full bg-[#f8cdd5]">
+              <motion.div className="relative aspect-[4/2] h-[7.5vw] overflow-hidden rounded-full bg-[#f8cdd5]">
                 <Image
                   src={'/images/hearts-ornament.png'}
                   style={{ objectFit: 'scale-down' }}
                   alt="img"
                   fill
                 />
-              </div>
+              </motion.div>
               <p>to code</p>
             </div>
           </div>
-          <div className="relative aspect-[4/2] w-screen">
+          <motion.div
+            className="relative aspect-[4/2] w-screen"
+            style={{ y, scale }}
+          >
             <Image
               src={'/images/hero.jpg'}
               style={{ objectFit: 'cover' }}
               alt="img"
               fill
             />
-          </div>
+          </motion.div>
         </div>
       </div>
-    </MotionWrap>
+    </div>
   );
 }
 
