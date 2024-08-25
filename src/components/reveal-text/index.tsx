@@ -28,13 +28,14 @@ const RevealText = (props: RevealTextProps) => {
     <span className={cn(styles.p, props.className)}>
       {text.split(' ').map((word, index) => {
         return (
+          // @ts-expect-error
+          // todo: add ability to set leading
           <Reveal
             key={index}
             transition={{ duration: 0.5, delay: (props.delay || 0.25) * index }}
             width={props.width}
-          >
-            {word}
-          </Reveal>
+            dangerouslySetInnerHTML={{ __html: word }}
+          />
         );
       })}
     </span>

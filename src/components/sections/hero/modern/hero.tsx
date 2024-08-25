@@ -27,9 +27,9 @@ function Hero() {
       <div className="relative z-10 h-[50rem] md:h-[68rem] md:min-h-[50dvh]">
         <div className="relative flex h-full flex-col items-center justify-center">
           <div className="w-full px-[10.625vw]">
-            <div className="text-4xl font-light sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+            <div className="text-4xl font-light leading-[89%] tracking-[-.04em] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
               <RevealText>A developer</RevealText>
-              <span className='flex gap-8 items-center'>
+              <span className="flex items-center gap-8">
                 <RevealText>Who</RevealText>
                 <motion.div className="relative aspect-[4/2] h-[7.5vw] overflow-hidden rounded-full bg-[#f8cdd5]">
                   <Image
