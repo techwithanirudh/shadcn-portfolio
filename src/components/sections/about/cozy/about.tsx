@@ -5,7 +5,7 @@ import Reveal from '@/components/reveal';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowUpRightIcon } from 'lucide-react';
-import RevealText from '@/components/reveal-text';
+import RevealText from '@/components/text-reveal';
 
 function About() {
   return (

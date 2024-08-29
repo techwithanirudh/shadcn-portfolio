@@ -14,7 +14,7 @@ import { contactSubmit } from '@/app/actions';
 import { useFormState } from 'react-dom';
 import { useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import RevealText from '@/components/reveal-text';
+import RevealText from '@/components/text-reveal';
 
 interface ValidationErrors {
   success: boolean;

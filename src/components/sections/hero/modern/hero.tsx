@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
-import RevealText from '@/components/reveal-text';
+import RevealText from '@/components/text-reveal';
 import Reveal from '@/components/reveal';
 
 function Hero() {

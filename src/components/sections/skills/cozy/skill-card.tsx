@@ -24,7 +24,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 
 import { trimLen } from '@/components/sections/skills/config';
-import RevealText from '@/components/reveal-text';
+import RevealText from '@/components/text-reveal';
 
 interface SkillCardProps extends Skill {
   index: number;

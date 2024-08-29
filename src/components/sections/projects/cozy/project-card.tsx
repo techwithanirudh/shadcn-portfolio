@@ -17,7 +17,7 @@ import {
 
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
-import RevealText from '@/components/reveal-text';
+import RevealText from '@/components/text-reveal';
 
 interface ProjectCardProps extends Project {
   className?: string;

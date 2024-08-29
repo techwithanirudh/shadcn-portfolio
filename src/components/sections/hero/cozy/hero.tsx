@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 // import { metadata as meta } from '@/app/config';
 import { hero } from '@/components/sections/hero/config';
-import RevealText from '@/components/reveal-text';
+import RevealText from '@/components/text-reveal';
 
 function Hero() {
   return (
