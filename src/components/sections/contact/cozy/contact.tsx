@@ -14,7 +14,7 @@ import { contactSubmit } from '@/app/actions';
 import { useFormState } from 'react-dom';
 import { useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import RevealText from '@/components/reveal-text';
+import RevealText from '@/components/text-reveal';
 
 interface ValidationErrors {
   success: boolean;
@@ -49,7 +49,7 @@ function Contact() {
             <RevealText>Contact Me</RevealText>
           </h2>
           <p className="max-w-[600px] text-muted-foreground">
-            <RevealText delay={0.01}>
+            <RevealText>
               Have a question or want to work together? Send me a message using
               the form.
             </RevealText>

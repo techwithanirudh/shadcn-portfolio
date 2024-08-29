@@ -1,21 +1,26 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+
+import React, { useState, useEffect, useRef } from 'react';
 import {
   motion,
   useInView,
   useAnimation,
   HTMLMotionProps
 } from 'framer-motion';
+import { Button } from '@/components/ui/button';
 
 interface RevealProps extends HTMLMotionProps<'span'> {
   children: React.ReactNode;
   width?: 'fit-content' | '100%';
 }
 
-const Reveal = (props: RevealProps) => {
+const Reveal: React.FC<RevealProps> = ({
+  children,
+  width = 'fit-content',
+  ...props
+}) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
+  const isInView = useInView(ref, { once: false });
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -24,7 +29,7 @@ const Reveal = (props: RevealProps) => {
     } else {
       mainControls.start('hidden');
     }
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
   return (
     <span
@@ -32,31 +37,22 @@ const Reveal = (props: RevealProps) => {
       style={{
         display: 'inline-flex',
         position: 'relative',
-        width: props.width,
+        width: width,
         overflow: 'hidden'
       }}
     >
       <motion.span
         variants={{
-          hidden: {
-            opacity: 0,
-            y: 100
-            // transition: { duration: 0.5 }
-          },
-          visible: {
-            opacity: 1,
-            y: 0
-            // transition: { duration: 0.5, delay: 0.01 }
-          }
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 }
         }}
         initial="hidden"
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.25 }}
         {...props}
       >
-        {props.children}
+        {children}
       </motion.span>
-      {/* TODO: Add slide div thingy */}
     </span>
   );
 };

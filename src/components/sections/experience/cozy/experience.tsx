@@ -4,7 +4,7 @@ import MotionWrap from '@/components/motion-wrap';
 import ExperienceCard from './experience-card';
 
 import { experiences } from '@/components/sections/experience/config';
-import RevealText from '@/components/reveal-text';
+import RevealText from '@/components/text-reveal';
 
 function Experiences() {
   return (
@@ -16,7 +16,7 @@ function Experiences() {
               <RevealText>My Experience</RevealText>
             </h2>
             <p className="text-gray-500 dark:text-gray-400">
-              <RevealText delay={0.01}>
+              <RevealText>
                 Here are some of my work experiences where I&apos;ve turned
                 challenges into accomplishments, making things happen.
               </RevealText>

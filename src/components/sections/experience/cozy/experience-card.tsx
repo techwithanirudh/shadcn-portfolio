@@ -9,7 +9,7 @@ import { CodeIcon } from 'lucide-react';
 import { Experience } from '@/types/experience';
 
 import { cn } from '@/lib/utils';
-import RevealText from '@/components/reveal-text';
+import RevealText from '@/components/text-reveal';
 
 interface ExperienceCardProps extends Experience {
   className?: string;
@@ -37,7 +37,7 @@ function ExperienceCard({
           <RevealText>{name}</RevealText>
         </h4>
         <p className="mt-2">
-          <RevealText delay={0.01}>{description}</RevealText>
+          <RevealText>{description}</RevealText>
         </p>
         <hr className="my-6 border-t border-border" />
       </CardContent>

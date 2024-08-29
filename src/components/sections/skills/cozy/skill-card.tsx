@@ -24,7 +24,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 
 import { trimLen } from '@/components/sections/skills/config';
-import RevealText from '@/components/reveal-text';
+import RevealText from '@/components/text-reveal';
 
 interface SkillCardProps extends Skill {
   index: number;
@@ -53,11 +53,11 @@ function SkillCard({
           </div>
           <div className="grid gap-0.5">
             <h3 className="mt-2 text-2xl font-bold leading-8 tracking-tight">
-              <RevealText delay={0.01}>{name}</RevealText>
+              <RevealText>{name}</RevealText>
             </h3>
             {trimLen != 0 && (
               <p className="mt-2 text-base text-muted-foreground">
-                <RevealText delay={0.01}>
+                <RevealText>
                   {trimLen != -1
                     ? trimString(trimLen, description || '')
                     : description}
