@@ -1,16 +1,6 @@
 'use client';
 import React from 'react';
-import { HTMLMotionProps } from 'framer-motion';
-
 import Reveal from '@/components/reveal';
-import { cn } from '@/lib/utils';
-
-interface RevealTextProps extends HTMLMotionProps<'span'> {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-  width?: 'fit-content' | '100%';
-}
 
 const TextReveal: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const processChildren = (child: React.ReactNode): React.ReactNode => {
