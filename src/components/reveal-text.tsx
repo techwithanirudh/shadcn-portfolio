@@ -3,6 +3,7 @@ import React from 'react';
 import { HTMLMotionProps } from 'framer-motion';
 
 import Reveal from '@/components/reveal';
+import { cn } from '@/lib/utils';
 
 interface RevealTextProps extends HTMLMotionProps<'span'> {
   children: React.ReactNode;
@@ -11,28 +12,32 @@ interface RevealTextProps extends HTMLMotionProps<'span'> {
   width?: 'fit-content' | '100%';
 }
 
-const RevealText = ({
-  children,
-  className,
-  delay = 0.25,
-  width
-}: RevealTextProps) => {
-  const words = React.Children.toArray(children);
+const TextReveal: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const processChildren = (child: React.ReactNode): React.ReactNode => {
+    if (typeof child === 'string') {
+      return child.split(' ').map((word, index) => (
+        <React.Fragment key={index}>
+          <Reveal>{word}</Reveal>
+          {index !== child.split(' ').length - 1 && ' '}
+        </React.Fragment>
+      ));
+    } else if (React.isValidElement(child)) {
+      return React.cloneElement(
+        child,
+        {},
+        processChildren(child.props.children)
+      );
+    } else if (Array.isArray(child)) {
+      return child.map((nestedChild, index) => (
+        <React.Fragment key={index}>
+          {processChildren(nestedChild)}
+        </React.Fragment>
+      ));
+    }
+    return child;
+  };
 
-  return (
-    <span className={className}>
-      {/* todo: fix index as index is 0 no delay is added */}
-      {words.map((word, index) => (
-        <Reveal
-          key={index}
-          transition={{ duration: 0.5, delay: delay * index }}
-          width={width}
-        >
-          {word}{' '}
-        </Reveal>
-      ))}
-    </span>
-  );
+  return <>{processChildren(children)}</>;
 };
 
-export default RevealText;
+export default TextReveal;
