@@ -51,10 +51,10 @@ function ProjectCard({
       <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6">
         <div>
           <h3 className="text-xl font-bold">
-            <RevealText delay={0.1}>{name}</RevealText>
+            <RevealText>{name}</RevealText>
           </h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            <RevealText delay={0.01}>{description || ''}</RevealText>
+            <RevealText>{description || ''}</RevealText>
           </p>
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => <Badge key={index}>{tag}</Badge>)}

@@ -37,7 +37,7 @@ function ExperienceCard({
           <RevealText>{name}</RevealText>
         </h4>
         <p className="mt-2">
-          <RevealText delay={0.01}>{description}</RevealText>
+          <RevealText>{description}</RevealText>
         </p>
         <hr className="my-6 border-t border-border" />
       </CardContent>

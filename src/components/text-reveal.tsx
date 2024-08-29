@@ -7,7 +7,9 @@ const TextReveal: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     if (typeof child === 'string') {
       return child.split(' ').map((word, index) => (
         <React.Fragment key={index}>
-          <Reveal>{word}</Reveal>
+          <Reveal transition={{ duration: 0.5, delay: 0.01 * index }}>
+            {word}
+          </Reveal>
           {index !== child.split(' ').length - 1 && ' '}
         </React.Fragment>
       ));

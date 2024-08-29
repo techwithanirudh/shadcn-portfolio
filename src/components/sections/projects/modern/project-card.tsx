@@ -49,10 +49,10 @@ function ProjectCard({
             className="h-48 w-full rounded-md object-cover"
           />
           <h3 className="text-xl font-bold">
-            <RevealText delay={0.1}>{name}</RevealText>
+            <RevealText>{name}</RevealText>
           </h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            <RevealText delay={0.01}>{description || ''}</RevealText>
+            <RevealText>{description || ''}</RevealText>
           </p>
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => <Badge key={index}>{tag}</Badge>)}
