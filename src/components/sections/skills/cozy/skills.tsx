@@ -33,7 +33,7 @@ function Skills() {
           <Accordion type="single" collapsible className="w-full space-y-4">
             {skills.map((skill, index) => (
               <SkillCard
-                key={index}
+                key={`skill_${index}`}
                 index={index + 1}
                 name={skill.name}
                 description={skill.description}

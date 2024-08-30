@@ -22,7 +22,7 @@ function Skills() {
           <div className="grid gap-4">
             {skills.map((skill, index) => (
               <SkillCard
-                key={index}
+                key={`skill_${index}`}
                 name={skill.name}
                 description={skill.description}
                 Icon={skill.Icon}

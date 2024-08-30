@@ -104,7 +104,7 @@ const Header = ({ loader }: HeaderProps) => {
                   <Link
                     className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
                     href={href}
-                    key={index}
+                    key={`header-desktop-link_${index}`}
                   >
                     {title}
                   </Link>
@@ -124,7 +124,10 @@ const Header = ({ loader }: HeaderProps) => {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                       {links.slice(linkLimit).map(({ title, href }, index) => (
-                        <DropdownMenuItem key={index} asChild>
+                        <DropdownMenuItem
+                          key={`header-extra-link_${index}`}
+                          asChild
+                        >
                           <Link href={href}>{title}</Link>
                         </DropdownMenuItem>
                       ))}
@@ -149,7 +152,7 @@ const Header = ({ loader }: HeaderProps) => {
               className="flex items-center text-sm font-medium underline-offset-4 hover:underline"
               href={href}
               onClick={toggleMenu}
-              key={index}
+              key={`header-mobile-link_${index}`}
             >
               {title}
             </Link>

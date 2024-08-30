@@ -67,7 +67,7 @@ function Contact() {
                     buttonVariants({ variant: 'outline', size: 'icon' }),
                     'text-md gap-1'
                   )}
-                  key={index}
+                  key={`contact-social_${index}`}
                 >
                   {Icon && <Icon className="h-4 w-4" />}
                 </a>

@@ -22,7 +22,7 @@ function Experiences() {
           <div className="grid gap-4">
             {experiences.map((experience, index) => (
               <ExperienceCard
-                key={index}
+                key={`experience_${index}`}
                 name={experience.name}
                 description={experience.description}
                 company={experience.company}

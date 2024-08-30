@@ -49,7 +49,7 @@ function Testimonials() {
               <CarouselContent>
                 {testimonials.map((testimonial, index) => (
                   <CarouselItem
-                    key={index}
+                    key={`testimonial_${index}`}
                     className="md:basis-1/2 lg:basis-1/3"
                   >
                     <div className="h-full p-1">
