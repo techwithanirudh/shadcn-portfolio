@@ -27,12 +27,12 @@ function Hero() {
       <div className="relative z-10 -mt-28 h-[50rem] md:h-[68rem] md:min-h-[50dvh]">
         <div className="relative flex h-full flex-col items-center justify-center">
           <div className="w-full px-4 md:px-[10.625vw]">
-            <h1 className="text-5xl font-light md:text-6xl lg:text-7xl xl:text-8xl">
+            <h1 className="text-5xl font-light md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
               <RevealText>A developer</RevealText>
               <br />
               {/* className="whitespace-nowrap" */}
-              <span>
-                <RevealText>Who</RevealText>
+              <span className="flex items-center gap-2 md:gap-4">
+                <Reveal>Who</Reveal>
                 <motion.span className="relative mx-2 my-auto inline-block aspect-[1.5/1] h-[3.25rem] overflow-hidden rounded-full bg-[#f8cdd5] md:mx-4 md:h-[7.8rem]">
                   <Image
                     src={'/images/hearts-ornament.png'}
@@ -41,7 +41,8 @@ function Hero() {
                     fill
                   />
                 </motion.span>
-                <RevealText>to code</RevealText>
+                <Reveal>to</Reveal>
+                <Reveal>code</Reveal>
               </span>
             </h1>
           </div>
