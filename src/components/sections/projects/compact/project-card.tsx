@@ -51,7 +51,9 @@ function ProjectCard({
             {description || ''}
           </p>
           <div className="mt-2 flex flex-wrap gap-2">
-            {tags?.map((tag, index) => <Badge key={index}>{tag}</Badge>)}
+            {tags?.map((tag, index) => (
+              <Badge key={`project-tag_${index}`}>{tag}</Badge>
+            ))}
           </div>
         </div>
       </CardContent>
