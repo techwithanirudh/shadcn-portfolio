@@ -35,8 +35,9 @@ const Reveal: React.FC<RevealProps> = ({
     <span
       ref={ref}
       style={{
-        display: 'inline-flex',
         position: 'relative',
+        display: 'inline-flex', // inline-flex gives opacity cool
+        // verticalAlign: 'top',
         width: width,
         overflow: 'hidden'
       }}

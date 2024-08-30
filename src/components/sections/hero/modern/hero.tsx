@@ -30,16 +30,17 @@ function Hero() {
             <h1 className="text-5xl font-light md:text-6xl lg:text-7xl xl:text-8xl">
               <RevealText>A developer</RevealText>
               <br />
-              <span className="whitespace-nowrap">
+              {/* className="whitespace-nowrap" */}
+              <span>
                 <RevealText>Who</RevealText>
-                {/* <motion.span className="relative aspect-[4/2] h-[4.88rem] overflow-hidden rounded-full bg-[#f8cdd5]"> */}
-                <Image
-                  src={'/images/hearts-ornament.png'}
-                  style={{ objectFit: 'scale-down' }}
-                  alt="img"
-                  fill
-                />
-                {/* </motion.span> */}
+                <motion.span className="relative mx-2 my-auto inline-block aspect-[1.5/1] h-[3.25rem] overflow-hidden rounded-full bg-[#f8cdd5] md:mx-4 md:h-[7.8rem]">
+                  <Image
+                    src={'/images/hearts-ornament.png'}
+                    style={{ objectFit: 'scale-down' }}
+                    alt="img"
+                    fill
+                  />
+                </motion.span>
                 <RevealText>to code</RevealText>
               </span>
             </h1>
