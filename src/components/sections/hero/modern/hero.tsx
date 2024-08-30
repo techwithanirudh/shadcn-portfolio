@@ -24,10 +24,10 @@ function Hero() {
       className="relative w-full overflow-hidden bg-background/[0.96]"
       ref={container}
     >
-      <div className="relative z-10 -mt-28 h-[50rem] md:h-[68rem] md:min-h-[50dvh]">
+      <div className="relative z-10 md:-mt-28 h-[50rem] md:h-[68rem] md:min-h-[50dvh]">
         <div className="relative flex h-full flex-col items-center justify-center">
-          <div className="w-full px-4 md:px-[10.625vw]">
-            <h1 className="text-5xl font-light md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+          <div className="flex items-center justify-center w-full px-4 md:px-[10.625vw]">
+            <h1 className="text-4xl sm:text-5xl font-light md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
               <RevealText>A developer</RevealText>
               <br />
               {/* className="whitespace-nowrap" */}
