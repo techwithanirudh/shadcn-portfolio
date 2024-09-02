@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import { Header } from '@/components/sections';
 
-import Preloader from '@/components/preloader/preloader';
+import Preloader from '@/app/loading';
 import Cursor from '@/components/cursor/cursor';
 import SmoothScroll from '@/components/smooth-scroll';
 

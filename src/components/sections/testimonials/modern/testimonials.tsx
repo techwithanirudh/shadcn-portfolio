@@ -89,7 +89,7 @@ function Testimonials() {
               className="w-full"
             >
               <CarouselContent>
-                {testimonials.reverse().map((testimonial, index) => (
+                {[...testimonials].reverse().map((testimonial, index) => (
                   <CarouselItem
                     key={`testimonial-reverse_${index}`}
                     className="md:basis-1/2 lg:basis-1/3"
