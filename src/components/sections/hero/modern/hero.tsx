@@ -59,6 +59,7 @@ function Hero() {
           style={{ objectFit: 'cover' }}
           alt="img"
           fill
+          priority
         />
       </motion.div>
     </section>

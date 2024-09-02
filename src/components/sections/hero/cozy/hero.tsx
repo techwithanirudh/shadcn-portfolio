@@ -28,7 +28,7 @@ function Hero() {
           sizes="100vw"
           src={'/images/hero.jpg'}
           width="800"
-          priority={true}
+          priority
         />
       </div>
     </MotionWrap>
