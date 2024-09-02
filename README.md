@@ -22,6 +22,7 @@
 2. 🚀 [Tech Stack](#tech-stack)
 3. ✨ [Features](#features)
 4. 📚 [Getting Started](#getting-started)
+5. ❤️  [Credits](#credits)
 
 ## <a name="introduction">🤖 Introduction</a>
 This is a **Work In Progress** portfolio template built using Next.JS, Framer Motion and Shadcn/UI.
@@ -73,5 +74,36 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+
+## <a name="credits">❤️ Credits</a>
+This project has been inspired by the following websites:
+
+- [honghong.me](https://honghong.me/)
+- [cuberto.com](https://cuberto.com/)
+- [dennissnellenberg.com](https://dennissnellenberg.com/)
+- [bychristinakosik.com](https://www.bychristinakosik.com/)
+- [danmachado.com](https://www.danmachado.com/)
+- [ui.aceternity.com](https://ui.aceternity.com/)
+- [blog.olivierlarose.com](https://blog.olivierlarose.com/)
+- [props.studiolumio.com](https://props.studiolumio.com/)
+- [dennissnellenberg.com](https://dennissnellenberg.com/)
+- [davidhaz.com](https://davidhaz.com/)
+- [fellipeutaka.vercel.app](https://fellipeutaka.vercel.app/)
+- [a-bd.me](https://www.a-bd.me/)
+- [luge.cool](https://luge.cool/)
+- [nahelmoussi.com](https://nahelmoussi.com/)
+- [boyntonyards.com](https://boyntonyards.com/)
+- [ped.ro](https://ped.ro/)
+- [leerob.io](https://leerob.io/)
+- [fuma-nama.vercel.app](https://fuma-nama.vercel.app/)
+- [fumadocs.vercel.app](https://fumadocs.vercel.app/)
+- [x.com/thereal_apk/status/1829874339254321290](https://x.com/thereal_apk/status/1829874339254321290)
+- [x.com/FonsMans/status/1829510586843152791](https://x.com/FonsMans/status/1829510586843152791)
+- [x.com/SumaiyaSsa/status/1828451225714471209](https://x.com/SumaiyaSsa/status/1828451225714471209)
+- [x.com/upintheozone/status/1818247085520761135](https://x.com/upintheozone/status/1818247085520761135)
+
+
+and more
 
 #
