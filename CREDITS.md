@@ -14,5 +14,9 @@ This portfolio template is inspired by:
 - [luge.cool](https://luge.cool/)
 - [nahelmoussi.com](https://nahelmoussi.com/)
 - [boyntonyards.com](https://boyntonyards.com/)
+- [x.com/thereal_apk/status/1829874339254321290](https://x.com/thereal_apk/status/1829874339254321290)
+- [x.com/FonsMans/status/1829510586843152791](https://x.com/FonsMans/status/1829510586843152791)
+- [x.com/SumaiyaSsa/status/1828451225714471209](https://x.com/SumaiyaSsa/status/1828451225714471209)
+- [x.com/upintheozone/status/1818247085520761135](https://x.com/upintheozone/status/1818247085520761135)
 
 and more
