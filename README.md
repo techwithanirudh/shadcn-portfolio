@@ -24,7 +24,7 @@
 4. 📚 [Getting Started](#getting-started)
 
 ## <a name="introduction">🤖 Introduction</a>
-This is a **Work In Progress** portfolio template built using Next.JS, Framer Motion and Shadcn/UI. It's still a work-in-progress.
+This is a **Work In Progress** portfolio template built using Next.JS, Framer Motion and Shadcn/UI.
 
 ## <a name="tech-stack">🚀 Tech Stack</a>
 
@@ -39,18 +39,13 @@ This is a **Work In Progress** portfolio template built using Next.JS, Framer Mo
 - 📝 MDX
 - 🎨 Tailwind CSS - for styling
 - 🌈 Shadcn UI - accessible UI components
-- 🛡 Strict TypeScript and ESLint configuration
 - 📱 Responsive design
 - 🌗 Light / Dark mode
 - 📈 SEO optimized with meta tags
-- 🗺 Sitemap (WIP)
 - 📊 Sentry (setup required)
 - 🎨 Animations - using Framer Motion
-- 🏠 LightHouse score near 100
 - 🔨 Husky & Lint Staged - lint and format code before committing
-- ✅ Conventional commit lint - make sure commit messages follow the conventional commit format (WIP)
 - 💄 Prettier - code formatting
-- 👷🏻‍♂️ t3-env - validate environment variables before building (WIP)
 
 ## <a name="getting-started">📚 Getting Started</a>
 
