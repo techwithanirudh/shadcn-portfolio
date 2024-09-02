@@ -9,7 +9,7 @@ const metadata: Metadata = {
   site: {
     title: 'John Doe - Portfolio Website',
     description: 'Portfolio of web & UI designer/developer John Doe.',
-    ogImage: '/images/og.png',
+    ogImage: '/api/og',
     url: 'https://www.example.com',
     keywords: [
       'web design',

@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     // creatorId: 'id',
     images: [
       {
-        url: '/images/og.png',
+        url: '/api/og',
         width: 1200,
         height: 630,
         alt: meta.site.description
