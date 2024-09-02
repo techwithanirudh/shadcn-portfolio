@@ -6,8 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 
 import { metadata as meta } from './config';
-import Loading from './loader';
-import { Suspense } from 'react';
+import Loader from '@/app/loader';
 
 const inter = Instrument_Sans({ subsets: ['latin'] });
 
@@ -106,7 +105,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Loading />
+          <Loader />
           {children}
           <Toaster />
         </ThemeProvider>
