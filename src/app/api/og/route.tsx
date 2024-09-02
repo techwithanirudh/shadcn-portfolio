@@ -12,8 +12,9 @@ export async function GET() {
     )
   );
 
-  const { title, image } = {
-    title: 'Fall Marathoners: It’s Time to Up the Miles and Find Your Pace',
+  const { name, description, image } = {
+    name: 'John Doe',
+    description: 'A young tech enthusiast who loves to code',
     image:
       'https://static01.nyt.com/images/2023/08/22/multimedia/21MARATHON-TRAINING-BUILDING1-blwc/21MARATHON-TRAINING-BUILDING1-blwc-facebookJumbo.jpg'
   };
@@ -26,7 +27,7 @@ export async function GET() {
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-start',
+          alignItems: 'center',
           justifyContent: 'center',
           backgroundImage: `url(${image})`,
           backgroundRepeat: 'no-repeat',
@@ -37,19 +38,26 @@ export async function GET() {
       >
         <h1
           style={{
-            position: 'absolute',
-            bottom: 60,
-            left: 80,
-            margin: 0,
-            fontSize: 50,
+            fontSize: 120,
             fontFamily: 'NYT Cheltenham',
             maxWidth: 900,
             whiteSpace: 'pre-wrap',
             letterSpacing: -1
           }}
         >
-          {title}
+          {name}
         </h1>
+        <p
+          style={{
+            fontSize: 40,
+            fontFamily: 'NYT Cheltenham',
+            maxWidth: 900,
+            whiteSpace: 'pre-wrap',
+            letterSpacing: -1
+          }}
+        >
+          {description}
+        </p>
       </div>
     ),
     {
