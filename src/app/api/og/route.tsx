@@ -1,50 +1,66 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 import { ImageResponse } from 'next/og';
 
 export async function GET() {
+  const fontData = await fs.promises.readFile(
+    path.join(
+      fileURLToPath(import.meta.url),
+      '../../../../styles/fonts/cheltenham-italic-700.ttf'
+    )
+  );
+
+  const { title, image } = {
+    title: 'Fall Marathoners: It’s Time to Up the Miles and Find Your Pace',
+    image:
+      'https://static01.nyt.com/images/2023/08/22/multimedia/21MARATHON-TRAINING-BUILDING1-blwc/21MARATHON-TRAINING-BUILDING1-blwc-facebookJumbo.jpg'
+  };
+
   return new ImageResponse(
     (
       <div
         style={{
-          display: 'flex',
           height: '100%',
           width: '100%',
-          alignItems: 'center',
-          justifyContent: 'center',
+          display: 'flex',
           flexDirection: 'column',
-          backgroundImage: 'linear-gradient(to bottom, #dbf4ff, #fff1f1)',
-          fontSize: 120,
-          letterSpacing: -2,
-          fontWeight: 700,
-          textAlign: 'center'
+          alignItems: 'flex-start',
+          justifyContent: 'center',
+          backgroundImage: `url(${image})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          fontWeight: 600,
+          color: 'white'
         }}
       >
-        <div
+        <h1
           style={{
-            backgroundImage:
-              'linear-gradient(90deg, rgb(0, 124, 240), rgb(0, 223, 216))',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            color: 'transparent'
+            position: 'absolute',
+            bottom: 60,
+            left: 80,
+            margin: 0,
+            fontSize: 50,
+            fontFamily: 'NYT Cheltenham',
+            maxWidth: 900,
+            whiteSpace: 'pre-wrap',
+            letterSpacing: -1
           }}
         >
-          John Doe&apos;s
-        </div>
-        <div
-          style={{
-            backgroundImage:
-              'linear-gradient(90deg, rgb(121, 40, 202), rgb(255, 0, 128))',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            color: 'transparent'
-          }}
-        >
-          Portfolio Website
-        </div>
+          {title}
+        </h1>
       </div>
     ),
     {
-      width: 1920,
-      height: 1080
+      width: 1050,
+      height: 549,
+      fonts: [
+        {
+          name: 'NYT Cheltenham',
+          data: fontData
+        }
+      ]
     }
   );
 }
