@@ -75,7 +75,6 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
-
 ## <a name="credits">❤️ Credits</a>
 This project has been inspired by the following websites:
 

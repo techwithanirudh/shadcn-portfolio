@@ -5,23 +5,46 @@ export async function GET() {
     (
       <div
         style={{
-          fontSize: 40,
-          color: 'black',
-          background: 'white',
-          width: '100%',
+          display: 'flex',
           height: '100%',
-          padding: '50px 200px',
-          textAlign: 'center',
+          width: '100%',
+          alignItems: 'center',
           justifyContent: 'center',
-          alignItems: 'center'
+          flexDirection: 'column',
+          backgroundImage: 'linear-gradient(to bottom, #dbf4ff, #fff1f1)',
+          fontSize: 120,
+          letterSpacing: -2,
+          fontWeight: 700,
+          textAlign: 'center'
         }}
       >
-        👋 Hello
+        <div
+          style={{
+            backgroundImage:
+              'linear-gradient(90deg, rgb(0, 124, 240), rgb(0, 223, 216))',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent'
+          }}
+        >
+          John Doe&apos;s
+        </div>
+        <div
+          style={{
+            backgroundImage:
+              'linear-gradient(90deg, rgb(121, 40, 202), rgb(255, 0, 128))',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent'
+          }}
+        >
+          Portfolio Website
+        </div>
       </div>
     ),
     {
-      width: 1200,
-      height: 630
+      width: 1920,
+      height: 1080
     }
   );
 }
