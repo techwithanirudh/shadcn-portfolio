@@ -1,74 +1,77 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
+import type { NextRequest } from 'next/server';
 import { ImageResponse } from 'next/og';
 
-export async function GET() {
-  const fontData = await fs.promises.readFile(
-    path.join(
-      fileURLToPath(import.meta.url),
-      '../../../../styles/fonts/cheltenham-italic-700.ttf'
-    )
-  );
+import LightSvg from './patterns/light-svg';
+import DarkSvg from './patterns/dark-svg';
 
-  const { name, description, image } = {
-    name: 'John Doe',
-    description: 'A young tech enthusiast who loves to code',
-    image:
-      'https://static01.nyt.com/images/2023/08/22/multimedia/21MARATHON-TRAINING-BUILDING1-blwc/21MARATHON-TRAINING-BUILDING1-blwc-facebookJumbo.jpg'
-  };
+export const runtime = 'edge';
 
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          height: '100%',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundImage: `url(${image})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          fontWeight: 600,
-          color: 'white'
-        }}
-      >
-        <h1
+const interSemiBold = fetch(
+  new URL('./Inter-SemiBold.ttf', import.meta.url)
+).then((res) => res.arrayBuffer());
+
+export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
+  try {
+    const { searchParams } = new URL(req.url);
+    const isLight = req.headers.get('Sec-CH-Prefers-Color-Scheme') === 'light';
+
+    const title = searchParams.has('title')
+      ? searchParams.get('title')
+      : 'App Router Playground';
+
+    return new ImageResponse(
+      (
+        <div
           style={{
-            fontSize: 120,
-            fontFamily: 'NYT Cheltenham',
-            maxWidth: 900,
-            whiteSpace: 'pre-wrap',
-            letterSpacing: -1
+            position: 'relative',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
           }}
         >
-          {name}
-        </h1>
-        <p
-          style={{
-            fontSize: 40,
-            fontFamily: 'NYT Cheltenham',
-            maxWidth: 900,
-            whiteSpace: 'pre-wrap',
-            letterSpacing: -1
-          }}
-        >
-          {description}
-        </p>
-      </div>
-    ),
-    {
-      width: 1050,
-      height: 549,
-      fonts: [
-        {
-          name: 'NYT Cheltenham',
-          data: fontData
-        }
-      ]
-    }
-  );
+          {isLight ? <LightSvg /> : <DarkSvg />}
+          <div
+            style={{
+              position: 'absolute',
+              fontFamily: 'Inter',
+              fontSize: '48px',
+              fontWeight: '600',
+              letterSpacing: '-0.04em',
+              color: isLight ? 'black' : 'white',
+              top: '250px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              whiteSpace: 'pre-wrap',
+              maxWidth: '750px',
+              textAlign: 'center',
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word'
+            }}
+          >
+            {title}
+          </div>
+        </div>
+      ),
+      {
+        width: 843,
+        height: 441,
+        fonts: [
+          {
+            name: 'Inter',
+            data: await interSemiBold,
+            style: 'normal',
+            weight: 400
+          }
+        ]
+      }
+    );
+  } catch (e) {
+    if (!(e instanceof Error)) throw e;
+
+    // eslint-disable-next-line no-console
+    console.log(e.message);
+    return new Response(`Failed to generate the image`, {
+      status: 500
+    });
+  }
 }
