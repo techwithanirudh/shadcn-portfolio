@@ -4,9 +4,9 @@ export default function LightSvg(): ReactElement {
   return (
     <svg
       fill="none"
-      height="441"
+      height="630"
       viewBox="0 0 843 441"
-      width="843"
+      width="1200"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_5_3)">

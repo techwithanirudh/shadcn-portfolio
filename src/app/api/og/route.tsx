@@ -1,4 +1,6 @@
 import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
+
 import { ImageResponse } from 'next/og';
 
 import { headers } from 'next/headers';
@@ -10,14 +12,14 @@ import { metadata as meta } from '@/app/config';
 
 export const runtime = 'edge';
 
-const interSemiBold = fetch(
-  new URL('./Inter-SemiBold.ttf', import.meta.url)
-).then((res) => res.arrayBuffer());
-
 export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
   try {
     const headersList = headers();
     const isLight = headersList.get('Sec-CH-Prefers-Color-Scheme') === 'light';
+
+    const inter = await fetch(
+      new URL('../../../../public/fonts/Inter-SemiBold.ttf', import.meta.url)
+    ).then((res) => res.arrayBuffer());
 
     const { title, description } = {
       title: meta.author.name,
@@ -63,9 +65,9 @@ export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
               fontWeight: '600',
               letterSpacing: '-0.04em',
               color: isLight ? 'black' : 'white',
-              top: '260px',
+              top: '58%',
               left: '50%',
-              transform: 'translateX(-50%)',
+              transform: 'translate(-50%, -50%)',
               whiteSpace: 'pre-wrap',
               maxWidth: '750px',
               textAlign: 'center',
@@ -78,25 +80,29 @@ export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
         </div>
       ),
       {
-        width: 843,
-        height: 441,
+        width: 1200,
+        height: 630,
         fonts: [
           {
             name: 'Inter',
-            data: await interSemiBold,
+            data: await inter,
             style: 'normal',
             weight: 400
           }
         ]
       }
     );
-  } catch (e) {
-    if (!(e instanceof Error)) throw e;
+  } catch (error) {
+    if (!(error instanceof Error)) throw error;
+    console.log(error.message);
 
-    // eslint-disable-next-line no-console
-    console.log(e.message);
-    return new Response(`Failed to generate the image`, {
-      status: 500
-    });
+    return NextResponse.json(
+      {
+        error: 'Failed to generate image'
+      },
+      {
+        status: 500
+      }
+    );
   }
 }
