@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 
 import { metadata as meta } from './config';
+import Loader from '@/app/loader';
 
 const inter = Instrument_Sans({ subsets: ['latin'] });
 
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     // creatorId: 'id',
     images: [
       {
-        url: '/images/og.png',
+        url: '/api/og',
         width: 1200,
         height: 630,
         alt: meta.site.description
@@ -104,6 +105,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Loader />
           {children}
           <Toaster />
         </ThemeProvider>
