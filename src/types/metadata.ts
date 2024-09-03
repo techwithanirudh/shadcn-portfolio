@@ -7,7 +7,6 @@ export interface Metadata {
   site: {
     title: string;
     description: string;
-    ogImage: string;
     url: string;
     keywords: string[];
     language: string;

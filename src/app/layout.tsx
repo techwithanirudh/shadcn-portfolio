@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     locale: 'en-US',
     images: [
       {
-        url: meta.site.ogImage,
+        url: '/api/og',
         width: 1200,
         height: 630,
         alt: meta.site.description,
