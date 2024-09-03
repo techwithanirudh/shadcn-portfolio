@@ -1,8 +1,12 @@
 import type { NextRequest } from 'next/server';
 import { ImageResponse } from 'next/og';
 
+import { headers } from 'next/headers';
+
 import LightSvg from './patterns/light-svg';
 import DarkSvg from './patterns/dark-svg';
+
+import { metadata as meta } from '@/app/config';
 
 export const runtime = 'edge';
 
@@ -12,12 +16,13 @@ const interSemiBold = fetch(
 
 export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
   try {
-    const { searchParams } = new URL(req.url);
-    const isLight = req.headers.get('Sec-CH-Prefers-Color-Scheme') === 'light';
+    const headersList = headers();
+    const isLight = headersList.get('Sec-CH-Prefers-Color-Scheme') === 'light';
 
-    const title = searchParams.has('title')
-      ? searchParams.get('title')
-      : 'App Router Playground';
+    const { title, description } = {
+      title: meta.author.name,
+      description: meta.site.description
+    };
 
     return new ImageResponse(
       (
@@ -38,7 +43,27 @@ export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
               fontWeight: '600',
               letterSpacing: '-0.04em',
               color: isLight ? 'black' : 'white',
-              top: '250px',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              whiteSpace: 'pre-wrap',
+              maxWidth: '750px',
+              textAlign: 'center',
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word'
+            }}
+          >
+            {title}
+          </div>
+          <div
+            style={{
+              position: 'absolute',
+              fontFamily: 'Inter',
+              fontSize: '20px',
+              fontWeight: '600',
+              letterSpacing: '-0.04em',
+              color: isLight ? 'black' : 'white',
+              top: '260px',
               left: '50%',
               transform: 'translateX(-50%)',
               whiteSpace: 'pre-wrap',
@@ -48,7 +73,7 @@ export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
               overflowWrap: 'break-word'
             }}
           >
-            {title}
+            {description}
           </div>
         </div>
       ),
