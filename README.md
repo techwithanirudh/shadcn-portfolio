@@ -50,30 +50,7 @@ This is a **Work In Progress** portfolio template built using Next.JS, Framer Mo
 
 ## <a name="getting-started">📚 Getting Started</a>
 
-Follow these steps to set up the project locally on your machine.
-
-**Requirements**
-
-Make sure you have the following installed on your machine:
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en) (reccomended v20)
-- [pnpm](https://pnpm.io/) (PNPM, reccomended corepack)
-
-**Setting up the Repository**
-
-```bash
-npx create-next-app -e https://github.com/techwithanirudh/shadcn-portfolio
-cd shadcn-portfolio
-```
-
-**Running the Project**
-
-```bash
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+Please refer to the [getting started guide](./GETTING_STARTED.md) for information on how to configure and run the portfolio template.
 
 ## <a name="credits">❤️ Credits</a>
 This project has been inspired by the following websites:
