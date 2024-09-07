@@ -7,28 +7,39 @@ import { cn } from '@/lib/utils';
 
 const TransitionLayer = ({
   className,
-  custom
+  custom,
+  duration,
+  delay = 0
 }: {
   className: string;
   custom: number;
+  duration: number;
+  delay?: number;
 }) => (
   <motion.div
     className={cn('fixed inset-0 z-50', className)}
     initial={{ y: '100%' }}
     animate={{ y: 0 }}
     exit={{ y: '-100%' }}
-    transition={{ duration: 0.5, ease: [0.65, 0, 0.35, 1] }}
+    transition={{
+      duration: duration,
+      ease: [0.65, 0, 0.35, 1],
+      delay: delay
+    }}
     custom={custom}
   />
 );
 
 export function TransitionProvider({
-  children
+  children,
+  speed = 1 // Default speed multiplier
 }: {
   children: React.ReactNode;
+  speed?: number;
 }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const transitionTiming = 750;
+  const baseDuration = 0.5 / speed; // Adjust this to make the overall transition faster or slower
+  const transitionTiming = baseDuration * 1000 * 3; // Total transition time in milliseconds
 
   useEffect(() => {
     if (isTransitioning) {
@@ -44,7 +55,7 @@ export function TransitionProvider({
       leave={(next, from, to) => {
         console.log({ from, to });
         setIsTransitioning(true);
-        setTimeout(next, transitionTiming);
+        setTimeout(next, transitionTiming * 0.6); // Start loading next page while transition is happening
         return () => setIsTransitioning(false);
       }}
       enter={(next) => {
@@ -59,8 +70,23 @@ export function TransitionProvider({
       <AnimatePresence>
         {isTransitioning && (
           <>
-            <TransitionLayer className="bg-primary" custom={1} />
-            <TransitionLayer className="bg-foreground" custom={2} />
+            <TransitionLayer
+              className="bg-black"
+              custom={1}
+              duration={baseDuration * 0.6}
+            />
+            <TransitionLayer
+              className="bg-orange-500"
+              custom={2}
+              duration={baseDuration * 0.8}
+              delay={baseDuration * 0.4}
+            />
+            <TransitionLayer
+              className="bg-black"
+              custom={3}
+              duration={baseDuration}
+              delay={baseDuration * 0.8}
+            />
           </>
         )}
       </AnimatePresence>
