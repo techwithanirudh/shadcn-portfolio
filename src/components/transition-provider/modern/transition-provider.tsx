@@ -32,14 +32,14 @@ const TransitionLayer = ({
 
 export function TransitionProvider({
   children,
-  speed = 1 // Default speed multiplier
+  speed = 1.1
 }: {
   children: React.ReactNode;
   speed?: number;
 }) {
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const baseDuration = 0.5 / speed; // Adjust this to make the overall transition faster or slower
-  const transitionTiming = baseDuration * 1000 * 3; // Total transition time in milliseconds
+  const baseDuration = 0.5 / speed;
+  const transitionTiming = baseDuration * 1000 * 3;
 
   useEffect(() => {
     if (isTransitioning) {
@@ -55,7 +55,7 @@ export function TransitionProvider({
       leave={(next, from, to) => {
         console.log({ from, to });
         setIsTransitioning(true);
-        setTimeout(next, transitionTiming * 0.6); // Start loading next page while transition is happening
+        setTimeout(next, transitionTiming * 0.6);
         return () => setIsTransitioning(false);
       }}
       enter={(next) => {
