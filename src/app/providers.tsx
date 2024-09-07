@@ -1,14 +1,9 @@
 'use client';
 
-import { useRef } from 'react';
-import { TransitionRouter } from 'next-transition-router';
 import { ThemeProvider } from '@/components/theme-provider';
-
-import { animate } from 'framer-motion/dom';
+import { TransitionProvider } from '@/components/transition-provider';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  const wrapperRef = useRef<HTMLDivElement>(null!);
-
   return (
     <ThemeProvider
       attribute="class"
@@ -16,25 +11,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <TransitionRouter
-        auto
-        leave={(next) => {
-          animate(
-            wrapperRef.current,
-            { opacity: [1, 0] },
-            { duration: 0.2, onComplete: next }
-          );
-        }}
-        enter={(next) => {
-          animate(
-            wrapperRef.current,
-            { opacity: [0, 1] },
-            { duration: 0.2, onComplete: next }
-          );
-        }}
-      >
-        <div ref={wrapperRef}>{children}</div>
-      </TransitionRouter>
+      <TransitionProvider>{children}</TransitionProvider>
     </ThemeProvider>
   );
 }
