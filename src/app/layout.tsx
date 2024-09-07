@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import { Instrument_Sans } from 'next/font/google';
 import '@/styles/globals.css';
 
-import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 
-import { metadata as meta } from './config';
+import { metadata as meta } from '@/app/config';
 import Loader from '@/app/loader';
+import Providers from '@/app/providers';
 
 const inter = Instrument_Sans({ subsets: ['latin'] });
 
@@ -99,16 +99,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Providers>
           <Loader />
           {children}
           <Toaster />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

@@ -38,6 +38,7 @@
     "lucide-react": "^0.363.0",
     "next": "^14.2.7",
     "next-themes": "^0.3.0",
+    "next-transition-router": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
     "react-email": "2.1.1",
