@@ -17,7 +17,7 @@ const TransitionLayer = ({
   delay?: number;
 }) => (
   <motion.div
-    className={cn('fixed inset-0 z-50', className)}
+    className={cn('fixed inset-0 z-[101]', className)}
     initial={{ y: '100%' }}
     animate={{ y: 0 }}
     exit={{ y: '-100%' }}
@@ -76,7 +76,7 @@ export function TransitionProvider({
               duration={baseDuration * 0.6}
             />
             <TransitionLayer
-              className="bg-orange-500"
+              className="bg-blue-300"
               custom={2}
               duration={baseDuration * 0.8}
               delay={baseDuration * 0.4}
