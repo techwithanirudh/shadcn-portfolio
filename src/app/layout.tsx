@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
-import { Instrument_Sans } from 'next/font/google';
+import {
+  Bricolage_Grotesque,
+  Instrument_Sans,
+  Montserrat
+} from 'next/font/google';
 import '@/styles/globals.css';
 
 import { Toaster } from '@/components/ui/toaster';
@@ -8,7 +12,8 @@ import { metadata as meta } from '@/app/config';
 import Loader from '@/app/loader';
 import Providers from '@/app/providers';
 
-const inter = Instrument_Sans({ subsets: ['latin'] });
+// https://iamsteve.me/blog/the-best-ink-trap-typefaces-for-websites
+const inter = Bricolage_Grotesque({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(meta.site.url),
@@ -100,7 +105,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-          <Loader />
+          {/* <Loader /> */}
           {children}
           <Toaster />
         </Providers>
