@@ -32,7 +32,7 @@ const TransitionLayer = ({
 
 export function TransitionProvider({
   children,
-  speed = 1.1
+  speed = 1.0
 }: {
   children: React.ReactNode;
   speed?: number;
@@ -76,7 +76,7 @@ export function TransitionProvider({
               duration={baseDuration * 0.6}
             />
             <TransitionLayer
-              className="bg-blue-300"
+              className="bg-orange-300"
               custom={2}
               duration={baseDuration * 0.8}
               delay={baseDuration * 0.4}
