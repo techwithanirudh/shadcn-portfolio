@@ -17,7 +17,7 @@ const TransitionLayer = ({
   delay?: number;
 }) => (
   <motion.div
-    className={cn('fixed inset-0 z-[101]', className)}
+    className={cn('fixed inset-0 z-30', className)}
     initial={{ y: '100%' }}
     animate={{ y: 0 }}
     exit={{ y: '-100%' }}

@@ -68,7 +68,7 @@ const Header = ({ loader }: HeaderProps) => {
 
   return (
     <motion.header
-      className="fixed z-[100] w-full bg-background/80 backdrop-blur-lg"
+      className="fixed z-20 w-full bg-background/80 backdrop-blur-lg"
       initial={{
         y: -80
       }}

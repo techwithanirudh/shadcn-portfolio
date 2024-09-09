@@ -33,7 +33,7 @@ export default function Preloader({ progress }: PreloaderProps) {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="fixed z-[101] flex h-[100dvh] w-[100dvw] cursor-wait items-end justify-end bg-background px-[60px] pb-[40px]"
+      className="fixed z-30 flex h-[100dvh] w-[100dvw] cursor-wait items-end justify-end bg-background px-[60px] pb-[40px]"
     >
       {dimension.width > 0 && (
         <>
