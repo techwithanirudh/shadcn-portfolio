@@ -3,9 +3,14 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { opacity, slideUp } from './anim';
 
+import { Teko } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
 interface PreloaderProps {
   progress: number;
 }
+
+const teko = Teko({ weight: '400', subsets: ['latin'] });
 
 export default function Preloader({ progress }: PreloaderProps) {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
@@ -33,7 +38,7 @@ export default function Preloader({ progress }: PreloaderProps) {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="fixed z-30 flex h-[100dvh] w-[100dvw] cursor-wait items-end justify-end bg-background px-[60px] pb-[40px]"
+      className="fixed z-30 flex h-[100dvh] w-[100dvw] cursor-wait items-center justify-center bg-background px-[60px] pb-[40px]"
     >
       {dimension.width > 0 && (
         <>
@@ -41,9 +46,12 @@ export default function Preloader({ progress }: PreloaderProps) {
             variants={opacity}
             initial="initial"
             animate="enter"
-            className="absolute z-[1] flex items-center text-7xl text-foreground"
+            className={cn(
+              teko.className,
+              'absolute z-[1] flex items-center text-[192px] text-foreground'
+            )}
           >
-            {progress}%
+            {progress}
           </motion.p>
           <svg className="absolute top-0 h-[calc(100%+300px)] w-full">
             <motion.path

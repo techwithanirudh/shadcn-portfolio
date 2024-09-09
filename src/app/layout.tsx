@@ -13,7 +13,7 @@ import Loader from '@/app/loader';
 import Providers from '@/app/providers';
 
 // https://iamsteve.me/blog/the-best-ink-trap-typefaces-for-websites
-const inter = Bricolage_Grotesque({ subsets: ['latin'] });
+const bricolage_grotesque = Bricolage_Grotesque({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(meta.site.url),
@@ -103,9 +103,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={bricolage_grotesque.className}>
         <Providers>
-          {/* <Loader /> */}
+          <Loader />
           {children}
           <Toaster />
         </Providers>
