@@ -12,13 +12,13 @@ function Hero() {
               {hero.label}
             </div>
             <h1 className="text-8xl font-bold tracking-tight md:text-9xl lg:self-start lg:text-[14rem]">
-              {hero.firstName}
+              {hero.name}
             </h1>
             <h1 className="text-8xl font-bold tracking-tight md:text-9xl lg:self-end lg:text-[14rem]">
-              {hero.lastName}
+              {hero.name}
             </h1>
           </div>
-          {/* https://artistrytemplate.framer.website/ on scroll make the text slide out */}
+          {/* inspired by https://artistrytemplate.framer.website/ */}
         </div>
       </div>
     </MotionWrap>
