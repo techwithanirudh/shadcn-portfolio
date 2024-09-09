@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 // import { metadata as meta } from '@/app/config';
 import { hero } from '@/components/sections/hero/config';
-import RevealText from '@/components/text-reveal';
+import TextReveal from '@/components/text-reveal';
 
 function Hero() {
   return (
@@ -15,10 +15,10 @@ function Hero() {
             {hero.label}
           </div>
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-            Hi, I&apos;m <RevealText>{hero.name}</RevealText>
+            Hi, I&apos;m <TextReveal>{hero.name}</TextReveal>
           </h1>
           <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            <RevealText>{hero.description}</RevealText>
+            <TextReveal>{hero.description}</TextReveal>
           </p>
         </div>
         <Image

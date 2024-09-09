@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
-import RevealText from '@/components/text-reveal';
+import TextReveal from '@/components/text-reveal';
 import Reveal from '@/components/reveal';
 
 function Hero() {
@@ -29,7 +29,7 @@ function Hero() {
           {/* items-center */}
           <div className="flex w-full items-center justify-center px-4 md:px-6">
             <h1 className="text-4xl font-light sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
-              <RevealText>A developer</RevealText>
+              <TextReveal>A developer</TextReveal>
               <br />
               {/* className="whitespace-nowrap" */}
               <span className="flex items-center gap-2 md:gap-4">
