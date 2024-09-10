@@ -4,11 +4,7 @@ import Cursor from '@/components/cursor/cursor';
 import SmoothScroll from '@/components/smooth-scroll';
 import TextReveal from '@/components/text-reveal';
 
-export default function About({
-  children
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function About() {
   return (
     <SmoothScroll>
       <div className="flex min-h-[100dvh] flex-col">
