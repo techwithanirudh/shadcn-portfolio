@@ -4,7 +4,7 @@ import MotionWrap from '@/components/motion-wrap';
 import ExperienceCard from './experience-card';
 
 import { experiences } from '@/components/sections/experience/config';
-import RevealText from '@/components/text-reveal';
+import TextReveal from '@/components/text-reveal';
 
 function Experiences() {
   return (
@@ -13,13 +13,13 @@ function Experiences() {
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl/none">
-              <RevealText>My Experience</RevealText>
+              <TextReveal>My Experience</TextReveal>
             </h2>
             <p className="text-gray-500 dark:text-gray-400">
-              <RevealText>
+              <TextReveal>
                 Here are some of my work experiences where I&apos;ve turned
                 challenges into accomplishments, making things happen.
-              </RevealText>
+              </TextReveal>
             </p>
           </div>
           <div className="grid gap-4">

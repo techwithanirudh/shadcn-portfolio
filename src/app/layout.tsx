@@ -1,14 +1,19 @@
 import type { Metadata } from 'next';
-import { Instrument_Sans } from 'next/font/google';
+import {
+  Bricolage_Grotesque,
+  Instrument_Sans,
+  Montserrat
+} from 'next/font/google';
 import '@/styles/globals.css';
 
-import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 
-import { metadata as meta } from './config';
+import { metadata as meta } from '@/app/config';
 import Loader from '@/app/loader';
+import Providers from '@/app/providers';
 
-const inter = Instrument_Sans({ subsets: ['latin'] });
+// https://iamsteve.me/blog/the-best-ink-trap-typefaces-for-websites
+const bricolage_grotesque = Bricolage_Grotesque({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(meta.site.url),
@@ -98,17 +103,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+      <body className={bricolage_grotesque.className}>
+        <Providers>
           <Loader />
           {children}
           <Toaster />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

@@ -78,7 +78,9 @@ This project has been inspired by the following websites:
 - [x.com/FonsMans/status/1829510586843152791](https://x.com/FonsMans/status/1829510586843152791)
 - [x.com/SumaiyaSsa/status/1828451225714471209](https://x.com/SumaiyaSsa/status/1828451225714471209)
 - [x.com/upintheozone/status/1818247085520761135](https://x.com/upintheozone/status/1818247085520761135)
-
+- [github.com/ismamz/next-transition-router](https://github.com/ismamz/next-transition-router)
+- [jorisbrianti.fr](https://jorisbrianti.fr/work/) (loaders from this portfolio)
+- [athos-dark.framer.ai](https://athos-dark.framer.ai/)
 
 and more
 

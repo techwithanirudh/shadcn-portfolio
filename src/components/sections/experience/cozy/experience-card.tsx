@@ -9,7 +9,7 @@ import { CodeIcon } from 'lucide-react';
 import { Experience } from '@/types/experience';
 
 import { cn } from '@/lib/utils';
-import RevealText from '@/components/text-reveal';
+import TextReveal from '@/components/text-reveal';
 
 interface ExperienceCardProps extends Experience {
   className?: string;
@@ -27,17 +27,17 @@ function ExperienceCard({
       <CardContent className="p-1">
         <div className="flex items-baseline justify-between">
           <h3 className="text-2xl font-semibold">
-            <RevealText>{company}</RevealText>
+            <TextReveal>{company}</TextReveal>
           </h3>
           <span className="text-sm font-medium">
-            <RevealText>{duration}</RevealText>
+            <TextReveal>{duration}</TextReveal>
           </span>
         </div>
         <h4 className="mt-2 text-lg font-medium uppercase">
-          <RevealText>{name}</RevealText>
+          <TextReveal>{name}</TextReveal>
         </h4>
         <p className="mt-2">
-          <RevealText>{description}</RevealText>
+          <TextReveal>{description}</TextReveal>
         </p>
         <hr className="my-6 border-t border-border" />
       </CardContent>

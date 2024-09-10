@@ -9,6 +9,9 @@
   pointer-events: none;
   transition: opacity 0.3s ease-in-out;
 
+  mix-blend-mode: difference;
+  background-color: white;
+
   &.hidden {
     opacity: 0;
   }

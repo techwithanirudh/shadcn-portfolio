@@ -21,11 +21,16 @@ function About() {
                 with a variety of web technologies and frameworks and I am
                 always eager to learn new things and take on new challenges.
               </p>
-              <Button asChild>
-                <Link href="resume.pdf" target="_blank">
-                  View Resume <ArrowUpRightIcon className="ml-2 size-5" />
-                </Link>
-              </Button>
+              <div className="flex gap-2">
+                <Button asChild variant={'outline'}>
+                  <a href="resume.pdf" target="_blank">
+                    View Resume <ArrowUpRightIcon className="ml-2 size-5" />
+                  </a>
+                </Button>
+                <Button asChild>
+                  <Link href="/about">Learn More</Link>
+                </Button>
+              </div>
             </div>
           </div>
           <div className="grid gap-4 sm:gap-6">

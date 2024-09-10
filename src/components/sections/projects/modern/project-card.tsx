@@ -17,7 +17,7 @@ import {
 
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
-import RevealText from '@/components/text-reveal';
+import TextReveal from '@/components/text-reveal';
 
 interface ProjectCardProps extends Project {
   className?: string;
@@ -49,10 +49,10 @@ function ProjectCard({
             className="h-48 w-full rounded-md object-cover"
           />
           <h3 className="text-xl font-bold">
-            <RevealText>{name}</RevealText>
+            <TextReveal>{name}</TextReveal>
           </h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            <RevealText>{description || ''}</RevealText>
+            <TextReveal>{description || ''}</TextReveal>
           </p>
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => (
