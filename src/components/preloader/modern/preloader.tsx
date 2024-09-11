@@ -12,7 +12,7 @@ interface PreloaderProps {
 
 const teko = Teko({ weight: '400', subsets: ['latin'] });
 
-export default function Preloader({ progress }: PreloaderProps) {
+export function Preloader({ progress }: PreloaderProps) {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
