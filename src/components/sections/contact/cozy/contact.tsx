@@ -3,7 +3,7 @@ import React from 'react';
 import { buttonVariants } from '@/components/ui/button';
 import MotionWrap from '@/components/motion-wrap';
 
-import { toast } from '@/components/ui/use-toast';
+import { toast } from 'sonner';
 
 import ContactForm from './contact-form';
 
@@ -36,9 +36,15 @@ function Contact() {
   useEffect(() => {
     if (state?.message === '') return;
 
-    toast({
-      title: state?.message
-    });
+    if (state.success) {
+      toast.success(state.message, {
+        position: 'bottom-center'
+      });
+    } else {
+      toast.error(state.message, {
+        position: 'bottom-center'
+      });
+    }
   }, [state]);
 
   return (

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import Preloader from '@/components/preloader/preloader';
+import { Preloader } from '@/components/preloader';
 import { AnimatePresence } from 'framer-motion';
 
 export default function Loader() {
