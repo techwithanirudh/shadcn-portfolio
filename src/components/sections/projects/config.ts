@@ -1,3 +1,5 @@
+// todo: remove this and pull data from fumadocs
+// todo: add new projects page with all projects
 import { Project } from '@/types/project';
 
 const projects: Project[] = [
