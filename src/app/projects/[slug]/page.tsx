@@ -1,8 +1,13 @@
+// https://fumadocs.vercel.app/docs/headless/remote/github
+// https://fumadocs.vercel.app/docs/headless/content-collections
 import Image from 'next/image';
 import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { getAllPages, getPage, type ProjectMetadata } from '@/lib/mdx';
+import { source } from '@/app/source';
+
+const getPage = source.getPage;
+
 import Header from './header';
 
 type ProjectPageProps = {
@@ -12,44 +17,47 @@ type ProjectPageProps = {
   searchParams: Record<string, never>;
 };
 
-export const generateStaticParams = (): Array<ProjectPageProps['params']> => {
-  return getAllPages<ProjectMetadata>('projects').map((project) => ({
-    slug: project.slug
-  }));
+type ProjectMetadata = {
+  name: string;
+  description: string;
+  website: string;
+  github: string;
+  techstack: Array<{ label: string }>;
+  selected: boolean;
+  slug: string;
 };
 
 export const generateMetadata = async (
   props: ProjectPageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> => {
-  const { params } = props;
+  const {
+    params: { slug }
+  } = props;
 
-  const project = getPage<ProjectMetadata>(`projects/${params.slug}`);
-
-  if (!project) {
-    return {};
-  }
+  const project = getPage([slug]);
+  if (!project) return {};
 
   const {
-    metadata: { name, description }
+    data: { title, description }
   } = project;
   const previousTwitter = (await parent)?.twitter ?? {};
   const previousOpenGraph = (await parent)?.openGraph ?? {};
 
   return {
-    title: name,
+    title: title,
     description: description,
     alternates: {
-      canonical: `/projects/${params.slug}`
+      canonical: `/projects/${slug}`
     },
     openGraph: {
       ...previousOpenGraph,
-      url: `/projects/${params.slug}`,
-      title: name,
+      url: `/projects/${slug}`,
+      title: title,
       description: description,
       images: [
         {
-          url: `/images/projects/${params.slug}/cover.png`,
+          url: `/images/projects/${slug}/cover.png`,
           width: 1280,
           height: 832,
           alt: description,
@@ -59,11 +67,11 @@ export const generateMetadata = async (
     },
     twitter: {
       ...previousTwitter,
-      title: name,
+      title: title,
       description: description,
       images: [
         {
-          url: `/images/projects/${params.slug}/cover.png`,
+          url: `/images/projects/${slug}/cover.png`,
           width: 1280,
           height: 832,
           alt: description
@@ -78,25 +86,24 @@ const ProjectPage = (props: ProjectPageProps) => {
     params: { slug }
   } = props;
 
-  const project = getPage<ProjectMetadata>(`projects/${slug}`);
+  const project = getPage([slug]);
+  if (!project) notFound();
 
-  if (!project) {
-    notFound();
-  }
-
-  const { metadata, content } = project;
+  const {
+    data: { structuredData, body }
+  } = project;
 
   return (
     <div className="container mx-auto">
-      <Header metadata={metadata} />
+      <Header metadata={structuredData} />
       <Image
         src={`/images/projects/${slug}/cover.jpg`}
         width={1280}
         height={832}
-        alt={metadata.name}
+        alt={structuredData.name}
         className="my-12 rounded-lg"
       />
-      {content}
+      {body}
     </div>
   );
 };

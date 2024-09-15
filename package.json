@@ -57,12 +57,17 @@
     "zod": "^3.23.5"
   },
   "devDependencies": {
+    "@content-collections/core": "^0.7.0",
+    "@content-collections/mdx": "^0.1.5",
+    "@content-collections/next": "^0.2.1",
+    "@fumadocs/content-collections": "^1.1.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
+    "fumadocs-core": "^13.4.10",
     "husky": "^9.0.11",
     "postcss": "^8",
     "prettier": "^3.2.5",
