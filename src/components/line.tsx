@@ -7,7 +7,13 @@ interface MouseEvent {
   clientX: number;
 }
 
-export default function Line({ className }: { className?: string }) {
+export default function Line({
+  className,
+  borderColor
+}: {
+  className?: string;
+  borderColor?: string;
+}) {
   const path = useRef<SVGPathElement>(null);
 
   let progress = 0;
@@ -89,7 +95,10 @@ export default function Line({ className }: { className?: string }) {
       <svg className="absolute top-[-250px] h-[500px] w-full">
         <path
           ref={path}
-          className="fill-none stroke-current stroke-[1px] text-border"
+          className={cn(
+            'fill-none stroke-current stroke-[1px] text-border',
+            borderColor
+          )}
         ></path>
       </svg>
     </div>
