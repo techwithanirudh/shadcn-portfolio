@@ -117,8 +117,6 @@ export default function Cursor() {
 
   return (
     <div className={styles.cursorContainer}>
-      {/* TODO: Instead of setting a high x & y, use hidden and show the cursor when moved */}
-      {/* TODO: Hide the whole cursor and make this the way to use the cursor */}
       <motion.div
         transformTemplate={template}
         style={{

@@ -98,7 +98,6 @@ const Header = ({ loader }: HeaderProps) => {
           </button>
           <div className="hidden md:flex md:w-auto md:items-center">
             <nav className="flex items-center gap-4">
-              {/* todo: add more menu if a certian length is exceeded */}
               <div className="flex items-center gap-4 lg:gap-6">
                 {links.slice(0, linkLimit).map(({ title, href }, index) => (
                   <Link
