@@ -11,7 +11,7 @@ import Header from './header';
 import Image from 'next/image';
 
 export async function generateStaticParams() {
-  return source.generateParams();
+  return projects.generateParams();
 }
 
 // todo: improve metadata generation, and also add dynamic og

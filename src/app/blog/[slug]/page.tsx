@@ -11,7 +11,7 @@ import Header from './header';
 import Image from 'next/image';
 
 export async function generateStaticParams() {
-  return source.generateParams();
+  return blog.generateParams();
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
