@@ -25,6 +25,7 @@
 5. ❤️  [Credits](#credits)
 
 ## <a name="introduction">🤖 Introduction</a>
+
 This is a **Work In Progress** portfolio template built using Next.JS, Framer Motion and Shadcn/UI.
 
 ## <a name="tech-stack">🚀 Tech Stack</a>
@@ -34,10 +35,10 @@ This is a **Work In Progress** portfolio template built using Next.JS, Framer Mo
 - Framer Motion
 - Tailwind CSS
 
-## <a name="tech-stack">✨ Features</a>
+## <a name="features">✨ Features</a>
 
 - ⚡️ Next.js 14 with App Router
-- 📝 MDX
+- 📝 Blog
 - 🎨 Tailwind CSS - for styling
 - 🌈 Shadcn UI - accessible UI components
 - 📱 Responsive design
@@ -47,12 +48,16 @@ This is a **Work In Progress** portfolio template built using Next.JS, Framer Mo
 - 🎨 Animations - using Framer Motion
 - 🔨 Husky & Lint Staged - lint and format code before committing
 - 💄 Prettier - code formatting
+- 📞 Contact form (setup required)
+- 🛡️ Cloudflare Turnstile (setup required)
 
 ## <a name="getting-started">📚 Getting Started</a>
 
-Please refer to the [getting started guide](./GETTING_STARTED.md) for information on how to configure and run the portfolio template.
+Please refer to the [getting started guide](./GETTING_STARTED.md) for information on how to configure and run the
+portfolio template.
 
 ## <a name="credits">❤️ Credits</a>
+
 This project has been inspired by the following websites:
 
 - [honghong.me](https://honghong.me/)
