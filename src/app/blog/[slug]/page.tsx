@@ -10,8 +10,14 @@ import { blog } from '@/app/source';
 import Header from './header';
 import Image from 'next/image';
 
-export async function generateStaticParams() {
-  return blog.generateParams();
+export async function generateStaticParams({
+  params
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
+  // @ts-ignore
+  return blog.generateParams([slug]);
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {

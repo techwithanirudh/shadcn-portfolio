@@ -5,13 +5,19 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { MDXContent } from '@content-collections/mdx/react';
 
 import { notFound } from 'next/navigation';
-import { projects } from '@/app/source';
+import { blog, projects } from '@/app/source';
 
 import Header from './header';
 import Image from 'next/image';
 
-export async function generateStaticParams() {
-  return projects.generateParams();
+export async function generateStaticParams({
+  params
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
+  // @ts-ignore
+  return blog.generateParams([slug]);
 }
 
 // todo: improve metadata generation, and also add dynamic og
