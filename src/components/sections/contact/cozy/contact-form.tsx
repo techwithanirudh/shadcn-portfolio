@@ -9,10 +9,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { LoaderCircleIcon, PlusIcon } from 'lucide-react';
 import { useFormState, useFormStatus } from 'react-dom';
 
-import { Turnstile } from '@marsidev/react-turnstile';
+import { TurnstileModal } from '@/components/sections/contact/_components/turnstile-modal';
 import { useState } from 'react';
-
-import { useTheme } from 'next-themes';
 
 interface ValidationErrors {
   success: boolean;
@@ -32,11 +30,6 @@ interface ContactFormProps extends React.HTMLAttributes<HTMLDivElement> {
 // https://v0.dev/chat/hB6dhdDxrt3
 export default function ContactForm({ state }: ContactFormProps) {
   const { pending } = useFormStatus();
-
-  const { theme } = useTheme();
-  const [turnstileStatus, setTurnstileStatus] = useState<
-    'success' | 'error' | 'expired' | 'required'
-  >('required');
 
   return (
     <>
@@ -107,24 +100,25 @@ export default function ContactForm({ state }: ContactFormProps) {
         </p>
       </div>
 
-      <Turnstile
-        // as={'aside'}
-        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-        onError={() => setTurnstileStatus('error')}
-        onExpire={() => setTurnstileStatus('expired')}
-        options={{
-          // action: 'submit-form',
-          theme: theme === 'light' || theme === 'dark' ? theme : 'auto'
-        }}
-        onSuccess={() => {
-          setTurnstileStatus('success');
-        }}
-      />
+      {/*<Turnstile*/}
+      {/*  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}*/}
+      {/*  onError={() => setTurnstileStatus('error')}*/}
+      {/*  onExpire={() => setTurnstileStatus('expired')}*/}
+      {/*  options={{*/}
+      {/*    action: 'submit-form',*/}
+      {/*    theme: theme === 'light' || theme === 'dark' ? theme : 'auto'*/}
+      {/*  }}*/}
+      {/*  onSuccess={() => {*/}
+      {/*    setTurnstileStatus('success');*/}
+      {/*  }}*/}
+      {/*/>*/}
 
-      <Button type="submit" disabled={turnstileStatus != 'success' || pending}>
-        {pending && <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />}
-        Submit
-      </Button>
+      <TurnstileModal pending={pending} />
+
+      {/*<Button type="submit" disabled={turnstileStatus != 'success' || pending}>*/}
+      {/*  {pending && <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />}*/}
+      {/*  Submit*/}
+      {/*</Button>*/}
     </>
   );
 }
