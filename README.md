@@ -62,6 +62,8 @@ This project has been inspired by the following websites:
 
 - [honghong.me](https://honghong.me/)
 - [cuberto.com](https://cuberto.com/)
+- [fuma-nama.vercel.app](https://fuma-nama.vercel.app/)
+- [fumadocs.vercel.app](https://fumadocs.vercel.app/)
 - [dennissnellenberg.com](https://dennissnellenberg.com/)
 - [bychristinakosik.com](https://www.bychristinakosik.com/)
 - [danmachado.com](https://www.danmachado.com/)
@@ -77,8 +79,6 @@ This project has been inspired by the following websites:
 - [boyntonyards.com](https://boyntonyards.com/)
 - [ped.ro](https://ped.ro/)
 - [leerob.io](https://leerob.io/)
-- [fuma-nama.vercel.app](https://fuma-nama.vercel.app/)
-- [fumadocs.vercel.app](https://fumadocs.vercel.app/)
 - [x.com/thereal_apk/status/1829874339254321290](https://x.com/thereal_apk/status/1829874339254321290)
 - [x.com/FonsMans/status/1829510586843152791](https://x.com/FonsMans/status/1829510586843152791)
 - [x.com/SumaiyaSsa/status/1828451225714471209](https://x.com/SumaiyaSsa/status/1828451225714471209)

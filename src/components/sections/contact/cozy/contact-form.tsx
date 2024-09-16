@@ -26,7 +26,7 @@ interface ContactFormProps extends React.HTMLAttributes<HTMLDivElement> {
   state: ValidationErrors;
 }
 
-// todo: add contact form
+// todo: fix contact form turnstile
 // https://v0.dev/chat/hB6dhdDxrt3
 export default function ContactForm({ state }: ContactFormProps) {
   const { pending } = useFormStatus();

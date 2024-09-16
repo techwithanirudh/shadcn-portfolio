@@ -9,7 +9,21 @@ const projects = defineCollection({
   name: 'projects',
   directory: 'content/projects',
   include: '**/*.mdx',
-  schema: createDocSchema,
+  schema: (z) => {
+    const docSchema = createDocSchema(z);
+    return {
+      ...docSchema,
+      website: z.string().optional(),
+      github: z.string().optional(),
+      techstack: z
+        .array(
+          z.object({
+            label: z.string()
+          })
+        )
+        .optional()
+    };
+  },
   transform: transformMDX
 });
 
@@ -25,7 +39,14 @@ const blog = defineCollection({
   name: 'blog',
   directory: 'content/blog',
   include: '**/*.mdx',
-  schema: createDocSchema,
+  schema: (z) => {
+    const docSchema = createDocSchema(z);
+    return {
+      ...docSchema,
+      author: z.string(),
+      date: z.string().date().or(z.date()).optional()
+    };
+  },
   transform: transformMDX
 });
 

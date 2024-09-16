@@ -9,3 +9,4 @@
 - [ ] Revert to default font for portfolio, but use the different font for about page
 - [ ] Add a guide to create and setup email handling, w/ turnstile
 - [ ] Make turnstile optional
+- [ ] Add a comment system, like fuma-comments (check if it is compatible with drizzle orm)
