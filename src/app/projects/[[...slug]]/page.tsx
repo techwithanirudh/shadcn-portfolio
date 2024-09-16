@@ -7,6 +7,9 @@ import { MDXContent } from '@content-collections/mdx/react';
 import { notFound } from 'next/navigation';
 import { source } from '@/app/source';
 
+import Header from './header';
+import Image from 'next/image';
+
 const getPage = source.getPage;
 // const getPageList = source.getPageList;
 
@@ -39,19 +42,19 @@ export default async function ProjectPage({
   if (!page) notFound();
 
   const {
-    data: { toc, body }
+    data: { toc, body, structuredData }
   } = page;
 
   return (
     <div className="container mx-auto">
-      {/*<Header metadata={structuredData} />*/}
-      {/*<Image*/}
-      {/*  src={`/images/projects/${slug}/cover.jpg`}*/}
-      {/*  width={1280}*/}
-      {/*  height={832}*/}
-      {/*  alt={structuredData.name}*/}
-      {/*  className="my-12 rounded-lg"*/}
-      {/*/>*/}
+      <Header metadata={page.data} />
+      <Image
+        src={`/images/projects/${params.slug.join('/')}/cover.jpg`}
+        width={1280}
+        height={832}
+        alt={structuredData.name}
+        className="my-12 rounded-lg"
+      />
       <MDXContent
         code={body}
         components={{ ...defaultMdxComponents, Callout }}

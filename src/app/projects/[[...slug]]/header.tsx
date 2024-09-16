@@ -19,7 +19,7 @@ const animation = {
 };
 
 type ProjectMetadata = {
-  name: string;
+  title: string;
   description: string;
   website: string;
   github: string;
