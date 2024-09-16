@@ -1,6 +1,10 @@
 // stole from fumadocs, change this later lol, yes
+// todo: add credit & inspiration for fumadocs
 import Link from 'next/link';
 import { projects } from '@/app/source';
+import TextReveal from '@/components/text-reveal';
+import Line from '@/components/line';
+import React from 'react';
 
 export default function Page(): React.ReactElement {
   const posts = [...projects.getPages()].sort(
@@ -9,39 +13,30 @@ export default function Page(): React.ReactElement {
       new Date(a.data.date ?? a.file.name).getTime()
   );
 
-  const svg = `<svg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'>
-  <filter id='noiseFilter'>
-    <feTurbulence 
-      type='fractalNoise' 
-      baseFrequency='0.65' 
-      numOctaves='3' 
-      stitchTiles='stitch'/>
-  </filter>
-  
-  <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
-</svg>`;
-
   return (
-    <main className="container max-sm:px-0 md:py-12">
-      <div
-        className="h-[300px] p-8 md:h-[400px] md:p-12"
-        style={{
-          backgroundImage: [
-            'radial-gradient(circle at 70% 10%, rgba(255,50,100,0.5), transparent)',
-            'radial-gradient(circle at 0% 80%, rgba(190,0,255,0.5), transparent)',
-            'radial-gradient(circle at 50% 50%, rgba(50,50,255,0.3), transparent)',
-            `url("data:image/svg+xml,${encodeURIComponent(svg)}")`
-          ].join(', ')
-        }}
+    <main>
+      <section
+        className="relative flex min-h-[calc(50dvh)] items-center justify-center"
+        id="hero"
       >
-        <h1 className="border-fd-foreground mb-4 border-b-4 pb-2 text-4xl font-bold md:text-5xl">
-          Fumadocs Blog
-        </h1>
-        <p className="text-sm md:text-base">
-          Light and gorgeous. like the moon
-        </p>
-      </div>
-      <div className="grid grid-cols-1 border md:grid-cols-3 lg:grid-cols-4">
+        <div className="flex flex-col items-center md:max-w-7xl">
+          <h1 className="leading-wide tracking-relaxed text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
+            <TextReveal delay={0.1}>Some fun things I&apos;ve built</TextReveal>
+          </h1>
+
+          <Line className={'mt-16'} />
+        </div>
+        {/*<motion.div*/}
+        {/*  className="absolute bottom-8 left-1/2 -translate-x-1/2 transform"*/}
+        {/*  style={{ opacity }}*/}
+        {/*  animate={{ y: [0, 10, 0] }}*/}
+        {/*  transition={{ duration: 1.5, repeat: Infinity }}*/}
+        {/*>*/}
+        {/*  <ChevronDown className="h-8 w-8" />*/}
+        {/*</motion.div>*/}
+      </section>
+      {/*className="container max-sm:px-0 md:py-12"*/}
+      <section className="container grid grid-cols-1 border md:grid-cols-3 lg:grid-cols-4">
         {posts.map((post) => (
           <Link
             key={post.url}
@@ -58,7 +53,7 @@ export default function Page(): React.ReactElement {
             </p>
           </Link>
         ))}
-      </div>
+      </section>
     </main>
   );
 }

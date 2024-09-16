@@ -10,18 +10,21 @@ import { projects } from '@/app/source';
 import Header from './header';
 import Image from 'next/image';
 
-export async function generateStaticParams({
-  params
-}: {
-  params: { slug?: string[] };
-}) {
-  return projects.generateParams([params.slug]);
+interface Param {
+  slug: string;
+}
+
+export function generateStaticParams(): Param[] {
+  return projects.getPages().map((page) => ({
+    slug: page.slugs[0]
+  }));
 }
 
 // todo: improve metadata generation, and also add dynamic og
 // https://github.com/fuma-nama/fumadocs/blob/dev/apps/docs/utils/metadata.ts
-export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const page = projects.getPage([params.slug]);
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+  const page = projects.getPage([slug]);
   if (!page) notFound();
 
   return {
@@ -33,10 +36,9 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
 export default async function ProjectPage({
   params
 }: {
-  params: { slug?: string[] };
+  params: { slug: string };
 }) {
   const { slug } = params;
-
   const page = projects.getPage([slug]);
   if (!page) notFound();
 

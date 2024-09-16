@@ -10,16 +10,19 @@ import { blog } from '@/app/source';
 import Header from './header';
 import Image from 'next/image';
 
-export async function generateStaticParams({
-  params
-}: {
-  params: { slug?: string[] };
-}) {
-  return blog.generateParams([params.slug]);
+interface Param {
+  slug: string;
 }
 
-export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const page = blog.getPage([params.slug]);
+export function generateStaticParams(): Param[] {
+  return blog.getPages().map((page) => ({
+    slug: page.slugs[0]
+  }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+  const page = blog.getPage([slug]);
   if (!page) notFound();
 
   return {
@@ -31,10 +34,9 @@ export function generateMetadata({ params }: { params: { slug?: string[] } }) {
 export default async function ProjectPage({
   params
 }: {
-  params: { slug?: string[] };
+  params: { slug: string };
 }) {
   const { slug } = params;
-
   const page = blog.getPage([slug]);
   if (!page) notFound();
 
