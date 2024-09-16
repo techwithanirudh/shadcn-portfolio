@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     // creatorId: 'id',
     images: [
       {
-        url: '/api/og',
+        url: '/og',
         width: 1200,
         height: 630,
         alt: meta.site.description
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     locale: 'en-US',
     images: [
       {
-        url: '/api/og',
+        url: '/og',
         width: 1200,
         height: 630,
         alt: meta.site.description,

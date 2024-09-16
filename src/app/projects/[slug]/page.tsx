@@ -56,10 +56,12 @@ export default async function ProjectPage({
         alt={structuredData.name}
         className="my-12 rounded-lg"
       />
-      <MDXContent
-        code={body}
-        components={{ ...defaultMdxComponents, Callout }}
-      />
+      <div className="prose p-4 dark:prose-invert">
+        <MDXContent
+          code={body}
+          components={{ ...defaultMdxComponents, Callout }}
+        />
+      </div>
     </div>
   );
 }

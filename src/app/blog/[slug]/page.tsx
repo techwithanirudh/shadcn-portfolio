@@ -75,7 +75,7 @@ export default async function BlogPage({
         </Link>
       </div>
       <article className="container grid grid-cols-1 px-0 py-8 lg:grid-cols-[2fr_1fr] lg:px-4">
-        <div className="prose p-4">
+        <div className="prose p-4 dark:prose-invert">
           <InlineTOC items={toc} />
           <MDXContent
             code={body}
@@ -84,11 +84,11 @@ export default async function BlogPage({
         </div>
         <div className="flex flex-col gap-4 border-l p-4 text-sm">
           <div>
-            <p className="text-fd-muted-foreground mb-1">Written by</p>
+            <p className="mb-1 text-muted-foreground">Written by</p>
             <p className="font-medium">{page.data.author}</p>
           </div>
           <div>
-            <p className="text-fd-muted-foreground mb-1 text-sm">At</p>
+            <p className="mb-1 text-sm text-muted-foreground">At</p>
             <p className="font-medium">
               {new Date(page.data.date ?? page.file.name).toDateString()}
             </p>
