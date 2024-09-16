@@ -10,14 +10,8 @@ import { projects } from '@/app/source';
 import Header from './header';
 import Image from 'next/image';
 
-interface Param {
-  slug: string;
-}
-
-export function generateStaticParams(): Param[] {
-  return projects.getPages().map((page) => ({
-    slug: page.slugs[0]
-  }));
+export async function generateStaticParams() {
+  return source.generateParams();
 }
 
 // todo: improve metadata generation, and also add dynamic og

@@ -10,14 +10,8 @@ import { blog } from '@/app/source';
 import Header from './header';
 import Image from 'next/image';
 
-interface Param {
-  slug: string;
-}
-
-export function generateStaticParams(): Param[] {
-  return blog.getPages().map((page) => ({
-    slug: page.slugs[0]
-  }));
+export async function generateStaticParams() {
+  return source.generateParams();
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
@@ -31,7 +25,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   } satisfies Metadata;
 }
 
-export default async function ProjectPage({
+export default async function BlogPage({
   params
 }: {
   params: { slug: string };
