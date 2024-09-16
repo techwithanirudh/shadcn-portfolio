@@ -21,7 +21,8 @@ const projects = defineCollection({
             label: z.string()
           })
         )
-        .optional()
+        .optional(),
+      date: z.string().date().or(z.date()).optional()
     };
   },
   transform: transformMDX
