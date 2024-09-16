@@ -18,6 +18,8 @@ export async function generateStaticParams({
   return projects.generateParams([params.slug]);
 }
 
+// todo: improve metadata generation, and also add dynamic og
+// https://github.com/fuma-nama/fumadocs/blob/dev/apps/docs/utils/metadata.ts
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
   const page = projects.getPage([params.slug]);
   if (!page) notFound();

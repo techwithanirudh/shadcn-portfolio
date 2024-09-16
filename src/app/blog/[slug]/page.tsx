@@ -10,12 +10,16 @@ import { blog } from '@/app/source';
 import Header from './header';
 import Image from 'next/image';
 
-export async function generateStaticParams() {
-  return blog.generateParams();
+export async function generateStaticParams({
+  params
+}: {
+  params: { slug?: string[] };
+}) {
+  return blog.generateParams([params.slug]);
 }
 
 export function generateMetadata({ params }: { params: { slug?: string[] } }) {
-  const page = blogs.getPage(params.slug);
+  const page = blog.getPage([params.slug]);
   if (!page) notFound();
 
   return {
@@ -29,7 +33,9 @@ export default async function ProjectPage({
 }: {
   params: { slug?: string[] };
 }) {
-  const page = blog.getPage(params.slug);
+  const { slug } = params;
+
+  const page = blog.getPage([slug]);
   if (!page) notFound();
 
   const {
@@ -40,7 +46,7 @@ export default async function ProjectPage({
     <div className="container mx-auto">
       <Header metadata={page.data} />
       <Image
-        src={`/images/projects/${params.slug.join('/')}/cover.jpg`}
+        src={`/images/blog/${slug}/cover.jpg`}
         width={1280}
         height={832}
         alt={structuredData.name}
