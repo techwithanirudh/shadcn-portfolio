@@ -5,31 +5,22 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { MDXContent } from '@content-collections/mdx/react';
 
 import { notFound } from 'next/navigation';
-import { source } from '@/app/source';
+import { blog } from '@/app/source';
 
 import Header from './header';
 import Image from 'next/image';
 
-const getPage = source.getPage;
-// const getPageList = source.getPageList;
+export async function generateStaticParams() {
+  return blog.generateParams();
+}
 
-// todo: fix generateStaticParams
-// export async function generateStaticParams() {
-//   return await getPageList().map((page) => ({
-//     slug: page.slugs
-//   }));
-// }
-
-export async function generateMetadata({
-  params
-}: {
-  params: { slug?: string[] };
-}) {
-  const page = getPage(params.slug);
-  if (!page) return {};
+export function generateMetadata({ params }: { params: { slug?: string[] } }) {
+  const page = blogs.getPage(params.slug);
+  if (!page) notFound();
 
   return {
-    title: page.data.title
+    title: page.data.title,
+    description: page.data.description
   } satisfies Metadata;
 }
 
@@ -38,7 +29,7 @@ export default async function ProjectPage({
 }: {
   params: { slug?: string[] };
 }) {
-  const page = getPage(params.slug);
+  const page = blog.getPage(params.slug);
   if (!page) notFound();
 
   const {

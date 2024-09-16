@@ -1,6 +1,4 @@
 import { defineCollection, defineConfig } from '@content-collections/core';
-
-import { compileMDX } from '@content-collections/mdx';
 import {
   createMetaSchema,
   createDocSchema,
