@@ -9,6 +9,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { LoaderCircleIcon, PlusIcon } from 'lucide-react';
 import { useFormState, useFormStatus } from 'react-dom';
 
+import { Turnstile } from '@marsidev/react-turnstile';
+import { useState } from 'react';
+
 interface ValidationErrors {
   success: boolean;
   message: string;
@@ -23,8 +26,13 @@ interface ContactFormProps extends React.HTMLAttributes<HTMLDivElement> {
   state: ValidationErrors;
 }
 
+// todo: add contact form
+// https://v0.dev/chat/hB6dhdDxrt3
 export default function ContactForm({ state }: ContactFormProps) {
   const { pending } = useFormStatus();
+  const [turnstileStatus, setTurnstileStatus] = useState<
+    'success' | 'error' | 'expired' | 'required'
+  >('required');
 
   return (
     <>
@@ -94,6 +102,15 @@ export default function ContactForm({ state }: ContactFormProps) {
           {state?.errors?.message}
         </p>
       </div>
+
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+        onError={() => setTurnstileStatus('error')}
+        onExpire={() => setTurnstileStatus('expired')}
+        onSuccess={() => {
+          setTurnstileStatus('success');
+        }}
+      />
 
       <Button type="submit" disabled={pending}>
         {pending && <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />}

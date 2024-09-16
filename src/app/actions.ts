@@ -1,8 +1,11 @@
 'use server';
+import 'server-only';
+
 import { Resend } from 'resend';
 import { ContactEmail } from '@/components/emails/contact-template';
 
 import { z } from 'zod';
+import { validateTurnstileToken } from '@/lib/turnstile';
 
 const contactFormSchema = z.object({
   name: z
@@ -27,6 +30,16 @@ const EMAIL_TO = process.env.EMAIL_TO;
 export async function contactSubmit(prevState: any, formData: FormData) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
+
+    const token = formData.get('cf-turnstile-response');
+    const isValid = await validateTurnstileToken(token as string);
+
+    if (!isValid.success)
+      return {
+        success: false,
+        message: 'Oops! Failed to validate turnstile token.'
+      };
+
     const validatedFields = contactFormSchema.safeParse({
       name: formData.get('name'),
       email: formData.get('email'),
@@ -46,7 +59,7 @@ export async function contactSubmit(prevState: any, formData: FormData) {
     if (!EMAIL_FROM || !EMAIL_TO) {
       return {
         success: false,
-        message: 'Oops! There went wrong. Please try again later.'
+        message: 'Oops! Something went wrong. Please try again later.'
       };
     }
 
