@@ -33,7 +33,9 @@ export default async function ProjectPage({
 }: {
   params: { slug?: string[] };
 }) {
-  const page = projects.getPage([params.slug]);
+  const { slug } = params;
+
+  const page = projects.getPage([slug]);
   if (!page) notFound();
 
   const {
@@ -44,7 +46,7 @@ export default async function ProjectPage({
     <div className="container mx-auto">
       <Header metadata={page.data} />
       <Image
-        src={`/images/projects/${params.slug}/cover.jpg`}
+        src={`/images/projects/${slug}/cover.jpg`}
         width={1280}
         height={832}
         alt={structuredData.name}
