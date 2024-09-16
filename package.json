@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -58,6 +59,8 @@
     "zod": "^3.23.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@content-collections/core": "^0.7.0",
     "@content-collections/mdx": "^0.1.5",
     "@content-collections/next": "^0.2.1",
@@ -69,13 +72,18 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "fumadocs-core": "^13.4.10",
-    "husky": "^9.0.11",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.10",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
     "react-email": "2.1.1",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix",
+    "**/*": "prettier --write --ignore-unknown"
   },
   "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf"
 }
