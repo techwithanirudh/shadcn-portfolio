@@ -113,8 +113,13 @@ export default function ContactForm({ state }: ContactFormProps) {
       {/*  }}*/}
       {/*/>*/}
 
-      <TurnstileModal pending={pending} />
+      <TurnstileModal
+        callback={(token) => {
+          console.log('token', token);
+        }}
+      />
 
+      {/* todo: refactor the form to use zod form or built-in validation, and refactor the modal to activate when the button is not disabled, and clickign on the submit the modal opens verifying it says then it closes and submitting current buttons shows and voila */}
       {/*<Button type="submit" disabled={turnstileStatus != 'success' || pending}>*/}
       {/*  {pending && <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />}*/}
       {/*  Submit*/}
