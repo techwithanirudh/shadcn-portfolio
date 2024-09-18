@@ -7,7 +7,7 @@ import {
 import { loader } from 'fumadocs-core/source';
 import { createMDXSource } from '@fumadocs/content-collections';
 
-export const projects = loader({
+export const project = loader({
   baseUrl: '/projects',
   source: createMDXSource(allProjects, allProjectMetas)
 });

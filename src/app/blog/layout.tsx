@@ -16,7 +16,7 @@ export default function BlogLayout({
       {/* <Loader /> */}
       <div className="flex min-h-[100dvh] flex-col">
         <Header />
-        <main className="my-14 flex-1">{children}</main>
+        <main className="my-24 flex-1">{children}</main>
       </div>
       <Cursor />
     </SmoothScroll>

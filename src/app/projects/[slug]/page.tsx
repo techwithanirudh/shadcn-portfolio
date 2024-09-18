@@ -5,7 +5,7 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { MDXContent } from '@content-collections/mdx/react';
 
 import { notFound } from 'next/navigation';
-import { blog, projects } from '@/app/source';
+import { project } from '@/app/source';
 
 import Header from './header';
 import Image from 'next/image';
@@ -17,14 +17,14 @@ export async function generateStaticParams({
 }) {
   const { slug } = params;
   // @ts-ignore
-  return blog.generateParams([slug]);
+  return project.generateParams([slug]);
 }
 
 // todo: improve metadata generation, and also add dynamic og
 // https://github.com/fuma-nama/fumadocs/blob/dev/apps/docs/utils/metadata.ts
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const { slug } = params;
-  const page = projects.getPage([slug]);
+  const page = project.getPage([slug]);
   if (!page) notFound();
 
   return {
@@ -39,7 +39,7 @@ export default async function ProjectPage({
   params: { slug: string };
 }) {
   const { slug } = params;
-  const page = projects.getPage([slug]);
+  const page = project.getPage([slug]);
   if (!page) notFound();
 
   const {
@@ -53,7 +53,7 @@ export default async function ProjectPage({
         src={`/images/projects/${slug}/cover.jpg`}
         width={1280}
         height={832}
-        alt={structuredData.name}
+        alt={`Image of ${page.data.title}`}
         className="my-12 rounded-lg"
       />
       <div className="prose p-4 dark:prose-invert">

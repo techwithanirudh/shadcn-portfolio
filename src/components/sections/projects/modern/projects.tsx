@@ -11,11 +11,16 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel';
 
-import { projects } from '@/components/sections/projects/config';
-
 import Reveal from '@/components/reveal';
+import { project } from '@/app/source';
 
 function Projects() {
+  const projects = [...project.getPages()].sort(
+    (a, b) =>
+      new Date(b.data.date ?? b.file.name).getTime() -
+      new Date(a.data.date ?? a.file.name).getTime()
+  );
+
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="projects">
       <div className="px-4 md:px-6">
@@ -54,11 +59,11 @@ function Projects() {
                   >
                     <div className="h-full">
                       <ProjectCard
-                        name={project.name}
-                        slug={project.slug}
-                        description={project.description}
-                        tags={project.tags}
-                        thumbnail={project.thumbnail}
+                        title={project.data.title}
+                        href={project.url}
+                        description={project.data.description}
+                        tags={project.data.tags}
+                        thumbnail={`/images/projects/${project.slugs[0]}/cover.jpg`}
                       />
                     </div>
                   </CarouselItem>

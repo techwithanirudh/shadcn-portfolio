@@ -15,7 +15,7 @@ const projects = defineCollection({
       ...docSchema,
       website: z.string().optional(),
       github: z.string().optional(),
-      techstack: z
+      tags: z
         .array(
           z.object({
             label: z.string()

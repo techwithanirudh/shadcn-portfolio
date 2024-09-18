@@ -1,13 +1,13 @@
 // stole from fumadocs, change this later lol, yes
 // todo: add credit & inspiration for fumadocs
 import Link from 'next/link';
-import { projects } from '@/app/source';
+import { project } from '@/app/source';
 import TextReveal from '@/components/text-reveal';
 import Line from '@/components/line';
 import React from 'react';
 
-export default function Page(): React.ReactElement {
-  const posts = [...projects.getPages()].sort(
+export default function ProjectsPage(): React.ReactElement {
+  const projects = [...project.getPages()].sort(
     (a, b) =>
       new Date(b.data.date ?? b.file.name).getTime() -
       new Date(a.data.date ?? a.file.name).getTime()
@@ -37,19 +37,19 @@ export default function Page(): React.ReactElement {
       </section>
       {/*className="container max-sm:px-0 md:py-12"*/}
       <section className="container grid grid-cols-1 border md:grid-cols-3 lg:grid-cols-4">
-        {posts.map((post) => (
+        {projects.map((project) => (
           <Link
-            key={post.url}
-            href={post.url}
+            key={project.url}
+            href={project.url}
             className="bg-fd-card hover:bg-fd-accent hover:text-fd-accent-foreground flex flex-col p-4 transition-colors"
           >
-            <p className="font-medium">{post.data.title}</p>
+            <p className="font-medium">{project.data.title}</p>
             <p className="text-fd-muted-foreground text-sm">
-              {post.data.description}
+              {project.data.description}
             </p>
 
             <p className="text-fd-muted-foreground mt-auto pt-4 text-xs">
-              {new Date(post.data.date ?? post.file.name).toDateString()}
+              {new Date(project.data.date ?? project.file.name).toDateString()}
             </p>
           </Link>
         ))}

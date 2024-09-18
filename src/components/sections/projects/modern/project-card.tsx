@@ -20,14 +20,16 @@ import { Badge } from '@/components/ui/badge';
 import TextReveal from '@/components/text-reveal';
 
 interface ProjectCardProps extends Project {
+  href: string;
+  thumbnail: string;
   className?: string;
 }
 
 function ProjectCard({
-  name,
+  title,
   description,
+  href,
   thumbnail,
-  slug,
   tags,
   className
 }: ProjectCardProps) {
@@ -42,21 +44,21 @@ function ProjectCard({
         <div className="grid gap-2">
           <Image
             src={thumbnail || '/placeholder.svg'}
-            alt={`Image of ${name}`}
+            alt={`Image of ${title}`}
             sizes="100vw"
             width={500}
             height={300}
             className="h-48 w-full rounded-md object-cover"
           />
           <h3 className="text-xl font-bold">
-            <TextReveal>{name}</TextReveal>
+            <TextReveal>{title}</TextReveal>
           </h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             <TextReveal>{description || ''}</TextReveal>
           </p>
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => (
-              <Badge key={`project-tag_${index}`}>{tag}</Badge>
+              <Badge key={`project-tag_${index}`}>{tag.label}</Badge>
             ))}
           </div>
         </div>
@@ -70,7 +72,7 @@ function ProjectCard({
                 className="z-[2] rounded-full border bg-muted hover:bg-foreground/10"
                 asChild
               >
-                <Link href={'/projects/' + slug}>
+                <Link href={href}>
                   <InfoIcon />
                 </Link>
               </Button>
@@ -81,7 +83,7 @@ function ProjectCard({
           </Tooltip>
         </TooltipProvider>
       </CardFooter>
-      <Link href={'/projects/' + slug} className="z-1 absolute inset-0 block" />
+      <Link href={href} className="z-1 absolute inset-0 block" />
     </Card>
   );
 }

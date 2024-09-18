@@ -20,15 +20,17 @@ import { Badge } from '@/components/ui/badge';
 import TextReveal from '@/components/text-reveal';
 
 interface ProjectCardProps extends Project {
+  href: string;
+  thumbnail: string;
   className?: string;
 }
 
 function ProjectCard({
-  name,
+  title,
   description,
   thumbnail,
-  slug,
   tags,
+  href,
   className
 }: ProjectCardProps) {
   return (
@@ -41,7 +43,7 @@ function ProjectCard({
       <CardContent className="z-[2] inline-block w-full overflow-hidden p-0">
         <Image
           src={thumbnail || '/placeholder.svg'}
-          alt={`Image of ${name}`}
+          alt={`Image of ${title}`}
           width={0}
           height={0}
           sizes="100vw"
@@ -51,14 +53,14 @@ function ProjectCard({
       <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6">
         <div>
           <h3 className="text-xl font-bold">
-            <TextReveal>{name}</TextReveal>
+            <TextReveal>{title}</TextReveal>
           </h3>
           <p className="text-sm text-gray-500 dark:text-gray-400">
             <TextReveal>{description || ''}</TextReveal>
           </p>
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => (
-              <Badge key={`project-tag_${index}`}>{tag}</Badge>
+              <Badge key={`project-tag_${index}`}>{tag.label}</Badge>
             ))}
           </div>
         </div>
@@ -71,7 +73,7 @@ function ProjectCard({
                   className="z-[2] rounded-full border bg-muted hover:bg-foreground/10"
                   asChild
                 >
-                  <Link href={'/projects/' + slug}>
+                  <Link href={href}>
                     <InfoIcon />
                   </Link>
                 </Button>
@@ -83,7 +85,7 @@ function ProjectCard({
           </TooltipProvider>
         </div>
       </CardFooter>
-      <Link href={'/projects/' + slug} className="z-1 absolute inset-0 block" />
+      <Link href={href} className="z-1 absolute inset-0 block" />
     </Card>
   );
 }
