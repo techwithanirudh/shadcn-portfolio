@@ -6,6 +6,8 @@ import { ContactEmail } from '@/components/emails/contact-template';
 
 import { z } from 'zod';
 import { validateTurnstileToken } from '@/lib/turnstile';
+import { actionClient } from '@/lib/safe-action';
+import { ContactFormSchema } from '@/lib/validators';
 
 const contactFormSchema = z.object({
   name: z
@@ -27,39 +29,21 @@ const contactFormSchema = z.object({
 const EMAIL_FROM = process.env.EMAIL_FROM;
 const EMAIL_TO = process.env.EMAIL_TO;
 
-export async function contactSubmit(prevState: any, formData: FormData) {
-  try {
+export const contactSubmit = actionClient
+  .schema(ContactFormSchema)
+  .action(async ({ parsedInput: { name, email, message } }) => {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const token = formData.get('cf-turnstile-response');
-    const isValid = await validateTurnstileToken(token as string);
-
-    if (!isValid.success)
-      return {
-        success: false,
-        message: 'Oops! Failed to validate turnstile token.'
-      };
-
-    const validatedFields = contactFormSchema.safeParse({
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message')
-    });
-
-    if (!validatedFields.success) {
-      return {
-        success: false,
-        errors: validatedFields.error.flatten().fieldErrors,
-        message: 'Please check your entries and try again.'
-      };
-    }
-
-    const { name, email, message } = validatedFields.data;
+    // const isValid = await validateTurnstileToken(token as string);
+    //
+    // if (!isValid.success)
+    //   return {
+    //     failure: 'Oops! Failed to validate turnstile.'
+    //   };
 
     if (!EMAIL_FROM || !EMAIL_TO) {
       return {
-        success: false,
-        message: 'Oops! Something went wrong. Please try again later.'
+        failure: 'Oops! Something went wrong. Please try again later.'
       };
     }
 
@@ -72,19 +56,11 @@ export async function contactSubmit(prevState: any, formData: FormData) {
 
     if (error) {
       return {
-        success: false,
-        message: 'Oops! Something went wrong. Please try again later.'
+        failure: 'Oops! Something went wrong. Please try again later.'
       };
     }
 
     return {
-      success: true,
-      message: 'Thank you for reaching out! Your message has been sent.'
+      success: 'Thank you for reaching out! Your message has been sent.'
     };
-  } catch (error) {
-    return {
-      success: false,
-      message: 'Oops! Something went wrong. Please try again later.'
-    };
-  }
-}
+  });

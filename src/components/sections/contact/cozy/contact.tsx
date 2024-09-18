@@ -9,9 +9,6 @@ import ContactForm from './contact-form';
 
 import { contact } from '@/components/sections/contact/config';
 
-import { contactSubmit } from '@/app/actions';
-
-import { useFormState } from 'react-dom';
 import { useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import TextReveal from '@/components/text-reveal';
@@ -24,29 +21,7 @@ interface ValidationErrors {
   };
 }
 
-const initialState: ValidationErrors = {
-  success: false,
-  errors: {},
-  message: ''
-};
-
 function Contact() {
-  const [state, formAction] = useFormState(contactSubmit, initialState);
-
-  useEffect(() => {
-    if (state?.message === '') return;
-
-    if (state.success) {
-      toast.success(state.message, {
-        position: 'bottom-center'
-      });
-    } else {
-      toast.error(state.message, {
-        position: 'bottom-center'
-      });
-    }
-  }, [state]);
-
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="contact">
       <div className="px-4 md:px-6">
@@ -96,9 +71,7 @@ function Contact() {
             </div>
           </div>
           <div className="flex w-full flex-col gap-4 py-3 lg:w-3/4 lg:pr-3">
-            <form action={formAction} className="grid gap-4">
-              <ContactForm state={state} />
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>
