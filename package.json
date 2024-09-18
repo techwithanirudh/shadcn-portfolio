@@ -41,7 +41,7 @@
     "gray-matter": "^4.0.3",
     "lenis": "^1.0.45",
     "lucide-react": "^0.363.0",
-    "next": "^14.2.7",
+    "next": "^14.2.12",
     "next-themes": "^0.3.0",
     "next-transition-router": "^0.2.1",
     "react": "^18",

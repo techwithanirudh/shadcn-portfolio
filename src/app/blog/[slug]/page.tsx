@@ -3,7 +3,9 @@ import type { Metadata } from 'next';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 
 import { Callout } from 'fumadocs-ui/components/callout';
+
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
+import { TOCItemType } from 'fumadocs-core/server';
 
 import { MDXContent } from '@content-collections/mdx/react';
 
@@ -76,7 +78,7 @@ export default async function BlogPage({
       </div>
       <article className="container grid grid-cols-1 px-0 py-8 lg:grid-cols-[2fr_1fr] lg:px-4">
         <div className="prose p-4 dark:prose-invert">
-          <InlineTOC items={toc} />
+          <InlineTOC items={toc as TOCItemType[]} />
           <MDXContent
             code={body}
             components={{ ...defaultMdxComponents, Callout }}
