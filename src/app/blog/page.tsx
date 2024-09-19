@@ -1,10 +1,15 @@
-// stole from fumadocs, change this later lol, yes
-// todo: add credit & inspiration for fumadocs
 import Link from 'next/link';
 import { blog } from '@/app/source';
 import TextReveal from '@/components/text-reveal';
 import Line from '@/components/line';
 import React from 'react';
+
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata({
+  title: 'Blog',
+  description: 'My thoughts on technology.'
+});
 
 export default function Page(): React.ReactElement {
   const posts = [...blog.getPages()].sort(
@@ -14,7 +19,7 @@ export default function Page(): React.ReactElement {
   );
 
   return (
-    <main>
+    <main className="my-24 flex-1">
       <section
         className="relative flex min-h-[calc(50dvh)] items-center justify-center"
         id="hero"

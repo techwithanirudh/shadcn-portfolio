@@ -1,80 +1,64 @@
 ---
-title: Why do you need a docs?
-description: You've read so many docs, but are they necessary?
-date: 2024-05-26
-author: Fuma Nama
+title: Hello World
+description: You've seen so many videos and blogs mention 'Hello World', but do you really know what it means?
+date: 2024-08-20
+author: John Doe
 ---
 
-Note: I have not written this blogpost, this blogpost has been used for testing the blog and project functionalities of fumadocs, please go to fumadocs's blog to read the original blogpost.
+# Hello World
 
-People often ask me, do we really need a framework to build docs sites? Well, **You don't**.
+Welcome to the world of programming! If you're new here, "Hello World" is often the very first program that developers write when learning a new language or tool. It might seem simple, but this small program represents something much larger—it's the first step in your coding journey!
 
-Documentation sites are so important in software development,
-an internal docs for developers in your company to understand the architecture,
-a docs for frameworks,
-a docs for web standards...
+## What is "Hello World"?
 
-Building docs is simple, but difficult.
+"Hello World" is essentially a way to confirm that everything is working as expected. When you write and run this program, it outputs the phrase "Hello, World!" to the screen, showing that your environment is set up correctly. Every programming language has its own syntax for doing this, and it's the perfect way to get comfortable with the basics.
 
-There are so many paradigms to build a docs, but writing a beginner-friendly docs could be difficult.
-As a result, people tends to use powerful docs frameworks, making the docs site interactive and straightforward.
+### A Simple Example in Python:
 
-## Over-Engineered
+```python
+print("Hello, World!")
+```
 
-For the docs of a small library/API service, you probably don't need to setup a Next.js site and spend time writing your site.
-Neither Nextra nor Fumadocs could be better than GitHub wiki and Swagger docs in this case.
+That's it! Running this code will output the text to the console, and boom—you've just written your first Python program.
 
-They offer a good, descent UI, basic functionalities, and a proper workflow of authoring docs.
-The DX is good enough, I can't think of a reason to switch to a full-powered docs framework just to make your docs looks fancy.
+### Why It Matters
 
-I'll just recommend writing your docs in markdown, make it accessible on your GitHub repository.
+The simplicity of "Hello World" might make it seem unimportant, but it's a powerful moment. You're not just typing random text; you're communicating with your machine, telling it what to do. And when that first message appears, you're officially a programmer.
 
-## Why Framework?
+### Other Languages, Same Hello
 
-Now you may wonder, why major services and frameworks have their own docs sites built with docs frameworks?
+Here’s how you’d write "Hello World" in some other languages:
 
-Of course, _Usually_ using things like GitHub Wiki is adequate, but it is not always true.
-Let's take Component Library for example, you cannot showcase your components with Markdown.
-You will constantly find an ordinary Markdown document lacks of capability and flexibility.
+**JavaScript:**
 
-Documentation frameworks aim to solve this problem, with the ability to integrate with major libraries like **React.js** and **Vue.js**.
-Good examples are Vitepress, Mintlify and Nextra - They made writing a docs more convenient and effective, while offering a better, dedicated experience to readers.
+```javascript
+console.log("Hello, World!");
+```
 
-For anything more than a simple library or API service, **it is worth a try.**
+**C++:**
 
-### Reinvent the Wheels
+```cpp
+#include <iostream>
+using namespace std;
 
-I would never recommend building a "custom docs site" on your own, without a proper docs framework.
-Despite the **Don't re-invent the wheels** principle, your hand-made docs site actually takes way more efforts to make it descent.
+int main() {
+    cout << "Hello, World!";
+    return 0;
+}
+```
 
-1. Document Search
-2. A user-friendly navigation experience
-3. Reading experience
-4. UI/UX Design
+**Java:**
 
-Implementing them properly already sounds nerve-racking, right?
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
 
-The docs itself, is definitely not your first priority. Never should you spend your precious time re-inventing the wheels - **it isn't worth**.
+### Moving Beyond Hello World
 
-From my perspective, I'd rather use GitHub Wiki than re-inventing the wheels.
-Why don't pick a descent solution? It saves your indispensable time, and help reducing the shitty docs sites on the internet.
+After mastering "Hello World," the next steps are learning more about syntax, control flow, data structures, and algorithms. It’s the start of an exciting journey where you’ll build complex programs, solve real-world problems, and maybe even contribute to open-source projects.
 
-## What we focus at Fumadocs?
-
-I personally value reading experience more than a fancy eye-catching UI.
-You may notice, we do not have animations everywhere, and we avoided many fancy designs.
-
-Fanciness of UI should stay only in landing page, a docs site should focus on **content.**
-Navigation elements are helpers to browse your site, never should they take up too much space on the screen.
-
-One thing I hated the most is the design of _two sidebars_, it is confusing and meaningless.
-You can just organize all items to a single, clean sidebar, but people instead added two hamburger buttons to the navbar.
-
-My favourite docs site is still [Linear docs](https://linear.app/docs), looks good and simple.
-
-## Conclusion
-
-1. You don't need a full-powered docs framework for a small library
-2. Don't make a docs site on your own, use a proper docs framework
-3. Fumadocs focuses on reading experience
-4. You should focus on content, too
+So go ahead—write your "Hello World" program, and welcome to the coding community!

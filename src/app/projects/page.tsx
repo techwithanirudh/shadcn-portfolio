@@ -6,6 +6,13 @@ import TextReveal from '@/components/text-reveal';
 import Line from '@/components/line';
 import React from 'react';
 
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata({
+  title: 'Projects',
+  description: 'Here are some projects I have worked on.'
+});
+
 export default function ProjectsPage(): React.ReactElement {
   const projects = [...project.getPages()].sort(
     (a, b) =>
@@ -14,7 +21,7 @@ export default function ProjectsPage(): React.ReactElement {
   );
 
   return (
-    <main>
+    <main className="my-14 flex-1">
       <section
         className="relative flex min-h-[calc(50dvh)] items-center justify-center"
         id="hero"

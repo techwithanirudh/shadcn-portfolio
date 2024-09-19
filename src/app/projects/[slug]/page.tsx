@@ -10,6 +10,9 @@ import { project } from '@/app/source';
 import Header from './header';
 import Image from 'next/image';
 
+import { createMetadata } from '@/lib/metadata';
+import { metadata as meta } from '@/app/config';
+
 export async function generateStaticParams({
   params
 }: {
@@ -27,10 +30,15 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const page = project.getPage([slug]);
   if (!page) notFound();
 
-  return {
+  return createMetadata({
     title: page.data.title,
-    description: page.data.description
-  } satisfies Metadata;
+    description: page.data.description,
+    openGraph: {
+      type: 'article',
+      authors: meta.author.name
+      // modifiedTime: page.data.date.toISOString()
+    }
+  }) satisfies Metadata;
 }
 
 export default async function ProjectPage({
@@ -47,21 +55,23 @@ export default async function ProjectPage({
   } = page;
 
   return (
-    <div className="container mx-auto">
-      <Header metadata={page.data} />
-      <Image
-        src={`/images/projects/${slug}/cover.jpg`}
-        width={1280}
-        height={832}
-        alt={`Image of ${page.data.title}`}
-        className="my-12 rounded-lg"
-      />
-      <div className="prose p-4 dark:prose-invert">
-        <MDXContent
-          code={body}
-          components={{ ...defaultMdxComponents, Callout }}
+    <main className="my-14 flex-1">
+      <div className="container mx-auto">
+        <Header metadata={page.data} />
+        <Image
+          src={`/images/projects/${slug}/cover.jpg`}
+          width={1280}
+          height={832}
+          alt={`Image of ${page.data.title}`}
+          className="my-12 rounded-lg"
         />
+        <div className="prose p-4 dark:prose-invert">
+          <MDXContent
+            code={body}
+            components={{ ...defaultMdxComponents, Callout }}
+          />
+        </div>
       </div>
-    </div>
+    </main>
   );
 }

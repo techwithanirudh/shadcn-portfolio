@@ -13,10 +13,9 @@ export default function BlogLayout({
 }>) {
   return (
     <SmoothScroll>
-      {/* <Loader /> */}
       <div className="flex min-h-[100dvh] flex-col">
         <Header />
-        <main className="my-24 flex-1">{children}</main>
+        {children}
       </div>
       <Cursor />
     </SmoothScroll>

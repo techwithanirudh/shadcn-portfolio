@@ -16,6 +16,8 @@ import Header from './header';
 import Image from 'next/image';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
+import { createMetadata } from '@/lib/metadata';
+import { metadata as meta } from '@/app/config';
 
 export async function generateStaticParams({
   params
@@ -32,10 +34,16 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const page = blog.getPage([slug]);
   if (!page) notFound();
 
-  return {
+  return createMetadata({
     title: page.data.title,
-    description: page.data.description
-  } satisfies Metadata;
+    description: page.data.description,
+    openGraph: {
+      type: 'article',
+      // todo: add custom dynamic og image
+      authors: meta.author.name,
+      modifiedTime: new Date(page.data.date ?? page.file.name).toISOString()
+    }
+  }) satisfies Metadata;
 }
 
 export default async function BlogPage({
@@ -51,8 +59,9 @@ export default async function BlogPage({
     data: { toc, body, structuredData }
   } = page;
 
+  // todo: fix blog rendering
   return (
-    <>
+    <main className="my-24 flex-1">
       <div
         className="container rounded-xl border py-12 md:px-8"
         style={{
@@ -98,6 +107,6 @@ export default async function BlogPage({
           {/*<Control url={page.url} />*/}
         </div>
       </article>
-    </>
+    </main>
   );
 }

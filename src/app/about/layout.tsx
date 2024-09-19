@@ -1,19 +1,22 @@
-import type { Metadata } from 'next';
-
 import { Header } from '@/components/sections';
 
-import Loader from '@/app/loader';
 import Cursor from '@/components/cursor/cursor';
 import SmoothScroll from '@/components/smooth-scroll';
 
-export default function ProjectLayout({
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata({
+  title: 'About',
+  description: 'Learn mroe about me and how I do things'
+});
+
+export default function AboutLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <SmoothScroll>
-      {/* <Loader /> */}
       <div className="flex min-h-[100dvh] flex-col">
         <Header />
         {children}
