@@ -116,7 +116,7 @@ export default function ContactForm() {
             )}
           />
 
-          <FormError message={result.serverError || result.data?.failure} />
+          <FormError message={result.serverError} />
           <FormSuccess message={result.data?.success} />
 
           <Button
