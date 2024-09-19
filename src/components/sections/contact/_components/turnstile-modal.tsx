@@ -16,7 +16,7 @@ import { LoaderCircleIcon } from 'lucide-react';
 
 interface TurnstileModalProps {
   open: boolean;
-  callback: (token: string) => void;
+  callback: (token?: string) => void;
 }
 
 export function TurnstileModal({ open, callback }: TurnstileModalProps) {
@@ -31,7 +31,7 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
     <Dialog
       open={open}
       onOpenChange={(open) => {
-        if (!open) callback('closed');
+        if (!open) callback();
       }}
     >
       <DialogContent className="sm:max-w-[425px]">

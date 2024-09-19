@@ -32,6 +32,8 @@ import {
 } from '@/lib/validators';
 import { useState } from 'react';
 
+import { toast } from 'sonner';
+
 export default function ContactForm() {
   const form = useForm<ContactFormType>({
     resolver: zodResolver(ContactFormSchema),
@@ -52,8 +54,17 @@ export default function ContactForm() {
     // execute(values);
   }
 
-  async function onVerify(token: string) {
+  async function onVerify(token?: string) {
     setIsOpen(false);
+    if (!token) {
+      toast.error(
+        'Captcha validation failed. Please ensure the captcha is completed.',
+        {
+          position: 'bottom-center'
+        }
+      );
+      return;
+    }
     execute({ ...form.getValues(), token });
   }
 
