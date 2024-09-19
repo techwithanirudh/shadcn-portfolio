@@ -42,7 +42,7 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
             a robot.
           </DialogDescription>
         </DialogHeader>
-        <div className="relative flex flex-col py-4 md:px-0">
+        <div className="relative flex flex-col py-4 md:py-0">
           <div className={'z-10 px-4 md:px-0'}>
             <Turnstile
               siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -60,7 +60,7 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
               }}
             />
           </div>
-          <div className={'z-1 absolute h-[65px] w-full px-4 md:px-0'}>
+          <div className={'z-1 absolute h-[65px] w-full px-4 md:px-0 md:py-0'}>
             <div
               className={
                 'flex h-[65px] w-full items-center justify-between rounded-md border border-border border-muted-foreground/50 bg-muted px-4'
