@@ -4,47 +4,40 @@ import 'server-only';
 import { Resend } from 'resend';
 import { ContactEmail } from '@/components/emails/contact-template';
 
-import { z } from 'zod';
 import { validateTurnstileToken } from '@/lib/turnstile';
-import { actionClient } from '@/lib/safe-action';
+import { actionClient, ActionError } from '@/lib/safe-action';
 import { ContactFormSchema } from '@/lib/validators';
-
-const contactFormSchema = z.object({
-  name: z
-    .string()
-    .min(2, {
-      message: 'Name must be at least 2 characters.'
-    })
-    .max(30, {
-      message: 'Name must not be longer than 30 characters.'
-    }),
-  email: z
-    .string({
-      required_error: 'Please enter a valid email.'
-    })
-    .email(),
-  message: z.string().max(380).min(4)
-});
 
 const EMAIL_FROM = process.env.EMAIL_FROM;
 const EMAIL_TO = process.env.EMAIL_TO;
 
 export const contactSubmit = actionClient
+  .use(async ({ next, clientInput }) => {
+    const data = clientInput as {
+      token?: string;
+    };
+
+    if (!data?.token)
+      throw new ActionError(
+        'Captcha validation failed. Please ensure the captcha is completed.'
+      );
+    const isValid = await validateTurnstileToken(data.token);
+
+    if (!isValid.success) {
+      throw new ActionError(
+        'Captcha validation failed. Please ensure the captcha is completed.'
+      );
+    }
+
+    return next();
+  })
   .schema(ContactFormSchema)
   .action(async ({ parsedInput: { name, email, message } }) => {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // const isValid = await validateTurnstileToken(token as string);
-    //
-    // if (!isValid.success)
-    //   return {
-    //     failure: 'Oops! Failed to validate turnstile.'
-    //   };
-
+    // todo: replace hook form of contact iwht https://github.com/next-safe-action/adapter-react-hook-form
     if (!EMAIL_FROM || !EMAIL_TO) {
-      return {
-        failure: 'Oops! Something went wrong. Please try again later.'
-      };
+      throw new Error('Contact form configuration missing');
     }
 
     const { data: res, error } = await resend.emails.send({
@@ -54,11 +47,7 @@ export const contactSubmit = actionClient
       react: ContactEmail({ name, email, message })
     });
 
-    if (error) {
-      return {
-        failure: 'Oops! Something went wrong. Please try again later.'
-      };
-    }
+    if (error) throw error;
 
     return {
       success: 'Thank you for reaching out! Your message has been sent.'
