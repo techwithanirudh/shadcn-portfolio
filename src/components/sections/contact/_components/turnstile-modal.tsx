@@ -21,14 +21,19 @@ interface TurnstileModalProps {
 
 export function TurnstileModal({ open, callback }: TurnstileModalProps) {
   const { theme } = useTheme();
-  const [isLoading, setIsLoading] = useState(true);
 
-  const [turnstileStatus, setTurnstileStatus] = useState<
+  const [, setIsLoading] = useState(true);
+  const [, setTurnstileStatus] = useState<
     'success' | 'error' | 'expired' | 'required'
   >('required');
 
   return (
-    <Dialog open={open}>
+    <Dialog
+      open={open}
+      onOpenChange={(open) => {
+        if (!open) callback('closed');
+      }}
+    >
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Verify Your Identity</DialogTitle>
@@ -37,45 +42,45 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
             a robot.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 px-4 py-4 md:px-0">
-          <Turnstile
-            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-            onWidgetLoad={() => setIsLoading(false)}
-            onError={() => setTurnstileStatus('error')}
-            onExpire={() => setTurnstileStatus('expired')}
-            options={{
-              action: 'submit-form',
-              theme: theme === 'light' || theme === 'dark' ? theme : 'auto',
-              size: 'flexible'
-            }}
-            onSuccess={(token) => {
-              setTurnstileStatus('success');
-              callback(token);
-            }}
-          />
-          {isLoading && (
-            <div
-              className={
-                'flex h-[65px] w-full items-center justify-between rounded-md border border-border border-muted-foreground/50 bg-muted px-4'
-              }
-            >
-              <div className={'flex items-center justify-center gap-2'}>
-                <div
-                  className={
-                    'inline-flex h-[30px] w-[30px] items-center justify-center rounded-full bg-background p-1'
-                  }
-                >
-                  <LoaderCircleIcon className="h-7 w-7 animate-spin" />
-                </div>
-                Loading
+        <div className="relative flex flex-col px-4 py-4 md:px-0">
+          <div className={'z-10'}>
+            <Turnstile
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+              onWidgetLoad={() => setIsLoading(false)}
+              onError={() => setTurnstileStatus('error')}
+              onExpire={() => setTurnstileStatus('expired')}
+              options={{
+                action: 'submit-form',
+                theme: theme === 'light' || theme === 'dark' ? theme : 'auto',
+                size: 'flexible'
+              }}
+              onSuccess={(token) => {
+                setTurnstileStatus('success');
+                callback(token);
+              }}
+            />
+          </div>
+          <div
+            className={
+              'z-1 absolute flex h-[65px] w-full items-center justify-between rounded-md border border-border border-muted-foreground/50 bg-muted px-4'
+            }
+          >
+            <div className={'flex items-center justify-center gap-2'}>
+              <div
+                className={
+                  'inline-flex h-[30px] w-[30px] items-center justify-center rounded-full bg-background p-1'
+                }
+              >
+                <LoaderCircleIcon className="h-7 w-7 animate-spin" />
               </div>
-              <div>
-                <p className={'max-w-[60px] text-xs font-semibold'}>
-                  Cloudflare Turnstile
-                </p>
-              </div>
+              Loading
             </div>
-          )}
+            <div>
+              <p className={'max-w-[60px] text-xs font-semibold'}>
+                Cloudflare Turnstile
+              </p>
+            </div>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
