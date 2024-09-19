@@ -3,23 +3,12 @@ import React from 'react';
 import { buttonVariants } from '@/components/ui/button';
 import MotionWrap from '@/components/motion-wrap';
 
-import { toast } from 'sonner';
-
 import ContactForm from './contact-form';
 
 import { contact } from '@/components/sections/contact/config';
 
-import { useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import TextReveal from '@/components/text-reveal';
-
-interface ValidationErrors {
-  success: boolean;
-  message: string;
-  errors?: {
-    name?: string[] | undefined;
-  };
-}
 
 function Contact() {
   return (

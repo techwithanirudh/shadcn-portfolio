@@ -46,7 +46,6 @@ export default function ContactForm() {
   const [isOpen, setIsOpen] = useState(false);
 
   // todo: probably refactor this, setIsOpen is not clean
-  // todo: migrate this to all types of contact forms like conmpact
   // values: ContactFormType
   async function onSubmit() {
     setIsOpen(true);
@@ -135,5 +134,3 @@ export default function ContactForm() {
     </div>
   );
 }
-
-// const { pending } = useFormStatus();

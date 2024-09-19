@@ -1,104 +1,136 @@
 'use client';
 
-import { cn } from '@/lib/utils';
+import { useAction } from 'next-safe-action/hooks';
+
 import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
-import { LoaderCircleIcon, PlusIcon } from 'lucide-react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
-interface ValidationErrors {
-  success: boolean;
-  message: string;
-  errors?: {
-    name?: string[] | undefined;
-    email?: string[] | undefined;
-    message?: string[] | undefined;
-  };
-}
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage
+} from '@/components/ui/form';
 
-interface ContactFormProps extends React.HTMLAttributes<HTMLDivElement> {
-  state: ValidationErrors;
-}
+import { TurnstileModal } from '@/components/sections/contact/_components/turnstile-modal';
+import { LoaderCircleIcon } from 'lucide-react';
+import { contactSubmit } from '@/app/actions';
 
-export default function ContactForm({ state }: ContactFormProps) {
-  const { pending } = useFormStatus();
+import { FormError } from '@/components/sections/contact/_components/form-error';
+import { FormSuccess } from '@/components/sections/contact/_components/form-success';
+
+import {
+  ContactForm as ContactFormType,
+  ContactFormSchema
+} from '@/lib/validators';
+import { useState } from 'react';
+
+export default function ContactForm() {
+  const form = useForm<ContactFormType>({
+    resolver: zodResolver(ContactFormSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      message: ''
+    }
+  });
+
+  const { execute, result, status } = useAction(contactSubmit);
+  const [isOpen, setIsOpen] = useState(false);
+
+  // todo: probably refactor this, setIsOpen is not clean
+  // values: ContactFormType
+  async function onSubmit() {
+    setIsOpen(true);
+    // execute(values);
+  }
+
+  async function onVerify(token: string) {
+    setIsOpen(false);
+    execute({ ...form.getValues(), token });
+  }
 
   return (
-    <>
-      <div className="grid gap-3">
-        <Label
-          htmlFor="name"
-          className={cn(
-            'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
-            state?.errors?.name && 'text-red-500 dark:text-red-900'
-          )}
-        >
-          Name
-        </Label>
-        <Input
-          id="name"
-          name="name"
-          placeholder="Jane Doe"
-          required
-          disabled={pending}
-        />
-        <p className="text-sm font-medium text-red-500 dark:text-red-900">
-          {state?.errors?.name}
-        </p>
-      </div>
-      <div className="grid gap-3">
-        <Label
-          htmlFor="email"
-          className={cn(
-            'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
-            state?.errors?.email && 'text-red-500 dark:text-red-900'
-          )}
-        >
-          Email
-        </Label>
-        <Input
-          id="email"
-          name="email"
-          placeholder="jane@example.com"
-          required
-          type="email"
-          disabled={pending}
-        />
-        <p className="text-sm font-medium text-red-500 dark:text-red-900">
-          {state?.errors?.email}
-        </p>
-      </div>
-      <div className="grid gap-3">
-        <Label
-          htmlFor="message"
-          className={cn(
-            'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
-            state?.errors?.message && 'text-red-500 dark:text-red-900'
-          )}
-        >
-          Message
-        </Label>
-        <Textarea
-          id="message"
-          name="message"
-          placeholder={
-            'Hello!\n\nThis is Jane Doe, from Example. Just wanted to say hi!'
-          }
-          required
-          disabled={pending}
-        />
-        <p className="text-sm font-medium text-red-500 dark:text-red-900">
-          {state?.errors?.message}
-        </p>
-      </div>
+    <div>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Name</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Jane Doe"
+                    disabled={status === 'executing'}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="jane@example.com"
+                    disabled={status === 'executing'}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Message</FormLabel>
+                <FormControl>
+                  <Textarea
+                    disabled={status === 'executing'}
+                    placeholder={
+                      'Hello!\n\nThis is Jane Doe, from Example. Just wanted to say hi!'
+                    }
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-      <Button type="submit" disabled={pending}>
-        {pending && <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />}
-        Submit
-      </Button>
-    </>
+          <FormError message={result.serverError} />
+          <FormSuccess message={result.data?.success} />
+
+          <Button
+            disabled={status === 'executing'}
+            type="submit"
+            className={'w-full'}
+          >
+            {status === 'executing' && (
+              <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />
+            )}
+            Submit
+          </Button>
+        </form>
+      </Form>
+      <TurnstileModal open={isOpen} callback={onVerify} />
+    </div>
   );
 }
