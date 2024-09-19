@@ -15,10 +15,11 @@ import { useState } from 'react';
 import { LoaderCircleIcon } from 'lucide-react';
 
 interface TurnstileModalProps {
+  open: boolean;
   callback: (token: string) => void;
 }
 
-export function TurnstileModal({ callback }: TurnstileModalProps) {
+export function TurnstileModal({ open, callback }: TurnstileModalProps) {
   const { theme } = useTheme();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -27,10 +28,7 @@ export function TurnstileModal({ callback }: TurnstileModalProps) {
   >('required');
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button>Submit</Button>
-      </DialogTrigger>
+    <Dialog open={open}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Verify Your Identity</DialogTitle>

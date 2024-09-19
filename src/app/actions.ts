@@ -6,7 +6,7 @@ import { ContactEmail } from '@/components/emails/contact-template';
 
 import { validateTurnstileToken } from '@/lib/turnstile';
 import { actionClient, ActionError } from '@/lib/safe-action';
-import { ContactFormSchema } from '@/lib/validators';
+import { ContactActionSchema } from '@/lib/validators';
 
 const EMAIL_FROM = process.env.EMAIL_FROM;
 const EMAIL_TO = process.env.EMAIL_TO;
@@ -21,9 +21,9 @@ export const contactSubmit = actionClient
       throw new ActionError(
         'Captcha validation failed. Please ensure the captcha is completed.'
       );
-    const isValid = await validateTurnstileToken(data.token);
+    const res = await validateTurnstileToken(data.token);
 
-    if (!isValid.success) {
+    if (!res.success) {
       throw new ActionError(
         'Captcha validation failed. Please ensure the captcha is completed.'
       );
@@ -31,7 +31,7 @@ export const contactSubmit = actionClient
 
     return next();
   })
-  .schema(ContactFormSchema)
+  .schema(ContactActionSchema)
   .action(async ({ parsedInput: { name, email, message } }) => {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
