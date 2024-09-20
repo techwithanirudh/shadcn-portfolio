@@ -75,7 +75,14 @@ export function createMetadata(override: Metadata): Metadata {
         }
       ]
     },
-    keywords: [...meta.site.keywords, ...(override.keywords ?? [])],
+    keywords: [
+      ...meta.site.keywords,
+      ...(Array.isArray(override?.keywords)
+        ? override.keywords
+        : override?.keywords
+          ? [override.keywords]
+          : [])
+    ],
     creator: meta.author.username,
     metadataBase: new URL(baseUrl)
   };
