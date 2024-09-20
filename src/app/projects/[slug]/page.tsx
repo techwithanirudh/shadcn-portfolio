@@ -84,7 +84,7 @@ export default async function ProjectPage({
           alt={`Image of ${page.data.title}`}
           className="my-12 rounded-lg"
         />
-        <div className="prose p-4 dark:prose-invert">
+        <div className="prose min-w-full dark:prose-invert">
           <MDXContent
             code={body}
             components={{ ...defaultMdxComponents, Callout }}

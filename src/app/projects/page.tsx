@@ -7,6 +7,7 @@ import Line from '@/components/line';
 import React from 'react';
 
 import { createMetadata } from '@/lib/metadata';
+import ProjectCard from '@/app/projects/_components/project-card';
 
 export const metadata = createMetadata({
   title: 'Projects',
@@ -27,8 +28,8 @@ export default function ProjectsPage(): React.ReactElement {
         id="hero"
       >
         <div className="flex flex-col items-center md:max-w-7xl">
-          <h1 className="leading-wide tracking-relaxed text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
-            <TextReveal delay={0.1}>Some fun things I&apos;ve built</TextReveal>
+          <h1 className="leading-wide tracking-relaxed text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+            <TextReveal delay={0.2}>My Projects</TextReveal>
           </h1>
 
           <Line className={'mt-16'} />
@@ -43,22 +44,16 @@ export default function ProjectsPage(): React.ReactElement {
         {/*</motion.div>*/}
       </section>
       {/*className="container max-sm:px-0 md:py-12"*/}
-      <section className="container grid grid-cols-1 border md:grid-cols-3 lg:grid-cols-4">
-        {projects.map((project) => (
-          <Link
-            key={project.url}
+      <section className="grid w-full grid-cols-1 gap-4 p-4 md:grid-cols-2 2xl:grid-cols-3">
+        {projects.map((project, index) => (
+          <ProjectCard
+            title={project.data.title}
             href={project.url}
-            className="bg-fd-card hover:bg-fd-accent hover:text-fd-accent-foreground flex flex-col p-4 transition-colors"
-          >
-            <p className="font-medium">{project.data.title}</p>
-            <p className="text-fd-muted-foreground text-sm">
-              {project.data.description}
-            </p>
-
-            <p className="text-fd-muted-foreground mt-auto pt-4 text-xs">
-              {new Date(project.data.date ?? project.file.name).toDateString()}
-            </p>
-          </Link>
+            description={project.data.description}
+            key={`project_${index}`}
+            tags={project.data.tags}
+            thumbnail={`/images/projects/${project.slugs[0]}/cover.jpg`}
+          />
         ))}
       </section>
     </main>

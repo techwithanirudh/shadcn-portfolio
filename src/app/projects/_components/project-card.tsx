@@ -4,7 +4,7 @@ import { Button, buttonVariants } from '@/components/ui/button';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { GithubIcon, GlobeIcon, InfoIcon } from 'lucide-react';
+import { InfoIcon } from 'lucide-react';
 
 import { Project } from '@/types/project';
 
@@ -48,7 +48,7 @@ function ProjectCard({
             sizes="100vw"
             width={500}
             height={300}
-            className="h-48 w-full rounded-md object-cover"
+            className="mb-2 h-auto w-full rounded-md object-cover"
           />
           <h3 className="text-xl font-bold">
             <TextReveal>{title}</TextReveal>
