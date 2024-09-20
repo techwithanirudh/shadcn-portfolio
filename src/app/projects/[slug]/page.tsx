@@ -13,6 +13,8 @@ import { metadata as meta } from '@/app/config';
 import { Heading, headingTypes, MDXLink } from '@/lib/mdx/default-components';
 import { cn } from '@/lib/utils';
 
+import { HTMLAttributes } from 'react';
+
 export async function generateStaticParams({
   params
 }: {
