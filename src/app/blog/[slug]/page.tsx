@@ -1,10 +1,5 @@
 import type { Metadata } from 'next';
 
-import defaultMdxComponents from 'fumadocs-ui/mdx';
-
-import { Callout } from 'fumadocs-ui/components/callout';
-
-import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import { TOCItemType } from 'fumadocs-core/server';
 
 import { MDXContent } from '@content-collections/mdx/react';
@@ -12,12 +7,13 @@ import { MDXContent } from '@content-collections/mdx/react';
 import { notFound } from 'next/navigation';
 import { blog } from '@/app/source';
 
-import Header from './header';
-import Image from 'next/image';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { createMetadata } from '@/lib/metadata';
 import { metadata as meta } from '@/app/config';
+
+import { MDXLink, headingTypes, Heading } from '@/lib/mdx/default-components';
+import { cn } from '@/lib/utils';
 
 export async function generateStaticParams({
   params
@@ -59,7 +55,7 @@ export default async function BlogPage({
     data: { toc, body, structuredData }
   } = page;
 
-  // todo: fix blog rendering
+  // todo: fixv blog rendering
   return (
     <main className="my-24 flex-1">
       <div
@@ -87,10 +83,36 @@ export default async function BlogPage({
       </div>
       <article className="container grid grid-cols-1 px-0 py-8 lg:grid-cols-[2fr_1fr] lg:px-4">
         <div className="prose p-4 dark:prose-invert">
-          <InlineTOC items={toc as TOCItemType[]} />
+          {/*todo: refer inlinetoc from fumadocs and create custom component using fumadoc core's toc components*/}
+          {/*<InlineTOC items={toc as TOCItemType[]} />*/}
+          {/*todo: refer to fumadocs's content of defaultMdxComponents to add extra components which are missing*/}
+          {/*todo: add code functionality which means syntax highlighting using remark*/}
+          {/*todo: add remark-image*/}
           <MDXContent
             code={body}
-            components={{ ...defaultMdxComponents, Callout }}
+            components={{
+              a: MDXLink,
+              img: (props) => <img className="rounded-xl" {...props} />,
+              ...Object.fromEntries(
+                headingTypes.map((type) => [
+                  type,
+                  (props: HTMLAttributes<HTMLHeadingElement>) => (
+                    <Heading as={type} {...props} />
+                  )
+                ])
+              ),
+              pre: ({ className, style: _style, ...props }) => (
+                <pre
+                  className={cn(
+                    'max-h-[500px] overflow-auto rounded-lg border border-neutral-800 bg-neutral-900 p-2 text-sm',
+                    className
+                  )}
+                  {...props}
+                >
+                  {props.children}
+                </pre>
+              )
+            }}
           />
         </div>
         <div className="flex flex-col gap-4 border-l p-4 text-sm">
