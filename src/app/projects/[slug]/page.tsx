@@ -35,8 +35,27 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     description: page.data.description,
     openGraph: {
       type: 'article',
+      images: [
+        {
+          alt: 'banner',
+          width: 1200,
+          height: 630,
+          url: `/images/projects/${slug}/cover.jpg`,
+          type: 'image/png'
+        }
+      ],
       authors: meta.author.name
       // modifiedTime: page.data.date.toISOString()
+    },
+    twitter: {
+      images: [
+        {
+          alt: 'banner',
+          width: 1200,
+          height: 630,
+          url: `/images/projects/${slug}/cover.jpg`
+        }
+      ]
     }
   }) satisfies Metadata;
 }
