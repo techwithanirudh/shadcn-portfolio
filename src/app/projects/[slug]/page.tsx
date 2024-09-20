@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 
-import defaultMdxComponents from 'fumadocs-ui/mdx';
-import { Callout } from 'fumadocs-ui/components/callout';
 import { MDXContent } from '@content-collections/mdx/react';
 
 import { notFound } from 'next/navigation';
@@ -12,6 +10,8 @@ import Image from 'next/image';
 
 import { createMetadata } from '@/lib/metadata';
 import { metadata as meta } from '@/app/config';
+import { Heading, headingTypes, MDXLink } from '@/lib/mdx/default-components';
+import { cn } from '@/lib/utils';
 
 export async function generateStaticParams({
   params
@@ -23,8 +23,6 @@ export async function generateStaticParams({
   return project.generateParams([slug]);
 }
 
-// todo: improve metadata generation, and also add dynamic og
-// https://github.com/fuma-nama/fumadocs/blob/dev/apps/docs/utils/metadata.ts
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const page = project.getPage([slug]);
@@ -87,7 +85,29 @@ export default async function ProjectPage({
         <div className="prose min-w-full dark:prose-invert">
           <MDXContent
             code={body}
-            components={{ ...defaultMdxComponents, Callout }}
+            components={{
+              a: MDXLink,
+              img: (props) => <img className="rounded-xl" {...props} />,
+              ...Object.fromEntries(
+                headingTypes.map((type) => [
+                  type,
+                  (props: HTMLAttributes<HTMLHeadingElement>) => (
+                    <Heading as={type} {...props} />
+                  )
+                ])
+              ),
+              pre: ({ className, style: _style, ...props }) => (
+                <pre
+                  className={cn(
+                    'max-h-[500px] overflow-auto rounded-lg border border-neutral-800 bg-neutral-900 p-2 text-sm',
+                    className
+                  )}
+                  {...props}
+                >
+                  {props.children}
+                </pre>
+              )
+            }}
           />
         </div>
       </div>
