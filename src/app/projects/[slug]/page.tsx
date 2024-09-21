@@ -82,8 +82,8 @@ export default async function ProjectPage({
           width={1280}
           height={832}
           alt={`Image of ${page.data.title}`}
-          className="my-12 rounded-lg"
-        />
+          className="my-12 h-auto w-full rounded-lg object-cover aspect-video"
+          />
         <div className="prose min-w-full dark:prose-invert">
           <MDXContent
             code={body}
