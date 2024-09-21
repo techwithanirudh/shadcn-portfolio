@@ -5,13 +5,14 @@ import Line from '@/components/line';
 import React from 'react';
 
 import { createMetadata } from '@/lib/metadata';
+import PostCard from '@/app/blog/_components/post-card';
 
 export const metadata = createMetadata({
   title: 'Blog',
   description: 'My thoughts on technology.'
 });
 
-export default function Page(): React.ReactElement {
+export default function BlogPage(): React.ReactElement {
   const posts = [...blog.getPages()].sort(
     (a, b) =>
       new Date(b.data.date ?? b.file.name).getTime() -
@@ -19,14 +20,14 @@ export default function Page(): React.ReactElement {
   );
 
   return (
-    <main className="my-24 flex-1">
+    <main className="my-14 flex-1">
       <section
         className="relative flex min-h-[calc(50dvh)] items-center justify-center"
         id="hero"
       >
         <div className="flex flex-col items-center md:max-w-7xl">
-          <h1 className="leading-wide tracking-relaxed text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
-            <TextReveal delay={0.1}>Some things I&apos;ve learned</TextReveal>
+          <h1 className="leading-wide tracking-relaxed text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+            <TextReveal delay={0.2}>Blog</TextReveal>
           </h1>
 
           <Line className={'mt-16'} />
@@ -41,22 +42,16 @@ export default function Page(): React.ReactElement {
         {/*</motion.div>*/}
       </section>
       {/*className="container max-sm:px-0 md:py-12"*/}
-      <section className="container grid grid-cols-1 border md:grid-cols-3 lg:grid-cols-4">
-        {posts.map((post) => (
-          <Link
-            key={post.url}
+      <section className="grid w-full grid-cols-1 gap-4 p-4 md:grid-cols-2 2xl:grid-cols-3">
+        {posts.map((post, index) => (
+          <PostCard
+            title={post.data.title}
             href={post.url}
-            className="bg-fd-card hover:bg-fd-accent hover:text-fd-accent-foreground flex flex-col p-4 transition-colors"
-          >
-            <p className="font-medium">{post.data.title}</p>
-            <p className="text-fd-muted-foreground text-sm">
-              {post.data.description}
-            </p>
-
-            <p className="text-fd-muted-foreground mt-auto pt-4 text-xs">
-              {new Date(post.data.date ?? post.file.name).toDateString()}
-            </p>
-          </Link>
+            description={post.data.description}
+            key={`post_${index}`}
+            date={new Date(post.data.date ?? post.file.name)}
+            thumbnail={`/images/blog/${post.slugs[0]}/cover.jpg`}
+          />
         ))}
       </section>
     </main>
