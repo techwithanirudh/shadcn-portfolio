@@ -59,18 +59,9 @@ export default async function BlogPage({
 
   // todo: fixv blog rendering
   return (
-    <main className="my-24 flex-1">
+    <main className="my-24 flex-1 px-4">
       <div
-        className="container rounded-xl border py-12 md:px-8"
-        style={{
-          backgroundColor: 'black',
-          backgroundImage: [
-            'linear-gradient(140deg, hsla(274,94%,54%,0.3), transparent 50%)',
-            'linear-gradient(to left top, hsla(260,90%,50%,0.8), transparent 50%)',
-            'radial-gradient(circle at 100% 100%, hsla(240,100%,82%,1), hsla(240,40%,40%,1) 17%, hsla(240,40%,40%,0.5) 20%, transparent)'
-          ].join(', '),
-          backgroundBlendMode: 'difference, difference, normal'
-        }}
+        className="container rounded-xl border py-12 md:px-8 bg-muted/30"
       >
         <h1 className="mb-2 text-3xl font-bold text-white">
           {page.data.title}
@@ -83,8 +74,8 @@ export default async function BlogPage({
           Back
         </Link>
       </div>
-      <article className="container grid grid-cols-1 px-0 py-8 lg:grid-cols-[2fr_1fr] lg:px-4">
-        <div className="prose p-4 dark:prose-invert">
+      <article className="container grid grid-cols-1 px-0 py-8 lg:grid-cols-[2fr_1fr]">
+        <div className="prose dark:prose-invert">
           {/*todo: refer inlinetoc from fumadocs and create custom component using fumadoc core's toc components*/}
           {/*<InlineTOC items={toc as TOCItemType[]} />*/}
           {/*todo: refer to fumadocs's content of defaultMdxComponents to add extra components which are missing*/}
