@@ -48,7 +48,7 @@ function ProjectCard({
             sizes="100vw"
             width={500}
             height={300}
-            className="mb-2 h-auto w-full rounded-md object-cover"
+            className="mb-2 h-auto w-full rounded-md object-cover aspect-video"
           />
           <h3 className="text-xl font-bold">
             <TextReveal>{title}</TextReveal>
