@@ -57,16 +57,15 @@ export default async function BlogPage({
     data: { toc, body, structuredData }
   } = page;
 
-  // todo: fixv blog rendering
   return (
     <main className="my-24 flex-1 px-4">
       <div
         className="container rounded-xl border py-12 md:px-8 bg-muted/30"
       >
-        <h1 className="mb-2 text-3xl font-bold text-white">
+        <h1 className="mb-2 text-3xl font-bold">
           {page.data.title}
         </h1>
-        <p className="mb-4 text-white/80">{page.data.description}</p>
+        <p className="mb-4 text-muted-foreground">{page.data.description}</p>
         <Link
           href="/blog"
           className={buttonVariants({ size: 'sm', variant: 'secondary' })}
