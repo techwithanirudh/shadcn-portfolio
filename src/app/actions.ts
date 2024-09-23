@@ -1,53 +1,43 @@
 'use server';
+import 'server-only';
+
 import { Resend } from 'resend';
 import { ContactEmail } from '@/components/emails/contact-template';
 
-import { z } from 'zod';
-
-const contactFormSchema = z.object({
-  name: z
-    .string()
-    .min(2, {
-      message: 'Name must be at least 2 characters.'
-    })
-    .max(30, {
-      message: 'Name must not be longer than 30 characters.'
-    }),
-  email: z
-    .string({
-      required_error: 'Please enter a valid email.'
-    })
-    .email(),
-  message: z.string().max(380).min(4)
-});
+import { validateTurnstileToken } from '@/lib/turnstile';
+import { actionClient, ActionError } from '@/lib/safe-action';
+import { ContactActionSchema } from '@/lib/validators';
 
 const EMAIL_FROM = process.env.EMAIL_FROM;
 const EMAIL_TO = process.env.EMAIL_TO;
 
-export async function contactSubmit(prevState: any, formData: FormData) {
-  try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const validatedFields = contactFormSchema.safeParse({
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message')
-    });
+export const contactSubmit = actionClient
+  .use(async ({ next, clientInput }) => {
+    const data = clientInput as {
+      token?: string;
+    };
 
-    if (!validatedFields.success) {
-      return {
-        success: false,
-        errors: validatedFields.error.flatten().fieldErrors,
-        message: 'Please check your entries and try again.'
-      };
+    if (!data?.token)
+      throw new ActionError(
+        'Captcha validation failed. Please ensure the captcha is completed.'
+      );
+    const res = await validateTurnstileToken(data.token);
+
+    if (!res.success) {
+      throw new ActionError(
+        'Captcha validation failed. Please ensure the captcha is completed.'
+      );
     }
 
-    const { name, email, message } = validatedFields.data;
+    return next();
+  })
+  .schema(ContactActionSchema)
+  .action(async ({ parsedInput: { name, email, message } }) => {
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
+    // todo: replace hook form of contact with https://github.com/next-safe-action/adapter-react-hook-form
     if (!EMAIL_FROM || !EMAIL_TO) {
-      return {
-        success: false,
-        message: 'Oops! There went wrong. Please try again later.'
-      };
+      throw new Error('Contact form configuration missing');
     }
 
     const { data: res, error } = await resend.emails.send({
@@ -57,21 +47,9 @@ export async function contactSubmit(prevState: any, formData: FormData) {
       react: ContactEmail({ name, email, message })
     });
 
-    if (error) {
-      return {
-        success: false,
-        message: 'Oops! Something went wrong. Please try again later.'
-      };
-    }
+    if (error) throw new Error(JSON.stringify(error));
 
     return {
-      success: true,
-      message: 'Thank you for reaching out! Your message has been sent.'
+      success: 'Thank you for reaching out! Your message has been sent.'
     };
-  } catch (error) {
-    return {
-      success: false,
-      message: 'Oops! Something went wrong. Please try again later.'
-    };
-  }
-}
+  });

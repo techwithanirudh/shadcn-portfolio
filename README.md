@@ -25,6 +25,7 @@
 5. ❤️  [Credits](#credits)
 
 ## <a name="introduction">🤖 Introduction</a>
+
 This is a **Work In Progress** portfolio template built using Next.JS, Framer Motion and Shadcn/UI.
 
 ## <a name="tech-stack">🚀 Tech Stack</a>
@@ -34,10 +35,10 @@ This is a **Work In Progress** portfolio template built using Next.JS, Framer Mo
 - Framer Motion
 - Tailwind CSS
 
-## <a name="tech-stack">✨ Features</a>
+## <a name="features">✨ Features</a>
 
 - ⚡️ Next.js 14 with App Router
-- 📝 MDX
+- 📝 Blog
 - 🎨 Tailwind CSS - for styling
 - 🌈 Shadcn UI - accessible UI components
 - 📱 Responsive design
@@ -47,16 +48,22 @@ This is a **Work In Progress** portfolio template built using Next.JS, Framer Mo
 - 🎨 Animations - using Framer Motion
 - 🔨 Husky & Lint Staged - lint and format code before committing
 - 💄 Prettier - code formatting
+- 📞 Contact form (setup required)
+- 🛡️ Cloudflare Turnstile (setup required)
 
 ## <a name="getting-started">📚 Getting Started</a>
 
-Please refer to the [getting started guide](./GETTING_STARTED.md) for information on how to configure and run the portfolio template.
+Please refer to the [getting started guide](./GETTING_STARTED.md) for information on how to configure and run the
+portfolio template.
 
 ## <a name="credits">❤️ Credits</a>
+
 This project has been inspired by the following websites:
 
 - [honghong.me](https://honghong.me/)
 - [cuberto.com](https://cuberto.com/)
+- [fuma-nama.vercel.app](https://fuma-nama.vercel.app/)
+- [fumadocs.vercel.app](https://fumadocs.vercel.app/)
 - [dennissnellenberg.com](https://dennissnellenberg.com/)
 - [bychristinakosik.com](https://www.bychristinakosik.com/)
 - [danmachado.com](https://www.danmachado.com/)
@@ -72,8 +79,6 @@ This project has been inspired by the following websites:
 - [boyntonyards.com](https://boyntonyards.com/)
 - [ped.ro](https://ped.ro/)
 - [leerob.io](https://leerob.io/)
-- [fuma-nama.vercel.app](https://fuma-nama.vercel.app/)
-- [fumadocs.vercel.app](https://fumadocs.vercel.app/)
 - [x.com/thereal_apk/status/1829874339254321290](https://x.com/thereal_apk/status/1829874339254321290)
 - [x.com/FonsMans/status/1829510586843152791](https://x.com/FonsMans/status/1829510586843152791)
 - [x.com/SumaiyaSsa/status/1828451225714471209](https://x.com/SumaiyaSsa/status/1828451225714471209)

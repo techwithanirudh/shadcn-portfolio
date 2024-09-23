@@ -6,6 +6,9 @@ import { motion } from 'framer-motion';
 import { ArrowUpRightIcon } from 'lucide-react';
 
 import Link from 'next/link';
+import { Project } from '@/types/project';
+import { Badge } from '@/components/ui/badge';
+import React from 'react';
 
 const animation = {
   hide: {
@@ -18,23 +21,13 @@ const animation = {
   }
 };
 
-type ProjectMetadata = {
-  name: string;
-  description: string;
-  website: string;
-  github: string;
-  techstack: Array<{ label: string }>;
-  selected: boolean;
-  slug: string;
-};
-
 type HeaderProps = {
-  metadata: ProjectMetadata;
+  metadata: Project;
 };
 
 const Header = (props: HeaderProps) => {
   const {
-    metadata: { name, description, website, github }
+    metadata: { title, description, website, github, tags }
   } = props;
 
   return (
@@ -45,7 +38,7 @@ const Header = (props: HeaderProps) => {
         animate={animation.show}
       >
         <div className="flex flex-col gap-3">
-          <div className="text-3xl font-bold">{name}</div>
+          <div className="text-3xl font-bold">{title}</div>
           <div>{description}</div>
         </div>
       </motion.div>
@@ -75,6 +68,16 @@ const Header = (props: HeaderProps) => {
             <ArrowUpRightIcon className="ml-2 size-5" />
           </Link>
         )}
+      </motion.div>
+      <motion.div
+        className="mt-2 flex flex-wrap gap-2"
+        initial={animation.hide}
+        animate={animation.show}
+        transition={{ delay: 0.1 }}
+      >
+        {tags?.map((tag, index) => (
+          <Badge key={`project-tag_${index}`}>{tag.label}</Badge>
+        ))}
       </motion.div>
     </div>
   );

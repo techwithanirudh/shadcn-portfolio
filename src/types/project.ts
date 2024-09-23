@@ -1,7 +1,8 @@
 export interface Project {
-  name: string;
-  slug: string;
+  title: string;
   description?: string;
-  thumbnail?: string;
-  tags?: string[];
+  website?: string;
+  github?: string;
+  tags?: Array<{ label: string }>;
+  // thumbnail: string;
 }

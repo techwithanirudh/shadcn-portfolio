@@ -7,7 +7,7 @@ const metadata: Metadata = {
     label: 'Designer & Developer'
   },
   site: {
-    title: 'John Doe - Portfolio Website',
+    title: 'John Doe',
     description: 'Portfolio of web & UI designer/developer John Doe.',
     url: 'https://www.example.com',
     keywords: [

@@ -3,10 +3,17 @@ import ProjectCard from './project-card';
 
 import Reveal from '@/components/reveal';
 
-import { projects } from '@/components/sections/projects/config';
 import MotionWrap from '@/components/motion-wrap';
 
+import { project } from '@/app/source';
+
 function Projects() {
+  const projects = [...project.getPages()].sort(
+    (a, b) =>
+      new Date(b.data.date ?? b.file.name).getTime() -
+      new Date(a.data.date ?? a.file.name).getTime()
+  );
+
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="projects">
       <div className="space-y-4 px-4 md:space-y-6 md:px-6 lg:space-y-10">
@@ -31,12 +38,12 @@ function Projects() {
         <div className="mt-6 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           {projects.map((project, index) => (
             <ProjectCard
+              title={project.data.title}
+              href={project.url}
+              description={project.data.description}
               key={`project_${index}`}
-              slug={project.slug}
-              name={project.name}
-              description={project.description}
-              tags={project.tags}
-              thumbnail={project.thumbnail}
+              tags={project.data.tags}
+              thumbnail={`/images/projects/${project.slugs[0]}/cover.jpg`}
             />
           ))}
         </div>

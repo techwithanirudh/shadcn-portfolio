@@ -18,7 +18,7 @@ export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
     const isLight = headersList.get('Sec-CH-Prefers-Color-Scheme') === 'light';
 
     const inter = await fetch(
-      new URL('../../../../public/fonts/Inter-SemiBold.ttf', import.meta.url)
+      new URL('../../../public/fonts/Inter-SemiBold.ttf', import.meta.url)
     ).then((res) => res.arrayBuffer());
 
     const { title, description } = {

@@ -19,6 +19,11 @@ const links: Link[] = [
     title: 'Projects',
     href: '/projects',
     thumbnail: 'projects.jpg'
+  },
+  {
+    title: 'Blog',
+    href: '/blog',
+    thumbnail: 'blog.jpg'
   }
 ];
 
