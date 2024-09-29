@@ -1,5 +1,3 @@
-// stole from fumadocs, change this later lol, yes
-// todo: add credit & inspiration for fumadocs
 import Link from 'next/link';
 import { project } from '@/app/source';
 import TextReveal from '@/components/text-reveal';

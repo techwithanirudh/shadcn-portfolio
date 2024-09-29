@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { InfoIcon } from 'lucide-react';
 
-import { Project } from '@/types/project';
+import { Post } from '@/types/post';
 
 import {
   Tooltip,
@@ -19,20 +19,20 @@ import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import TextReveal from '@/components/text-reveal';
 
-interface ProjectCardProps extends Project {
+interface PostCardProps extends Post {
   href: string;
   thumbnail: string;
   className?: string;
 }
 
-function ProjectCard({
+function PostCard({
   title,
   description,
   href,
   thumbnail,
-  tags,
+  date,
   className
-}: ProjectCardProps) {
+}: PostCardProps) {
   return (
     <Card
       className={cn(
@@ -56,11 +56,14 @@ function ProjectCard({
           <p className="text-sm text-gray-500 dark:text-gray-400">
             <TextReveal>{description || ''}</TextReveal>
           </p>
-          <div className="mt-2 flex flex-wrap gap-2">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            <TextReveal>{date.toDateString()}</TextReveal>
+          </p>
+          {/* <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => (
               <Badge key={`project-tag_${index}`}>{tag.label}</Badge>
             ))}
-          </div>
+          </div> */}
         </div>
       </CardContent>
       <CardFooter className="flex items-center justify-end p-4 md:p-6">
@@ -88,4 +91,4 @@ function ProjectCard({
   );
 }
 
-export default ProjectCard;
+export default PostCard;

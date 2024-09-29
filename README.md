@@ -22,11 +22,11 @@
 2. 🚀 [Tech Stack](#tech-stack)
 3. ✨ [Features](#features)
 4. 📚 [Getting Started](#getting-started)
-5. ❤️  [Credits](#credits)
+5. ❤️ [Credits](#credits)
 
 ## <a name="introduction">🤖 Introduction</a>
 
-This is a **Work In Progress** portfolio template built using Next.JS, Framer Motion and Shadcn/UI.
+This is a portfolio template built using Next.JS, Framer Motion and Shadcn/UI.
 
 ## <a name="tech-stack">🚀 Tech Stack</a>
 
@@ -58,6 +58,14 @@ portfolio template.
 
 ## <a name="credits">❤️ Credits</a>
 
+This project wouldn’t be possible without the following open-source projects:
+
+- MDX Rendering and Logic from [fumadocs](https://github.com/fuma-nama/fumadocs)
+- MDX Data from [content-collections](https://www.content-collections.dev/)
+- UI from [shadcn/ui](https://ui.shadcn.com/)
+- Smooth Scrolling from [Lenis](https://github.com/darkroomengineering/lenis)
+- Turnstile from [react-turnstile](https://github.com/marsidev/react-turnstile)
+
 This project has been inspired by the following websites:
 
 - [honghong.me](https://honghong.me/)
@@ -79,12 +87,12 @@ This project has been inspired by the following websites:
 - [boyntonyards.com](https://boyntonyards.com/)
 - [ped.ro](https://ped.ro/)
 - [leerob.io](https://leerob.io/)
-- [x.com/thereal_apk/status/1829874339254321290](https://x.com/thereal_apk/status/1829874339254321290)
-- [x.com/FonsMans/status/1829510586843152791](https://x.com/FonsMans/status/1829510586843152791)
-- [x.com/SumaiyaSsa/status/1828451225714471209](https://x.com/SumaiyaSsa/status/1828451225714471209)
-- [x.com/upintheozone/status/1818247085520761135](https://x.com/upintheozone/status/1818247085520761135)
+- [portfolio hero challenge](https://x.com/thereal_apk/status/1829874339254321290)
+- [minimal homepage exploration](https://x.com/FonsMans/status/1829510586843152791)
+- [suxmaiya.framer.website](https://x.com/SumaiyaSsa/status/1828451225714471209)
+- [jrhu.me](https://jrhu.me/)
 - [github.com/ismamz/next-transition-router](https://github.com/ismamz/next-transition-router)
-- [jorisbrianti.fr](https://jorisbrianti.fr/work/) (loaders from this portfolio)
+- [jorisbrianti.fr](https://jorisbrianti.fr/)
 - [athos-dark.framer.ai](https://athos-dark.framer.ai/)
 
 and more
