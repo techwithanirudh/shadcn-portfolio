@@ -1,7 +1,5 @@
 export interface Post {
-
-    title: string;
-    description?: string;
-    date: Date;
-  }
-  
+  title: string;
+  description?: string;
+  date: Date;
+}

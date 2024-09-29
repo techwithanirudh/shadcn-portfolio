@@ -22,7 +22,7 @@
 2. 🚀 [Tech Stack](#tech-stack)
 3. ✨ [Features](#features)
 4. 📚 [Getting Started](#getting-started)
-5. ❤️  [Credits](#credits)
+5. ❤️ [Credits](#credits)
 
 ## <a name="introduction">🤖 Introduction</a>
 
@@ -59,6 +59,7 @@ portfolio template.
 ## <a name="credits">❤️ Credits</a>
 
 This project wouldn’t be possible without the following open-source projects:
+
 - MDX Rendering and Logic from [fumadocs](https://github.com/fuma-nama/fumadocs)
 - MDX Data from [content-collections](https://www.content-collections.dev/)
 - UI from [shadcn/ui](https://ui.shadcn.com/)
