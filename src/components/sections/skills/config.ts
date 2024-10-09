@@ -5,6 +5,7 @@ const trimLen: number = -1; // 0 is accordion only, -1 is does not restrict the 
 const skills: Skill[] = [
   {
     name: 'Web Development',
+    // todo: use proper thumbnail pics
     thumbnail: '/images/person/3.jpg',
     description: `Web Development involves creating websites and web applications that are both visually appealing and highly functional. It encompasses a variety of technologies, frameworks, and best practices to ensure a seamless user experience and efficient performance.`
   },

@@ -7,14 +7,14 @@ import React, {
   useId,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react';
 import {
   motion,
   AnimatePresence,
   MotionConfig,
   Transition,
-  Variant,
+  Variant
 } from 'framer-motion';
 import { createPortal } from 'react-dom';
 import { cn } from '@/lib/utils';
@@ -84,7 +84,7 @@ function DialogTrigger({
   children,
   className,
   style,
-  triggerRef,
+  triggerRef
 }: DialogTriggerProps) {
   const { setIsOpen, isOpen, uniqueId } = useDialog();
 
@@ -110,8 +110,8 @@ function DialogTrigger({
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       style={style}
-      role='button'
-      aria-haspopup='dialog'
+      role="button"
+      aria-haspopup="dialog"
       aria-expanded={isOpen}
       aria-controls={`dialog-content-${uniqueId}`}
     >
@@ -194,8 +194,8 @@ function DialogContent({ children, className, style }: DialogContent) {
       layoutId={`dialog-${uniqueId}`}
       className={cn('overflow-hidden', className)}
       style={style}
-      role='dialog'
-      aria-modal='true'
+      role="dialog"
+      aria-modal="true"
       aria-labelledby={`dialog-title-${uniqueId}`}
       aria-describedby={`dialog-description-${uniqueId}`}
     >
@@ -222,17 +222,17 @@ function DialogContainer({ children }: DialogContainerProps) {
   if (!mounted) return null;
 
   return createPortal(
-    <AnimatePresence initial={false} mode='sync'>
+    <AnimatePresence initial={false} mode="sync">
       {isOpen && (
         <>
           <motion.div
             key={`backdrop-${uniqueId}`}
-            className='fixed inset-0 h-full w-full bg-white/40 backdrop-blur-sm dark:bg-black/40'
+            className="fixed inset-0 h-full w-full bg-white/40 backdrop-blur-sm dark:bg-black/40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           />
-          <div className='fixed inset-0 z-50 flex items-center justify-center'>
+          <div className="fixed inset-0 z-50 flex items-center justify-center">
             {children}
           </div>
         </>
@@ -298,7 +298,7 @@ function DialogDescription({
   children,
   className,
   variants,
-  disableLayoutAnimation,
+  disableLayoutAnimation
 }: DialogDescriptionProps) {
   const { uniqueId } = useDialog();
 
@@ -312,9 +312,9 @@ function DialogDescription({
       }
       variants={variants}
       className={className}
-      initial='initial'
-      animate='animate'
-      exit='exit'
+      initial="initial"
+      animate="animate"
+      exit="exit"
       id={`dialog-description-${uniqueId}`}
     >
       {children}
@@ -327,18 +327,36 @@ type DialogImageProps = {
   alt: string;
   className?: string;
   style?: React.CSSProperties;
+  disableLayoutAnimation?: boolean;
+  variants?: {
+    initial: Variant;
+    animate: Variant;
+    exit: Variant;
+  };
 };
 
-function DialogImage({ src, alt, className, style }: DialogImageProps) {
+function DialogImage({
+  src,
+  alt,
+  className,
+  style,
+  disableLayoutAnimation,
+  variants
+}: DialogImageProps) {
   const { uniqueId } = useDialog();
 
   return (
     <motion.img
+      key={`dialog-img-${uniqueId}`}
       src={src}
       alt={alt}
+      layoutId={disableLayoutAnimation ? undefined : `dialog-img-${uniqueId}`}
+      variants={variants}
       className={cn(className)}
-      layoutId={`dialog-img-${uniqueId}`}
       style={style}
+      initial="initial"
+      animate="animate"
+      exit="exit"
     />
   );
 }
@@ -363,13 +381,13 @@ function DialogClose({ children, className, variants }: DialogCloseProps) {
   return (
     <motion.button
       onClick={handleClose}
-      type='button'
-      aria-label='Close dialog'
+      type="button"
+      aria-label="Close dialog"
       key={`dialog-close-${uniqueId}`}
       className={cn('absolute right-6 top-6', className)}
-      initial='initial'
-      animate='animate'
-      exit='exit'
+      initial="initial"
+      animate="animate"
+      exit="exit"
       variants={variants}
     >
       {children || <XIcon size={24} />}
@@ -386,5 +404,5 @@ export {
   DialogTitle,
   DialogSubtitle,
   DialogDescription,
-  DialogImage,
+  DialogImage
 };

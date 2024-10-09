@@ -20,16 +20,19 @@ import { MemoizedReactMarkdown } from '@/components/markdown';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 
+import TextReveal from '@/components/text-reveal';
+
 interface SkillCardProps extends Skill {
   index: number;
   className?: string;
 }
 
+// todo: use text reveal for name and description
+// todo: use motion-primitives text-reveal
 export default function SkillCard({
   name,
   description,
   thumbnail,
-  index,
   className
 }: SkillCardProps) {
   return (
@@ -44,7 +47,10 @@ export default function SkillCard({
         style={{
           borderRadius: '12px'
         }}
-        className={cn("flex flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900", className)}
+        className={cn(
+          'flex flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900',
+          className
+        )}
       >
         {/* <DialogImage
           src="/eb-27-lamp-edouard-wilfrid-buquet.jpg"
@@ -61,12 +67,16 @@ export default function SkillCard({
           </button>
           <div className="flex w-full flex-col gap-2">
             <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
-              {name}
+              <TextReveal>
+                {name}
+              </TextReveal>
             </DialogTitle>
             <DialogSubtitle className="text-md text-muted-foreground text-zinc-700 dark:text-zinc-400">
-              {trimLen != -1
-                ? trimString(trimLen, description || '')
-                : description}
+              <TextReveal>
+                {trimLen != -1
+                  ? trimString(trimLen, description || '')
+                  : description ?? ''}
+              </TextReveal>
             </DialogSubtitle>
           </div>
         </div>
@@ -83,9 +93,15 @@ export default function SkillCard({
               src={thumbnail}
               alt={`An image which depicts the skill (${name})`}
               className="h-full w-full"
+              disableLayoutAnimation
+              variants={{
+                initial: { opacity: 0, scale: 0.8, y: 100 },
+                animate: { opacity: 1, scale: 1, y: 0 },
+                exit: { opacity: 0, scale: 0.8, y: 100 }
+              }}
             />
           )}
-          <div className="p-6">
+          <div className="flex flex-col p-6 gap-2">
             <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
               {name}
             </DialogTitle>
