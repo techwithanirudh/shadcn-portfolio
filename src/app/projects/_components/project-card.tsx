@@ -36,7 +36,7 @@ function ProjectCard({
   return (
     <Card
       className={cn(
-        'relative flex h-full flex-col justify-between bg-muted/40',
+        'relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900',
         className
       )}
     >
@@ -68,8 +68,8 @@ function ProjectCard({
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                variant="outline"
-                className="z-[2] rounded-full border bg-muted hover:bg-foreground/10"
+                variant="ghost"
+                className="z-[2] rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
                 asChild
               >
                 <Link href={href}>
