@@ -17,6 +17,9 @@ import { testimonials } from '@/components/sections/testimonials/config';
 
 import Autoplay from 'embla-carousel-auto-scroll';
 
+const firstRow = testimonials.slice(0, testimonials.length / 2);
+const secondRow = testimonials.slice(testimonials.length / 2);
+
 function Testimonials() {
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="testimonials">
@@ -37,6 +40,8 @@ function Testimonials() {
           <p className="mt-4 hidden text-gray-500 dark:text-gray-400 lg:mt-0 lg:block lg:w-[35%]">
             Here are some of my testimonials where clients and colleagues share
             their experiences of working with me.
+            <br />
+            <b>Note: The images used in this carousel are sourced from Unsplash.</b>
           </p>
         </div>
 
@@ -55,7 +60,7 @@ function Testimonials() {
             className="w-full"
           >
             <CarouselContent>
-              {testimonials.map((testimonial, index) => (
+              {firstRow.map((testimonial, index) => (
                 <CarouselItem
                   key={`testimonial_${index}`}
                   className="md:basis-1/2 lg:basis-1/3"
@@ -87,7 +92,7 @@ function Testimonials() {
             className="w-full"
           >
             <CarouselContent>
-              {[...testimonials].reverse().map((testimonial, index) => (
+              {secondRow.map((testimonial, index) => (
                 <CarouselItem
                   key={`testimonial-reverse_${index}`}
                   className="md:basis-1/2 lg:basis-1/3"
