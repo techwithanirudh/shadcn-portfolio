@@ -36,15 +36,6 @@ function About() {
               </div>
             </div>
           </div>
-          <div className="relative flex w-full items-center justify-end">
-            <Image
-              alt="Image"
-              className="aspect-square h-full overflow-hidden rounded-xl object-cover object-center"
-              src="/images/hero.jpg"
-              width={550}
-              height={550}
-            />
-          </div>
         </div>
       </div>
     </MotionWrap>
