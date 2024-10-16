@@ -41,7 +41,9 @@ function Testimonials() {
             Here are some of my testimonials where clients and colleagues share
             their experiences of working with me.
             <br />
-            <b>Note: The images used in this carousel are sourced from Unsplash.</b>
+            <b>
+              Note: The images used in this carousel are sourced from Unsplash.
+            </b>
           </p>
         </div>
 
@@ -54,7 +56,10 @@ function Testimonials() {
             }}
             plugins={[
               Autoplay({
-                speed: 1
+                speed: 1,
+                startDelay: 100,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true
               })
             ]}
             className="w-full"
@@ -86,7 +91,10 @@ function Testimonials() {
             plugins={[
               Autoplay({
                 speed: 1,
-                direction: 'backward'
+                direction: 'backward',
+                startDelay: 100,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true
               })
             ]}
             className="w-full"
