@@ -17,7 +17,7 @@ function TestimonialCard({
   className
 }: TestimonialCardProps) {
   return (
-    <Card className={cn('h-full w-full rounded-xl', 'bg-muted/40', className)}>
+    <Card className={cn('h-full w-full rounded-xl', 'bg-muted/40 hover:bg-muted', className)}>
       <div className="flex items-center p-4">
         <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white">
           <Image
