@@ -18,6 +18,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import TextReveal from '@/components/text-reveal';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface ProjectCardProps extends Project {
   href: string;
@@ -40,15 +41,18 @@ function ProjectCard({
         className
       )}
     >
-      <CardContent className="z-[2] inline-block w-full overflow-hidden p-0">
-        <Image
-          src={thumbnail || '/placeholder.svg'}
-          alt={`Image of ${title}`}
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="h-auto max-h-96 w-full object-cover transition-transform duration-300 hover:scale-105"
-        />
+      <CardContent className="w-full p-0">
+        <AspectRatio
+          ratio={16 / 9}
+          className="z-[2] inline-block overflow-hidden"
+        >
+          <Image
+            src={thumbnail || '/placeholder.svg'}
+            alt={`Image of ${title}`}
+            fill
+            className="object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </AspectRatio>
       </CardContent>
       <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6">
         <div>
