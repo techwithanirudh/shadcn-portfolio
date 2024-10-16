@@ -56,7 +56,7 @@ function Testimonials() {
             }}
             plugins={[
               Autoplay({
-                speed: 1,
+                speed: 600 / 1000,
                 startDelay: 100,
                 stopOnInteraction: false,
                 stopOnMouseEnter: true
@@ -68,7 +68,7 @@ function Testimonials() {
               {firstRow.map((testimonial, index) => (
                 <CarouselItem
                   key={`testimonial_${index}`}
-                  className="md:basis-1/2 lg:basis-1/3"
+                  className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
                 >
                   <div className="h-full p-1">
                     <TestimonialCard
@@ -90,7 +90,7 @@ function Testimonials() {
             }}
             plugins={[
               Autoplay({
-                speed: 1,
+                speed: 600 / 1000,
                 direction: 'backward',
                 startDelay: 100,
                 stopOnInteraction: false,
@@ -103,7 +103,7 @@ function Testimonials() {
               {secondRow.map((testimonial, index) => (
                 <CarouselItem
                   key={`testimonial-reverse_${index}`}
-                  className="md:basis-1/2 lg:basis-1/3"
+                  className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
                 >
                   <div className="h-full p-1">
                     <TestimonialCard
@@ -118,8 +118,8 @@ function Testimonials() {
             </CarouselContent>
           </Carousel>
 
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white dark:from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-background"></div>
         </div>
       </div>
     </MotionWrap>
