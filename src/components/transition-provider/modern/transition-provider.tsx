@@ -71,18 +71,18 @@ export function TransitionProvider({
         {isTransitioning && (
           <>
             <TransitionLayer
-              className="bg-black"
+              className="bg-background"
               custom={1}
               duration={baseDuration * 0.6}
             />
             <TransitionLayer
-              className="bg-orange-300"
+              className="bg-muted"
               custom={2}
               duration={baseDuration * 0.8}
               delay={baseDuration * 0.4}
             />
             <TransitionLayer
-              className="bg-black"
+              className="bg-background"
               custom={3}
               duration={baseDuration}
               delay={baseDuration * 0.8}

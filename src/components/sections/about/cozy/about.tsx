@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowUpRightIcon } from 'lucide-react';
-import TextReveal from '@/components/text-reveal';
+import TextReveal from '@/components/motion/text-reveal';
 
 function About() {
   return (
@@ -35,15 +35,6 @@ function About() {
                 </Button>
               </div>
             </div>
-          </div>
-          <div className="relative flex w-full items-center justify-end">
-            <Image
-              alt="Image"
-              className="aspect-square h-full overflow-hidden rounded-xl object-cover object-center"
-              src="/images/hero.jpg"
-              width={550}
-              height={550}
-            />
           </div>
         </div>
       </div>

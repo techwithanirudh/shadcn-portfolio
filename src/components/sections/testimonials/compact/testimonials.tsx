@@ -23,6 +23,11 @@ function Testimonials() {
             <p className="text-gray-500 dark:text-gray-400">
               Here are some of my testimonials where clients and colleagues
               share their experiences of working with me.
+              <br />
+              <b>
+                Note: The images used in this carousel are sourced from
+                Unsplash.
+              </b>
             </p>
           </div>
 

@@ -1,8 +1,8 @@
 'use client';
-import TextReveal from '@/components/text-reveal';
+import TextReveal from '@/components/motion/text-reveal';
 
 import React from 'react';
-import Line from '@/components/line';
+import Line from '@/components/motion/line';
 
 export default function About() {
   // const { scrollYProgress } = useScroll();

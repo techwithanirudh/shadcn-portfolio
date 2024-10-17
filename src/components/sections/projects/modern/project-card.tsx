@@ -17,7 +17,9 @@ import {
 
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
-import TextReveal from '@/components/text-reveal';
+import TextReveal from '@/components/motion/text-reveal';
+
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface ProjectCardProps extends Project {
   href: string;
@@ -33,23 +35,24 @@ function ProjectCard({
   tags,
   className
 }: ProjectCardProps) {
+  // todo: decide either to keep the white as the bg or use a muted color instead like prev versions
   return (
     <Card
       className={cn(
-        'relative flex h-full flex-col justify-between bg-muted/40',
+        'relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900',
         className
       )}
     >
       <CardContent className="p-4 md:p-6">
         <div className="grid gap-2">
-          <Image
-            src={thumbnail || '/placeholder.svg'}
-            alt={`Image of ${title}`}
-            sizes="100vw"
-            width={500}
-            height={300}
-            className="h-48 w-full rounded-md object-cover"
-          />
+          <AspectRatio ratio={16 / 9} className="z-[2] inline-block overflow-hidden rounded-md mb-2">
+            <Image
+              src={thumbnail || '/placeholder.svg'}
+              alt={`Image of ${title}`}
+              fill
+              className="object-cover transition-transform duration-300 hover:scale-105"
+            />
+          </AspectRatio>
           <h3 className="text-xl font-bold">
             <TextReveal>{title}</TextReveal>
           </h3>
@@ -68,8 +71,8 @@ function ProjectCard({
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                variant="outline"
-                className="z-[2] rounded-full border bg-muted hover:bg-foreground/10"
+                variant="ghost"
+                className="z-[2] rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
                 asChild
               >
                 <Link href={href}>

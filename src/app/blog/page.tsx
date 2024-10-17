@@ -1,16 +1,44 @@
 import Link from 'next/link';
 import { blog } from '@/app/source';
-import TextReveal from '@/components/text-reveal';
-import Line from '@/components/line';
+import TextReveal from '@/components/motion/text-reveal';
+import Line from '@/components/motion/line';
 import React from 'react';
 
 import { createMetadata } from '@/lib/metadata';
 import PostCard from '@/app/blog/_components/post-card';
 
+import { metadata as meta } from '@/app/config';
+import type { WithContext, Blog } from 'schema-dts';
+
+const title = 'Blog';
+const description = 'My thoughts on technology.';
+
 export const metadata = createMetadata({
-  title: 'Blog',
-  description: 'My thoughts on technology.'
+  title,
+  description,
+  openGraph: {
+    url: '/blog',
+    title,
+    description
+  },
+  twitter: {
+    title,
+    description
+  }
 });
+
+const jsonLd: WithContext<Blog> = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: title,
+  description,
+  url: `${meta.site.url}/blog`,
+  author: {
+    '@type': 'Person',
+    name: meta.author.name,
+    url: meta.site.url
+  }
+};
 
 export default function BlogPage(): React.ReactElement {
   const posts = [...blog.getPages()].sort(
@@ -21,6 +49,10 @@ export default function BlogPage(): React.ReactElement {
 
   return (
     <main className="my-14 flex-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section
         className="relative flex min-h-[calc(50dvh)] items-center justify-center"
         id="hero"

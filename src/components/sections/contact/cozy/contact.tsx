@@ -8,7 +8,7 @@ import ContactForm from './contact-form';
 import { contact } from '@/components/sections/contact/config';
 
 import { cn } from '@/lib/utils';
-import TextReveal from '@/components/text-reveal';
+import TextReveal from '@/components/motion/text-reveal';
 
 function Contact() {
   return (

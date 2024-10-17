@@ -4,7 +4,7 @@ import MotionWrap from '@/components/motion-wrap';
 import ExperienceCard from './experience-card';
 
 import { experiences } from '@/components/sections/experience/config';
-import TextReveal from '@/components/text-reveal';
+import TextReveal from '@/components/motion/text-reveal';
 
 function Experiences() {
   return (

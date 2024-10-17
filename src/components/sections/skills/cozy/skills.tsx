@@ -5,7 +5,6 @@ import Reveal from '@/components/reveal';
 
 import { skills } from '@/components/sections/skills/config';
 import MotionWrap from '@/components/motion-wrap';
-import { Accordion } from '@/components/ui/accordion';
 
 function Skills() {
   return (
@@ -29,18 +28,16 @@ function Skills() {
             expertise, making things happen.
           </p>
         </div>
-        <div className="mt-6">
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {skills.map((skill, index) => (
-              <SkillCard
-                key={`skill_${index}`}
-                index={index + 1}
-                name={skill.name}
-                description={skill.description}
-                Icon={skill.Icon}
-              />
-            ))}
-          </Accordion>
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
+          {skills.map((skill, index) => (
+            <SkillCard
+              key={`skill_${index}`}
+              index={index + 1}
+              name={skill.name}
+              description={skill.description}
+              thumbnail={skill.thumbnail}
+            />
+          ))}
         </div>
       </div>
     </MotionWrap>

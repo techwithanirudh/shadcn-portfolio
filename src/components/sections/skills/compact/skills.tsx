@@ -25,7 +25,7 @@ function Skills() {
                 key={`skill_${index}`}
                 name={skill.name}
                 description={skill.description}
-                Icon={skill.Icon}
+                thumbnail={skill.thumbnail}
               />
             ))}
           </div>
