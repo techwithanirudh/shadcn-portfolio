@@ -6,9 +6,9 @@ import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
-import TextReveal from '@/components/text-reveal';
+import TextReveal from '@/components/motion/text-reveal';
 import Reveal from '@/components/reveal';
-import ParallaxImage from '@/components/motion-primitives/parallax-image';
+import ParallaxImage from '@/components/motion/parallax-image';
 
 function Hero() {
   const container = useRef<HTMLDivElement>(null);

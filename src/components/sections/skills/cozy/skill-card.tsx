@@ -8,7 +8,7 @@ import {
   DialogClose,
   DialogDescription,
   DialogContainer
-} from '@/components/motion-primitives/dialog';
+} from '@/components/motion/dialog';
 import { PlusIcon } from 'lucide-react';
 import { Skill } from '@/types/skill';
 
@@ -20,7 +20,7 @@ import { MemoizedReactMarkdown } from '@/components/markdown';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 
-import TextReveal from '@/components/text-reveal';
+import TextReveal from '@/components/motion/text-reveal';
 
 interface SkillCardProps extends Skill {
   index: number;

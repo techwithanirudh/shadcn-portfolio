@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowUpRightIcon } from 'lucide-react';
-import TextReveal from '@/components/text-reveal';
+import TextReveal from '@/components/motion/text-reveal';
 
 function About() {
   return (

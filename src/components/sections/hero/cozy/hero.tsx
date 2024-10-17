@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 // import { metadata as meta } from '@/app/config';
 import { hero } from '@/components/sections/hero/config';
-import TextReveal from '@/components/text-reveal';
+import TextReveal from '@/components/motion/text-reveal';
 
 function Hero() {
   return (
