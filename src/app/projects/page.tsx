@@ -1,16 +1,39 @@
 import Link from 'next/link';
 import { project } from '@/app/source';
-import TextReveal from '@/components/text-reveal';
-import Line from '@/components/line';
+import TextReveal from '@/components/motion/text-reveal';
+import Line from '@/components/motion/line';
 import React from 'react';
 
 import { createMetadata } from '@/lib/metadata';
 import ProjectCard from '@/app/projects/_components/project-card';
 
+import { metadata as meta } from '@/app/config';
+import type { CollectionPage, WithContext } from 'schema-dts';
+
+const title = 'Projects';
+const description = 'Here are some projects I have worked on.';
+
 export const metadata = createMetadata({
-  title: 'Projects',
-  description: 'Here are some projects I have worked on.'
+  title,
+  description,
+  openGraph: {
+    url: '/projects',
+    title,
+    description
+  },
+  twitter: {
+    title,
+    description
+  }
 });
+
+const jsonLd: WithContext<CollectionPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: title,
+  description,
+  url: `${meta.site.url}/projects`
+};
 
 export default function ProjectsPage(): React.ReactElement {
   const projects = [...project.getPages()].sort(
@@ -21,6 +44,10 @@ export default function ProjectsPage(): React.ReactElement {
 
   return (
     <main className="my-14 flex-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section
         className="relative flex min-h-[calc(50dvh)] items-center justify-center"
         id="hero"

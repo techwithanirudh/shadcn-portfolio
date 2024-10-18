@@ -4,20 +4,14 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { useScroll, useTransform, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
-import TextReveal from '@/components/text-reveal';
+import TextReveal from '@/components/motion/text-reveal';
 import Reveal from '@/components/reveal';
+import ParallaxImage from '@/components/motion/parallax-image';
 
 function Hero() {
-  const container = useRef<HTMLInputElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ['start end', 'end start']
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+  const container = useRef<HTMLDivElement>(null);
 
   return (
     <section
@@ -50,18 +44,19 @@ function Hero() {
         </div>
       </div>
 
-      <motion.div
-        className="relative aspect-[4/2] w-screen lg:mt-28"
-        style={{ y, scale }}
-      >
-        <Image
-          src={'/images/hero.jpg'}
-          style={{ objectFit: 'cover' }}
-          alt="img"
-          fill
-          priority
-        />
-      </motion.div>
+      <ParallaxImage
+        src="/images/hero.jpg"
+        containerRef={container}
+        alt="Hero image"
+        containerClassName="aspect-[4/2] w-screen lg:mt-28"
+        priority
+        parallaxOptions={{
+          yStart: '-10%',
+          yEnd: '10%',
+          scaleStart: 1,
+          scaleEnd: 1.5
+        }}
+      />
     </section>
   );
 }

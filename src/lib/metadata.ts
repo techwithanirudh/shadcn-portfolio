@@ -49,7 +49,6 @@ export function createMetadata(override: Metadata): Metadata {
       ],
       ...override.twitter
     },
-
     icons: {
       icon: '/favicon/favicon.svg',
       shortcut: '/favicon/favicon.svg',
@@ -84,6 +83,6 @@ export function createMetadata(override: Metadata): Metadata {
           : [])
     ],
     creator: meta.author.username,
-    metadataBase: new URL(baseUrl)
+    metadataBase: new URL(baseUrl),
   };
 }
