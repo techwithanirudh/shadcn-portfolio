@@ -75,7 +75,7 @@
 	"updateContentCommand": {
 		//   "install_deno": "curl -fsSL https://deno.land/install.sh | sh",
 		"install_xdg-utils": "bash ./.devcontainer/scripts/install_xdg-utils.sh",
-		"configure_git-repo": "bash ./.devcontainer/scripts/configure-git-repo.sh"
+		"configure_git-repo": "bash ./.devcontainer/scripts/configure_git-repo.sh"
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": {
