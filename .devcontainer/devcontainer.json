@@ -79,6 +79,6 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": {
 		//   "restore": "pnpm run clean && pnpm install",
-		"web": "cd web && pnpm install"
+		"web": "pnpm install"
 	}
 }
