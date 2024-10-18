@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from '@/components/motion/link';
 import { motion } from 'framer-motion';
 import { CodeIcon, EllipsisIcon, MenuIcon, XIcon } from 'lucide-react';
 import ThemeToggle from '@/components/mode-toggle';

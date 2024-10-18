@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import { metadata as meta } from '@/app/config';
+import Link from '@/components/motion/link';import { metadata as meta } from '@/app/config';
 
 import { footer } from '@/components/sections/footer/config';
 

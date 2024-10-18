@@ -9,7 +9,7 @@ const TextReveal: React.FC<{ children: React.ReactNode; delay?: number }> = ({
   const processChildren = (child: React.ReactNode): React.ReactNode => {
     if (typeof child === 'string') {
       return child.split(' ').map((word, index) => (
-        <React.Fragment key={index}>
+        <React.Fragment key={`word-${index}`}>
           <Reveal transition={{ duration: 0.5, delay: delay * index }}>
             {word}
           </Reveal>
@@ -24,7 +24,7 @@ const TextReveal: React.FC<{ children: React.ReactNode; delay?: number }> = ({
       );
     } else if (Array.isArray(child)) {
       return child.map((nestedChild, index) => (
-        <React.Fragment key={index}>
+        <React.Fragment key={`nested-${index}`}>
           {processChildren(nestedChild)}
         </React.Fragment>
       ));
