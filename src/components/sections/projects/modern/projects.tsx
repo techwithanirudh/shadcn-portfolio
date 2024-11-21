@@ -55,7 +55,7 @@ function Projects() {
                 {projects.map((project, index) => (
                   <CarouselItem
                     key={`project_${index}`}
-                    className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                    className="md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
                   >
                     <div className="h-full">
                       <ProjectCard

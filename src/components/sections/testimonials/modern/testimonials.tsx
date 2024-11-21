@@ -68,7 +68,7 @@ function Testimonials() {
               {firstRow.map((testimonial, index) => (
                 <CarouselItem
                   key={`testimonial_${index}`}
-                  className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                  className="md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
                 >
                   <div className="h-full p-1">
                     <TestimonialCard
@@ -103,7 +103,7 @@ function Testimonials() {
               {secondRow.map((testimonial, index) => (
                 <CarouselItem
                   key={`testimonial-reverse_${index}`}
-                  className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                  className="md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
                 >
                   <div className="h-full p-1">
                     <TestimonialCard
