@@ -36,7 +36,7 @@ function ExperienceCard({
         <h4 className="mt-2 text-xl font-medium uppercase">
           <TextReveal>{name}</TextReveal>
         </h4>
-        <p className="mt-2 text-zinc-700 dark:text-zinc-400 max-w-2xl text-lg font-light">
+        <p className="mt-2 max-w-2xl text-lg font-light text-zinc-700 dark:text-zinc-400">
           <TextReveal>{description}</TextReveal>
         </p>
         <hr className="my-6 border-t border-border" />

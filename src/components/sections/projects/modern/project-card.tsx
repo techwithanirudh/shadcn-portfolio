@@ -45,7 +45,10 @@ function ProjectCard({
     >
       <CardContent className="p-4 md:p-6">
         <div className="grid gap-2">
-          <AspectRatio ratio={16 / 9} className="z-[2] inline-block overflow-hidden rounded-md mb-2">
+          <AspectRatio
+            ratio={16 / 9}
+            className="z-[2] mb-2 inline-block overflow-hidden rounded-md"
+          >
             <Image
               src={thumbnail || '/placeholder.svg'}
               alt={`Image of ${title}`}

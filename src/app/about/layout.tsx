@@ -9,7 +9,7 @@ import type { AboutPage, WithContext } from 'schema-dts';
 import { metadata as meta } from '@/app/config';
 import { contact } from '@/components/sections/contact/config';
 
-const title = 'About'
+const title = 'About';
 const description = 'Learn more about me and how I do things';
 
 export const metadata = createMetadata({

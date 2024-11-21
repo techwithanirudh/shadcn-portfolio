@@ -25,7 +25,9 @@ export async function generateStaticParams({
   return project.generateParams([slug]);
 }
 
-export async function generateMetadata(props: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const { slug } = params;
   const page = project.getPage([slug]);
@@ -61,11 +63,9 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   }) satisfies Metadata;
 }
 
-export default async function ProjectPage(
-  props0: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export default async function ProjectPage(props0: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props0.params;
   const { slug } = params;
   const page = project.getPage([slug]);

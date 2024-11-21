@@ -76,7 +76,7 @@ const testimonials: Testimonial[] = [
     image: '/images/person/jameswhite.jpg', // todo
     username: 'jameswhite',
     testimonial:
-      "John’s technical prowess and collaborative spirit made him an indispensable part of the project."
+      'John’s technical prowess and collaborative spirit made him an indispensable part of the project.'
   },
   {
     name: 'Isabella Evans',
@@ -104,7 +104,7 @@ const testimonials: Testimonial[] = [
     image: '/images/person/williamharris.jpg',
     username: 'williamharris',
     testimonial:
-      "John’s thoroughness and problem-solving skills ensured the project’s success. I highly recommend working with him."
+      'John’s thoroughness and problem-solving skills ensured the project’s success. I highly recommend working with him.'
   },
   {
     name: 'Mia Clark',
@@ -167,7 +167,7 @@ const testimonials: Testimonial[] = [
     image: '/images/person/eleanorscott.jpg',
     username: 'eleanorscott',
     testimonial:
-      "John’s ability to bring clarity and structure to the project was invaluable. He’s a pleasure to work with."
+      'John’s ability to bring clarity and structure to the project was invaluable. He’s a pleasure to work with.'
   }
   // todo: add attribution for portfolio unsplash images
 ];

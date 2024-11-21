@@ -1,85 +1,85 @@
 {
-	"name": "shadcn-portfolio",
-	// See complete list https://hub.docker.com/r/oven/bun
-	// "build": {
-	// 	// Path is relative to the devcontainer.json file.
-	// 	"dockerfile": "Dockerfile"
-	// },
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [
-		// Http
-		3000
-	],
-	// Use 'portsAttributes' to set default properties for specific forwarded ports. 
-	// More info: https://containers.dev/implementors/json_reference/#port-attributes
-	"portsAttributes": {
-		"3000": {
-			"label": "Web",
-			"onAutoForward": "notify"
-		}
-	},
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "root",
-	// Add more features. See complete list https://github.com/devcontainers/features
-	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {
-			"configureZshAsDefaultShell": true
-		},
-		"ghcr.io/devcontainers/features/github-cli:1": {}
-		// "ghcr.io/devcontainers/features/node:1": {}
-	},
-	"containerEnv": {},
-	"remoteEnv": {},
-	// Configure tool-specific properties.
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [
-				// TypeScript
-				"bierner.lit-html",
-				"better-ts-errors.better-ts-errors",
-				// Makefile
-				"ms-vscode.makefile-tools",
-				// Markdown
-				"bierner.markdown-preview-github-styles",
-				"bierner.markdown-emoji",
-				"bierner.markdown-checkbox",
-				"bierner.jsdoc-markdown-highlighting",
-				"ms-vscode.wordcount",
-				// Other
-				"albert.tabout",
-				"streetsidesoftware.code-spell-checker",
-				"bierner.comment-tagged-templates"
-			],
-			// Set *default* container specific settings.json values on container create.
-			"settings": {
-				"terminal.integrated.defaultProfile.linux": "zsh",
-				"debug.internalConsoleOptions": "neverOpen",
-				"editor.formatOnPaste": true,
-				"editor.guides.bracketPairs": "active",
-				"scm.defaultViewMode": "tree",
-				"diffEditor.diffAlgorithm": "advanced",
-				"diffEditor.experimental.showMoves": true,
-				"diffEditor.renderSideBySide": false,
-				"files.watcherExclude": {
-					"**/node_modules/**": true
-				},
-				// Prettifies the response with emojis and such.
-				"betterTypeScriptErrors.prettify": true
-			}
-		}
-	},
-	// Use 'updateContentCommand' to run commands after the container is successfully created.
-	"updateContentCommand": {
-		//   "install_deno": "curl -fsSL https://deno.land/install.sh | sh",
-		"install_xdg-utils": "bash ./.devcontainer/scripts/install_xdg-utils.sh",
-		"configure_git-repo": "bash ./.devcontainer/scripts/configure_git-repo.sh"
-	},
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": {
-		//   "restore": "pnpm run clean && pnpm install",
-		"web": "pnpm install"
-	}
+  "name": "shadcn-portfolio",
+  // See complete list https://hub.docker.com/r/oven/bun
+  // "build": {
+  // 	// Path is relative to the devcontainer.json file.
+  // 	"dockerfile": "Dockerfile"
+  // },
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    // Http
+    3000
+  ],
+  // Use 'portsAttributes' to set default properties for specific forwarded ports.
+  // More info: https://containers.dev/implementors/json_reference/#port-attributes
+  "portsAttributes": {
+    "3000": {
+      "label": "Web",
+      "onAutoForward": "notify"
+    }
+  },
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "root",
+  // Add more features. See complete list https://github.com/devcontainers/features
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+    // "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "containerEnv": {},
+  "remoteEnv": {},
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        // TypeScript
+        "bierner.lit-html",
+        "better-ts-errors.better-ts-errors",
+        // Makefile
+        "ms-vscode.makefile-tools",
+        // Markdown
+        "bierner.markdown-preview-github-styles",
+        "bierner.markdown-emoji",
+        "bierner.markdown-checkbox",
+        "bierner.jsdoc-markdown-highlighting",
+        "ms-vscode.wordcount",
+        // Other
+        "albert.tabout",
+        "streetsidesoftware.code-spell-checker",
+        "bierner.comment-tagged-templates"
+      ],
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "debug.internalConsoleOptions": "neverOpen",
+        "editor.formatOnPaste": true,
+        "editor.guides.bracketPairs": "active",
+        "scm.defaultViewMode": "tree",
+        "diffEditor.diffAlgorithm": "advanced",
+        "diffEditor.experimental.showMoves": true,
+        "diffEditor.renderSideBySide": false,
+        "files.watcherExclude": {
+          "**/node_modules/**": true
+        },
+        // Prettifies the response with emojis and such.
+        "betterTypeScriptErrors.prettify": true
+      }
+    }
+  },
+  // Use 'updateContentCommand' to run commands after the container is successfully created.
+  "updateContentCommand": {
+    //   "install_deno": "curl -fsSL https://deno.land/install.sh | sh",
+    "install_xdg-utils": "bash ./.devcontainer/scripts/install_xdg-utils.sh",
+    "configure_git-repo": "bash ./.devcontainer/scripts/configure_git-repo.sh"
+  },
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": {
+    //   "restore": "pnpm run clean && pnpm install",
+    "web": "pnpm install"
+  }
 }

@@ -23,17 +23,19 @@ export const AnimatedWord: React.FC<AnimatedWordProps> = ({
       animate={isHovered ? 'hover' : 'rest'}
       className="relative whitespace-nowrap"
     >
-      {title.split('').map((character, i) =>
-        character === ' ' ? (
-          <span key={`space-${i}`}>&nbsp;</span>
-        ) : (
-          <AnimatedLetter 
-            key={`char-${i}`}
-            character={character} 
-            animation={animation} 
-          />
-        )
-      )}
+      {title
+        .split('')
+        .map((character, i) =>
+          character === ' ' ? (
+            <span key={`space-${i}`}>&nbsp;</span>
+          ) : (
+            <AnimatedLetter
+              key={`char-${i}`}
+              character={character}
+              animation={animation}
+            />
+          )
+        )}
     </motion.span>
   );
 };

@@ -67,15 +67,13 @@ export default function SkillCard({
           </button>
           <div className="flex w-full flex-col gap-2">
             <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
-              <TextReveal>
-                {name}
-              </TextReveal>
+              <TextReveal>{name}</TextReveal>
             </DialogTitle>
             <DialogSubtitle className="text-md text-muted-foreground text-zinc-700 dark:text-zinc-400">
               <TextReveal>
                 {trimLen != -1
                   ? trimString(trimLen, description || '')
-                  : description ?? ''}
+                  : (description ?? '')}
               </TextReveal>
             </DialogSubtitle>
           </div>
@@ -101,7 +99,7 @@ export default function SkillCard({
               }}
             />
           )}
-          <div className="flex flex-col p-6 gap-2">
+          <div className="flex flex-col gap-2 p-6">
             <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
               {name}
             </DialogTitle>
