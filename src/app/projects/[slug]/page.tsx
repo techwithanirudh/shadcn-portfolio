@@ -14,6 +14,7 @@ import { Heading, headingTypes, MDXLink } from '@/lib/mdx/default-components';
 import { cn } from '@/lib/utils';
 
 import { HTMLAttributes } from 'react';
+import defaultMdxComponents from 'fumadocs-ui/mdx';
 
 export async function generateStaticParams({
   params
@@ -90,27 +91,8 @@ export default async function ProjectPage(props0: {
           <MDXContent
             code={body}
             components={{
+              ...defaultMdxComponents,
               a: MDXLink,
-              img: (props) => <img className="rounded-xl" {...props} />,
-              ...Object.fromEntries(
-                headingTypes.map((type) => [
-                  type,
-                  (props: HTMLAttributes<HTMLHeadingElement>) => (
-                    <Heading as={type} {...props} />
-                  )
-                ])
-              ),
-              pre: ({ className, style: _style, ...props }) => (
-                <pre
-                  className={cn(
-                    'max-h-[500px] overflow-auto rounded-lg border border-neutral-800 bg-neutral-900 p-2 text-sm',
-                    className
-                  )}
-                  {...props}
-                >
-                  {props.children}
-                </pre>
-              )
             }}
           />
         </div>
