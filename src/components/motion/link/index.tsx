@@ -7,9 +7,13 @@ import { letterAnimation, letterAnimationTwo } from './anim';
 import Link from 'next/link';
 import type { LinkProps } from 'next/link';
 
-type AnimatedLinkProps = Omit<LinkProps, 'children'> & {
-  children: React.ReactNode;
-};
+type AnimatedLinkProps = Omit<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  keyof LinkProps
+> &
+  LinkProps & {
+    children?: React.ReactNode | undefined;
+  } & React.RefAttributes<HTMLAnchorElement>;
 
 export default function AnimatedLink({
   href,

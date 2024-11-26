@@ -92,7 +92,7 @@ export default async function ProjectPage(props0: {
             code={body}
             components={{
               ...defaultMdxComponents,
-              a: MDXLink,
+              a: MDXLink
             }}
           />
         </div>

@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils';
 function Contact() {
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="contact">
-      <div className=" px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">

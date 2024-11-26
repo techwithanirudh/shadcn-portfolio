@@ -47,7 +47,7 @@ function Testimonials() {
           </p>
         </div>
 
-        <div className="relative flex flex-col items-center justify-center gap-4 overflow-hidden overflow-hidden">
+        <div className="relative flex flex-col items-center justify-center gap-4 overflow-hidden">
           <Carousel
             opts={{
               align: 'start',
