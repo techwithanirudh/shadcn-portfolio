@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { TOCItemType } from 'fumadocs-core/server';
 
 import { MDXContent } from '@content-collections/mdx/react';
+import defaultMdxComponents from 'fumadocs-ui/mdx';
 
 import { notFound } from 'next/navigation';
 import { blog } from '@/app/source';
@@ -81,27 +82,8 @@ export default async function BlogPage(props0: {
           <MDXContent
             code={body}
             components={{
-              a: MDXLink,
-              img: (props) => <img className="rounded-xl" {...props} />,
-              ...Object.fromEntries(
-                headingTypes.map((type) => [
-                  type,
-                  (props: HTMLAttributes<HTMLHeadingElement>) => (
-                    <Heading as={type} {...props} />
-                  )
-                ])
-              ),
-              pre: ({ className, style: _style, ...props }) => (
-                <pre
-                  className={cn(
-                    'max-h-[500px] overflow-auto rounded-lg border border-neutral-800 bg-neutral-900 p-2 text-sm',
-                    className
-                  )}
-                  {...props}
-                >
-                  {props.children}
-                </pre>
-              )
+              ...defaultMdxComponents,
+              a: MDXLink
             }}
           />
         </div>
