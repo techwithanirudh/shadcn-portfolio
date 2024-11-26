@@ -25,7 +25,7 @@ interface DialogContextType {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   uniqueId: string;
-  triggerRef: React.RefObject<HTMLDivElement>;
+  triggerRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const DialogContext = React.createContext<DialogContextType | null>(null);
@@ -54,7 +54,6 @@ function DialogProvider({ children, transition }: DialogProviderProps) {
   );
 
   return (
-    // @ts-expect-error react 19 types issue
     <DialogContext.Provider value={contextValue}>
       <MotionConfig transition={transition}>{children}</MotionConfig>
     </DialogContext.Provider>
@@ -78,7 +77,7 @@ type DialogTriggerProps = {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
-  triggerRef?: React.RefObject<HTMLDivElement>;
+  triggerRef?: React.RefObject<HTMLDivElement | null>;
 };
 
 function DialogTrigger({
