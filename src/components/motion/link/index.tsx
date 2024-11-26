@@ -50,11 +50,20 @@ export default function AnimatedLink({
         </React.Fragment>
       ));
     } else if (React.isValidElement(child)) {
-      return React.cloneElement(
-        child,
-        {},
-        processChildren(child.props.children)
-      );
+      const element = child as React.ReactElement & {
+        props?: {
+          children?: React.ReactNode;
+        };
+      };
+
+      if (element.props && 'children' in element.props) {
+        return React.cloneElement(
+          element,
+          {},
+          processChildren(element.props.children)
+        );
+      }
+      return element;
     } else if (Array.isArray(child)) {
       return child.map((nestedChild, index) => (
         <React.Fragment key={`nested-${index}`}>
