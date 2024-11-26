@@ -54,6 +54,7 @@ function DialogProvider({ children, transition }: DialogProviderProps) {
   );
 
   return (
+    // @ts-expect-error react 19 types issue
     <DialogContext.Provider value={contextValue}>
       <MotionConfig transition={transition}>{children}</MotionConfig>
     </DialogContext.Provider>

@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 
 interface ParallaxImageProps extends Omit<ImageProps, 'ref'> {
   className?: string;
-  containerRef: RefObject<HTMLElement>;
+  containerRef: RefObject<HTMLElement | null>;
   containerClassName?: string;
   parallaxOptions?: {
     yStart?: string;
