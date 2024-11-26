@@ -16,15 +16,13 @@ import { metadata as meta } from '@/app/config';
 import { MDXLink, headingTypes, Heading } from '@/lib/mdx/default-components';
 import { cn } from '@/lib/utils';
 
-import { HTMLAttributes } from 'react';
-
 export async function generateStaticParams({
   params
 }: {
   params: { slug: string };
 }) {
   const { slug } = params;
-  // @ts-ignore
+  // @ts-expect-error issue with fumadocs
   return blog.generateParams([slug]);
 }
 

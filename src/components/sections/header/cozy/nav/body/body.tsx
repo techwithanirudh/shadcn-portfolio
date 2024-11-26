@@ -23,7 +23,7 @@ export default function Body({
   setIsActive
 }: BodyProps) {
   const getChars = (word: string) => {
-    let chars: JSX.Element[] = [];
+    const chars: JSX.Element[] = [];
     word.split('').forEach((char, i) => {
       chars.push(
         <motion.span

@@ -22,7 +22,7 @@ export async function generateStaticParams({
   params: { slug: string };
 }) {
   const { slug } = params;
-  // @ts-ignore
+  // @ts-expect-error issue with fumadocs
   return project.generateParams([slug]);
 }
 
