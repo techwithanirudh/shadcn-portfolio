@@ -8,7 +8,10 @@ const nextConfig: NextConfig = {
       allowedOrigins: ['localhost:3000']
     },
     reactCompiler: true
-  }
+  },
+  sassOptions: {
+		silenceDeprecations: ["legacy-js-api"]
+	},
 };
 
 export default withContentCollections(nextConfig);
