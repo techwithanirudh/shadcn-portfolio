@@ -14,7 +14,9 @@ export const ContactFormSchema = z.object({
       required_error: 'Please enter a valid email.'
     })
     .email(),
-  message: z.string().max(380).min(4)
+  message: z.string().max(380).min(4, {
+    message: 'Message must be at least 4 characters.'
+  })
 });
 
 export type ContactForm = z.infer<typeof ContactFormSchema>;
