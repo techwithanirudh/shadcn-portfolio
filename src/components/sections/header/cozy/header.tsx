@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'next-view-transitions';
 import { CodeIcon } from 'lucide-react';
 import styles from './style.module.scss';

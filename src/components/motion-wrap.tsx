@@ -1,6 +1,6 @@
 'use client';
 import React, { ReactNode } from 'react';
-import { motion, MotionProps } from 'framer-motion';
+import { motion, MotionProps } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 type MotionWrapProps = {

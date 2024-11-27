@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from "motion/react";
 import { opacity, slideUp } from './anim';
 
 import { Teko } from 'next/font/google';

@@ -6,7 +6,7 @@ import {
   useInView,
   useAnimation,
   HTMLMotionProps
-} from 'framer-motion';
+} from 'motion/react';
 import { Button } from '@/components/ui/button';
 
 interface RevealProps extends HTMLMotionProps<'span'> {
