@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from 'motion/react';
 import { Link } from 'next-view-transitions';
 import styles from './style.module.scss';
 import { blur, translate } from '../../anim';

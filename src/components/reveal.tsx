@@ -1,12 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  motion,
-  useInView,
-  useAnimation,
-  HTMLMotionProps
-} from 'motion/react';
+import { motion, useInView, useAnimation, HTMLMotionProps } from 'motion/react';
 import { Button } from '@/components/ui/button';
 
 interface RevealProps extends HTMLMotionProps<'span'> {

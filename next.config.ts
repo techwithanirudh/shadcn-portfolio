@@ -10,8 +10,8 @@ const nextConfig: NextConfig = {
     reactCompiler: true
   },
   sassOptions: {
-		silenceDeprecations: ["legacy-js-api"]
-	},
+    silenceDeprecations: ['legacy-js-api']
+  }
 };
 
 export default withContentCollections(nextConfig);

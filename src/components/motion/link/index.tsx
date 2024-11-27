@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useId } from 'react';
-import { motion } from "motion/react";
+import { motion } from 'motion/react';
 import { AnimatedWord } from './word';
 import { letterAnimation, letterAnimationTwo } from './anim';
 import { Link } from 'next-view-transitions';

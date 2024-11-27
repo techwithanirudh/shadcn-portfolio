@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { motion } from "motion/react";
+import { motion } from 'motion/react';
 import { opacity, slideUp } from './anim';
 
 interface PreloaderProps {

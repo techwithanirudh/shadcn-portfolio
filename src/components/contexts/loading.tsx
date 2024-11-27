@@ -7,7 +7,9 @@ interface LoadingContextProps {
   setIsLoading: (loading: boolean) => void;
 }
 
-const LoadingContext = createContext<LoadingContextProps | undefined>(undefined);
+const LoadingContext = createContext<LoadingContextProps | undefined>(
+  undefined
+);
 
 export const LoadingProvider = ({ children }: { children: ReactNode }) => {
   const [isLoading, setIsLoading] = useState(true);
