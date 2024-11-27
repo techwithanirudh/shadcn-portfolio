@@ -1,6 +1,6 @@
 // credit: fuma-nama
 import { HTMLAttributes, type AnchorHTMLAttributes } from 'react';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 
 export function MDXLink({
   href,

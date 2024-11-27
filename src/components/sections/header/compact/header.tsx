@@ -76,7 +76,6 @@ const Header = ({ loader }: HeaderProps) => {
         y: 0
       }}
       transition={{
-        delay: loader ? 3.5 : 0, // 3.5 for loading, .5 can be added for delay
         duration: 0.8
       }}
     >

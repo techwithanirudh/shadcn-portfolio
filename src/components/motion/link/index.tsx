@@ -4,7 +4,7 @@ import React, { useState, useId } from 'react';
 import { motion } from 'framer-motion';
 import { AnimatedWord } from './word';
 import { letterAnimation, letterAnimationTwo } from './anim';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import type { LinkProps } from 'next/link';
 
 type AnimatedLinkProps = Omit<

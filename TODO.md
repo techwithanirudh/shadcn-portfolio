@@ -13,3 +13,4 @@
 - [ ] Fix turnstile, it is not working properly and implement in all veairns
 - Add sitemap
 - Add og for each blog page, and project page
+- Fix zod validation errors

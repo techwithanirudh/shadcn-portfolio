@@ -2,7 +2,7 @@ import React from 'react';
 import { CardContent, CardFooter, Card } from '@/components/ui/card';
 import { buttonVariants } from '@/components/ui/button';
 
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import Image from 'next/image';
 import { CodeIcon } from 'lucide-react';
 

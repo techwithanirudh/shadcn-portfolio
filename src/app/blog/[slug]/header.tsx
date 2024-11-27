@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { ArrowUpRightIcon } from 'lucide-react';
 
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 
 const animation = {
   hide: {

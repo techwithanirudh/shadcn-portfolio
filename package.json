@@ -47,7 +47,7 @@
     "next": "15.0.3",
     "next-safe-action": "^7.9.9",
     "next-themes": "^0.4.3",
-    "next-transition-router": "^0.2.5",
+    "next-view-transitions": "^0.3.2",
     "react": "19.0.0-rc.1",
     "react-dom": "19.0.0-rc.1",
     "react-hook-form": "^7.53.2",

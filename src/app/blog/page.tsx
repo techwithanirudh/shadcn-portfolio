@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import { blog } from '@/app/source';
 import TextReveal from '@/components/motion/text-reveal';
 import Line from '@/components/motion/line';
