@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Link } from 'next-view-transitions';
+import Link from 'next/link';
 import styles from './style.module.scss';
 import { blur, translate } from '../../anim';
 import { Link as LinkType } from '@/types/link';

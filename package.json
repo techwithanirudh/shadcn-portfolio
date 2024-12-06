@@ -47,9 +47,9 @@
     "next": "15.0.3",
     "next-safe-action": "^7.9.9",
     "next-themes": "^0.4.3",
-    "next-view-transitions": "^0.3.2",
-    "react": "19.0.0-rc.1",
-    "react-dom": "19.0.0-rc.1",
+    "next-transition-router": "^0.2.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-hook-form": "^7.53.2",
     "react-markdown": "^9.0.1",
     "rehype-sanitize": "^6.0.0",
@@ -73,8 +73,8 @@
     "@content-collections/next": "^0.2.4",
     "@fumadocs/content-collections": "^1.1.5",
     "@types/node": "^22.10.0",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
     "autoprefixer": "^10.4.20",
     "babel-plugin-react-compiler": "19.0.0-beta-df7b47d-20241124",
     "eslint": "^9.15.0",
@@ -95,11 +95,5 @@
     "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix",
     "**/*": "prettier --write --ignore-unknown"
   },
-  "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf",
-  "pnpm": {
-    "overrides": {
-      "@types/react": "npm:types-react@19.0.0-rc.1",
-      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-    }
-  }
+  "packageManager": "pnpm@9.7.0+sha512.dc09430156b427f5ecfc79888899e1c39d2d690f004be70e05230b72cb173d96839587545d09429b55ac3c429c801b4dc3c0e002f653830a420fa2dd4e3cf9cf"
 }

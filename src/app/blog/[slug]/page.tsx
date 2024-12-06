@@ -8,7 +8,7 @@ import defaultMdxComponents from 'fumadocs-ui/mdx';
 import { notFound } from 'next/navigation';
 import { blog } from '@/app/source';
 
-import { Link } from 'next-view-transitions';
+import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { createMetadata } from '@/lib/metadata';
 import { metadata as meta } from '@/app/config';
