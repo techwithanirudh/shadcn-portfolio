@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     serverActions: {
       allowedOrigins: ['localhost:3000']
     },
-    reactCompiler: true
+    // reactCompiler: true
   }
 };
 
