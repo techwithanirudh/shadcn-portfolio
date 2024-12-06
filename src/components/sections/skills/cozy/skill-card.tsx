@@ -1,14 +1,14 @@
 import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogTitle,
-  DialogImage,
-  DialogSubtitle,
-  DialogClose,
-  DialogDescription,
-  DialogContainer
-} from '@/components/motion/dialog';
+  MorphingDialog as Dialog,
+  MorphingDialogTrigger as DialogTrigger,
+  MorphingDialogContent as DialogContent,
+  MorphingDialogTitle as DialogTitle,
+  MorphingDialogImage as DialogImage,
+  MorphingDialogSubtitle as DialogSubtitle,
+  MorphingDialogClose as DialogClose,
+  MorphingDialogDescription as DialogDescription,
+  MorphingDialogContainer as DialogContainer
+} from '@/components/motion/morphing-dialog';
 import { PlusIcon } from 'lucide-react';
 import { Skill } from '@/types/skill';
 
@@ -39,8 +39,8 @@ export default function SkillCard({
     <Dialog
       transition={{
         type: 'spring',
-        bounce: 0.05,
-        duration: 0.25
+        stiffness: 200,
+        damping: 24,
       }}
     >
       <DialogTrigger
@@ -66,6 +66,14 @@ export default function SkillCard({
             <PlusIcon size={18} />
           </button>
           <div className="flex w-full flex-col gap-2">
+            <DialogImage
+              src={thumbnail}
+              alt={`An image which depicts the skill (${name})`}
+              className='h-12 w-12 object-cover object-top'
+              style={{
+                borderRadius: '4px',
+              }}
+            />
             <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
               <TextReveal>{name}</TextReveal>
             </DialogTitle>
@@ -91,12 +99,6 @@ export default function SkillCard({
               src={thumbnail}
               alt={`An image which depicts the skill (${name})`}
               className="h-full w-full"
-              disableLayoutAnimation
-              variants={{
-                initial: { opacity: 0, scale: 0.8, y: 100 },
-                animate: { opacity: 1, scale: 1, y: 0 },
-                exit: { opacity: 0, scale: 0.8, y: 100 }
-              }}
             />
           )}
           <div className="flex flex-col gap-2 p-6">
