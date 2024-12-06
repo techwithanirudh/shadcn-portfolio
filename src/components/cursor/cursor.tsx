@@ -8,7 +8,7 @@ import {
   MotionValue,
   SpringOptions,
   AnimationControls
-} from 'framer-motion';
+} from 'motion/react';
 
 interface MouseMoveEvent {
   clientX: number;

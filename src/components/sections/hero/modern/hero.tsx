@@ -4,7 +4,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useRef } from 'react';
 import TextReveal from '@/components/motion/text-reveal';
 import Reveal from '@/components/reveal';

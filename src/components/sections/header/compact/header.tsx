@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from '@/components/motion/link';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { CodeIcon, EllipsisIcon, MenuIcon, XIcon } from 'lucide-react';
 import ThemeToggle from '@/components/mode-toggle';
 import { linkLimit, links } from '@/components/sections/header/config';
@@ -76,7 +76,6 @@ const Header = ({ loader }: HeaderProps) => {
         y: 0
       }}
       transition={{
-        delay: loader ? 3.5 : 0, // 3.5 for loading, .5 can be added for delay
         duration: 0.8
       }}
     >

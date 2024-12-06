@@ -1,12 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  motion,
-  useInView,
-  useAnimation,
-  HTMLMotionProps
-} from 'framer-motion';
+import { motion, useInView, useAnimation, HTMLMotionProps } from 'motion/react';
 import { Button } from '@/components/ui/button';
 
 interface RevealProps extends HTMLMotionProps<'span'> {
@@ -20,7 +15,7 @@ const Reveal: React.FC<RevealProps> = ({
   ...props
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
 
   useEffect(() => {

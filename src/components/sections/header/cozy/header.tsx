@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import { CodeIcon } from 'lucide-react';
 import styles from './style.module.scss';
@@ -26,7 +26,6 @@ const Header = ({ loader }: HeaderProps) => {
         y: 0
       }}
       transition={{
-        delay: loader ? 3.5 : 0, // 3.5 for loading, .5 can be added for delay
         duration: 0.8
       }}
     >

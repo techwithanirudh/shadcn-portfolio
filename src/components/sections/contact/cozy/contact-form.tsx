@@ -32,6 +32,7 @@ import {
 } from '@/lib/validators';
 import { useState } from 'react';
 
+import { contact } from '@/components/sections/contact/config';
 import { toast } from 'sonner';
 
 export default function ContactForm() {
@@ -49,10 +50,18 @@ export default function ContactForm() {
 
   // todo: probably refactor this, setIsOpen is not clean
   // values: ContactFormType
-  async function onSubmit() {
-    setIsOpen(true);
-    // execute(values);
-  }
+  async function onSubmit(values: ContactFormType) {
+    if (process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === "true") {
+      setIsOpen(true);
+    } else {
+      const mailto = `mailto:${encodeURIComponent(contact.email)}` +
+                     `?subject=${encodeURIComponent("Contact Form Submission")}` +
+                     `&body=${encodeURIComponent(
+                       `Name: ${values.name}\nMessage: ${values.message}`
+                     )}`;
+      window.location.href = mailto;
+    }
+  };
 
   async function onVerify(token?: string) {
     setIsOpen(false);
@@ -106,6 +115,7 @@ export default function ContactForm() {
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name="message"
