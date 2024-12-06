@@ -8,20 +8,20 @@ import { TextLoop } from '@/components/motion/text-loop';
 
 const heroContent = [
   { role: 'developer', action: 'code', emoji: '💻', bgColor: 'bg-green-100' },
-  { role: 'gamer', action: 'win', emoji: '🎮', bgColor: 'bg-blue-100' },
+  { role: 'gamer', action: 'win', emoji: '🎮', bgColor: 'bg-blue-100' }
 ];
 
 const textLoopVariants = {
   initial: { y: 20, rotateX: 90, opacity: 0, filter: 'blur(4px)' },
   animate: { y: 0, rotateX: 0, opacity: 1, filter: 'blur(0px)' },
-  exit: { y: -20, rotateX: -90, opacity: 0, filter: 'blur(4px)' },
+  exit: { y: -20, rotateX: -90, opacity: 0, filter: 'blur(4px)' }
 };
 
 const textLoopTransition = {
   type: 'spring',
   stiffness: 900,
   damping: 80,
-  mass: 10,
+  mass: 10
 };
 
 function Hero() {
@@ -53,16 +53,16 @@ function Hero() {
                 <Reveal>Who</Reveal>
                 <TextReveal>
                   <TextLoop
-                    className="overflow-y-clip"
+                    className="my-auto inline-block h-[3.25rem] overflow-hidden overflow-y-clip md:h-[7.8rem]"
                     transition={textLoopTransition}
                     variants={textLoopVariants}
                   >
                     {heroContent.map((content, index) => (
-                      <span 
+                      <span
                         key={index}
                         className={`relative mx-2 my-auto inline-block aspect-[1.5/1] h-[3.25rem] overflow-hidden rounded-full md:mx-4 md:h-[7.8rem] ${content.bgColor}`}
                       >
-                        <span className="absolute inset-0 flex items-center justify-center text-4xl md:text-7xl">
+                        <span className="absolute inset-0 flex select-none items-center justify-center text-4xl md:text-7xl">
                           {content.emoji}
                         </span>
                       </span>
@@ -105,4 +105,3 @@ function Hero() {
 }
 
 export default Hero;
-
