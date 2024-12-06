@@ -9,6 +9,7 @@ import { useRef } from 'react';
 import TextReveal from '@/components/motion/text-reveal';
 import Reveal from '@/components/reveal';
 import ParallaxImage from '@/components/motion/parallax-image';
+import { TextLoop } from '@/components/motion/text-loop';
 
 function Hero() {
   const container = useRef<HTMLDivElement>(null);
@@ -37,7 +38,42 @@ function Hero() {
                   />
                 </motion.span>
                 <Reveal>to</Reveal>
-                <Reveal>code</Reveal>
+                <Reveal>
+                  <TextLoop
+                    className="overflow-y-clip"
+                    transition={{
+                      type: 'spring',
+                      stiffness: 900,
+                      damping: 80,
+                      mass: 10
+                    }}
+                    variants={{
+                      initial: {
+                        y: 20,
+                        rotateX: 90,
+                        opacity: 0,
+                        filter: 'blur(4px)'
+                      },
+                      animate: {
+                        y: 0,
+                        rotateX: 0,
+                        opacity: 1,
+                        filter: 'blur(0px)'
+                      },
+                      exit: {
+                        y: -20,
+                        rotateX: -90,
+                        opacity: 0,
+                        filter: 'blur(4px)'
+                      }
+                    }}
+                  >
+                    <span>Code</span>
+                    <span>Game</span>
+                    <span>Fork</span>
+                    <span>Pull</span>
+                  </TextLoop>
+                </Reveal>
               </span>
             </h1>
           </div>
