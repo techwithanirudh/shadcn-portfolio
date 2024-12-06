@@ -67,7 +67,7 @@ export default function SkillCard({
           </button>
           <div className="flex w-full flex-col gap-2">
             <DialogImage
-              src={thumbnail}
+              src={thumbnail ?? '/placeholder.svg'}
               alt={`An image which depicts the skill (${name})`}
               className='h-12 w-12 object-cover object-top'
               style={{
@@ -94,13 +94,11 @@ export default function SkillCard({
           }}
           className="pointer-events-auto relative flex h-auto w-full flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900 sm:w-[500px]"
         >
-          {thumbnail && (
-            <DialogImage
-              src={thumbnail}
-              alt={`An image which depicts the skill (${name})`}
-              className="h-full w-full"
-            />
-          )}
+          <DialogImage
+            src={thumbnail ?? '/placeholder.svg'}
+            alt={`An image which depicts the skill (${name})`}
+            className="h-full w-full"
+          />
           <div className="flex flex-col gap-2 p-6">
             <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
               {name}
