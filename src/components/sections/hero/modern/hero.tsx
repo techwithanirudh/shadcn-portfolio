@@ -8,7 +8,12 @@ import { TextLoop } from '@/components/motion/text-loop';
 
 const heroContent = [
   { role: 'developer', action: 'code', emoji: '💻', bgColor: 'bg-green-100' },
-  { role: 'gamer', action: 'win', emoji: '🎮', bgColor: 'bg-blue-100' }
+  { role: 'gamer', action: 'win', emoji: '🎮', bgColor: 'bg-blue-100' },
+  { role: 'thinker', action: 'solve', emoji: '🤔', bgColor: 'bg-yellow-100' },
+  { role: 'learner', action: 'grow', emoji: '📚', bgColor: 'bg-purple-100' },
+  { role: 'creator', action: 'build', emoji: '✨', bgColor: 'bg-pink-100' },
+  { role: 'teammate', action: 'collab', emoji: '🤝', bgColor: 'bg-orange-100' },
+  { role: 'fixer', action: 'repair', emoji: '🛠️', bgColor: 'bg-gray-100' }
 ];
 
 const textLoopVariants = {
