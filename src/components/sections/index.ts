@@ -6,7 +6,7 @@ import Experience from './experience/cozy/experience';
 import Projects from './projects/modern/projects';
 import Contact from './contact/cozy/contact';
 import Testimonials from './testimonials/modern/testimonials';
-import Footer from './footer/cozy/footer';
+import Footer from './footer/modern/footer';
 
 export {
   Header,
