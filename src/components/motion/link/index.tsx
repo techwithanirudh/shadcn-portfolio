@@ -13,11 +13,15 @@ type AnimatedLinkProps = Omit<
 > &
   LinkProps & {
     children?: React.ReactNode | undefined;
-  } & React.RefAttributes<HTMLAnchorElement>;
+  } & React.RefAttributes<HTMLAnchorElement> & {
+    external?: boolean;
+  };
 
 export default function AnimatedLink({
   href,
   children,
+  target,
+  external,
   ...props
 }: AnimatedLinkProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -74,7 +78,16 @@ export default function AnimatedLink({
     return child;
   };
 
-  return (
+  return external ? (
+    <a
+      href={href.toString() ?? ''}
+      target={target || '_blank'}
+      rel="noopener noreferrer"
+      {...props}
+    >
+      {processChildren(children)}
+    </a>
+  ) : (
     <Link href={href} {...props}>
       {processChildren(children)}
     </Link>
