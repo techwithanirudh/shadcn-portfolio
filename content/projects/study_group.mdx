@@ -15,3 +15,61 @@ tags:
 ---
 
 This platform allows students to form virtual study groups, schedule sessions, and share resources in real-time. The idea behind this project was to provide a collaborative environment for students to study together, even when they are physically apart. Working on this project helped me understand real-time communication and the importance of user experience in a collaborative tool.
+
+## Features
+
+- **Group Creation**: Students can create or join study groups based on subjects or interests.
+- **Real-Time Chat**: Communicate with group members using instant messaging powered by **Socket.IO**.
+- **Session Scheduling**: Schedule and manage study sessions with integrated reminders.
+- **Resource Sharing**: Upload and share study materials such as PDFs, videos, and links.
+- **Collaborative Notes**: Work together on shared notes in real-time.
+
+## Tech Stack
+
+- **Frontend**: Built with **React** for a dynamic and user-friendly interface.
+- **Backend**: **Node.js** with **Express** for handling APIs and server-side logic.
+- **Database**: **MongoDB** for storing user data, group information, and shared resources.
+- **Real-Time Communication**: Implemented using **Socket.IO** for instant messaging and updates.
+- **Styling**: Styled using **CSS** and **Tailwind CSS** for responsive and modern designs.
+- **Hosting**: Backend hosted on **Heroku** or **AWS**, and the frontend deployed on **Vercel**.
+
+## Implementation
+
+### Frontend
+- **React** components for reusable and modular UI elements.
+- **React Router** for seamless navigation between pages like dashboard, groups, and profile.
+- Integration with libraries for date and time management, like **date-fns** or **Moment.js**.
+
+### Backend
+- **Express.js** APIs for managing user authentication, group creation, and resource sharing.
+- **Socket.IO** for enabling real-time messaging and collaborative features.
+- **JWT** for secure user sessions and access control.
+
+### Database
+- **MongoDB Atlas** for scalable cloud database management.
+- Indexed queries to ensure fast retrieval of group and session data.
+- Relationship models for linking users to study groups and sessions.
+
+### Deployment
+- Backend deployed on **Heroku** with real-time web socket handling.
+- Frontend deployed on **Vercel** with automated build pipelines for continuous deployment.
+
+## How It Works
+
+1. **User Onboarding**: Sign up or log in to access the platform.
+2. **Create or Join Groups**: Form new study groups or join existing ones based on interests or subjects.
+3. **Schedule Sessions**: Use the scheduler to plan study sessions with group members.
+4. **Share Resources**: Upload and share files, links, or notes directly within the group.
+5. **Collaborate in Real-Time**: Chat, share updates, and work on notes collaboratively.
+
+## Challenges Faced
+
+- Ensuring real-time communication is fast and reliable across different devices.
+- Managing file uploads and maintaining performance during high usage.
+- Designing an intuitive interface that encourages collaboration and productivity.
+
+## Future Enhancements
+
+- Adding video conferencing capabilities for virtual study sessions.
+- Integrating AI tools for personalized study recommendations and smart resource suggestions.
+- Creating a gamified experience with achievements and badges to motivate students.
