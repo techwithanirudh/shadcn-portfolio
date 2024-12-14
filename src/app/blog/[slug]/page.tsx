@@ -72,7 +72,7 @@ export default async function BlogPage(props0: {
         </Link>
       </div>
       <article className="container grid grid-cols-1 px-0 py-8 lg:grid-cols-[2fr_1fr]">
-        <div className="prose flex-1 space-y-4">
+        <div className="prose flex-1 space-y-4 p-4">
           {/*todo: refer inlinetoc from fumadocs and create custom component using fumadoc core's toc components*/}
           <InlineTOC items={toc as TOCItemType[]} />
           {/*todo: refer to fumadocs's content of defaultMdxComponents to add extra components which are missing*/}
