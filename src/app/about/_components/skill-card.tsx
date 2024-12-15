@@ -80,7 +80,11 @@ export default function SkillCard({
               <TextReveal>{name}</TextReveal>
             </DialogTitle>
             <DialogSubtitle className="text-md text-muted-foreground text-zinc-700 dark:text-zinc-400">
-              <TextReveal>{trimString(120, description || '')}</TextReveal>
+              <TextReveal>
+                {trimLen != -1
+                  ? trimString(trimLen, description || '')
+                  : (description ?? '')}
+              </TextReveal>
             </DialogSubtitle>
           </div>
         </div>

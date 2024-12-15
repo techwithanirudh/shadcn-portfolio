@@ -92,7 +92,7 @@ export default function About() {
                     name={skill.name}
                     description={skill.description}
                     thumbnail={skill.thumbnail}
-                    className="flex h-40 rounded-lg sm:h-48"
+                    className="flex rounded-lg"
                   />
                 ))}
               </div>
