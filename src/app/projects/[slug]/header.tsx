@@ -27,7 +27,7 @@ type HeaderProps = {
 
 const Header = (props: HeaderProps) => {
   const {
-    metadata: { title, description, website, github, tags }
+    metadata: { title, description, website, github, tags, date }
   } = props;
 
   return (
@@ -40,6 +40,11 @@ const Header = (props: HeaderProps) => {
         <div className="flex flex-col gap-3">
           <div className="text-3xl font-bold">{title}</div>
           <div>{description}</div>
+          {date && (
+            <p className="font-medium">
+              {new Date(date).toDateString()}
+            </p>
+          )}
         </div>
       </motion.div>
       <motion.div
@@ -76,7 +81,7 @@ const Header = (props: HeaderProps) => {
         transition={{ delay: 0.1 }}
       >
         {tags?.map((tag, index) => (
-          <Badge key={`project-tag_${index}`}>{tag.label}</Badge>
+          <Badge key={`project-tag_${index}`} variant={"secondary"} className='px-3 py-1 text-sm'>{tag.label}</Badge>
         ))}
       </motion.div>
     </div>

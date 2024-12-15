@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { TOCItemType } from 'fumadocs-core/server';
 
 import { MDXContent } from '@content-collections/mdx/react';
+import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 
 import { notFound } from 'next/navigation';
@@ -71,9 +72,9 @@ export default async function BlogPage(props0: {
         </Link>
       </div>
       <article className="container grid grid-cols-1 px-0 py-8 lg:grid-cols-[2fr_1fr]">
-        <div className="prose dark:prose-invert">
+        <div className="prose flex-1 space-y-4 p-4">
           {/*todo: refer inlinetoc from fumadocs and create custom component using fumadoc core's toc components*/}
-          {/*<InlineTOC items={toc as TOCItemType[]} />*/}
+          <InlineTOC items={toc as TOCItemType[]} />
           {/*todo: refer to fumadocs's content of defaultMdxComponents to add extra components which are missing*/}
           {/*todo: add code functionality which means syntax highlighting using remark*/}
           {/*todo: add remark-image*/}
