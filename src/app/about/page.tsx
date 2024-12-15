@@ -2,7 +2,7 @@
 import TextReveal from '@/components/motion/text-reveal';
 
 import React from 'react';
-import { ArrowUpRightIcon, MailIcon } from 'lucide-react';
+import { ArrowUpRightIcon, ChevronDown, MailIcon } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import Reveal from '@/components/reveal';
 
@@ -15,8 +15,12 @@ import { contact } from '@/components/sections/contact/config';
 import Link from '@/components/motion/link';
 import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
+import { motion, useScroll, useTransform } from 'motion/react';
 
 export default function About() {
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
   return (
     <>
       <main className="flex-1 px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24">
@@ -29,13 +33,21 @@ export default function About() {
               <Reveal>Designer</Reveal>
             </h1>
           </div>
+          <motion.div
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 transform"
+            style={{ opacity }}
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            <ChevronDown className="h-8 w-8" />
+          </motion.div>
         </section>
 
         <Separator />
         <section className="py-12">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-5 md:gap-8">
             <div className="col-span-1 md:col-span-2">
-              <h2 className="text-xl font-semibold">About</h2>
+              <h2 className="text-xl  sm:text-2xl font-semibold">About</h2>
             </div>
             <div className="col-span-1 md:col-span-3">
               <div className="space-y-8">
@@ -45,7 +57,7 @@ export default function About() {
                     and technology.
                   </TextReveal>
                 </h3>
-                <p className="text-base leading-relaxed text-gray-600 sm:text-lg md:text-lg lg:text-xl xl:text-2xl">
+                <p className="text-base leading-relaxed text-muted-foreground sm:text-lg md:text-lg lg:text-xl xl:text-2xl">
                   <TextReveal>
                     My journey into creativity began with a spark of curiosity
                     about how ideas could come to life on a screen. Fascinated
@@ -79,12 +91,12 @@ export default function About() {
         <section className="py-12">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-5 md:gap-8">
             <div className="col-span-1 md:col-span-2">
-              <h2 className="text-xl font-semibold text-gray-800 sm:text-2xl">
+              <h2 className="text-xl font-semibold sm:text-2xl">
                 Skills
               </h2>
             </div>
             <div className="col-span-1 md:col-span-3">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 md:grid-cols-1 xl:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-1 md:gap-6 xl:grid-cols-2">
                 {skills.map((skill, index) => (
                   <SkillCard
                     key={`skill_${index}`}
@@ -104,7 +116,7 @@ export default function About() {
         <section className="py-12">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-5 md:gap-8">
             <div className="col-span-1 md:col-span-2">
-              <h2 className="text-xl font-semibold text-gray-800 sm:text-2xl">
+              <h2 className="text-xl font-semibold sm:text-2xl">
                 Contact
               </h2>
               <div className="mt-2 flex flex-col gap-1">
