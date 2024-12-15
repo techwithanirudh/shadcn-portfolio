@@ -32,15 +32,15 @@ export default function About() {
             <h1 className="leading-wide tracking-relaxed z-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
               <Reveal>Designer</Reveal>
             </h1>
+            <motion.div
+              className="mt-8"
+              style={{ opacity }}
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ChevronDown className="h-8 w-8" />
+            </motion.div>
           </div>
-          <motion.div
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 transform"
-            style={{ opacity }}
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <ChevronDown className="h-8 w-8" />
-          </motion.div>
         </section>
 
         <Separator />
