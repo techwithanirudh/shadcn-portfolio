@@ -6,7 +6,7 @@ import { ArrowUpRightIcon, MailIcon } from 'lucide-react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import Reveal from '@/components/reveal';
 
-import SkillCard from '@/components/sections/skills/cozy/skill-card';
+import SkillCard from '@/app/about/_components/skill-card';
 import { skills } from '@/components/sections/skills/config';
 import { Footer } from '@/components/sections';
 import ContactForm from '@/components/sections/contact/cozy/contact-form';
@@ -33,7 +33,7 @@ export default function About() {
 
         <Separator />
         <section className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-5 md:gap-8">
             <div className="col-span-1 md:col-span-2">
               <h2 className="text-xl font-semibold">About</h2>
             </div>
@@ -41,17 +41,24 @@ export default function About() {
               <div className="space-y-8">
                 <h3 className="font-serif text-3xl leading-tight sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl">
                   <TextReveal>
-                    I create captivating designs by blending aesthetics,
-                    motion, and technology.
+                    I create captivating designs by blending aesthetics, motion,
+                    and technology.
                   </TextReveal>
                 </h3>
-                <p className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-2xl leading-relaxed text-gray-600">
+                <p className="text-base leading-relaxed text-gray-600 sm:text-lg md:text-lg lg:text-xl xl:text-2xl">
                   <TextReveal>
-                    I am a passionate and creative Web Developer with a love
-                    for beautiful and functional websites. I have experience
-                    working with a variety of web technologies and frameworks
-                    and I am always eager to learn new things and take on new
-                    challenges.
+                    My journey into creativity began with a spark of curiosity
+                    about how ideas could come to life on a screen. Fascinated
+                    by the interplay of design and technology, I started
+                    exploring web development, motion graphics, and interface
+                    design through self-driven projects. With every experiment,
+                    my skills grew, and what began as a hobby soon became a
+                    passion for crafting meaningful digital experiences. As I
+                    honed my abilities, I sought opportunities to apply them in
+                    real-world settings, turning concepts into polished
+                    outcomes. Today, my approach combines creativity,
+                    problem-solving, and technical expertise to create work that
+                    is both functional and impactful.
                   </TextReveal>
                 </p>
                 <Button
@@ -70,12 +77,14 @@ export default function About() {
 
         <Separator />
         <section className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-5 md:gap-8">
             <div className="col-span-1 md:col-span-2">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Skills</h2>
+              <h2 className="text-xl font-semibold text-gray-800 sm:text-2xl">
+                Skills
+              </h2>
             </div>
             <div className="col-span-1 md:col-span-3">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 md:grid-cols-1 xl:grid-cols-2">
                 {skills.map((skill, index) => (
                   <SkillCard
                     key={`skill_${index}`}
@@ -83,7 +92,7 @@ export default function About() {
                     name={skill.name}
                     description={skill.description}
                     thumbnail={skill.thumbnail}
-                    className="flex h-40 sm:h-48 rounded-lg"
+                    className="flex h-40 rounded-lg sm:h-48"
                   />
                 ))}
               </div>
@@ -93,16 +102,16 @@ export default function About() {
 
         <Separator />
         <section className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-5 md:gap-8">
             <div className="col-span-1 md:col-span-2">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">
+              <h2 className="text-xl font-semibold text-gray-800 sm:text-2xl">
                 Contact
               </h2>
-              <div className="flex flex-col gap-1 mt-2">
+              <div className="mt-2 flex flex-col gap-1">
                 <Link
                   className={cn(
                     buttonVariants({ variant: 'link' }),
-                    'text-sm sm:text-base md:text-lg h-min w-min p-0 font-normal'
+                    'h-min w-min p-0 text-sm font-normal sm:text-base md:text-lg'
                   )}
                   href={`mailto:${contact.email}`}
                 >
@@ -115,7 +124,7 @@ export default function About() {
                     href={href}
                     className={cn(
                       buttonVariants({ variant: 'link' }),
-                      'text-sm sm:text-base md:text-lg h-min w-min gap-1 p-0'
+                      'h-min w-min gap-1 p-0 text-sm sm:text-base md:text-lg'
                     )}
                     key={`contact-social_${index}`}
                   >
@@ -135,4 +144,3 @@ export default function About() {
     </>
   );
 }
-
