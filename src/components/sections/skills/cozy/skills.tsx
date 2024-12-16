@@ -12,16 +12,9 @@ function Skills() {
       <div className="space-y-4 px-4 md:px-6 lg:space-y-10">
         <div className="flex w-full flex-col items-center justify-center text-center lg:flex-row lg:justify-between lg:text-left">
           <div className="flex flex-col items-center lg:items-start">
-            <h2 className="text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight">
-              <TextReveal>
-                My
-              </TextReveal>
-            </h2>
-            <h2 className="-mt-2 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight">
-              <TextReveal>
-                Skills
-              </TextReveal>
-            </h2>
+            <TextReveal as="h2" className="text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight flex flex-col -space-y-4">
+              My Skills
+            </TextReveal>
           </div>
           <p className="mt-4 hidden text-gray-500 dark:text-gray-400 lg:mt-0 lg:block lg:w-[35%]">
             Here are some of my skills where I&apos;ve turned knowledge into
