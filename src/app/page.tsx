@@ -26,8 +26,10 @@ export default function Home() {
           <Experience />
           <Testimonials />
           <Contact />
-          <Footer />
         </main>
+        <footer>
+          <Footer />
+        </footer>
       </div>
       <Cursor />
     </SmoothScroll>

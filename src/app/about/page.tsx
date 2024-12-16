@@ -18,13 +18,52 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { experiences } from '@/components/sections/experience/config';
 import ExperienceCard from '@/components/sections/experience/cozy/experience-card';
 
+import { metadata as meta } from '@/app/config';
+import type { WithContext, AboutPage } from 'schema-dts';
+import { createMetadata } from '@/lib/metadata';
+
+const title = 'About';
+const description = 'More about me.';
+
+export const metadata = createMetadata({
+  title,
+  description,
+  openGraph: {
+    url: '/about',
+    title,
+    description
+  },
+  twitter: {
+    title,
+    description
+  }
+});
+
+const jsonLd: WithContext<AboutPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: title,
+  description,
+  url: `${meta.site.url}/about`,
+  author: {
+    '@type': 'Person',
+    name: meta.author.name,
+    url: meta.site.url,
+    sameAs: [...contact.socials.map(social => social.href)]
+  }
+};
+
 export default function About() {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <>
+    <div className="min-h-[100dvh]">
       <main className="flex-1 px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <section className="flex h-[calc(100svh-theme(spacing.14))] items-center pb-12">
           <div className="container relative mx-auto flex flex-col items-center px-4">
             <TextReveal as="h1" className="leading-wide tracking-relaxed z-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">Innovator</TextReveal>
@@ -197,7 +236,9 @@ export default function About() {
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   );
 }
