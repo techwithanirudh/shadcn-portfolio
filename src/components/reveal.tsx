@@ -1,14 +1,15 @@
 'use client'
 
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import { useInView, motion } from 'motion/react';
 
 interface RevealProps {
   phrases: string[];
   className?: string;
+  as?: React.ElementType;
 }
 
-export function Reveal({ phrases, className = '' }: RevealProps) {
+export function Reveal({ phrases, className = '', as = 'div' }: RevealProps) {
   const body = useRef(null);
   const isInView = useInView(body, { once: true, margin: "-10%" });
 
@@ -17,14 +18,15 @@ export function Reveal({ phrases, className = '' }: RevealProps) {
     enter: (i: number) => ({
       y: "0",
       opacity: 1,
-      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: 0.0075 * i }
+      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: 0.05 * i }
     })
   };
 
+  const Tag = as;
   return (
-    <div ref={body} className={className}>
+    <Tag ref={body} className={className}>
       {phrases.map((phrase, index) => (
-        <div key={index} className="overflow-hidden inline-block mr-1">
+        <span key={index} className="inline-block overflow-hidden mr-1">
           <motion.span
             className="inline-block"
             custom={index}
@@ -34,9 +36,9 @@ export function Reveal({ phrases, className = '' }: RevealProps) {
           >
             {phrase}
           </motion.span>
-        </div>
+        </span>
       ))}
-    </div>
+    </Tag>
   );
 }
 
