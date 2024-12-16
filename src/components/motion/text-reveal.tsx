@@ -1,21 +1,20 @@
 'use client';
-import React from 'react';
-import Reveal from '@/components/reveal';
 
-const TextReveal: React.FC<{ children: React.ReactNode; delay?: number }> = ({
+import React from 'react';
+import { Reveal as AnimatedText } from '@/components/reveal';
+
+interface TextRevealProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const TextReveal: React.FC<TextRevealProps> = ({
   children,
-  delay = 0.01
+  className = ''
 }) => {
-  const processChildren = (child: React.ReactNode): React.ReactNode => {
+  const generatePhrases = (child: React.ReactNode): string[] => {
     if (typeof child === 'string') {
-      return child.split(' ').map((word, index) => (
-        <React.Fragment key={`word-${index}`}>
-          <Reveal transition={{ duration: 0.5, delay: delay * index }}>
-            {word}
-          </Reveal>
-          {index !== child.split(' ').length - 1 && ' '}
-        </React.Fragment>
-      ));
+      return child.split(' ');
     } else if (React.isValidElement(child)) {
       const element = child as React.ReactElement & {
         props?: {
@@ -24,24 +23,19 @@ const TextReveal: React.FC<{ children: React.ReactNode; delay?: number }> = ({
       };
 
       if (element.props && 'children' in element.props) {
-        return React.cloneElement(
-          element,
-          {},
-          processChildren(element.props.children)
-        );
+        return generatePhrases(element.props.children);
       }
-      return element;
+      return [];
     } else if (Array.isArray(child)) {
-      return child.map((nestedChild, index) => (
-        <React.Fragment key={`nested-${index}`}>
-          {processChildren(nestedChild)}
-        </React.Fragment>
-      ));
+      return child.flatMap(nestedChild => generatePhrases(nestedChild));
     }
-    return child;
+    return [];
   };
 
-  return <>{processChildren(children)}</>;
+  const phrases = generatePhrases(children);
+
+  return <AnimatedText phrases={phrases} className={className} />;
 };
 
 export default TextReveal;
+
