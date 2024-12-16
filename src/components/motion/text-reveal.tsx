@@ -1,16 +1,18 @@
 'use client';
 
-import React from 'react';
-import { Reveal as AnimatedText } from '@/components/reveal';
+import React, { type JSX } from 'react';
+import { Reveal } from '@/components/reveal';
 
 interface TextRevealProps {
   children: React.ReactNode;
   className?: string;
+  as?: keyof JSX.IntrinsicElements;
 }
 
 const TextReveal: React.FC<TextRevealProps> = ({
   children,
-  className = ''
+  className = '',
+  as = 'div'
 }) => {
   const generatePhrases = (child: React.ReactNode): string[] => {
     if (typeof child === 'string') {
@@ -34,7 +36,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
 
   const phrases = generatePhrases(children);
 
-  return <AnimatedText phrases={phrases} className={className} />;
+  return <Reveal phrases={phrases} className={className} as={as} />;
 };
 
 export default TextReveal;

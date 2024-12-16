@@ -56,12 +56,11 @@ function ProjectCard({
       </CardContent>
       <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6">
         <div>
-          <h3 className="text-xl font-bold">
-            <TextReveal>{title}</TextReveal>
-          </h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            <TextReveal>{description || ''}</TextReveal>
-          </p>
+          <TextReveal as="h3" className="text-xl font-bold">
+            {title}
+          </TextReveal>
+          <TextReveal as="p" className="text-sm text-gray-500 dark:text-gray-400">{description || ''}</TextReveal>
+
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => (
               <Badge key={`project-tag_${index}`}>{tag.label}</Badge>

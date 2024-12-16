@@ -27,12 +27,8 @@ export default function About() {
       <main className="flex-1 px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24">
         <section className="flex h-[calc(100svh-theme(spacing.14))] items-center pb-12">
           <div className="container relative mx-auto flex flex-col items-center px-4">
-            <h1 className="leading-wide tracking-relaxed z-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
-              <TextReveal>Innovator</TextReveal>
-            </h1>
-            <h1 className="leading-wide tracking-relaxed z-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
-              <TextReveal>Designer</TextReveal>
-            </h1>
+            <TextReveal as="h1" className="leading-wide tracking-relaxed z-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">Innovator</TextReveal>
+            <TextReveal as="h1" className="leading-wide tracking-relaxed z-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">Designer</TextReveal>
             <motion.div
               className="mt-8"
               style={{ opacity }}
@@ -53,13 +49,13 @@ export default function About() {
             <div className="col-span-1 md:col-span-3">
               <div className="space-y-8">
                 <h3 className="font-serif text-3xl leading-tight sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl">
-                  <TextReveal>
+                  <TextReveal as="p">
                     I create captivating designs by blending aesthetics, motion,
                     and technology.
                   </TextReveal>
                 </h3>
                 <p className="text-base leading-relaxed text-muted-foreground sm:text-lg md:text-lg lg:text-xl xl:text-2xl">
-                  <TextReveal>
+                  <TextReveal as="p">
                     My journey into creativity began with a spark of curiosity
                     about how ideas could come to life on a screen. Fascinated
                     by the interplay of design and technology, I started
