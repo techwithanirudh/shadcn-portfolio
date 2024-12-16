@@ -58,7 +58,8 @@ export default function BlogPage(): React.ReactElement {
         id="hero"
       >
         <div className="flex flex-col items-center md:max-w-7xl">
-          <TextReveal delay={0.2} as="h1" className="leading-wide tracking-relaxed text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">Blog</TextReveal>
+          {/* todo: re-add delay of 0.2seconds */}
+          <TextReveal as="h1" className="leading-wide tracking-relaxed text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">Blog</TextReveal> 
           <Line className={'mt-16'} />
         </div>
         {/*<motion.div*/}
