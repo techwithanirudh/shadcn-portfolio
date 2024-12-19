@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { Header } from '@/components/sections';
+import { Footer, Header } from '@/components/sections';
 
 import Loader from '@/app/loader';
 import Cursor from '@/components/cursor/cursor';
@@ -17,6 +17,9 @@ export default function ProjectLayout({
       <div className="flex min-h-[100dvh] flex-col">
         <Header />
         {children}
+        <footer>
+          <Footer />
+        </footer>
       </div>
       <Cursor />
     </SmoothScroll>

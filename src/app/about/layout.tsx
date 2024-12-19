@@ -1,4 +1,4 @@
-import { Header } from '@/components/sections';
+import { Footer, Header } from '@/components/sections';
 
 import Cursor from '@/components/cursor/cursor';
 import SmoothScroll from '@/components/smooth-scroll';
@@ -56,6 +56,9 @@ export default function AboutLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        <footer>
+          <Footer />
+        </footer>
       </div>
       <Cursor />
     </SmoothScroll>
