@@ -47,28 +47,24 @@ export default function About() {
           </div>
           <div className="col-span-1 md:col-span-3">
             <div className="space-y-8">
-              <h3 className="font-serif text-3xl leading-tight sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl">
-                <TextReveal as="p">
-                  I create captivating designs by blending aesthetics, motion,
-                  and technology.
-                </TextReveal>
-              </h3>
-              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg md:text-lg lg:text-xl xl:text-2xl">
-                <TextReveal as="p">
-                  My journey into creativity began with a spark of curiosity
-                  about how ideas could come to life on a screen. Fascinated
-                  by the interplay of design and technology, I started
-                  exploring web development, motion graphics, and interface
-                  design through self-driven projects. With every experiment,
-                  my skills grew, and what began as a hobby soon became a
-                  passion for crafting meaningful digital experiences. As I
-                  honed my abilities, I sought opportunities to apply them in
-                  real-world settings, turning concepts into polished
-                  outcomes. Today, my approach combines creativity,
-                  problem-solving, and technical expertise to create work that
-                  is both functional and impactful.
-                </TextReveal>
-              </p>
+              <TextReveal as="h3" className="font-serif text-3xl leading-tight sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl">
+                I create captivating designs by blending aesthetics, motion,
+                and technology.
+              </TextReveal>
+              <TextReveal as="p" className="text-base leading-relaxed text-muted-foreground sm:text-lg md:text-lg lg:text-xl xl:text-2xl">
+                My journey into creativity began with a spark of curiosity
+                about how ideas could come to life on a screen. Fascinated
+                by the interplay of design and technology, I started
+                exploring web development, motion graphics, and interface
+                design through self-driven projects. With every experiment,
+                my skills grew, and what began as a hobby soon became a
+                passion for crafting meaningful digital experiences. As I
+                honed my abilities, I sought opportunities to apply them in
+                real-world settings, turning concepts into polished
+                outcomes. Today, my approach combines creativity,
+                problem-solving, and technical expertise to create work that
+                is both functional and impactful.
+              </TextReveal>
               <Button
                 asChild
                 variant={'outline'}

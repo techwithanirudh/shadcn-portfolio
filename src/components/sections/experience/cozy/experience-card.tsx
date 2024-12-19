@@ -30,7 +30,7 @@ function ExperienceCard({
             {company}
           </TextReveal>
           <TextReveal as="span" className="text-sm font-medium">
-            <TextReveal>{duration}</TextReveal>
+            {duration}
           </TextReveal>
         </div>
         <TextReveal as="h4" className="mt-2 text-xl font-medium uppercase">
