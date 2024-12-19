@@ -53,6 +53,7 @@ function ProjectCard({
               src={thumbnail || '/placeholder.svg'}
               alt={`Image of ${title}`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-300 hover:scale-105"
             />
           </AspectRatio>
