@@ -4,10 +4,10 @@ import { motion } from 'motion/react';
 import { opacity, slideUp } from './anim';
 
 interface PreloaderProps {
-  progress: number;
+  children: React.ReactNode;
 }
 
-export function Preloader({ progress }: PreloaderProps) {
+export function Preloader({ children }: PreloaderProps) {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export function Preloader({ progress }: PreloaderProps) {
               'absolute z-[1] flex items-center text-7xl text-foreground'
             }
           >
-            {progress}%
+            {children}%
           </motion.p>
           <svg className="absolute top-0 h-[calc(100%+300px)] w-full">
             <motion.path
