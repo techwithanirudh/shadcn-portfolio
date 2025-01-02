@@ -60,7 +60,12 @@ function ProjectCard({
           <TextReveal as="h3" className="text-xl font-bold">
             {title}
           </TextReveal>
-          <TextReveal as="p" className="text-sm text-gray-500 dark:text-gray-400">{description || ''}</TextReveal>
+          <TextReveal
+            as="p"
+            className="text-sm text-gray-500 dark:text-gray-400"
+          >
+            {description || ''}
+          </TextReveal>
 
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => (

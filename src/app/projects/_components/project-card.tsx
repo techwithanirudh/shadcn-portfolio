@@ -57,7 +57,10 @@ function ProjectCard({
           <TextReveal className="text-xl font-bold" as="h1">
             {title}
           </TextReveal>
-          <TextReveal as="p" className="text-sm text-gray-500 dark:text-gray-400">
+          <TextReveal
+            as="p"
+            className="text-sm text-gray-500 dark:text-gray-400"
+          >
             {description || ''}
           </TextReveal>
           <div className="mt-2 flex flex-wrap gap-2">

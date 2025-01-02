@@ -10,18 +10,18 @@ export default function Loader() {
 
   return (
     <AnimatePresence mode="wait">
-      {isVisible &&
-        (<Preloader>
+      {isVisible && (
+        <Preloader>
           <NumberTicker
             from={10}
             target={100}
             autoStart={true}
-            transition={{ duration: 2.5, type: "tween", ease: "easeInOut" }}
+            transition={{ duration: 2.5, type: 'tween', ease: 'easeInOut' }}
             onComplete={() => setIsVisible(false)}
-            onStart={() => console.log("start")}
+            onStart={() => console.log('start')}
           />
-        </Preloader>)
-      }
+        </Preloader>
+      )}
     </AnimatePresence>
   );
 }

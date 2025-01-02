@@ -17,7 +17,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
   const generatePhrases = (child: React.ReactNode): string[] => {
     if (typeof child === 'string') {
       // Split by words but preserve natural line breaks
-      return child.split(/\s+/).filter(word => word.length > 0);
+      return child.split(/\s+/).filter((word) => word.length > 0);
     } else if (React.isValidElement(child)) {
       const element = child as React.ReactElement & {
         props?: {
@@ -30,7 +30,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
       }
       return [];
     } else if (Array.isArray(child)) {
-      return child.flatMap(nestedChild => generatePhrases(nestedChild));
+      return child.flatMap((nestedChild) => generatePhrases(nestedChild));
     }
     return [];
   };
@@ -41,4 +41,3 @@ const TextReveal: React.FC<TextRevealProps> = ({
 };
 
 export default TextReveal;
-

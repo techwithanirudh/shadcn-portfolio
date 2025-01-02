@@ -3,7 +3,7 @@ import type { Technology } from '@/types/technology';
 const technologies: Technology[] = [
   {
     name: 'HTML',
-    image: '/images/person/janedoe.jpg',
+    image: '/images/person/janedoe.jpg'
   },
   {
     name: 'CSS',
@@ -24,7 +24,7 @@ const technologies: Technology[] = [
   {
     name: 'Python',
     image: '/images/person/michaeljohnson.jpg'
-  },
+  }
 ];
 
 export { technologies };

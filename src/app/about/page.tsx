@@ -124,10 +124,10 @@ export default function About() {
           </div>
           <div className="col-span-1 md:col-span-3">
             <div
-              className="w-full h-full items-center justify-center cursor-pointer relative overflow-hidden"
+              className="relative h-full w-full cursor-pointer items-center justify-center overflow-hidden"
               ref={containerRef}
             >
-              <div className="flex h-full w-full items-center justify-start gap-4 flex-wrap">
+              <div className="flex h-full w-full flex-wrap items-center justify-start gap-4">
                 {technologies.map((technology, index) => (
                   <>
                     <TechnologyCard

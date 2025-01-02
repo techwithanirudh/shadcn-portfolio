@@ -39,7 +39,7 @@ const jsonLd: WithContext<Blog> = {
     '@type': 'Person',
     name: meta.author.name,
     url: meta.site.url,
-    sameAs: [...contact.socials.map(social => social.href)]
+    sameAs: [...contact.socials.map((social) => social.href)]
   }
 };
 
@@ -62,7 +62,12 @@ export default function BlogPage(): React.ReactElement {
       >
         <div className="flex flex-col items-center md:max-w-7xl">
           {/* todo: re-add delay of 0.2seconds */}
-          <TextReveal as="h1" className="leading-wide tracking-relaxed text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">Blog</TextReveal>
+          <TextReveal
+            as="h1"
+            className="leading-wide tracking-relaxed text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
+          >
+            Blog
+          </TextReveal>
           <Line className={'mt-16'} />
         </div>
       </section>

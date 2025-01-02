@@ -41,9 +41,7 @@ const Header = (props: HeaderProps) => {
           <div className="text-3xl font-bold">{title}</div>
           <div>{description}</div>
           {date && (
-            <p className="font-medium">
-              {new Date(date).toDateString()}
-            </p>
+            <p className="font-medium">{new Date(date).toDateString()}</p>
           )}
         </div>
       </motion.div>
@@ -81,7 +79,13 @@ const Header = (props: HeaderProps) => {
         transition={{ delay: 0.1 }}
       >
         {tags?.map((tag, index) => (
-          <Badge key={`project-tag_${index}`} variant={"secondary"} className='px-3 py-1 text-sm'>{tag.label}</Badge>
+          <Badge
+            key={`project-tag_${index}`}
+            variant={'secondary'}
+            className="px-3 py-1 text-sm"
+          >
+            {tag.label}
+          </Badge>
         ))}
       </motion.div>
     </div>

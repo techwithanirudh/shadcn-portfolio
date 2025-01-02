@@ -27,7 +27,10 @@ function Projects() {
         <div className="grid gap-10">
           <div className="flex w-full flex-col items-center justify-center text-center lg:flex-row lg:justify-between lg:text-left">
             <div className="flex flex-col items-center lg:items-start">
-              <TextReveal as="h2" className="text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight flex flex-col -space-y-4">
+              <TextReveal
+                as="h2"
+                className="flex flex-col -space-y-4 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
+              >
                 My Projects
               </TextReveal>
             </div>

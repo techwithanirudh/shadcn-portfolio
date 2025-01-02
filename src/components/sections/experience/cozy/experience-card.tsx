@@ -36,7 +36,10 @@ function ExperienceCard({
         <TextReveal as="h4" className="mt-2 text-xl font-medium uppercase">
           {name}
         </TextReveal>
-        <TextReveal as="p" className="mt-2 max-w-2xl text-lg font-light text-zinc-700 dark:text-zinc-400">
+        <TextReveal
+          as="p"
+          className="mt-2 max-w-2xl text-lg font-light text-zinc-700 dark:text-zinc-400"
+        >
           {description}
         </TextReveal>
         <hr className="my-6 border-t border-border" />

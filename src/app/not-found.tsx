@@ -1,29 +1,27 @@
 'use client';
-import React from "react";
-import Screensaver from "@/components/motion/screensaver";
-import { exampleImages } from "@/lib/example-images";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import React from 'react';
+import Screensaver from '@/components/motion/screensaver';
+import { exampleImages } from '@/lib/example-images';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
 
 const NotFoundPage: React.FC = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   return (
     <div
-      className="min-h-[100dvh] bg-[#efefef] overflow-hidden flex items-center justify-center relative"
+      className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden bg-[#efefef]"
       ref={containerRef}
     >
-      <div className="z-30 flex flex-col justify-center items-center gap-4">
-        <h1 className="text-3xl md:text-6xl">
-          page not found
-        </h1>
-        <div className="bg-[#efefef] w-full rounded-full">
+      <div className="z-30 flex flex-col items-center justify-center gap-4">
+        <h1 className="text-3xl md:text-6xl">page not found</h1>
+        <div className="w-full rounded-full bg-[#efefef]">
           <Link
             href="/"
             className={cn(
               buttonVariants({ variant: 'default' }),
-              'self-center rounded-full px-8 py-2 md:self-start w-full'
+              'w-full self-center rounded-full px-8 py-2 md:self-start'
             )}
           >
             Home
@@ -38,11 +36,11 @@ const NotFoundPage: React.FC = () => {
           startAngle={40}
           containerRef={containerRef}
         >
-          <div className="w-20 h-20 md:w-48 md:h-48 overflow-hidden">
+          <div className="h-20 w-20 overflow-hidden md:h-48 md:w-48">
             <img
               src={image}
               alt={`Example ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
           </div>
         </Screensaver>

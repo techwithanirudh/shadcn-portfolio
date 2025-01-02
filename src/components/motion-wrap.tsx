@@ -15,10 +15,7 @@ const MotionWrap: React.FC<MotionWrapProps> = ({
   ...props
 }) => {
   return (
-    <motion.section
-      className={cn(className)}
-      {...props}
-    >
+    <motion.section className={cn(className)} {...props}>
       {children}
     </motion.section>
   );

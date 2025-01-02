@@ -23,7 +23,7 @@ export const metadata = createMetadata({
   },
   twitter: {
     title,
-    description,
+    description
   }
 });
 
@@ -36,7 +36,7 @@ const jsonLd: WithContext<CollectionPage> = {
   isPartOf: {
     '@type': 'WebSite',
     name: meta.site.title,
-    url: meta.site.url,
+    url: meta.site.url
   },
   hasPart: [...project.getPages()].map((project) => ({
     '@type': 'SoftwareApplication',
@@ -66,7 +66,10 @@ export default function ProjectsPage(): React.ReactElement {
       >
         <div className="flex flex-col items-center md:max-w-7xl">
           {/* todo: re-add delay of 0.2seconds */}
-          <TextReveal as="h1" className="leading-wide tracking-relaxed text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl" >
+          <TextReveal
+            as="h1"
+            className="leading-wide tracking-relaxed text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
+          >
             My Projects
           </TextReveal>
 

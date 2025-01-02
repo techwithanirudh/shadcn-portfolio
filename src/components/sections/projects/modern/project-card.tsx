@@ -57,8 +57,13 @@ function ProjectCard({
               className="object-cover transition-transform duration-300 hover:scale-105"
             />
           </AspectRatio>
-          <TextReveal className="text-xl font-bold" as="h3">{title}</TextReveal>
-          <TextReveal as="p" className="text-sm text-gray-500 dark:text-gray-400">
+          <TextReveal className="text-xl font-bold" as="h3">
+            {title}
+          </TextReveal>
+          <TextReveal
+            as="p"
+            className="text-sm text-gray-500 dark:text-gray-400"
+          >
             {description || ''}
           </TextReveal>
           <div className="mt-2 flex flex-wrap gap-2">

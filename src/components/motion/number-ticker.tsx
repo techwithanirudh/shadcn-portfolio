@@ -1,28 +1,28 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 import {
   useMotionValue,
   useTransform,
   motion,
   animate,
   ValueAnimationTransition,
-  AnimationPlaybackControls,
-} from "motion/react";
+  AnimationPlaybackControls
+} from 'motion/react';
 import {
   useEffect,
   useCallback,
   useState,
   useImperativeHandle,
-  forwardRef,
-} from "react";
+  forwardRef
+} from 'react';
 
 interface NumberTickerProps {
-  from: number;           // Starting value of the animation
-  target: number;         // End value of the animation
-  transition?: ValueAnimationTransition;  // Animation configuration, refer to framer-motion docs for more details
-  className?: string;     // additionl CSS classes for styling
-  onStart?: () => void;   // Callback function when animation starts
+  from: number; // Starting value of the animation
+  target: number; // End value of the animation
+  transition?: ValueAnimationTransition; // Animation configuration, refer to framer-motion docs for more details
+  className?: string; // additionl CSS classes for styling
+  onStart?: () => void; // Callback function when animation starts
   onComplete?: () => void; // Callback function when animation completes
-  autoStart?: boolean;    // Whether to start the animation automatically
+  autoStart?: boolean; // Whether to start the animation automatically
 }
 
 // Ref interface to allow external control of the animation
@@ -37,8 +37,8 @@ const NumberTicker = forwardRef<NumberTickerRef, NumberTickerProps>(
       target = 100,
       transition = {
         duration: 3,
-        type: "tween",
-        ease: "easeInOut",
+        type: 'tween',
+        ease: 'easeInOut'
       },
       className,
       onStart,
@@ -60,19 +60,19 @@ const NumberTicker = forwardRef<NumberTickerRef, NumberTickerProps>(
       onStart?.();
 
       count.set(from);
-      
+
       const newControls = animate(count, target, {
         ...transition,
         onComplete: () => {
           onComplete?.();
-        },
+        }
       });
       setControls(newControls);
     }, []);
 
     // Expose the startAnimation function via ref
     useImperativeHandle(ref, () => ({
-      startAnimation,
+      startAnimation
     }));
 
     useEffect(() => {
@@ -90,7 +90,7 @@ const NumberTicker = forwardRef<NumberTickerRef, NumberTickerProps>(
   }
 );
 
-NumberTicker.displayName = "NumberTicker";
+NumberTicker.displayName = 'NumberTicker';
 
 export default NumberTicker;
 
