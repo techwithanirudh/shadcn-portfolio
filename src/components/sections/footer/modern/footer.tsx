@@ -18,7 +18,7 @@ export default function Footer() {
       ref={containerRef}
       className="relative h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] 2xl:h-[800px]"
       style={{
-        clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)',
+        clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)'
       }}
     >
       <motion.div
@@ -30,4 +30,3 @@ export default function Footer() {
     </div>
   );
 }
-

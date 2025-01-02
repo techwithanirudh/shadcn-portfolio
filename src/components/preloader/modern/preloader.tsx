@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { opacity, slideUp } from './anim';
 
@@ -7,12 +7,12 @@ import { Teko } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
 interface PreloaderProps {
-  progress: number;
+  children: React.ReactNode;
 }
 
 const teko = Teko({ weight: '400', subsets: ['latin'] });
 
-export function Preloader({ progress }: PreloaderProps) {
+export function Preloader({ children }: PreloaderProps) {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export function Preloader({ progress }: PreloaderProps) {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="fixed z-30 flex h-[100dvh] w-[100dvw] cursor-wait items-center justify-center bg-background px-[60px] pb-[40px]"
+      className="fixed z-[999] flex h-[100dvh] w-[100dvw] cursor-wait items-center justify-center bg-background px-[60px] pb-[40px]"
     >
       {dimension.width > 0 && (
         <>
@@ -51,7 +51,7 @@ export function Preloader({ progress }: PreloaderProps) {
               'absolute z-[1] flex items-center text-[192px] text-foreground'
             )}
           >
-            {progress}
+            {children}
           </motion.p>
           <svg className="absolute top-0 h-[calc(100%+300px)] w-full">
             <motion.path

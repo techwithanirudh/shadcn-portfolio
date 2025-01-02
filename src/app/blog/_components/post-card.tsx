@@ -54,15 +54,21 @@ function PostCard({
               className="object-cover transition-transform duration-300 hover:scale-105"
             />
           </AspectRatio>
-          <h3 className="text-xl font-bold">
-            <TextReveal>{title}</TextReveal>
-          </h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            <TextReveal>{description || ''}</TextReveal>
-          </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            <TextReveal>{date.toDateString()}</TextReveal>
-          </p>
+          <TextReveal as="h3" className="text-xl font-bold">
+            {title}
+          </TextReveal>
+          <TextReveal
+            as="p"
+            className="text-sm text-gray-500 dark:text-gray-400"
+          >
+            {description || ''}
+          </TextReveal>
+          <TextReveal
+            as="p"
+            className="text-sm text-gray-500 dark:text-gray-400"
+          >
+            {date.toDateString()}
+          </TextReveal>
           {/* <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => (
               <Badge key={`project-tag_${index}`}>{tag.label}</Badge>

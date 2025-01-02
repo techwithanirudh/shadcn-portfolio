@@ -51,17 +51,18 @@ export default function ContactForm() {
   // todo: probably refactor this, setIsOpen is not clean
   // values: ContactFormType
   async function onSubmit(values: ContactFormType) {
-    if (process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === "true") {
+    if (process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === 'true') {
       setIsOpen(true);
     } else {
-      const mailto = `mailto:${encodeURIComponent(contact.email)}` +
-                     `?subject=${encodeURIComponent("Contact Form Submission")}` +
-                     `&body=${encodeURIComponent(
-                       `Name: ${values.name}\nMessage: ${values.message}`
-                     )}`;
+      const mailto =
+        `mailto:${encodeURIComponent(contact.email)}` +
+        `?subject=${encodeURIComponent('Contact Form Submission')}` +
+        `&body=${encodeURIComponent(
+          `Name: ${values.name}\nMessage: ${values.message}`
+        )}`;
       window.location.href = mailto;
     }
-  };
+  }
 
   async function onVerify(token?: string) {
     setIsOpen(false);

@@ -40,7 +40,7 @@ export default function SkillCard({
       transition={{
         type: 'spring',
         stiffness: 200,
-        damping: 24,
+        damping: 24
       }}
     >
       <DialogTrigger
@@ -69,9 +69,9 @@ export default function SkillCard({
             <DialogImage
               src={thumbnail ?? '/placeholder.svg'}
               alt={`An image which depicts the skill (${name})`}
-              className='h-12 w-12 object-cover object-top'
+              className="h-12 w-12 object-cover object-top"
               style={{
-                borderRadius: '4px',
+                borderRadius: '4px'
               }}
             />
             <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
@@ -116,7 +116,7 @@ export default function SkillCard({
               }}
             >
               <MemoizedReactMarkdown
-                className="prose min-w-full break-words text-muted-foreground dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
+                className="dark:prose-invert prose min-w-full break-words text-muted-foreground prose-p:leading-relaxed prose-pre:p-0"
                 remarkPlugins={[remarkGfm, remarkMath]}
                 components={{
                   p({ children }) {

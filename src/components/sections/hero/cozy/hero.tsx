@@ -17,9 +17,12 @@ function Hero() {
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
             Hi, I&apos;m <TextReveal>{hero.name}</TextReveal>
           </h1>
-          <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            <TextReveal>{hero.description}</TextReveal>
-          </p>
+          <TextReveal
+            as="p"
+            className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+          >
+            {hero.description}
+          </TextReveal>
         </div>
         <Image
           alt="Image"
