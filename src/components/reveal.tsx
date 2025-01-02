@@ -26,7 +26,7 @@ export function Reveal({ phrases, className = '', as = 'div' }: RevealProps) {
   return (
     <Tag ref={body} className={className}>
       {phrases.map((phrase, index) => (
-        <span key={index} className="inline-block overflow-hidden mr-1">
+        <span key={index} className="inline-flex overflow-hidden w-fit relative mr-1">
           <motion.span
             className="inline-block"
             custom={index}

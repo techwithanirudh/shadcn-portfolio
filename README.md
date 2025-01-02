@@ -94,6 +94,7 @@ This project has been inspired by the following websites:
 - [github.com/ismamz/next-transition-router](https://github.com/ismamz/next-transition-router)
 - [jorisbrianti.fr](https://jorisbrianti.fr/)
 - [athos-dark.framer.ai](https://athos-dark.framer.ai/)
+- [fancycomponents.dev](https://www.fancycomponents.dev/)
 
 and more
 

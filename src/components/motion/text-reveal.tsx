@@ -16,7 +16,8 @@ const TextReveal: React.FC<TextRevealProps> = ({
 }) => {
   const generatePhrases = (child: React.ReactNode): string[] => {
     if (typeof child === 'string') {
-      return child.split(' ');
+      // Split by words but preserve natural line breaks
+      return child.split(/\s+/).filter(word => word.length > 0);
     } else if (React.isValidElement(child)) {
       const element = child as React.ReactElement & {
         props?: {
