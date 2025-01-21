@@ -5,6 +5,7 @@ import { metadata as meta } from '@/app/config';
 import { copyright, footer } from '@/components/sections/footer/config';
 import { links } from '@/components/sections/header/config';
 import { contact } from '@/components/sections/contact/config';
+import { getYearDisplay } from '@/lib/utils';
 
 export default function Content() {
   return (
@@ -17,9 +18,8 @@ export default function Content() {
 
 const Copyright = () => {
   const { startYear } = copyright;
-  const currentYear = new Date().getFullYear()
-  const yearDisplay = startYear === currentYear ? startYear : `${startYear}-${currentYear}`
-
+  const yearDisplay = getYearDisplay(startYear);
+  
   return (
     <div className="flex flex-col items-start justify-between sm:flex-row sm:items-end">
       <h1 className="mt-10 text-[18vw] leading-[0.8] md:text-[16vw] lg:text-[18vw] xl:text-[20vw] 2xl:text-[22vw]">

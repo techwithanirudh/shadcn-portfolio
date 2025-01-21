@@ -11,3 +11,8 @@ export function trimString(len: number, str: string) {
   }
   return str;
 }
+
+export const getYearDisplay = (startYear: number) => {
+  const currentYear = new Date().getFullYear();
+  return startYear === currentYear ? startYear : `${startYear}-${currentYear}`;
+};

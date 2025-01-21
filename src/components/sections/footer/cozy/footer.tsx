@@ -3,11 +3,11 @@ import Link from '@/components/motion/link';
 import { metadata as meta } from '@/app/config';
 
 import { copyright, footer } from '@/components/sections/footer/config';
+import { getYearDisplay } from '@/lib/utils';
 
 function Footer() {
   const { startYear } = copyright;
-  const currentYear = new Date().getFullYear()
-  const yearDisplay = startYear === currentYear ? startYear : `${startYear}-${currentYear}`
+  const yearDisplay = getYearDisplay(startYear);
   
   return (
     <footer className="flex w-full shrink-0 flex-col items-center gap-2 border-t border-border px-4 py-6 sm:flex-row md:px-6">
