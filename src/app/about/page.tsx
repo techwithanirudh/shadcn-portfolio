@@ -19,15 +19,35 @@ import { experiences } from '@/components/sections/experience/config';
 import ExperienceCard from '@/components/sections/experience/cozy/experience-card';
 import TechnologyCard from '@/components/sections/technologies/modern/technology-card';
 import { technologies } from '@/components/sections/technologies/config';
+import ImageTrail from '@/components/motion/motion-trail';
+import { exampleImages } from '@/lib/example-images';
 
 export default function About() {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null)
+  const testimonialsRef = useRef<HTMLDivElement>(null);
 
   return (
     <main className="flex-1 px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24">
-      <section className="flex h-[calc(100svh-theme(spacing.14))] items-center pb-12">
+      <section className="flex h-[calc(100svh-theme(spacing.14))] justify-center items-center pb-12 relative overflow-hidden -mx-4 sm:-mx-8 md:-mx-12 lg:-mx-16 2xl:-mx-24">
+        <div className="absolute top-0 left-0 z-0" ref={heroRef}>
+          <ImageTrail containerRef={heroRef}>
+            {exampleImages.map((image, index) => (
+              <div
+                key={index}
+                className="flex relative overflow-hidden w-24 h-24 "
+              >
+                <img
+                  src={image}
+                  alt="image"
+                  className="object-cover absolute inset-0"
+                />
+              </div>
+            ))}
+          </ImageTrail>
+        </div>
+        {/* <h1 className="text-9xl z-10">ALBUMS</h1> */}
         <div className="container relative mx-auto flex flex-col items-center px-4">
           <TextReveal
             as="h1"
@@ -125,7 +145,7 @@ export default function About() {
           <div className="col-span-1 md:col-span-3">
             <div
               className="relative h-full w-full cursor-pointer items-center justify-center overflow-hidden"
-              ref={containerRef}
+              ref={testimonialsRef}
             >
               <div className="flex h-full w-full flex-wrap items-center justify-start gap-4">
                 {technologies.map((technology, index) => (
@@ -133,14 +153,14 @@ export default function About() {
                     <TechnologyCard
                       key={`technology_${index}`}
                       name={technology.name}
-                      containerRef={containerRef}
+                      containerRef={testimonialsRef}
                     />
 
                     {index < technologies.length - 1 && (
                       <TechnologyCard
                         key={`technology_sep_${index}`}
                         name={','}
-                        containerRef={containerRef}
+                        containerRef={testimonialsRef}
                       />
                     )}
                   </>
