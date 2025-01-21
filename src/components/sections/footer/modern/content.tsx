@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '@/components/motion/link';
 import { metadata as meta } from '@/app/config';
 
-import { footer } from '@/components/sections/footer/config';
+import { copyright, footer } from '@/components/sections/footer/config';
 import { links } from '@/components/sections/header/config';
 import { contact } from '@/components/sections/contact/config';
 
@@ -16,7 +16,7 @@ export default function Content() {
 }
 
 const Copyright = () => {
-  const startYear = 2024
+  const { startYear } = copyright;
   const currentYear = new Date().getFullYear()
   const yearDisplay = startYear === currentYear ? startYear : `${startYear}-${currentYear}`
 

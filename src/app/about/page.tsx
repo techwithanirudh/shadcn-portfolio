@@ -41,6 +41,7 @@ export default function About() {
                 <img
                   src={image}
                   alt="image"
+                  loading="lazy"
                   className="object-cover absolute inset-0"
                 />
               </div>

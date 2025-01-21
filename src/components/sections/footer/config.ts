@@ -7,4 +7,8 @@ const footer: FooterItem[] = [
   }
 ];
 
+export const copyright = {
+  startYear: 2024
+};
+
 export { footer };
