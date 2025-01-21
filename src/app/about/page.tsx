@@ -41,13 +41,13 @@ export default function About() {
                 <img
                   src={image}
                   alt="image"
+                  loading="lazy"
                   className="object-cover absolute inset-0"
                 />
               </div>
             ))}
           </ImageTrail>
         </div>
-        {/* <h1 className="text-9xl z-10">ALBUMS</h1> */}
         <div className="container relative mx-auto flex flex-col items-center px-4">
           <TextReveal
             as="h1"
