@@ -57,7 +57,7 @@ export default function SkillCard({
           alt="A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood."
           className="h-48 w-full object-cover"
         /> */}
-        <div className="flex flex-grow flex-col items-end justify-between p-6">
+        <div className="flex grow flex-col items-end justify-between p-6">
           <div className="flex w-full flex-col gap-2">
             <div className="flex items-center justify-between gap-2">
               <DialogImage

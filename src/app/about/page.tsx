@@ -30,7 +30,7 @@ export default function About() {
 
   return (
     <main className="flex-1 px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24">
-      <section className="flex h-[calc(100svh-theme(spacing.14))] justify-center items-center pb-12 relative overflow-hidden -mx-4 sm:-mx-8 md:-mx-12 lg:-mx-16 2xl:-mx-24">
+      <section className="flex h-[calc(100svh-(--spacing(14)))] justify-center items-center pb-12 relative overflow-hidden -mx-4 sm:-mx-8 md:-mx-12 lg:-mx-16 2xl:-mx-24">
         <div className="absolute top-0 left-0 z-0" ref={heroRef}>
           <ImageTrail containerRef={heroRef}>
             {exampleImages.map((image, index) => (
