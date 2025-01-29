@@ -67,8 +67,8 @@ function Projects() {
               </CarouselContent>
 
               {/* todo: look for a nicer design, remove px-12 to see the new design */}
-              {/* <CarouselPrevious className='z-[999] left-0 rounded' variant={"default"} />
-              <CarouselNext className='z-[999] right-0 rounded' variant={"default"} /> */}
+              {/* <CarouselPrevious className='z-999 left-0 rounded' variant={"default"} />
+              <CarouselNext className='z-999 right-0 rounded' variant={"default"} /> */}
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>

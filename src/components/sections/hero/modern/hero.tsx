@@ -89,7 +89,7 @@ function Hero() {
         src="/images/hero.jpg"
         containerRef={container}
         alt="Hero image"
-        containerClassName="aspect-[4/2] w-screen lg:mt-28"
+        containerClassName="aspect-4/2 w-screen lg:mt-28"
         priority
         parallaxOptions={{
           yStart: '-10%',

@@ -44,7 +44,7 @@ function ProjectCard({
       <CardContent className="w-full p-0">
         <AspectRatio
           ratio={16 / 9}
-          className="z-[2] inline-block overflow-hidden"
+          className="z-2 inline-block overflow-hidden"
         >
           <Image
             src={thumbnail || '/placeholder.svg'}
@@ -79,7 +79,7 @@ function ProjectCard({
               <TooltipTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="z-[2] rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
+                  className="z-2 rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
                   asChild
                 >
                   <Link href={href}>

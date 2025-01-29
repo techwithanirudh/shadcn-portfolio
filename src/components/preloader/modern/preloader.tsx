@@ -38,7 +38,7 @@ export function Preloader({ children }: PreloaderProps) {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="fixed z-[999] flex h-[100dvh] w-[100dvw] cursor-wait items-center justify-center bg-background px-[60px] pb-[40px]"
+      className="fixed z-999 flex h-[100dvh] w-[100dvw] cursor-wait items-center justify-center bg-background px-[60px] pb-[40px]"
     >
       {dimension.width > 0 && (
         <>
@@ -48,7 +48,7 @@ export function Preloader({ children }: PreloaderProps) {
             animate="enter"
             className={cn(
               teko.className,
-              'absolute z-[1] flex items-center text-[192px] text-foreground'
+              'absolute z-1 flex items-center text-[192px] text-foreground'
             )}
           >
             {children}
