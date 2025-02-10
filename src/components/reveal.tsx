@@ -11,7 +11,7 @@ interface RevealProps {
 
 export function Reveal({ phrases, className = '', as = 'div' }: RevealProps) {
   const body = useRef(null);
-  const isInView = useInView(body, { once: true, margin: '-10%' });
+  const isInView = useInView(body, { once: true, margin: '0px' });
 
   const animation = {
     initial: { y: '100%', opacity: 0 },

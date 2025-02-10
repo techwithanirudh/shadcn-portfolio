@@ -2,7 +2,7 @@ import Header from './header/cozy/header';
 import Hero from './hero/modern/hero';
 import About from './about/cozy/about';
 import Skills from './skills/cozy/skills';
-import Experience from './experience/cozy/experience';
+import Experience from './experience/modern/experience';
 import Technologies from './technologies/modern/technologies';
 import Projects from './projects/modern/projects';
 import Contact from './contact/cozy/contact';
