@@ -13,7 +13,7 @@ Ensure you have the following installed on your machine:
 **Setting up the Repository**
 
 ```bash
-npx create-next-app -e https://github.com/techwithanirudh/shadcn-portfolio
+npx create-next-app -e https://github.com/techwithanirudh/shadcn-portfolio --use-pnpm
 cd shadcn-portfolio
 ```
 

@@ -1,14 +1,14 @@
 import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogTitle,
-  DialogImage,
-  DialogSubtitle,
-  DialogClose,
-  DialogDescription,
-  DialogContainer
-} from '@/components/motion/dialog';
+  MorphingDialog as Dialog,
+  MorphingDialogTrigger as DialogTrigger,
+  MorphingDialogContent as DialogContent,
+  MorphingDialogTitle as DialogTitle,
+  MorphingDialogImage as DialogImage,
+  MorphingDialogSubtitle as DialogSubtitle,
+  MorphingDialogClose as DialogClose,
+  MorphingDialogDescription as DialogDescription,
+  MorphingDialogContainer as DialogContainer
+} from '@/components/motion/morphing-dialog';
 import { PlusIcon } from 'lucide-react';
 import { Skill } from '@/types/skill';
 
@@ -39,8 +39,8 @@ export default function SkillCard({
     <Dialog
       transition={{
         type: 'spring',
-        bounce: 0.05,
-        duration: 0.25
+        stiffness: 200,
+        damping: 24
       }}
     >
       <DialogTrigger
@@ -57,7 +57,7 @@ export default function SkillCard({
           alt="A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood."
           className="h-48 w-full object-cover"
         /> */}
-        <div className="flex flex-grow flex-col items-end justify-between gap-4 p-6">
+        <div className="flex grow flex-col items-end justify-between gap-4 p-6">
           <button
             type="button"
             className="relative ml-1 flex h-10 w-10 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-full border border-zinc-950/10 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:bg-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:focus-visible:ring-zinc-500"
@@ -66,16 +66,22 @@ export default function SkillCard({
             <PlusIcon size={18} />
           </button>
           <div className="flex w-full flex-col gap-2">
+            <DialogImage
+              src={thumbnail ?? '/placeholder.svg'}
+              alt={`An image which depicts the skill (${name})`}
+              className="h-12 w-12 object-cover object-top"
+              style={{
+                borderRadius: '4px'
+              }}
+            />
             <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
-              <TextReveal>
-                {name}
-              </TextReveal>
+              <TextReveal>{name}</TextReveal>
             </DialogTitle>
             <DialogSubtitle className="text-md text-muted-foreground text-zinc-700 dark:text-zinc-400">
               <TextReveal>
                 {trimLen != -1
                   ? trimString(trimLen, description || '')
-                  : description ?? ''}
+                  : (description ?? '')}
               </TextReveal>
             </DialogSubtitle>
           </div>
@@ -88,20 +94,12 @@ export default function SkillCard({
           }}
           className="pointer-events-auto relative flex h-auto w-full flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900 sm:w-[500px]"
         >
-          {thumbnail && (
-            <DialogImage
-              src={thumbnail}
-              alt={`An image which depicts the skill (${name})`}
-              className="h-full w-full"
-              disableLayoutAnimation
-              variants={{
-                initial: { opacity: 0, scale: 0.8, y: 100 },
-                animate: { opacity: 1, scale: 1, y: 0 },
-                exit: { opacity: 0, scale: 0.8, y: 100 }
-              }}
-            />
-          )}
-          <div className="flex flex-col p-6 gap-2">
+          <DialogImage
+            src={thumbnail ?? '/placeholder.svg'}
+            alt={`An image which depicts the skill (${name})`}
+            className="h-full w-full"
+          />
+          <div className="flex flex-col gap-2 p-6">
             <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
               {name}
             </DialogTitle>
@@ -118,7 +116,7 @@ export default function SkillCard({
               }}
             >
               <MemoizedReactMarkdown
-                className="prose min-w-full break-words text-muted-foreground dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
+                className="dark:prose-invert prose min-w-full break-words text-muted-foreground prose-p:leading-relaxed prose-pre:p-0"
                 remarkPlugins={[remarkGfm, remarkMath]}
                 components={{
                   p({ children }) {

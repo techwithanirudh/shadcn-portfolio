@@ -9,6 +9,8 @@ import PostCard from '@/app/blog/_components/post-card';
 
 import { metadata as meta } from '@/app/config';
 import type { WithContext, Blog } from 'schema-dts';
+import { Footer } from '@/components/sections';
+import { contact } from '@/components/sections/contact/config';
 
 const title = 'Blog';
 const description = 'My thoughts on technology.';
@@ -36,7 +38,8 @@ const jsonLd: WithContext<Blog> = {
   author: {
     '@type': 'Person',
     name: meta.author.name,
-    url: meta.site.url
+    url: meta.site.url,
+    sameAs: [...contact.socials.map((social) => social.href)]
   }
 };
 
@@ -58,22 +61,16 @@ export default function BlogPage(): React.ReactElement {
         id="hero"
       >
         <div className="flex flex-col items-center md:max-w-7xl">
-          <h1 className="leading-wide tracking-relaxed text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
-            <TextReveal delay={0.2}>Blog</TextReveal>
-          </h1>
-
+          {/* todo: re-add delay of 0.2seconds */}
+          <TextReveal
+            as="h1"
+            className="leading-wide tracking-relaxed text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
+          >
+            Blog
+          </TextReveal>
           <Line className={'mt-16'} />
         </div>
-        {/*<motion.div*/}
-        {/*  className="absolute bottom-8 left-1/2 -translate-x-1/2 transform"*/}
-        {/*  style={{ opacity }}*/}
-        {/*  animate={{ y: [0, 10, 0] }}*/}
-        {/*  transition={{ duration: 1.5, repeat: Infinity }}*/}
-        {/*>*/}
-        {/*  <ChevronDown className="h-8 w-8" />*/}
-        {/*</motion.div>*/}
       </section>
-      {/*className="container max-sm:px-0 md:py-12"*/}
       <section className="grid w-full grid-cols-1 gap-4 p-4 md:grid-cols-2 2xl:grid-cols-3">
         {posts.map((post, index) => (
           <PostCard

@@ -14,6 +14,7 @@ import { Heading, headingTypes, MDXLink } from '@/lib/mdx/default-components';
 import { cn } from '@/lib/utils';
 
 import { HTMLAttributes } from 'react';
+import defaultMdxComponents from 'fumadocs-ui/mdx';
 
 export async function generateStaticParams({
   params
@@ -21,11 +22,14 @@ export async function generateStaticParams({
   params: { slug: string };
 }) {
   const { slug } = params;
-  // @ts-ignore
+  // @ts-expect-error issue with fumadocs
   return project.generateParams([slug]);
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const params = await props.params;
   const { slug } = params;
   const page = project.getPage([slug]);
   if (!page) notFound();
@@ -60,11 +64,10 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   }) satisfies Metadata;
 }
 
-export default async function ProjectPage({
-  params
-}: {
-  params: { slug: string };
+export default async function ProjectPage(props0: {
+  params: Promise<{ slug: string }>;
 }) {
+  const params = await props0.params;
   const { slug } = params;
   const page = project.getPage([slug]);
   if (!page) notFound();
@@ -84,31 +87,12 @@ export default async function ProjectPage({
           alt={`Image of ${page.data.title}`}
           className="my-12 aspect-video h-auto w-full rounded-lg object-cover"
         />
-        <div className="prose min-w-full dark:prose-invert">
+        <div className="prose min-w-full">
           <MDXContent
             code={body}
             components={{
-              a: MDXLink,
-              img: (props) => <img className="rounded-xl" {...props} />,
-              ...Object.fromEntries(
-                headingTypes.map((type) => [
-                  type,
-                  (props: HTMLAttributes<HTMLHeadingElement>) => (
-                    <Heading as={type} {...props} />
-                  )
-                ])
-              ),
-              pre: ({ className, style: _style, ...props }) => (
-                <pre
-                  className={cn(
-                    'max-h-[500px] overflow-auto rounded-lg border border-neutral-800 bg-neutral-900 p-2 text-sm',
-                    className
-                  )}
-                  {...props}
-                >
-                  {props.children}
-                </pre>
-              )
+              ...defaultMdxComponents,
+              a: MDXLink
             }}
           />
         </div>

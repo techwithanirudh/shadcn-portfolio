@@ -45,7 +45,7 @@ function PostCard({
         <div className="grid gap-2">
           <AspectRatio
             ratio={16 / 9}
-            className="z-[2] mb-2 inline-block overflow-hidden rounded-md"
+            className="z-2 mb-2 inline-block overflow-hidden rounded-md"
           >
             <Image
               src={thumbnail || '/placeholder.svg'}
@@ -54,15 +54,21 @@ function PostCard({
               className="object-cover transition-transform duration-300 hover:scale-105"
             />
           </AspectRatio>
-          <h3 className="text-xl font-bold">
-            <TextReveal>{title}</TextReveal>
-          </h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            <TextReveal>{description || ''}</TextReveal>
-          </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            <TextReveal>{date.toDateString()}</TextReveal>
-          </p>
+          <TextReveal as="h3" className="text-xl font-bold">
+            {title}
+          </TextReveal>
+          <TextReveal
+            as="p"
+            className="text-sm text-gray-500 dark:text-gray-400"
+          >
+            {description || ''}
+          </TextReveal>
+          <TextReveal
+            as="p"
+            className="text-sm text-gray-500 dark:text-gray-400"
+          >
+            {date.toDateString()}
+          </TextReveal>
           {/* <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => (
               <Badge key={`project-tag_${index}`}>{tag.label}</Badge>
@@ -76,7 +82,7 @@ function PostCard({
             <TooltipTrigger asChild>
               <Button
                 variant="ghost"
-                className="z-[2] rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
+                className="z-2 rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
                 asChild
               >
                 <Link href={href}>

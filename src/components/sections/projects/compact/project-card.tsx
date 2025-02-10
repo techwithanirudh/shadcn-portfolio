@@ -36,7 +36,7 @@ function ProjectCard({
   return (
     <Card
       className={cn(
-        'flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900',
+        'relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900',
         className
       )}
     >
@@ -44,11 +44,12 @@ function ProjectCard({
         <div className="grid gap-2">
           <AspectRatio
             ratio={16 / 9}
-            className="z-[2] mb-2 inline-block overflow-hidden rounded-md"
+            className="z-2 mb-2 inline-block overflow-hidden rounded-md"
           >
             <Image
               src={thumbnail || '/placeholder.svg'}
               alt={`Image of ${title}`}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               fill
               className="object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -70,7 +71,7 @@ function ProjectCard({
             <TooltipTrigger asChild>
               <Button
                 variant="ghost"
-                className="z-[2] rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
+                className="z-2 rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
                 asChild
               >
                 <Link href={href}>

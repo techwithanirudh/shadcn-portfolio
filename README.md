@@ -37,7 +37,7 @@ This is a portfolio template built using Next.JS, Framer Motion and Shadcn/UI.
 
 ## <a name="features">✨ Features</a>
 
-- ⚡️ Next.js 14 with App Router
+- ⚡️ Next.js 15 with App Router
 - 📝 Blog
 - 🎨 Tailwind CSS - for styling
 - 🌈 Shadcn UI - accessible UI components
@@ -94,6 +94,7 @@ This project has been inspired by the following websites:
 - [github.com/ismamz/next-transition-router](https://github.com/ismamz/next-transition-router)
 - [jorisbrianti.fr](https://jorisbrianti.fr/)
 - [athos-dark.framer.ai](https://athos-dark.framer.ai/)
+- [fancycomponents.dev](https://www.fancycomponents.dev/)
 
 and more
 

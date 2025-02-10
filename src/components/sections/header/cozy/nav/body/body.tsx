@@ -1,8 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 import styles from './style.module.scss';
 import { blur, translate } from '../../anim';
 import { Link as LinkType } from '@/types/link';
+
+import type { JSX } from 'react';
 
 interface SelectedLink {
   isActive: boolean;
@@ -23,7 +25,7 @@ export default function Body({
   setIsActive
 }: BodyProps) {
   const getChars = (word: string) => {
-    let chars: JSX.Element[] = [];
+    const chars: JSX.Element[] = [];
     word.split('').forEach((char, i) => {
       chars.push(
         <motion.span

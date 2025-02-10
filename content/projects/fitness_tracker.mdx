@@ -14,3 +14,65 @@ tags:
 ---
 
 This is a mobile app that helps users track their fitness activities, set goals, and monitor progress with motivational tools. I created this app to encourage people to lead a healthier lifestyle by making fitness tracking simple and engaging. The project allowed me to delve into mobile development and learn more about user-centered design and data management.
+
+## Features
+
+- **Activity Tracking**: Log daily fitness activities such as walking, running, cycling, and gym workouts.
+- **Goal Setting**: Users can set fitness goals for specific durations and activities.
+- **Progress Monitoring**: Visual progress reports through charts and graphs.
+- **Motivational Tools**: Daily tips, streak tracking, and achievement badges.
+- **Personalized Dashboard**: Tailored experience for users based on their fitness preferences.
+
+## Tech Stack
+
+- **Frontend**: Built with **React Native** for cross-platform mobile app development.
+- **Backend**: **Node.js** and **Express** for handling server-side logic and API endpoints.
+- **Database**: **MongoDB** for storing user data, activity logs, and goals.
+- **Styling**: Custom styles with **CSS-in-JS** libraries like Styled Components.
+- **Charts and Graphs**: Integrated with libraries like **Victory Native** or **Recharts** for visual data representation.
+- **Hosting**: Backend deployed on **AWS** or **Heroku**, and the app distributed via **Google Play Store** and **Apple App Store**.
+
+## Implementation
+
+### Frontend
+
+- **React Native** used for creating a responsive and intuitive UI across iOS and Android platforms.
+- Navigation handled with **React Navigation**.
+- Real-time feedback and updates with **WebSocket** integration.
+
+### Backend
+
+- **Express.js** APIs for user authentication, activity logging, and data retrieval.
+- Secure user sessions with **JWT** and encrypted passwords.
+- Background jobs with **Node-cron** for reminders and notifications.
+
+### Database
+
+- **MongoDB** for storing user profiles, activity data, and achievements.
+- Optimized queries for fast data retrieval and updates.
+- Integration of cloud storage (e.g., **AWS S3**) for managing media uploads like user avatars.
+
+### Deployment
+
+- Backend deployed on **Render** with containerized services using Docker.
+- App published on **Google Play Store** and **Apple App Store** with automated CI/CD pipelines.
+
+## How It Works
+
+1. **User Onboarding**: Easy registration or login via email or social accounts.
+2. **Tracking Activities**: Log fitness activities with input fields or wearable device integration.
+3. **Setting Goals**: Define personalized fitness goals and deadlines.
+4. **Monitoring Progress**: View performance trends and daily progress with visual reports.
+5. **Motivational Features**: Receive tips and unlock achievements for staying consistent.
+
+## Challenges Faced
+
+- Ensuring cross-platform compatibility for a seamless user experience.
+- Handling real-time data synchronization across devices.
+- Designing an engaging and intuitive UI that motivates users.
+
+## Future Enhancements
+
+- Integration with fitness wearables like Fitbit and Apple Watch.
+- AI-driven fitness recommendations based on user activity patterns.
+- Adding social features for users to connect, compete, and collaborate with friends.

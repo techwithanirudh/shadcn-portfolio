@@ -1,4 +1,4 @@
-import { Header } from '@/components/sections';
+import { Footer, Header } from '@/components/sections';
 
 import Cursor from '@/components/cursor/cursor';
 import SmoothScroll from '@/components/smooth-scroll';
@@ -9,7 +9,7 @@ import type { AboutPage, WithContext } from 'schema-dts';
 import { metadata as meta } from '@/app/config';
 import { contact } from '@/components/sections/contact/config';
 
-const title = 'About'
+const title = 'About';
 const description = 'Learn more about me and how I do things';
 
 export const metadata = createMetadata({
@@ -56,6 +56,9 @@ export default function AboutLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        <footer>
+          <Footer />
+        </footer>
       </div>
       <Cursor />
     </SmoothScroll>

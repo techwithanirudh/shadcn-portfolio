@@ -23,22 +23,25 @@ function ExperienceCard({
   className
 }: ExperienceCardProps) {
   return (
-    <Card className={cn('border-none bg-transparent', className)}>
+    <Card className={cn('border-none bg-transparent shadow-none', className)}>
       <CardContent className="p-1">
         <div className="flex items-baseline justify-between">
-          <h3 className="text-3xl font-semibold">
-            <TextReveal>{company}</TextReveal>
-          </h3>
-          <span className="text-sm font-medium">
-            <TextReveal>{duration}</TextReveal>
-          </span>
+          <TextReveal as="h3" className="text-3xl font-semibold">
+            {company}
+          </TextReveal>
+          <TextReveal as="span" className="text-sm font-medium">
+            {duration}
+          </TextReveal>
         </div>
-        <h4 className="mt-2 text-xl font-medium uppercase">
-          <TextReveal>{name}</TextReveal>
-        </h4>
-        <p className="mt-2 text-zinc-700 dark:text-zinc-400 max-w-2xl text-lg font-light">
-          <TextReveal>{description}</TextReveal>
-        </p>
+        <TextReveal as="h4" className="mt-2 text-xl font-medium uppercase">
+          {name}
+        </TextReveal>
+        <TextReveal
+          as="p"
+          className="mt-2 max-w-2xl text-lg font-light text-zinc-700 dark:text-zinc-400"
+        >
+          {description}
+        </TextReveal>
         <hr className="my-6 border-t border-border" />
       </CardContent>
     </Card>

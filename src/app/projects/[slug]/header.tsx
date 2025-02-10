@@ -2,7 +2,7 @@
 
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { ArrowUpRightIcon } from 'lucide-react';
 
 import Link from 'next/link';
@@ -27,7 +27,7 @@ type HeaderProps = {
 
 const Header = (props: HeaderProps) => {
   const {
-    metadata: { title, description, website, github, tags }
+    metadata: { title, description, website, github, tags, date }
   } = props;
 
   return (
@@ -40,6 +40,9 @@ const Header = (props: HeaderProps) => {
         <div className="flex flex-col gap-3">
           <div className="text-3xl font-bold">{title}</div>
           <div>{description}</div>
+          {date && (
+            <p className="font-medium">{new Date(date).toDateString()}</p>
+          )}
         </div>
       </motion.div>
       <motion.div
@@ -49,24 +52,24 @@ const Header = (props: HeaderProps) => {
         transition={{ delay: 0.1 }}
       >
         {website && (
-          <Link
+          <a
             href={website}
             className={cn(buttonVariants(), 'group')}
             target="_blank"
           >
             Visit Website
             <ArrowUpRightIcon className="ml-2 size-5" />
-          </Link>
+          </a>
         )}
         {github && (
-          <Link
+          <a
             href={github}
             className={cn(buttonVariants(), 'group')}
             target="_blank"
           >
             Github
             <ArrowUpRightIcon className="ml-2 size-5" />
-          </Link>
+          </a>
         )}
       </motion.div>
       <motion.div
@@ -76,7 +79,13 @@ const Header = (props: HeaderProps) => {
         transition={{ delay: 0.1 }}
       >
         {tags?.map((tag, index) => (
-          <Badge key={`project-tag_${index}`}>{tag.label}</Badge>
+          <Badge
+            key={`project-tag_${index}`}
+            variant={'secondary'}
+            className="px-3 py-1 text-sm"
+          >
+            {tag.label}
+          </Badge>
         ))}
       </motion.div>
     </div>

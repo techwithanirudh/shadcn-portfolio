@@ -1,61 +1,46 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
-import {
-  motion,
-  useInView,
-  useAnimation,
-  HTMLMotionProps
-} from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import React, { useRef } from 'react';
+import { useInView, motion } from 'motion/react';
 
-interface RevealProps extends HTMLMotionProps<'span'> {
-  children: React.ReactNode;
-  width?: 'fit-content' | '100%';
+interface RevealProps {
+  phrases: string[];
+  className?: string;
+  as?: React.ElementType;
 }
 
-const Reveal: React.FC<RevealProps> = ({
-  children,
-  width = 'fit-content',
-  ...props
-}) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
-  const mainControls = useAnimation();
+export function Reveal({ phrases, className = '', as = 'div' }: RevealProps) {
+  const body = useRef(null);
+  const isInView = useInView(body, { once: true, margin: '-10%' });
 
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-    } else {
-      mainControls.start('hidden');
-    }
-  }, [isInView, mainControls]);
+  const animation = {
+    initial: { y: '100%', opacity: 0 },
+    enter: (i: number) => ({
+      y: '0',
+      opacity: 1,
+      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: 0.05 * i }
+    })
+  };
 
+  const Tag = as;
   return (
-    <span
-      ref={ref}
-      style={{
-        position: 'relative',
-        display: 'inline-flex', // inline-flex gives opacity cool
-        // verticalAlign: 'top',
-        width: width,
-        overflow: 'hidden'
-      }}
-    >
-      <motion.span
-        variants={{
-          hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 }
-        }}
-        initial="hidden"
-        animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.25 }}
-        {...props}
-      >
-        {children}
-      </motion.span>
-    </span>
+    <Tag ref={body} className={className}>
+      {phrases.map((phrase, index) => (
+        <span
+          key={index}
+          className="relative mr-1 inline-flex w-fit overflow-hidden"
+        >
+          <motion.span
+            className="inline-block"
+            custom={index}
+            variants={animation}
+            initial="initial"
+            animate={isInView ? 'enter' : ''}
+          >
+            {phrase}
+          </motion.span>
+        </span>
+      ))}
+    </Tag>
   );
-};
-
-export default Reveal;
+}

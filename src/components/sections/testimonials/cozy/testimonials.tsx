@@ -10,9 +10,8 @@ import {
 } from '@/components/ui/carousel';
 import TestimonialCard from './testimonial-card';
 
-import Reveal from '@/components/reveal';
-
 import { testimonials } from '@/components/sections/testimonials/config';
+import TextReveal from '@/components/motion/text-reveal';
 
 function Testimonials() {
   return (
@@ -22,16 +21,12 @@ function Testimonials() {
         <div className="grid gap-10">
           <div className="flex w-full flex-col items-center justify-center text-center lg:flex-row lg:justify-between lg:text-left">
             <div className="flex flex-col items-center lg:items-start">
-              <Reveal>
-                <h2 className="text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight">
-                  My
-                </h2>
-              </Reveal>
-              <Reveal>
-                <h2 className="-mt-2 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight">
-                  Testimonials
-                </h2>
-              </Reveal>
+              <TextReveal
+                as="h2"
+                className="flex flex-col -space-y-4 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
+              >
+                My Testimonials
+              </TextReveal>
             </div>
             <p className="mt-4 hidden text-gray-500 dark:text-gray-400 lg:mt-0 lg:block lg:w-[35%]">
               Here are some of my testimonials where clients and colleagues

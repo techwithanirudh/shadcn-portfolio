@@ -14,7 +14,7 @@ export const runtime = 'edge';
 
 export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
   try {
-    const headersList = headers();
+    const headersList = await headers();
     const isLight = headersList.get('Sec-CH-Prefers-Color-Scheme') === 'light';
 
     const inter = await fetch(

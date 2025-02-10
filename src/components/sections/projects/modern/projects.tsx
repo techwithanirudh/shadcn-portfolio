@@ -11,8 +11,8 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel';
 
-import Reveal from '@/components/reveal';
 import { project } from '@/app/source';
+import TextReveal from '@/components/motion/text-reveal';
 
 function Projects() {
   const projects = [...project.getPages()].sort(
@@ -27,16 +27,12 @@ function Projects() {
         <div className="grid gap-10">
           <div className="flex w-full flex-col items-center justify-center text-center lg:flex-row lg:justify-between lg:text-left">
             <div className="flex flex-col items-center lg:items-start">
-              <Reveal>
-                <h2 className="text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight">
-                  My
-                </h2>
-              </Reveal>
-              <Reveal>
-                <h2 className="-mt-2 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight">
-                  Projects
-                </h2>
-              </Reveal>
+              <TextReveal
+                as="h2"
+                className="flex flex-col -space-y-4 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
+              >
+                My Projects
+              </TextReveal>
             </div>
             <p className="mt-4 hidden text-gray-500 dark:text-gray-400 lg:mt-0 lg:block lg:w-[35%]">
               Here are some of my projects where I&apos;ve turned code into
@@ -55,7 +51,7 @@ function Projects() {
                 {projects.map((project, index) => (
                   <CarouselItem
                     key={`project_${index}`}
-                    className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                    className="md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
                   >
                     <div className="h-full">
                       <ProjectCard
@@ -71,8 +67,8 @@ function Projects() {
               </CarouselContent>
 
               {/* todo: look for a nicer design, remove px-12 to see the new design */}
-              {/* <CarouselPrevious className='z-[999] left-0 rounded' variant={"default"} />
-              <CarouselNext className='z-[999] right-0 rounded' variant={"default"} /> */}
+              {/* <CarouselPrevious className='z-999 left-0 rounded' variant={"default"} />
+              <CarouselNext className='z-999 right-0 rounded' variant={"default"} /> */}
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>

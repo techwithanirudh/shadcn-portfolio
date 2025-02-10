@@ -1,6 +1,6 @@
 'use client';
 import React, { ReactNode } from 'react';
-import { motion, MotionProps } from 'framer-motion';
+import { motion, MotionProps } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 type MotionWrapProps = {
@@ -15,12 +15,7 @@ const MotionWrap: React.FC<MotionWrapProps> = ({
   ...props
 }) => {
   return (
-    <motion.section
-      whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-      transition={{ duration: 0.5 }}
-      className={cn(className)}
-      {...props}
-    >
+    <motion.section className={cn(className)} {...props}>
       {children}
     </motion.section>
   );

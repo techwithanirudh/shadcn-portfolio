@@ -11,7 +11,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <TransitionProvider speed={1.3}>{children}</TransitionProvider>
+      <TransitionProvider>{children}</TransitionProvider>
     </ThemeProvider>
   );
 }

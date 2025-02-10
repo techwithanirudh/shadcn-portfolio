@@ -2,12 +2,12 @@
 
 import React, { RefObject } from 'react';
 import Image, { ImageProps } from 'next/image';
-import { useScroll, useTransform, motion } from 'framer-motion';
+import { useScroll, useTransform, motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 interface ParallaxImageProps extends Omit<ImageProps, 'ref'> {
   className?: string;
-  containerRef: RefObject<HTMLElement>;
+  containerRef: RefObject<HTMLElement | null>;
   containerClassName?: string;
   parallaxOptions?: {
     yStart?: string;

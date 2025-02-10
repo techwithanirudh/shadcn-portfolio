@@ -14,3 +14,65 @@ tags:
 ---
 
 This is a social app for food lovers where users can post, share, and discover recipes from around the world. I built this app to combine my passion for food and technology, creating a platform where people can connect and share their culinary creations. The project allowed me to work on both front-end and back-end development, enhancing my full-stack development skills.
+
+## Features
+
+- **Recipe Posting**: Users can create and post their recipes with detailed instructions and photos.
+- **Recipe Discovery**: Search and explore recipes based on categories, cuisines, or ingredients.
+- **User Profiles**: Personalized profiles to showcase user-posted recipes and favorites.
+- **Comments and Likes**: Engage with the community by commenting on or liking recipes.
+- **Favorites**: Save recipes for quick access later.
+
+## Tech Stack
+
+- **Frontend**: Built with **React** for a dynamic and responsive user interface.
+- **Backend**: **Node.js** and **Express** for handling server-side logic and APIs.
+- **Database**: **MongoDB** for storing recipes, user profiles, and interactions.
+- **Styling**: Designed with **CSS** and styled components for a visually appealing UI.
+- **Image Hosting**: Integrated with **Cloudinary** for uploading and managing recipe photos.
+- **Hosting**: Deployed on **Heroku** or **AWS** for backend and **Vercel** for the frontend.
+
+## Implementation
+
+### Frontend
+
+- **React** used for reusable UI components.
+- **React Router** for navigating between pages like home, profiles, and recipe details.
+- **Axios** for API integration with the backend.
+
+### Backend
+
+- **Express.js** API endpoints for managing recipes, user authentication, and interactions.
+- **JWT** for secure user authentication.
+- Middleware for validating and uploading images using **Multer** and **Cloudinary**.
+
+### Database
+
+- **MongoDB** for storing structured data like users, recipes, and comments.
+- Indexed queries for fast search and retrieval.
+- Data relationships for linking recipes to user profiles.
+
+### Deployment
+
+- Backend deployed on **Heroku** with Dockerized containers.
+- Frontend deployed on **Vercel** with CI/CD for seamless updates.
+
+## How It Works
+
+1. **User Onboarding**: Sign up or log in to start exploring and sharing recipes.
+2. **Post Recipes**: Upload recipes with images, categories, and detailed steps.
+3. **Discover Recipes**: Use search or filters to find recipes based on your taste.
+4. **Engage with Community**: Like, comment, and save your favorite recipes.
+5. **Personalize Profile**: Showcase your culinary creations on your profile page.
+
+## Challenges Faced
+
+- Managing large image uploads efficiently while maintaining performance.
+- Creating a seamless user experience for both desktop and mobile devices.
+- Ensuring database scalability to handle increasing recipe posts and user interactions.
+
+## Future Enhancements
+
+- Adding a meal planner feature for users to organize recipes for the week.
+- Introducing recipe video tutorials for better user engagement.
+- Implementing AI-powered suggestions for recipes based on user preferences.

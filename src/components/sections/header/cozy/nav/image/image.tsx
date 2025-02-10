@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import styles from './style.module.scss';
 import { opacity } from '../../anim';
@@ -21,6 +21,7 @@ const Index: React.FC<IndexProps> = ({ src, isActive }) => {
         src={`/images/nav/${src}`}
         fill={true}
         alt={'An image to describe the selected link'}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         // priority={true}
       />
     </motion.div>

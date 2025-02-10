@@ -1,38 +1,43 @@
 'use client';
-import React from 'react';
-import Reveal from '@/components/reveal';
 
-const TextReveal: React.FC<{ children: React.ReactNode; delay?: number }> = ({
+import React, { type JSX } from 'react';
+import { Reveal } from '@/components/reveal';
+
+interface TextRevealProps {
+  children: React.ReactNode;
+  className?: string;
+  as?: keyof JSX.IntrinsicElements;
+}
+
+const TextReveal: React.FC<TextRevealProps> = ({
   children,
-  delay = 0.01
+  className = '',
+  as = 'div'
 }) => {
-  const processChildren = (child: React.ReactNode): React.ReactNode => {
+  const generatePhrases = (child: React.ReactNode): string[] => {
     if (typeof child === 'string') {
-      return child.split(' ').map((word, index) => (
-        <React.Fragment key={index}>
-          <Reveal transition={{ duration: 0.5, delay: delay * index }}>
-            {word}
-          </Reveal>
-          {index !== child.split(' ').length - 1 && ' '}
-        </React.Fragment>
-      ));
+      // Split by words but preserve natural line breaks
+      return child.split(/\s+/).filter((word) => word.length > 0);
     } else if (React.isValidElement(child)) {
-      return React.cloneElement(
-        child,
-        {},
-        processChildren(child.props.children)
-      );
+      const element = child as React.ReactElement & {
+        props?: {
+          children?: React.ReactNode;
+        };
+      };
+
+      if (element.props && 'children' in element.props) {
+        return generatePhrases(element.props.children);
+      }
+      return [];
     } else if (Array.isArray(child)) {
-      return child.map((nestedChild, index) => (
-        <React.Fragment key={index}>
-          {processChildren(nestedChild)}
-        </React.Fragment>
-      ));
+      return child.flatMap((nestedChild) => generatePhrases(nestedChild));
     }
-    return child;
+    return [];
   };
 
-  return <>{processChildren(children)}</>;
+  const phrases = generatePhrases(children);
+
+  return <Reveal phrases={phrases} className={className} as={as} />;
 };
 
 export default TextReveal;

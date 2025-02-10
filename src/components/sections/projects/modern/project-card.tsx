@@ -45,20 +45,27 @@ function ProjectCard({
     >
       <CardContent className="p-4 md:p-6">
         <div className="grid gap-2">
-          <AspectRatio ratio={16 / 9} className="z-[2] inline-block overflow-hidden rounded-md mb-2">
+          <AspectRatio
+            ratio={16 / 9}
+            className="z-2 mb-2 inline-block overflow-hidden rounded-md"
+          >
             <Image
               src={thumbnail || '/placeholder.svg'}
               alt={`Image of ${title}`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-300 hover:scale-105"
             />
           </AspectRatio>
-          <h3 className="text-xl font-bold">
-            <TextReveal>{title}</TextReveal>
-          </h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            <TextReveal>{description || ''}</TextReveal>
-          </p>
+          <TextReveal className="text-xl font-bold" as="h3">
+            {title}
+          </TextReveal>
+          <TextReveal
+            as="p"
+            className="text-sm text-gray-500 dark:text-gray-400"
+          >
+            {description || ''}
+          </TextReveal>
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => (
               <Badge key={`project-tag_${index}`}>{tag.label}</Badge>
@@ -72,7 +79,7 @@ function ProjectCard({
             <TooltipTrigger asChild>
               <Button
                 variant="ghost"
-                className="z-[2] rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
+                className="z-2 rounded-md border border-zinc-950/10 dark:border-zinc-50/10"
                 asChild
               >
                 <Link href={href}>

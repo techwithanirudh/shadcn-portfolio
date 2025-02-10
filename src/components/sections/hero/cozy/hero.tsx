@@ -8,7 +8,7 @@ import TextReveal from '@/components/motion/text-reveal';
 
 function Hero() {
   return (
-    <MotionWrap className="flex h-[calc(100dvh-theme(spacing.14))] w-full items-center justify-center">
+    <MotionWrap className="flex h-[calc(100dvh-(--spacing(14)))] w-full items-center justify-center">
       <div className="grid items-start justify-center gap-4 px-4 md:grid-cols-2 md:px-6 lg:gap-10">
         <div className="space-y-3 text-left">
           <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-foreground/10">
@@ -17,9 +17,12 @@ function Hero() {
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
             Hi, I&apos;m <TextReveal>{hero.name}</TextReveal>
           </h1>
-          <p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            <TextReveal>{hero.description}</TextReveal>
-          </p>
+          <TextReveal
+            as="p"
+            className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+          >
+            {hero.description}
+          </TextReveal>
         </div>
         <Image
           alt="Image"
