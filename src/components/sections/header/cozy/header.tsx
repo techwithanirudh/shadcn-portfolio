@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import Link from 'next/link';
+import MotionLink from '@/components/motion/link';
 import { CodeIcon } from 'lucide-react';
 import styles from './style.module.scss';
 import { opacity, background } from './anim';
@@ -30,11 +30,9 @@ const Header = ({ loader }: HeaderProps) => {
       }}
     >
       <div className={styles.bar}>
-        <Link href="/" className="flex items-center justify-center">
-          <span className="text-md font-semibold transition-transform hover:translate-x-1 hover:translate-y-1">
-            {meta.author.name}
-          </span>
-        </Link>
+        <MotionLink href="/" className="inline-flex items-center justify-center text-md font-semibold">
+          {meta.author.name}
+        </MotionLink>
         <div onClick={() => setIsActive(!isActive)} className={styles.el}>
           <div className={styles.label}>
             <motion.p
