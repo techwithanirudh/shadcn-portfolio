@@ -1,3 +1,3 @@
-import { TransitionProvider } from './modern/transition-provider';
+import { TransitionProvider } from './cozy/transition-provider';
 
 export { TransitionProvider };
