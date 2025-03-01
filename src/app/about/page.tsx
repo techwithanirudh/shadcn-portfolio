@@ -1,5 +1,5 @@
 'use client';
-import TextReveal from '@/components/motion/text-reveal';
+import TextReveal from '@/components/fancy/text-reveal';
 
 import React, { useRef } from 'react';
 import { ArrowUpRightIcon, ChevronDown, MailIcon } from 'lucide-react';
@@ -11,7 +11,7 @@ import { Footer } from '@/components/sections';
 import ContactForm from '@/components/sections/contact/cozy/contact-form';
 import { contact } from '@/components/sections/contact/config';
 
-import Link from '@/components/motion/link';
+import Link from '@/components/fancy/link';
 import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
 import { motion, useScroll, useTransform } from 'motion/react';
@@ -19,7 +19,7 @@ import { experiences } from '@/components/sections/experience/config';
 import ExperienceCard from '@/components/sections/experience/cozy/experience-card';
 import TechnologyCard from '@/components/sections/technologies/modern/technology-card';
 import { technologies } from '@/components/sections/technologies/config';
-import ImageTrail from '@/components/motion/motion-trail';
+import ImageTrail from '@/components/fancy/motion-trail';
 import { exampleImages } from '@/lib/example-images';
 
 export default function About() {

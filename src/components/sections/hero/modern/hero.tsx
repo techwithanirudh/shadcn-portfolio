@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useRef } from 'react';
-import TextReveal from '@/components/motion/text-reveal';
-import ParallaxImage from '@/components/motion/parallax-image';
-import { TextLoop } from '@/components/motion/text-loop';
+import TextReveal from '@/components/fancy/text-reveal';
+import ParallaxImage from '@/components/fancy/parallax-image';
+import { TextLoop } from '@/components/fancy/text-loop';
 
 const heroContent = [
   { role: 'developer', action: 'code', emoji: '💻', bgColor: 'bg-green-100' },

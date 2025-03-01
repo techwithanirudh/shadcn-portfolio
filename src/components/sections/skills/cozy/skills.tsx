@@ -2,8 +2,8 @@ import React from 'react';
 import SkillCard from './skill-card';
 
 import { skills } from '@/components/sections/skills/config';
-import MotionWrap from '@/components/motion-wrap';
-import TextReveal from '@/components/motion/text-reveal';
+import MotionWrap from '@/components/fancy-wrap';
+import TextReveal from '@/components/fancy/text-reveal';
 
 function Skills() {
   return (

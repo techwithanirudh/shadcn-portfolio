@@ -1,10 +1,10 @@
 import React from 'react';
-import MotionWrap from '@/components/motion-wrap';
+import MotionWrap from '@/components/fancy-wrap';
 import Image from 'next/image';
 
 // import { metadata as meta } from '@/app/config';
 import { hero } from '@/components/sections/hero/config';
-import TextReveal from '@/components/motion/text-reveal';
+import TextReveal from '@/components/fancy/text-reveal';
 
 function Hero() {
   return (

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { project } from '@/app/source';
-import TextReveal from '@/components/motion/text-reveal';
-import Line from '@/components/motion/line';
+import TextReveal from '@/components/fancy/text-reveal';
+import Line from '@/components/fancy/line';
 import React from 'react';
 
 import { createMetadata } from '@/lib/metadata';

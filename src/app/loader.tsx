@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Preloader } from '@/components/preloader';
 import { AnimatePresence } from 'motion/react';
-import NumberTicker from '@/components/motion/number-ticker';
+import NumberTicker from '@/components/fancy/number-ticker';
 
 export default function Loader() {
   const [isVisible, setIsVisible] = useState(true);

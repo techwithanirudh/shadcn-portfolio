@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import MotionLink from '@/components/motion/link';
+import MotionLink from '@/components/fancy/link';
 import { CodeIcon } from 'lucide-react';
 import styles from './style.module.scss';
 import { opacity, background } from './anim';

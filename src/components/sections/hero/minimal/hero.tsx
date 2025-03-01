@@ -1,5 +1,5 @@
 import React from 'react';
-import MotionWrap from '@/components/motion-wrap';
+import MotionWrap from '@/components/fancy-wrap';
 import { hero } from '@/components/sections/hero/config';
 
 function Hero() {

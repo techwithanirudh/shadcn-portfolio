@@ -9,7 +9,7 @@ import { CodeIcon } from 'lucide-react';
 import { Experience } from '@/types/experience';
 
 import { cn } from '@/lib/utils';
-import TextReveal from '@/components/motion/text-reveal';
+import TextReveal from '@/components/fancy/text-reveal';
 
 interface ExperienceCardProps extends Experience {
   className?: string;

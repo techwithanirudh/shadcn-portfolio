@@ -17,7 +17,7 @@ import {
 
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
-import TextReveal from '@/components/motion/text-reveal';
+import TextReveal from '@/components/fancy/text-reveal';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface ProjectCardProps extends Project {

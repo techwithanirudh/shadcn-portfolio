@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MotionWrap from '@/components/motion-wrap';
+import MotionWrap from '@/components/fancy-wrap';
 import {
   Carousel,
   CarouselContent,
@@ -11,7 +11,7 @@ import {
 import TestimonialCard from './testimonial-card';
 
 import { testimonials } from '@/components/sections/testimonials/config';
-import TextReveal from '@/components/motion/text-reveal';
+import TextReveal from '@/components/fancy/text-reveal';
 
 function Testimonials() {
   return (

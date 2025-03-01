@@ -1,16 +1,16 @@
 'use client';
 import React from 'react';
 import { buttonVariants } from '@/components/ui/button';
-import MotionWrap from '@/components/motion-wrap';
+import MotionWrap from '@/components/fancy-wrap';
 
 import ContactForm from './contact-form';
 
 import { contact } from '@/components/sections/contact/config';
 
 import { cn } from '@/lib/utils';
-import TextReveal from '@/components/motion/text-reveal';
+import TextReveal from '@/components/fancy/text-reveal';
 
-import Link from '@/components/motion/link';
+import Link from '@/components/fancy/link';
 function Contact() {
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="contact">

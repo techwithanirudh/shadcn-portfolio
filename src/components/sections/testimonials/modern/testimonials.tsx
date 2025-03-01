@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 
-import MotionWrap from '@/components/motion-wrap';
+import MotionWrap from '@/components/fancy-wrap';
 import {
   Carousel,
   CarouselContent,
@@ -16,7 +16,7 @@ import { Reveal } from '@/components/reveal';
 import { testimonials } from '@/components/sections/testimonials/config';
 
 import Autoplay from 'embla-carousel-auto-scroll';
-import TextReveal from '@/components/motion/text-reveal';
+import TextReveal from '@/components/fancy/text-reveal';
 
 const firstRow = testimonials.slice(0, testimonials.length / 2);
 const secondRow = testimonials.slice(testimonials.length / 2);

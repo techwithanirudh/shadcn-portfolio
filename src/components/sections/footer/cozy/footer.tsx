@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '@/components/motion/link';
+import Link from '@/components/fancy/link';
 import { metadata as meta } from '@/app/config';
 
 import { copyright, footer } from '@/components/sections/footer/config';

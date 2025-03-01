@@ -1,10 +1,10 @@
 import React from 'react';
 
-import MotionWrap from '@/components/motion-wrap';
+import MotionWrap from '@/components/fancy-wrap';
 import ExperienceCard from './experience-card';
 
 import { experiences } from '@/components/sections/experience/config';
-import TextReveal from '@/components/motion/text-reveal';
+import TextReveal from '@/components/fancy/text-reveal';
 
 function Experiences() {
   return (

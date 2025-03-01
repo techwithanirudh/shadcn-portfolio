@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Screensaver from '@/components/motion/screensaver';
+import Screensaver from '@/components/fancy/screensaver';
 import { exampleImages } from '@/lib/example-images';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';

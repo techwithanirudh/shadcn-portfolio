@@ -1,10 +1,10 @@
 import React from 'react';
 import ProjectCard from './project-card';
 
-import MotionWrap from '@/components/motion-wrap';
+import MotionWrap from '@/components/fancy-wrap';
 
 import { project } from '@/app/source';
-import TextReveal from '@/components/motion/text-reveal';
+import TextReveal from '@/components/fancy/text-reveal';
 
 function Projects() {
   const projects = [...project.getPages()].sort(

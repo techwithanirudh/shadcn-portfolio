@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MotionWrap from '@/components/motion-wrap';
+import MotionWrap from '@/components/fancy-wrap';
 import ExperienceCard from './experience-card';
 
 import { experiences } from '@/components/sections/experience/config';

@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { buttonVariants } from '@/components/ui/button';
-import MotionWrap from '@/components/motion-wrap';
+import MotionWrap from '@/components/fancy-wrap';
 
 import ContactForm from './contact-form';
 

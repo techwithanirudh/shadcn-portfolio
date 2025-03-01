@@ -8,7 +8,7 @@ import {
   MorphingDialogClose as DialogClose,
   MorphingDialogDescription as DialogDescription,
   MorphingDialogContainer as DialogContainer
-} from '@/components/motion/morphing-dialog';
+} from '@/components/fancy/morphing-dialog';
 import { PlusIcon } from 'lucide-react';
 import { Skill } from '@/types/skill';
 
@@ -20,7 +20,7 @@ import { MemoizedReactMarkdown } from '@/components/markdown';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 
-import TextReveal from '@/components/motion/text-reveal';
+import TextReveal from '@/components/fancy/text-reveal';
 
 interface SkillCardProps extends Skill {
   index: number;

@@ -1,5 +1,5 @@
 import React from 'react';
-import MotionWrap from '@/components/motion-wrap';
+import MotionWrap from '@/components/fancy-wrap';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';

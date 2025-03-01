@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { TransitionRouter } from 'next-transition-router';
 import { cn } from '@/lib/utils';
-import AnimatedPathText from '@/components/motion/text/text-along-path';
+import AnimatedPathText from '@/components/fancy/text/text-along-path';
 
 /**
  * Loader component that displays animated circular text.
@@ -15,7 +15,7 @@ function Loader() {
     'M 100 100 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0';
 
   return (
-    <div className="w-dvw h-dvh flex justify-center items-center relative">
+    <div className="w-dvw h-dvh flex justify-center items-center relative z-100">
       {[0, 90, 180, 270].map((rotation, i) => (
         <AnimatedPathText
           key={rotation}

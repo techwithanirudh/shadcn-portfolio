@@ -1,6 +1,6 @@
 import React from 'react';
 import { Testimonial } from '@/types/testimonial';
-import VariableFontCursorProximity from '@/components/motion/variable-font-cursor-proximity';
+import VariableFontCursorProximity from '@/components/fancy/variable-font-cursor-proximity';
 import { cn } from '@/lib/utils';
 
 interface TechnologyCardProps extends Testimonial {
