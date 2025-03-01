@@ -97,7 +97,8 @@ function FormLabel({
     <Label
       data-slot="form-label"
       data-error={!!error}
-      className={cn('data-[error=true]:text-destructive-foreground', className)}
+      // todo: fix use text-destructive instead of text-destructive-foreground
+      className={cn('data-[error=true]:text-destructive', className)}
       htmlFor={formItemId}
       {...props}
     />
@@ -148,7 +149,8 @@ function FormMessage({ className, ...props }: React.ComponentProps<'p'>) {
     <p
       data-slot="form-message"
       id={formMessageId}
-      className={cn('text-destructive-foreground text-sm', className)}
+      // todo: fix use text-destructive instead of text-destructive-foreground
+      className={cn('text-destructive text-sm', className)}
       {...props}
     >
       {body}
