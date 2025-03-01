@@ -4,11 +4,12 @@ import { withContentCollections } from '@content-collections/next';
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   experimental: {
+    viewTransition: true,
     serverActions: {
       allowedOrigins: ['localhost:3000']
-    }
+    },
     // react 19 compiler issue where shadcn rhf does not work, todo: fix
-    // reactCompiler: true
+    reactCompiler: true
   },
   sassOptions: {
     silenceDeprecations: ['legacy-js-api']
