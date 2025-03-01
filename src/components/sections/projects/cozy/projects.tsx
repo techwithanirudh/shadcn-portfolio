@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectCard from './project-card';
 
-import MotionWrap from '@/components/fancy-wrap';
+import MotionWrap from '@/components/motion-wrap';
 
 import { project } from '@/app/source';
 import TextReveal from '@/components/fancy/text-reveal';

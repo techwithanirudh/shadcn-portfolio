@@ -1,5 +1,5 @@
 import React from 'react';
-import MotionWrap from '@/components/fancy-wrap';
+import MotionWrap from '@/components/motion-wrap';
 import {
   Carousel,
   CarouselContent,

@@ -1,6 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
-import MotionWrap from '@/components/fancy-wrap';
+import MotionWrap from '@/components/motion-wrap';
 import TechnologyCard from './technology-card';
 
 import { technologies } from '@/components/sections/technologies/config';

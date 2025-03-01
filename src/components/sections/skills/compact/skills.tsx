@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MotionWrap from '@/components/fancy-wrap';
+import MotionWrap from '@/components/motion-wrap';
 import SkillCard from './skill-card';
 
 import { skills } from '@/components/sections/skills/config';
