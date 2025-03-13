@@ -2,6 +2,8 @@
 
 import { ThemeProvider } from '@/components/theme-provider';
 import { TransitionProvider } from '@/components/transition-provider';
+import {   unstable_addTransitionType as addTransitionType,
+} from 'react';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -11,7 +13,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <TransitionProvider>{children}</TransitionProvider>
+      <ViewTransition>{children}</ViewTransition>
     </ThemeProvider>
   );
 }

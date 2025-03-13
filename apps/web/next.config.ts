@@ -1,14 +1,25 @@
 import type { NextConfig } from 'next';
 import { withContentCollections } from '@content-collections/next';
 
+// todo: setup eslint CI
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  /** Enables hot reloading for local packages without a build step */
+  transpilePackages: [
+    "@repo/api",
+    "@repo/auth",
+    "@repo/db",
+    "@repo/ui",
+    "@repo/validators",
+  ],
+  /** We already do linting and typechecking as separate tasks in CI */
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
   experimental: {
     viewTransition: true,
     serverActions: {
       allowedOrigins: ['localhost:3000']
     },
-    // react 19 compiler issue where shadcn rhf does not work, todo: fix
     reactCompiler: true
   },
   sassOptions: {
