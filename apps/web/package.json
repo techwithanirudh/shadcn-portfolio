@@ -23,6 +23,7 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.2.1",
     "@repo/auth": "workspace:*",
+    "@repo/emails": "workspace:*",
     "@repo/db": "workspace:*",
     "@repo/ui": "workspace:*",
     "@repo/validators": "workspace:*",

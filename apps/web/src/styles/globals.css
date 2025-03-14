@@ -5,7 +5,7 @@
 
 /* relative to the CSS file, make sure it's correct for your app */
 @source '../../node_modules/fumadocs-ui/dist/**/*.js';
-@source '../../packages/ui/src/*.{ts,tsx}';
+@source '../../../../packages/ui/src/*.{ts,tsx}';
 
 @custom-variant dark (&:is(.dark *));
 
