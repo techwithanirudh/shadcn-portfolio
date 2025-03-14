@@ -1,5 +1,10 @@
 {
   "extends": "@repo/tsconfig/base.json",
-  "include": ["src", "*.ts"],
+  "compilerOptions": {
+    "lib": ["ES2022", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "rootDir": "."
+  }, 
+  "include": ["*.ts", "src"],
   "exclude": ["node_modules"]
 }

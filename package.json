@@ -1,5 +1,5 @@
 {
-  "name": "create-t3-turbo",
+  "name": "shadcn-portfolio",
   "private": true,
   "engines": {
     "node": ">=22.11.0",
