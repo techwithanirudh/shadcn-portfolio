@@ -1,54 +1,53 @@
-'use client';
-import TextReveal from '@/components/fancy/text-reveal';
+"use client";
 
-import React, { useRef } from 'react';
-import { ArrowUpRightIcon, ChevronDown, MailIcon } from 'lucide-react';
-import { Button, buttonVariants } from '@repo/ui/button';
+import React, { useRef } from "react";
+import SkillCard from "@/app/about/_components/skill-card";
+import Link from "@/components/fancy/link";
+import ImageTrail from "@/components/fancy/motion-trail";
+import TextReveal from "@/components/fancy/text-reveal";
+import { Footer } from "@/components/sections";
+import { contact } from "@/components/sections/contact/config";
+import ContactForm from "@/components/sections/contact/cozy/contact-form";
+import { experiences } from "@/components/sections/experience/config";
+import ExperienceCard from "@/components/sections/experience/cozy/experience-card";
+import { skills } from "@/components/sections/skills/config";
+import { technologies } from "@/components/sections/technologies/config";
+import TechnologyCard from "@/components/sections/technologies/modern/technology-card";
+import { exampleImages } from "@/lib/example-images";
+import { cn } from "@/lib/utils";
+import { ArrowUpRightIcon, ChevronDown, MailIcon } from "lucide-react";
+import { motion, useScroll, useTransform } from "motion/react";
 
-import SkillCard from '@/app/about/_components/skill-card';
-import { skills } from '@/components/sections/skills/config';
-import { Footer } from '@/components/sections';
-import ContactForm from '@/components/sections/contact/cozy/contact-form';
-import { contact } from '@/components/sections/contact/config';
-
-import Link from '@/components/fancy/link';
-import { cn } from '@/lib/utils';
-import { Separator } from '@repo/ui/separator';
-import { motion, useScroll, useTransform } from 'motion/react';
-import { experiences } from '@/components/sections/experience/config';
-import ExperienceCard from '@/components/sections/experience/cozy/experience-card';
-import TechnologyCard from '@/components/sections/technologies/modern/technology-card';
-import { technologies } from '@/components/sections/technologies/config';
-import ImageTrail from '@/components/fancy/motion-trail';
-import { exampleImages } from '@/lib/example-images';
+import { Button, buttonVariants } from "@repo/ui/button";
+import { Separator } from "@repo/ui/separator";
 
 export default function About() {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const heroRef = useRef<HTMLDivElement>(null)
+  const heroRef = useRef<HTMLDivElement>(null);
   const testimonialsRef = useRef<HTMLDivElement>(null);
 
   return (
     <main className="flex-1 px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24">
-      <section className="flex h-[calc(100svh-(--spacing(14)))] justify-center items-center pb-12 relative overflow-hidden -mx-4 sm:-mx-8 md:-mx-12 lg:-mx-16 2xl:-mx-24">
+      <section className="relative -mx-4 flex h-[calc(100svh-(--spacing(14)))] items-center justify-center overflow-hidden pb-12 sm:-mx-8 md:-mx-12 lg:-mx-16 2xl:-mx-24">
         <div className="absolute top-0 left-0 z-0" ref={heroRef}>
           <ImageTrail containerRef={heroRef}>
             {exampleImages.map((image, index) => (
               <div
                 key={index}
-                className="flex relative overflow-hidden w-24 h-24 "
+                className="relative flex h-24 w-24 overflow-hidden"
               >
                 <img
                   src={image}
                   alt="image"
                   loading="lazy"
-                  className="object-cover absolute inset-0"
+                  className="absolute inset-0 object-cover"
                 />
               </div>
             ))}
           </ImageTrail>
         </div>
-        <div className="container relative mx-auto flex flex-col items-center px-4">
+        <div className="relative container mx-auto flex flex-col items-center px-4">
           <TextReveal
             as="h1"
             className="leading-wide tracking-relaxed z-20 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
@@ -89,7 +88,7 @@ export default function About() {
               </TextReveal>
               <TextReveal
                 as="p"
-                className="text-base leading-relaxed text-muted-foreground sm:text-lg md:text-lg lg:text-xl xl:text-2xl"
+                className="text-muted-foreground text-base leading-relaxed sm:text-lg md:text-lg lg:text-xl xl:text-2xl"
               >
                 My journey into creativity began with a spark of curiosity about
                 how ideas could come to life on a screen. Fascinated by the
@@ -103,7 +102,7 @@ export default function About() {
                 combines creativity, problem-solving, and technical expertise to
                 create work that is both functional and impactful.
               </TextReveal>
-              <Button asChild variant={'outline'} className="rounded-full px-6">
+              <Button asChild variant={"outline"} className="rounded-full px-6">
                 <a href="resume.pdf" target="_blank">
                   View Resume <ArrowUpRightIcon className="ml-2 size-5" />
                 </a>
@@ -159,7 +158,7 @@ export default function About() {
                     {index < technologies.length - 1 && (
                       <TechnologyCard
                         key={`technology_sep_${index}`}
-                        name={','}
+                        name={","}
                         containerRef={testimonialsRef}
                       />
                     )}
@@ -201,8 +200,8 @@ export default function About() {
             <div className="mt-2 flex flex-col gap-1">
               <Link
                 className={cn(
-                  buttonVariants({ variant: 'link' }),
-                  'h-min w-min p-0 text-sm font-normal sm:text-base md:text-lg'
+                  buttonVariants({ variant: "link" }),
+                  "h-min w-min p-0 text-sm font-normal sm:text-base md:text-lg",
                 )}
                 href={`mailto:${contact.email}`}
               >
@@ -214,8 +213,8 @@ export default function About() {
                   target="_blank"
                   href={href}
                   className={cn(
-                    buttonVariants({ variant: 'link' }),
-                    'h-min w-min gap-1 p-0 text-sm sm:text-base md:text-lg'
+                    buttonVariants({ variant: "link" }),
+                    "h-min w-min gap-1 p-0 text-sm sm:text-base md:text-lg",
                   )}
                   key={`contact-social_${index}`}
                 >

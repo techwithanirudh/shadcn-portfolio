@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react";
+import TextReveal from "@/components/fancy/text-reveal";
+import MotionWrap from "@/components/motion-wrap";
+import { experiences } from "@/components/sections/experience/config";
 
-import MotionWrap from '@/components/motion-wrap';
-import ExperienceCard from './experience-card';
-
-import { experiences } from '@/components/sections/experience/config';
-import TextReveal from '@/components/fancy/text-reveal';
+import ExperienceCard from "./experience-card";
 
 function Experiences() {
   return (
@@ -23,7 +22,7 @@ function Experiences() {
               challenges into accomplishments, making things happen.
             </TextReveal>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {experiences.map((experience, index) => (
               <ExperienceCard
                 key={`experience_${index}`}

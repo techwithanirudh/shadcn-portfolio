@@ -1,6 +1,7 @@
-'use client';
-import { useRef, useEffect } from 'react';
-import { cn } from '@/lib/utils';
+"use client";
+
+import { useEffect, useRef } from "react";
+import { cn } from "@/lib/utils";
 
 interface MouseEvent {
   movementY: number;
@@ -9,7 +10,7 @@ interface MouseEvent {
 
 export default function Line({
   className,
-  borderColor
+  borderColor,
 }: {
   className?: string;
   borderColor?: string;
@@ -30,8 +31,8 @@ export default function Line({
 
     path.current?.setAttributeNS(
       null,
-      'd',
-      `M0 250 Q${width * x} ${250 + progress}, ${width} 250`
+      "d",
+      `M0 250 Q${width * x} ${250 + progress}, ${width} 250`,
     );
   };
 
@@ -79,7 +80,7 @@ export default function Line({
   };
 
   return (
-    <div className={cn('relative h-px w-full', className)}>
+    <div className={cn("relative h-px w-full", className)}>
       <div
         onMouseEnter={() => {
           manageMouseEnter();
@@ -96,8 +97,8 @@ export default function Line({
         <path
           ref={path}
           className={cn(
-            'fill-none stroke-current stroke-[1px] text-border',
-            borderColor
+            "text-border fill-none stroke-current stroke-[1px]",
+            borderColor,
           )}
         ></path>
       </svg>

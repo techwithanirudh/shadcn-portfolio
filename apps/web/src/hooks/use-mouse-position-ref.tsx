@@ -1,13 +1,14 @@
-import { useEffect, useRef, RefObject } from 'react';
+import type { RefObject } from "react";
+import { useEffect, useRef } from "react";
 
 export const useMousePositionRef = (
-  containerRef?: RefObject<HTMLElement | SVGElement | null>
+  containerRef?: RefObject<HTMLElement | SVGElement | null>,
 ) => {
   const positionRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const updatePosition = (x: number, y: number) => {
-      if (containerRef && containerRef.current) {
+      if (containerRef?.current) {
         const rect = containerRef.current.getBoundingClientRect();
         const relativeX = x - rect.left;
         const relativeY = y - rect.top;
@@ -29,12 +30,12 @@ export const useMousePositionRef = (
     };
 
     // Listen for both mouse and touch events
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, [containerRef]);
 

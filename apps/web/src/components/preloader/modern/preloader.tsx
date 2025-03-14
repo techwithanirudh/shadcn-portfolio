@@ -1,16 +1,17 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import { motion } from 'motion/react';
-import { opacity, slideUp } from './anim';
+"use client";
 
-import { Teko } from 'next/font/google';
-import { cn } from '@/lib/utils';
+import React, { useEffect, useState } from "react";
+import { Teko } from "next/font/google";
+import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+
+import { opacity, slideUp } from "./anim";
 
 interface PreloaderProps {
   children: React.ReactNode;
 }
 
-const teko = Teko({ weight: '400', subsets: ['latin'] });
+const teko = Teko({ weight: "400", subsets: ["latin"] });
 
 export function Preloader({ children }: PreloaderProps) {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
@@ -25,12 +26,12 @@ export function Preloader({ children }: PreloaderProps) {
   const curve = {
     initial: {
       d: initialPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] }
+      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
     },
     exit: {
       d: targetPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 }
-    }
+      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 },
+    },
   };
 
   return (
@@ -38,7 +39,7 @@ export function Preloader({ children }: PreloaderProps) {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="fixed z-999 flex h-[100dvh] w-[100dvw] cursor-wait items-center justify-center bg-background px-[60px] pb-[40px]"
+      className="bg-background fixed z-999 flex h-[100dvh] w-[100dvw] cursor-wait items-center justify-center px-[60px] pb-[40px]"
     >
       {dimension.width > 0 && (
         <>
@@ -48,7 +49,7 @@ export function Preloader({ children }: PreloaderProps) {
             animate="enter"
             className={cn(
               teko.className,
-              'absolute z-1 flex items-center text-[192px] text-foreground'
+              "text-foreground absolute z-1 flex items-center text-[192px]",
             )}
           >
             {children}
@@ -58,7 +59,7 @@ export function Preloader({ children }: PreloaderProps) {
               variants={curve}
               initial="initial"
               exit="exit"
-              className={'fill-background'}
+              className={"fill-background"}
             ></motion.path>
           </svg>
         </>

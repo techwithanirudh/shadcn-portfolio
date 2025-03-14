@@ -1,10 +1,10 @@
-import { motion } from 'motion/react';
-import Link from 'next/link';
-import styles from './style.module.scss';
-import { blur, translate } from '../../anim';
-import { Link as LinkType } from '@/types/link';
+import type { Link as LinkType } from "@/types/link";
+import type { JSX } from "react";
+import Link from "next/link";
+import { motion } from "motion/react";
 
-import type { JSX } from 'react';
+import { blur, translate } from "../../anim";
+import styles from "./style.module.scss";
 
 interface SelectedLink {
   isActive: boolean;
@@ -22,11 +22,11 @@ export default function Body({
   links,
   selectedLink,
   setSelectedLink,
-  setIsActive
+  setIsActive,
 }: BodyProps) {
   const getChars = (word: string) => {
     const chars: JSX.Element[] = [];
-    word.split('').forEach((char, i) => {
+    word.split("").forEach((char, i) => {
       chars.push(
         <motion.span
           custom={[i * 0.02, (word.length - i) * 0.01]}
@@ -37,7 +37,7 @@ export default function Body({
           key={char + i}
         >
           {char}
-        </motion.span>
+        </motion.span>,
       );
     });
     return chars;
@@ -57,8 +57,8 @@ export default function Body({
               variants={blur}
               animate={
                 selectedLink.isActive && selectedLink.index !== index
-                  ? 'open'
-                  : 'closed'
+                  ? "open"
+                  : "closed"
               }
             >
               {getChars(title)}

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useCallback } from 'react';
-import { Preloader } from '@/components/preloader';
-import { AnimatePresence } from 'motion/react';
-import NumberTicker from '@/components/fancy/number-ticker';
+import { useCallback, useEffect, useState } from "react";
+import NumberTicker from "@/components/fancy/number-ticker";
+import { Preloader } from "@/components/preloader";
+import { AnimatePresence } from "motion/react";
 
 export default function Loader() {
   const [isVisible, setIsVisible] = useState(true);
@@ -16,9 +16,9 @@ export default function Loader() {
             from={10}
             target={100}
             autoStart={true}
-            transition={{ duration: 2.5, type: 'tween', ease: 'easeInOut' }}
+            transition={{ duration: 2.5, type: "tween", ease: "easeInOut" }}
             onComplete={() => setIsVisible(false)}
-            onStart={() => console.log('start')}
+            onStart={() => console.log("start")}
           />
         </Preloader>
       )}

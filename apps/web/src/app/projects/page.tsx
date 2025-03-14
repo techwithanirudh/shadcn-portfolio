@@ -1,57 +1,55 @@
-import Link from 'next/link';
-import { project } from '@/app/source';
-import TextReveal from '@/components/fancy/text-reveal';
-import Line from '@/components/fancy/line';
-import React from 'react';
+import type { CollectionPage, WithContext } from "schema-dts";
+import React from "react";
+import Link from "next/link";
+import { metadata as meta } from "@/app/config";
+import ProjectCard from "@/app/projects/_components/project-card";
+import { project } from "@/app/source";
+import Line from "@/components/fancy/line";
+import TextReveal from "@/components/fancy/text-reveal";
+import { createMetadata } from "@/lib/metadata";
 
-import { createMetadata } from '@/lib/metadata';
-import ProjectCard from '@/app/projects/_components/project-card';
-
-import { metadata as meta } from '@/app/config';
-import type { CollectionPage, WithContext } from 'schema-dts';
-
-const title = 'Projects';
-const description = 'Here are some projects I have worked on.';
+const title = "Projects";
+const description = "Here are some projects I have worked on.";
 
 export const metadata = createMetadata({
   title,
   description,
   openGraph: {
-    url: '/projects',
+    url: "/projects",
     title,
-    description
+    description,
   },
   twitter: {
     title,
-    description
-  }
+    description,
+  },
 });
 
 const jsonLd: WithContext<CollectionPage> = {
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
   name: title,
   description,
   url: `${meta.site.url}/projects`,
   isPartOf: {
-    '@type': 'WebSite',
+    "@type": "WebSite",
     name: meta.site.title,
-    url: meta.site.url
+    url: meta.site.url,
   },
   hasPart: [...project.getPages()].map((project) => ({
-    '@type': 'SoftwareApplication',
+    "@type": "SoftwareApplication",
     name: project.data.title,
     description: project.data.description,
     url: project.url,
-    applicationCategory: 'WebApplication'
-  }))
+    applicationCategory: "WebApplication",
+  })),
 };
 
 export default function ProjectsPage(): React.ReactElement {
   const projects = [...project.getPages()].sort(
     (a, b) =>
       new Date(b.data.date ?? b.file.name).getTime() -
-      new Date(a.data.date ?? a.file.name).getTime()
+      new Date(a.data.date ?? a.file.name).getTime(),
   );
 
   return (
@@ -73,7 +71,7 @@ export default function ProjectsPage(): React.ReactElement {
             My Projects
           </TextReveal>
 
-          <Line className={'mt-16'} />
+          <Line className={"mt-16"} />
         </div>
       </section>
       <section className="grid w-full grid-cols-1 gap-4 p-4 md:grid-cols-2 2xl:grid-cols-3">

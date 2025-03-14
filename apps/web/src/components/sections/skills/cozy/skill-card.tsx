@@ -1,26 +1,22 @@
+import type { Skill } from "@/types/skill";
 import {
   MorphingDialog as Dialog,
-  MorphingDialogTrigger as DialogTrigger,
+  MorphingDialogClose as DialogClose,
+  MorphingDialogContainer as DialogContainer,
   MorphingDialogContent as DialogContent,
-  MorphingDialogTitle as DialogTitle,
+  MorphingDialogDescription as DialogDescription,
   MorphingDialogImage as DialogImage,
   MorphingDialogSubtitle as DialogSubtitle,
-  MorphingDialogClose as DialogClose,
-  MorphingDialogDescription as DialogDescription,
-  MorphingDialogContainer as DialogContainer
-} from '@/components/fancy/morphing-dialog';
-import { PlusIcon } from 'lucide-react';
-import { Skill } from '@/types/skill';
-
-import { trimLen } from '@/components/sections/skills/config';
-import { cn, trimString } from '@/lib/utils';
-
-import { MemoizedReactMarkdown } from '@/components/markdown';
-
-import remarkGfm from 'remark-gfm';
-import remarkMath from 'remark-math';
-
-import TextReveal from '@/components/fancy/text-reveal';
+  MorphingDialogTitle as DialogTitle,
+  MorphingDialogTrigger as DialogTrigger,
+} from "@/components/fancy/morphing-dialog";
+import TextReveal from "@/components/fancy/text-reveal";
+import { MemoizedReactMarkdown } from "@/components/markdown";
+import { trimLen } from "@/components/sections/skills/config";
+import { cn, trimString } from "@/lib/utils";
+import { PlusIcon } from "lucide-react";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 
 interface SkillCardProps extends Skill {
   index: number;
@@ -33,23 +29,23 @@ export default function SkillCard({
   name,
   description,
   thumbnail,
-  className
+  className,
 }: SkillCardProps) {
   return (
     <Dialog
       transition={{
-        type: 'spring',
+        type: "spring",
         stiffness: 200,
-        damping: 24
+        damping: 24,
       }}
     >
       <DialogTrigger
         style={{
-          borderRadius: '12px'
+          borderRadius: "12px",
         }}
         className={cn(
-          'flex flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900',
-          className
+          "flex flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900",
+          className,
         )}
       >
         {/* <DialogImage
@@ -60,28 +56,28 @@ export default function SkillCard({
         <div className="flex grow flex-col items-end justify-between gap-4 p-6">
           <button
             type="button"
-            className="relative ml-1 flex h-10 w-10 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-full border border-zinc-950/10 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:bg-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:focus-visible:ring-zinc-500"
+            className="relative ml-1 flex h-10 w-10 shrink-0 scale-100 appearance-none items-center justify-center rounded-full border border-zinc-950/10 text-zinc-500 transition-colors select-none hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:bg-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:focus-visible:ring-zinc-500"
             aria-label="Open dialog"
           >
             <PlusIcon size={18} />
           </button>
           <div className="flex w-full flex-col gap-2">
             <DialogImage
-              src={thumbnail ?? '/placeholder.svg'}
+              src={thumbnail ?? "/placeholder.svg"}
               alt={`An image which depicts the skill (${name})`}
               className="h-12 w-12 object-cover object-top"
               style={{
-                borderRadius: '4px'
+                borderRadius: "4px",
               }}
             />
-            <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
+            <DialogTitle className="text-3xl leading-8 font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
               <TextReveal>{name}</TextReveal>
             </DialogTitle>
             <DialogSubtitle className="text-md text-muted-foreground text-zinc-700 dark:text-zinc-400">
               <TextReveal>
                 {trimLen != -1
-                  ? trimString(trimLen, description || '')
-                  : (description ?? '')}
+                  ? trimString(trimLen, description || "")
+                  : (description ?? "")}
               </TextReveal>
             </DialogSubtitle>
           </div>
@@ -90,17 +86,17 @@ export default function SkillCard({
       <DialogContainer>
         <DialogContent
           style={{
-            borderRadius: '24px'
+            borderRadius: "24px",
           }}
-          className="pointer-events-auto relative flex h-auto w-full flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900 sm:w-[500px]"
+          className="pointer-events-auto relative flex h-auto w-full flex-col overflow-hidden border border-zinc-950/10 bg-white sm:w-[500px] dark:border-zinc-50/10 dark:bg-zinc-900"
         >
           <DialogImage
-            src={thumbnail ?? '/placeholder.svg'}
+            src={thumbnail ?? "/placeholder.svg"}
             alt={`An image which depicts the skill (${name})`}
             className="h-full w-full"
           />
           <div className="flex flex-col gap-2 p-6">
-            <DialogTitle className="text-3xl font-bold leading-8 tracking-tight text-zinc-950 dark:text-zinc-50">
+            <DialogTitle className="text-3xl leading-8 font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
               {name}
             </DialogTitle>
             {/* <DialogSubtitle className="text-zinc-700 dark:text-zinc-400">
@@ -112,16 +108,16 @@ export default function SkillCard({
               variants={{
                 initial: { opacity: 0, scale: 0.8, y: 100 },
                 animate: { opacity: 1, scale: 1, y: 0 },
-                exit: { opacity: 0, scale: 0.8, y: 100 }
+                exit: { opacity: 0, scale: 0.8, y: 100 },
               }}
             >
               <MemoizedReactMarkdown
-                className="dark:prose-invert prose min-w-full break-words text-muted-foreground prose-p:leading-relaxed prose-pre:p-0"
+                className="dark:prose-invert prose text-muted-foreground prose-p:leading-relaxed prose-pre:p-0 min-w-full break-words"
                 remarkPlugins={[remarkGfm, remarkMath]}
                 components={{
                   p({ children }) {
                     return <p className="mb-2 last:mb-0">{children}</p>;
-                  }
+                  },
                 }}
               >
                 {description}

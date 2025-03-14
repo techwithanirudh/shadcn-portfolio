@@ -1,6 +1,8 @@
-'use client';
-import React, { useState } from 'react';
-import { motion, Variants } from 'motion/react';
+"use client";
+
+import type { Variants } from "motion/react";
+import React, { useState } from "react";
+import { motion } from "motion/react";
 
 interface AnimatedLetterProps {
   character: string;
@@ -9,7 +11,7 @@ interface AnimatedLetterProps {
 
 export const AnimatedLetter = ({
   character,
-  animation
+  animation,
 }: AnimatedLetterProps) => {
   return (
     <motion.span

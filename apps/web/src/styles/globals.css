@@ -1,7 +1,7 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin 'tailwindcss-animate';
-@import 'fumadocs-ui/css/neutral.css';
-@import 'fumadocs-ui/css/preset.css';
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
 
 /* relative to the CSS file, make sure it's correct for your app */
 @source '../../node_modules/fumadocs-ui/dist/**/*.js';
@@ -151,7 +151,7 @@
 
 @layer base {
   * {
-    @apply m-0 box-border border-border p-0;
+    @apply border-border m-0 box-border p-0;
   }
 
   body {

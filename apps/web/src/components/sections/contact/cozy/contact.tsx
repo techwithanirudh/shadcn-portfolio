@@ -1,16 +1,16 @@
-'use client';
-import React from 'react';
-import { buttonVariants } from '@repo/ui/button';
-import MotionWrap from '@/components/motion-wrap';
+"use client";
 
-import ContactForm from './contact-form';
+import React from "react";
+import Link from "@/components/fancy/link";
+import TextReveal from "@/components/fancy/text-reveal";
+import MotionWrap from "@/components/motion-wrap";
+import { contact } from "@/components/sections/contact/config";
+import { cn } from "@/lib/utils";
 
-import { contact } from '@/components/sections/contact/config';
+import { buttonVariants } from "@repo/ui/button";
 
-import { cn } from '@/lib/utils';
-import TextReveal from '@/components/fancy/text-reveal';
+import ContactForm from "./contact-form";
 
-import Link from '@/components/fancy/link';
 function Contact() {
   return (
     <MotionWrap className="w-full py-24 lg:py-32" id="contact">
@@ -22,7 +22,7 @@ function Contact() {
           >
             Contact Me
           </TextReveal>
-          <TextReveal as="p" className="max-w-[600px] text-muted-foreground">
+          <TextReveal as="p" className="text-muted-foreground max-w-[600px]">
             Have a question or want to work together? Send me a message using
             the form.
           </TextReveal>
@@ -30,12 +30,12 @@ function Contact() {
         <div className="flex flex-wrap">
           <div className="flex w-full flex-col gap-4 py-3 lg:order-2 lg:w-1/4 lg:pl-3">
             <div>
-              <p className="text-sm text-muted-foreground">Email</p>
+              <p className="text-muted-foreground text-sm">Email</p>
               {/* todo: seperate this into animated text and use an a instead */}
               <Link
                 className={cn(
-                  buttonVariants({ variant: 'link' }),
-                  'text-md h-min w-min p-0 font-normal'
+                  buttonVariants({ variant: "link" }),
+                  "text-md h-min w-min p-0 font-normal",
                 )}
                 href={`mailto:${contact.email}`}
               >
@@ -43,15 +43,15 @@ function Contact() {
               </Link>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Socials</p>
+              <p className="text-muted-foreground text-sm">Socials</p>
               <div className="flex flex-col gap-1">
                 {contact.socials.map(({ Icon, name, href }, index) => (
                   <Link
                     target="_blank"
                     href={href}
                     className={cn(
-                      buttonVariants({ variant: 'link' }),
-                      'text-md h-min w-min gap-1 p-0'
+                      buttonVariants({ variant: "link" }),
+                      "text-md h-min w-min gap-1 p-0",
                     )}
                     key={`contact-social_${index}`}
                   >

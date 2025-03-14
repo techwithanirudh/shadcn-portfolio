@@ -1,14 +1,12 @@
-import React from 'react';
-import { CardContent, CardFooter, Card } from '@repo/ui/card';
-import { buttonVariants } from '@repo/ui/button';
+import type { Skill } from "@/types/skill";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { CodeIcon } from "lucide-react";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { CodeIcon } from 'lucide-react';
-
-import { Skill } from '@/types/skill';
-
-import { cn } from '@/lib/utils';
+import { buttonVariants } from "@repo/ui/button";
+import { Card, CardContent, CardFooter } from "@repo/ui/card";
 
 interface SkillCardProps extends Skill {
   className?: string;
@@ -16,14 +14,14 @@ interface SkillCardProps extends Skill {
 
 function SkillCard({ name, description, className }: SkillCardProps) {
   return (
-    <Card className={cn('bg-muted/40', className)}>
+    <Card className={cn("bg-muted/40", className)}>
       <CardContent className="p-4 md:p-6">
         <div className="flex items-center gap-4">
           <CodeIcon className="min-h-8 min-w-8" />
           <div className="grid gap-0.5">
             <h3 className="text-xl font-semibold">{name}</h3>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              {description || ''}
+              {description || ""}
             </p>
           </div>
         </div>

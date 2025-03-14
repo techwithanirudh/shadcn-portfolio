@@ -1,9 +1,9 @@
-import type { NextConfig } from 'next';
-import { withContentCollections } from '@content-collections/next';
+import type { NextConfig } from "next";
+import { withContentCollections } from "@content-collections/next";
 
 // todo: setup eslint CI
 const nextConfig: NextConfig = {
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [
     "@repo/api",
@@ -18,13 +18,13 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
     serverActions: {
-      allowedOrigins: ['localhost:3000']
+      allowedOrigins: ["localhost:3000"],
     },
-    reactCompiler: true
+    reactCompiler: true,
   },
   sassOptions: {
-    silenceDeprecations: ['legacy-js-api']
-  }
+    silenceDeprecations: ["legacy-js-api"],
+  },
 };
 
 export default withContentCollections(nextConfig);

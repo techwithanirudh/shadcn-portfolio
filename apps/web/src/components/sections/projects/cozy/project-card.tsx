@@ -1,24 +1,21 @@
-import React from 'react';
-import { CardContent, CardFooter, Card } from '@repo/ui/card';
-import { Button, buttonVariants } from '@repo/ui/button';
+import type { Project } from "@/types/project";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import TextReveal from "@/components/fancy/text-reveal";
+import { cn } from "@/lib/utils";
+import { GithubIcon, GlobeIcon, InfoIcon } from "lucide-react";
 
-import Link from 'next/link';
-import Image from 'next/image';
-
-import { Project } from '@/types/project';
-import { GithubIcon, GlobeIcon, InfoIcon } from 'lucide-react';
-
+import { AspectRatio } from "@repo/ui/aspect-ratio";
+import { Badge } from "@repo/ui/badge";
+import { Button, buttonVariants } from "@repo/ui/button";
+import { Card, CardContent, CardFooter } from "@repo/ui/card";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger
-} from '@repo/ui/tooltip';
-
-import { cn } from '@/lib/utils';
-import { Badge } from '@repo/ui/badge';
-import TextReveal from '@/components/fancy/text-reveal';
-import { AspectRatio } from '@repo/ui/aspect-ratio';
+  TooltipTrigger,
+} from "@repo/ui/tooltip";
 
 interface ProjectCardProps extends Project {
   href: string;
@@ -32,13 +29,13 @@ function ProjectCard({
   thumbnail,
   tags,
   href,
-  className
+  className,
 }: ProjectCardProps) {
   return (
     <Card
       className={cn(
-        'group relative flex flex-col justify-between overflow-hidden rounded-md border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900',
-        className
+        "group relative flex flex-col justify-between overflow-hidden rounded-md border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900",
+        className,
       )}
     >
       <CardContent className="w-full p-0">
@@ -47,7 +44,7 @@ function ProjectCard({
           className="z-2 inline-block overflow-hidden"
         >
           <Image
-            src={thumbnail || '/placeholder.svg'}
+            src={thumbnail || "/placeholder.svg"}
             alt={`Image of ${title}`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -64,7 +61,7 @@ function ProjectCard({
             as="p"
             className="text-sm text-gray-500 dark:text-gray-400"
           >
-            {description || ''}
+            {description || ""}
           </TextReveal>
 
           <div className="mt-2 flex flex-wrap gap-2">
@@ -94,7 +91,7 @@ function ProjectCard({
           </TooltipProvider>
         </div>
       </CardFooter>
-      <Link href={href} className="z-1 absolute inset-0 block" />
+      <Link href={href} className="absolute inset-0 z-1 block" />
     </Card>
   );
 }

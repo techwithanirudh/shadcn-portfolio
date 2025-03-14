@@ -1,53 +1,51 @@
-import Link from 'next/link';
-import { blog } from '@/app/source';
-import TextReveal from '@/components/fancy/text-reveal';
-import Line from '@/components/fancy/line';
-import React from 'react';
+import type { Blog, WithContext } from "schema-dts";
+import React from "react";
+import Link from "next/link";
+import PostCard from "@/app/blog/_components/post-card";
+import { metadata as meta } from "@/app/config";
+import { blog } from "@/app/source";
+import Line from "@/components/fancy/line";
+import TextReveal from "@/components/fancy/text-reveal";
+import { Footer } from "@/components/sections";
+import { contact } from "@/components/sections/contact/config";
+import { createMetadata } from "@/lib/metadata";
 
-import { createMetadata } from '@/lib/metadata';
-import PostCard from '@/app/blog/_components/post-card';
-
-import { metadata as meta } from '@/app/config';
-import type { WithContext, Blog } from 'schema-dts';
-import { Footer } from '@/components/sections';
-import { contact } from '@/components/sections/contact/config';
-
-const title = 'Blog';
-const description = 'My thoughts on technology.';
+const title = "Blog";
+const description = "My thoughts on technology.";
 
 export const metadata = createMetadata({
   title,
   description,
   openGraph: {
-    url: '/blog',
+    url: "/blog",
     title,
-    description
+    description,
   },
   twitter: {
     title,
-    description
-  }
+    description,
+  },
 });
 
 const jsonLd: WithContext<Blog> = {
-  '@context': 'https://schema.org',
-  '@type': 'Blog',
+  "@context": "https://schema.org",
+  "@type": "Blog",
   name: title,
   description,
   url: `${meta.site.url}/blog`,
   author: {
-    '@type': 'Person',
+    "@type": "Person",
     name: meta.author.name,
     url: meta.site.url,
-    sameAs: [...contact.socials.map((social) => social.href)]
-  }
+    sameAs: [...contact.socials.map((social) => social.href)],
+  },
 };
 
 export default function BlogPage(): React.ReactElement {
   const posts = [...blog.getPages()].sort(
     (a, b) =>
       new Date(b.data.date ?? b.file.name).getTime() -
-      new Date(a.data.date ?? a.file.name).getTime()
+      new Date(a.data.date ?? a.file.name).getTime(),
   );
 
   return (
@@ -68,7 +66,7 @@ export default function BlogPage(): React.ReactElement {
           >
             Blog
           </TextReveal>
-          <Line className={'mt-16'} />
+          <Line className={"mt-16"} />
         </div>
       </section>
       <section className="grid w-full grid-cols-1 gap-4 p-4 md:grid-cols-2 2xl:grid-cols-3">

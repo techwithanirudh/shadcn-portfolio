@@ -1,24 +1,20 @@
-import type { Metadata } from 'next';
+import type { TOCItemType } from "fumadocs-core/server";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { metadata as meta } from "@/app/config";
+import { blog } from "@/app/source";
+import { Heading, headingTypes, MDXLink } from "@/lib/mdx/default-components";
+import { createMetadata } from "@/lib/metadata";
+import { cn } from "@/lib/utils";
+import { MDXContent } from "@content-collections/mdx/react";
+import { InlineTOC } from "fumadocs-ui/components/inline-toc";
+import defaultMdxComponents from "fumadocs-ui/mdx";
 
-import { TOCItemType } from 'fumadocs-core/server';
-
-import { MDXContent } from '@content-collections/mdx/react';
-import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
-import defaultMdxComponents from 'fumadocs-ui/mdx';
-
-import { notFound } from 'next/navigation';
-import { blog } from '@/app/source';
-
-import Link from 'next/link';
-import { buttonVariants } from '@repo/ui/button';
-import { createMetadata } from '@/lib/metadata';
-import { metadata as meta } from '@/app/config';
-
-import { MDXLink, headingTypes, Heading } from '@/lib/mdx/default-components';
-import { cn } from '@/lib/utils';
+import { buttonVariants } from "@repo/ui/button";
 
 export async function generateStaticParams({
-  params
+  params,
 }: {
   params: { slug: string };
 }) {
@@ -39,11 +35,11 @@ export async function generateMetadata(props: {
     title: page.data.title,
     description: page.data.description,
     openGraph: {
-      type: 'article',
+      type: "article",
       // todo: add custom dynamic og image
       authors: meta.author.name,
-      modifiedTime: new Date(page.data.date ?? page.file.name).toISOString()
-    }
+      modifiedTime: new Date(page.data.date ?? page.file.name).toISOString(),
+    },
   }) satisfies Metadata;
 }
 
@@ -56,17 +52,17 @@ export default async function BlogPage(props0: {
   if (!page) notFound();
 
   const {
-    data: { toc, body, structuredData }
+    data: { toc, body, structuredData },
   } = page;
 
   return (
     <main className="my-24 flex-1 px-4">
-      <div className="container rounded-xl border bg-muted/30 py-12 md:px-8">
+      <div className="bg-muted/30 container rounded-xl border py-12 md:px-8">
         <h1 className="mb-2 text-3xl font-bold">{page.data.title}</h1>
-        <p className="mb-4 text-muted-foreground">{page.data.description}</p>
+        <p className="text-muted-foreground mb-4">{page.data.description}</p>
         <Link
           href="/blog"
-          className={buttonVariants({ size: 'sm', variant: 'secondary' })}
+          className={buttonVariants({ size: "sm", variant: "secondary" })}
         >
           Back
         </Link>
@@ -82,17 +78,17 @@ export default async function BlogPage(props0: {
             code={body}
             components={{
               ...defaultMdxComponents,
-              a: MDXLink
+              a: MDXLink,
             }}
           />
         </div>
         <div className="flex flex-col gap-4 border-l p-4 text-sm">
           <div>
-            <p className="mb-1 text-muted-foreground">Written by</p>
+            <p className="text-muted-foreground mb-1">Written by</p>
             <p className="font-medium">{page.data.author}</p>
           </div>
           <div>
-            <p className="mb-1 text-sm text-muted-foreground">At</p>
+            <p className="text-muted-foreground mb-1 text-sm">At</p>
             <p className="font-medium">
               {new Date(page.data.date ?? page.file.name).toDateString()}
             </p>

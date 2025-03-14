@@ -1,48 +1,40 @@
-'use client';
+"use client";
 
-import { useAction } from 'next-safe-action/hooks';
+import type { ContactForm as ContactFormType } from "@/lib/validators";
+import { useState } from "react";
+import { contactSubmit } from "@/app/actions";
+import { FormError } from "@/components/sections/contact/_components/form-error";
+import { FormSuccess } from "@/components/sections/contact/_components/form-success";
+import { TurnstileModal } from "@/components/sections/contact/_components/turnstile-modal";
+import { contact } from "@/components/sections/contact/config";
+import { ContactFormSchema } from "@/lib/validators";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { LoaderCircleIcon } from "lucide-react";
+import { useAction } from "next-safe-action/hooks";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { z } from "zod";
 
-import { Button } from '@repo/ui/button';
-import { Input } from '@repo/ui/input';
-import { Textarea } from '@repo/ui/textarea';
-
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-
+import { Button } from "@repo/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
-} from '@repo/ui/form';
-
-import { TurnstileModal } from '@/components/sections/contact/_components/turnstile-modal';
-import { LoaderCircleIcon } from 'lucide-react';
-import { contactSubmit } from '@/app/actions';
-
-import { FormError } from '@/components/sections/contact/_components/form-error';
-import { FormSuccess } from '@/components/sections/contact/_components/form-success';
-
-import {
-  ContactForm as ContactFormType,
-  ContactFormSchema
-} from '@/lib/validators';
-import { useState } from 'react';
-
-import { contact } from '@/components/sections/contact/config';
-import { toast } from 'sonner';
+  FormMessage,
+} from "@repo/ui/form";
+import { Input } from "@repo/ui/input";
+import { Textarea } from "@repo/ui/textarea";
 
 export default function ContactForm() {
   const form = useForm<ContactFormType>({
     resolver: zodResolver(ContactFormSchema),
     defaultValues: {
-      name: '',
-      email: '',
-      message: ''
-    }
+      name: "",
+      email: "",
+      message: "",
+    },
   });
 
   const { execute, result, status } = useAction(contactSubmit);
@@ -51,14 +43,14 @@ export default function ContactForm() {
   // todo: probably refactor this, setIsOpen is not clean
   // values: ContactFormType
   async function onSubmit(values: ContactFormType) {
-    if (process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === 'true') {
+    if (process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === "true") {
       setIsOpen(true);
     } else {
       const mailto =
         `mailto:${encodeURIComponent(contact.email)}` +
-        `?subject=${encodeURIComponent('Contact Form Submission')}` +
+        `?subject=${encodeURIComponent("Contact Form Submission")}` +
         `&body=${encodeURIComponent(
-          `Name: ${values.name}\nMessage: ${values.message}`
+          `Name: ${values.name}\nMessage: ${values.message}`,
         )}`;
       window.location.href = mailto;
     }
@@ -68,10 +60,10 @@ export default function ContactForm() {
     setIsOpen(false);
     if (!token) {
       toast.error(
-        'Captcha validation failed. Please ensure the captcha is completed.',
+        "Captcha validation failed. Please ensure the captcha is completed.",
         {
-          position: 'bottom-center'
-        }
+          position: "bottom-center",
+        },
       );
       return;
     }
@@ -91,7 +83,7 @@ export default function ContactForm() {
                 <FormControl>
                   <Input
                     placeholder="Jane Doe"
-                    disabled={status === 'executing'}
+                    disabled={status === "executing"}
                     {...field}
                   />
                 </FormControl>
@@ -108,7 +100,7 @@ export default function ContactForm() {
                 <FormControl>
                   <Input
                     placeholder="jane@example.com"
-                    disabled={status === 'executing'}
+                    disabled={status === "executing"}
                     {...field}
                   />
                 </FormControl>
@@ -125,9 +117,9 @@ export default function ContactForm() {
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    disabled={status === 'executing'}
+                    disabled={status === "executing"}
                     placeholder={
-                      'Hello!\n\nThis is Jane Doe, from Example. Just wanted to say hi!'
+                      "Hello!\n\nThis is Jane Doe, from Example. Just wanted to say hi!"
                     }
                     {...field}
                   />
@@ -141,11 +133,11 @@ export default function ContactForm() {
           <FormSuccess message={result.data?.success} />
 
           <Button
-            disabled={status === 'executing'}
+            disabled={status === "executing"}
             type="submit"
-            className={'w-full'}
+            className={"w-full"}
           >
-            {status === 'executing' && (
+            {status === "executing" && (
               <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />
             )}
             Submit

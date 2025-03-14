@@ -1,24 +1,23 @@
-import React from 'react';
-
-import MotionWrap from '@/components/motion-wrap';
-import ProjectCard from './project-card';
+import React from "react";
+import { project } from "@/app/source";
+import TextReveal from "@/components/fancy/text-reveal";
+import MotionWrap from "@/components/motion-wrap";
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
-} from '@repo/ui/carousel';
+  CarouselPrevious,
+} from "@repo/ui/carousel";
 
-import { project } from '@/app/source';
-import TextReveal from '@/components/fancy/text-reveal';
+import ProjectCard from "./project-card";
 
 function Projects() {
   const projects = [...project.getPages()].sort(
     (a, b) =>
       new Date(b.data.date ?? b.file.name).getTime() -
-      new Date(a.data.date ?? a.file.name).getTime()
+      new Date(a.data.date ?? a.file.name).getTime(),
   );
 
   return (
@@ -29,12 +28,12 @@ function Projects() {
             <div className="flex flex-col items-center lg:items-start">
               <TextReveal
                 as="h2"
-                className="flex flex-col -space-y-4 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
+                className="flex flex-col -space-y-4 text-4xl leading-tight font-bold tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
               >
                 My Projects
               </TextReveal>
             </div>
-            <p className="mt-4 hidden text-gray-500 dark:text-gray-400 lg:mt-0 lg:block lg:w-[35%]">
+            <p className="mt-4 hidden text-gray-500 lg:mt-0 lg:block lg:w-[35%] dark:text-gray-400">
               Here are some of my projects where I&apos;ve turned code into
               cool, functional stuff.
             </p>
@@ -43,7 +42,7 @@ function Projects() {
           <div className="flex items-center justify-center overflow-hidden lg:px-12">
             <Carousel
               opts={{
-                align: 'start'
+                align: "start",
               }}
               className="w-full"
             >

@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
+import TextReveal from "@/components/fancy/text-reveal";
+import MotionWrap from "@/components/motion-wrap";
+import { testimonials } from "@/components/sections/testimonials/config";
 
-import MotionWrap from '@/components/motion-wrap';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
-} from '@repo/ui/carousel';
-import TestimonialCard from './testimonial-card';
+  CarouselPrevious,
+} from "@repo/ui/carousel";
 
-import { testimonials } from '@/components/sections/testimonials/config';
-import TextReveal from '@/components/fancy/text-reveal';
+import TestimonialCard from "./testimonial-card";
 
 function Testimonials() {
   return (
@@ -23,12 +23,12 @@ function Testimonials() {
             <div className="flex flex-col items-center lg:items-start">
               <TextReveal
                 as="h2"
-                className="flex flex-col -space-y-4 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
+                className="flex flex-col -space-y-4 text-4xl leading-tight font-bold tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
               >
                 My Testimonials
               </TextReveal>
             </div>
-            <p className="mt-4 hidden text-gray-500 dark:text-gray-400 lg:mt-0 lg:block lg:w-[35%]">
+            <p className="mt-4 hidden text-gray-500 lg:mt-0 lg:block lg:w-[35%] dark:text-gray-400">
               Here are some of my testimonials where clients and colleagues
               share their experiences of working with me.
               <br />
@@ -42,7 +42,7 @@ function Testimonials() {
           <div className="flex items-center justify-center overflow-hidden lg:px-12">
             <Carousel
               opts={{
-                align: 'start'
+                align: "start",
               }}
               className="w-full"
             >

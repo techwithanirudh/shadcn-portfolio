@@ -1,49 +1,46 @@
-import { Footer, Header } from '@/components/sections';
+import type { AboutPage, WithContext } from "schema-dts";
+import { metadata as meta } from "@/app/config";
+import Cursor from "@/components/cursor/cursor";
+import { Footer, Header } from "@/components/sections";
+import { contact } from "@/components/sections/contact/config";
+import SmoothScroll from "@/components/smooth-scroll";
+import { createMetadata } from "@/lib/metadata";
 
-import Cursor from '@/components/cursor/cursor';
-import SmoothScroll from '@/components/smooth-scroll';
-
-import { createMetadata } from '@/lib/metadata';
-import type { AboutPage, WithContext } from 'schema-dts';
-
-import { metadata as meta } from '@/app/config';
-import { contact } from '@/components/sections/contact/config';
-
-const title = 'About';
-const description = 'Learn more about me and how I do things';
+const title = "About";
+const description = "Learn more about me and how I do things";
 
 export const metadata = createMetadata({
   title,
   description,
   openGraph: {
-    url: '/about',
-    type: 'profile',
+    url: "/about",
+    type: "profile",
     title,
-    description
+    description,
   },
   twitter: {
     title,
-    description
-  }
+    description,
+  },
 });
 
 const jsonLd: WithContext<AboutPage> = {
-  '@context': 'https://schema.org',
-  '@type': 'AboutPage',
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
   name: title,
   description,
   url: `${meta.site.url}/about`,
   mainEntity: {
-    '@type': 'Person',
+    "@type": "Person",
     name: meta.author.name,
     description: meta.site.description,
     url: meta.site.url,
-    sameAs: contact.socials.map((social) => social.href)
-  }
+    sameAs: contact.socials.map((social) => social.href),
+  },
 };
 
 export default function AboutLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {

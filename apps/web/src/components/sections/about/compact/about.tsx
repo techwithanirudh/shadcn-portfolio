@@ -1,9 +1,10 @@
-import React from 'react';
-import MotionWrap from '@/components/motion-wrap';
-import Image from 'next/image';
-import { Button } from '@repo/ui/button';
-import Link from 'next/link';
-import { ArrowUpRightIcon } from 'lucide-react';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import MotionWrap from "@/components/motion-wrap";
+import { ArrowUpRightIcon } from "lucide-react";
+
+import { Button } from "@repo/ui/button";
 
 function About() {
   return (
@@ -15,14 +16,14 @@ function About() {
               About Me
             </h2>
             <div className="space-y-4">
-              <p className="max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                 I am a passionate and creative Web Developer with a love for
                 beautiful and functional websites. I have experience working
                 with a variety of web technologies and frameworks and I am
                 always eager to learn new things and take on new challenges.
               </p>
               <div className="flex gap-2">
-                <Button asChild variant={'outline'}>
+                <Button asChild variant={"outline"}>
                   <a href="resume.pdf" target="_blank">
                     View Resume <ArrowUpRightIcon className="ml-2 size-5" />
                   </a>

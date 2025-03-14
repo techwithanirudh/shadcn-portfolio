@@ -1,6 +1,7 @@
-import styles from './style.module.scss';
-import { translate } from '../../anim';
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
+
+import { translate } from "../../anim";
+import styles from "./style.module.scss";
 
 export default function Footer() {
   return (

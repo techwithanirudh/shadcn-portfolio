@@ -1,13 +1,13 @@
-'use client';
-import React from 'react';
-import { buttonVariants } from '@repo/ui/button';
-import MotionWrap from '@/components/motion-wrap';
+"use client";
 
-import ContactForm from './contact-form';
+import React from "react";
+import MotionWrap from "@/components/motion-wrap";
+import { contact } from "@/components/sections/contact/config";
+import { cn } from "@/lib/utils";
 
-import { contact } from '@/components/sections/contact/config';
+import { buttonVariants } from "@repo/ui/button";
 
-import { cn } from '@/lib/utils';
+import ContactForm from "./contact-form";
 
 function Contact() {
   return (
@@ -18,12 +18,12 @@ function Contact() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Contact Me
             </h2>
-            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="text-muted-foreground max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Have a question or want to work together? Send me a message using
               the form.
             </p>
             <p className="text-muted-foreground">
-              Email:{' '}
+              Email:{" "}
               <a className="hover:underline" href={`mailto:${contact.email}`}>
                 {contact.email}
               </a>
@@ -34,8 +34,8 @@ function Contact() {
                   target="_blank"
                   href={href}
                   className={cn(
-                    buttonVariants({ variant: 'outline', size: 'icon' }),
-                    'text-md gap-1'
+                    buttonVariants({ variant: "outline", size: "icon" }),
+                    "text-md gap-1",
                   )}
                   key={`contact-social_${index}`}
                 >

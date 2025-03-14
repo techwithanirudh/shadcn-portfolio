@@ -1,15 +1,16 @@
-import React from 'react';
-import MotionWrap from '@/components/motion-wrap';
+import React from "react";
+import MotionWrap from "@/components/motion-wrap";
+import { testimonials } from "@/components/sections/testimonials/config";
+
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
-} from '@repo/ui/carousel';
-import TestimonialCard from './testimonial-card';
+  CarouselPrevious,
+} from "@repo/ui/carousel";
 
-import { testimonials } from '@/components/sections/testimonials/config';
+import TestimonialCard from "./testimonial-card";
 
 function Testimonials() {
   return (

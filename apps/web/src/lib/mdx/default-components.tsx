@@ -1,6 +1,6 @@
 // credit: fuma-nama
-import { HTMLAttributes, type AnchorHTMLAttributes } from 'react';
-import Link from 'next/link';
+import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
+import Link from "next/link";
 
 export function MDXLink({
   href,
@@ -8,7 +8,7 @@ export function MDXLink({
 }: AnchorHTMLAttributes<HTMLAnchorElement>) {
   if (!href) return <a {...props} />;
 
-  const isExternal = href.startsWith('https://') || href.startsWith('http://');
+  const isExternal = href.startsWith("https://") || href.startsWith("http://");
 
   if (isExternal) {
     return (
@@ -19,7 +19,7 @@ export function MDXLink({
   return <Link href={href} {...props} />;
 }
 
-export const headingTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] as const;
+export const headingTypes = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 
 export function Heading({
   as: As,
@@ -29,7 +29,7 @@ export function Heading({
     return (
       <a href={`#${props.id}`} className="group no-underline">
         <As {...props}>
-          <span className="absolute -ml-4 mt-0.5 text-base text-neutral-500 opacity-0 transition-opacity group-hover:opacity-100">
+          <span className="absolute mt-0.5 -ml-4 text-base text-neutral-500 opacity-0 transition-opacity group-hover:opacity-100">
             #
           </span>
           {props.children}

@@ -1,33 +1,20 @@
 {
-    "extends": "@repo/tsconfig/base.json",
-    "compilerOptions": {
-        "lib": [
-            "ES2022",
-            "dom",
-            "dom.iterable"
-        ],
-        "jsx": "preserve",
-        "baseUrl": ".",
-        "paths": {
-            "@/*": [
-                "./src/*"
-            ],
-            "content-collections": [
-                "./.content-collections/generated"
-            ]
-        },
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ],
-        "module": "esnext"
+  "extends": "@repo/tsconfig/base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "content-collections": ["./.content-collections/generated"]
     },
-    "include": [
-        ".",
-        ".next/types/**/*.ts"
+    "plugins": [
+      {
+        "name": "next"
+      }
     ],
-    "exclude": [
-        "node_modules"
-    ]
+    "module": "esnext"
+  },
+  "include": [".", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

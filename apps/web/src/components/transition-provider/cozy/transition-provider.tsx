@@ -1,39 +1,39 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { TransitionRouter } from 'next-transition-router';
-import { cn } from '@/lib/utils';
-import AnimatedPathText from '@/components/fancy/text/text-along-path';
+import { useEffect, useState } from "react";
+import AnimatedPathText from "@/components/fancy/text/text-along-path";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "motion/react";
+import { TransitionRouter } from "next-transition-router";
 
 /**
  * Loader component that displays animated circular text.
-**/
+ **/
 
 function Loader() {
   const circlePath =
-    'M 100 100 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0';
+    "M 100 100 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0";
 
   return (
-    <div className="w-dvw h-dvh flex justify-center items-center relative z-100">
+    <div className="relative z-100 flex h-dvh w-dvw items-center justify-center">
       {[0, 90, 180, 270].map((rotation, i) => (
         <AnimatedPathText
           key={rotation}
           path={circlePath}
           pathId={`circle-path-${i}`}
           svgClassName={cn(
-            'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full',
+            "absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2",
             {
-              'rotate-0': rotation === 0,
-              'rotate-90': rotation === 90,
-              'rotate-180': rotation === 180,
-              '-rotate-90': rotation === 270,
-            }
+              "rotate-0": rotation === 0,
+              "rotate-90": rotation === 90,
+              "rotate-180": rotation === 180,
+              "-rotate-90": rotation === 270,
+            },
           )}
           easingFunction={{
-            calcMode: 'spline',
-            keyTimes: '0;1',
-            keySplines: '0.762 0.002 0.253 0.999',
+            calcMode: "spline",
+            keyTimes: "0;1",
+            keySplines: "0.762 0.002 0.253 0.999",
           }}
           viewBox="0 0 200 200"
           text="loading"
@@ -63,7 +63,7 @@ export function TransitionProvider({
 
   // Disable scrolling during transitions.
   useEffect(() => {
-    document.body.style.overflow = isTransitioning ? 'hidden' : '';
+    document.body.style.overflow = isTransitioning ? "hidden" : "";
   }, [isTransitioning]);
 
   return (

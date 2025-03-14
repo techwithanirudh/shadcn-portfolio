@@ -1,24 +1,21 @@
-import React from 'react';
-import { CardContent, CardFooter, Card } from '@repo/ui/card';
-import { Button, buttonVariants } from '@repo/ui/button';
+import type { Post } from "@/types/post";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import TextReveal from "@/components/fancy/text-reveal";
+import { cn } from "@/lib/utils";
+import { InfoIcon } from "lucide-react";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { InfoIcon } from 'lucide-react';
-
-import { Post } from '@/types/post';
-
+import { AspectRatio } from "@repo/ui/aspect-ratio";
+import { Badge } from "@repo/ui/badge";
+import { Button, buttonVariants } from "@repo/ui/button";
+import { Card, CardContent, CardFooter } from "@repo/ui/card";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger
-} from '@repo/ui/tooltip';
-
-import { cn } from '@/lib/utils';
-import { Badge } from '@repo/ui/badge';
-import TextReveal from '@/components/fancy/text-reveal';
-import { AspectRatio } from '@repo/ui/aspect-ratio';
+  TooltipTrigger,
+} from "@repo/ui/tooltip";
 
 interface PostCardProps extends Post {
   href: string;
@@ -32,13 +29,13 @@ function PostCard({
   href,
   thumbnail,
   date,
-  className
+  className,
 }: PostCardProps) {
   return (
     <Card
       className={cn(
-        'relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900',
-        className
+        "relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900",
+        className,
       )}
     >
       <CardContent className="p-4 md:p-6">
@@ -48,7 +45,7 @@ function PostCard({
             className="z-2 mb-2 inline-block overflow-hidden rounded-md"
           >
             <Image
-              src={thumbnail || '/placeholder.svg'}
+              src={thumbnail || "/placeholder.svg"}
               alt={`Image of ${title}`}
               fill
               className="object-cover transition-transform duration-300 hover:scale-105"
@@ -61,7 +58,7 @@ function PostCard({
             as="p"
             className="text-sm text-gray-500 dark:text-gray-400"
           >
-            {description || ''}
+            {description || ""}
           </TextReveal>
           <TextReveal
             as="p"
@@ -96,7 +93,7 @@ function PostCard({
           </Tooltip>
         </TooltipProvider>
       </CardFooter>
-      <Link href={href} className="z-1 absolute inset-0 block" />
+      <Link href={href} className="absolute inset-0 z-1 block" />
     </Card>
   );
 }

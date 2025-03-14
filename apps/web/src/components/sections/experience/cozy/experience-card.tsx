@@ -1,15 +1,13 @@
-import React from 'react';
-import { CardContent, CardFooter, Card } from '@repo/ui/card';
-import { buttonVariants } from '@repo/ui/button';
+import type { Experience } from "@/types/experience";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import TextReveal from "@/components/fancy/text-reveal";
+import { cn } from "@/lib/utils";
+import { CodeIcon } from "lucide-react";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { CodeIcon } from 'lucide-react';
-
-import { Experience } from '@/types/experience';
-
-import { cn } from '@/lib/utils';
-import TextReveal from '@/components/fancy/text-reveal';
+import { buttonVariants } from "@repo/ui/button";
+import { Card, CardContent, CardFooter } from "@repo/ui/card";
 
 interface ExperienceCardProps extends Experience {
   className?: string;
@@ -20,10 +18,10 @@ function ExperienceCard({
   name,
   duration,
   description,
-  className
+  className,
 }: ExperienceCardProps) {
   return (
-    <Card className={cn('border-none bg-transparent shadow-none', className)}>
+    <Card className={cn("border-none bg-transparent shadow-none", className)}>
       <CardContent className="p-1">
         <div className="flex items-baseline justify-between">
           <TextReveal as="h3" className="text-3xl font-semibold">
@@ -42,7 +40,7 @@ function ExperienceCard({
         >
           {description}
         </TextReveal>
-        <hr className="my-6 border-t border-border" />
+        <hr className="border-border my-6 border-t" />
       </CardContent>
     </Card>
   );

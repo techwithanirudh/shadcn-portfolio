@@ -1,9 +1,11 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion, Variants } from 'motion/react';
-import { AnimatedLetter } from './letter';
-import { titleAnimation } from './anim';
+import type { Variants } from "motion/react";
+import React from "react";
+import { motion } from "motion/react";
+
+import { titleAnimation } from "./anim";
+import { AnimatedLetter } from "./letter";
 
 interface AnimatedWordProps {
   title: string;
@@ -14,19 +16,19 @@ interface AnimatedWordProps {
 export const AnimatedWord: React.FC<AnimatedWordProps> = ({
   title,
   animation,
-  isHovered
+  isHovered,
 }) => {
   return (
     <motion.span
       variants={titleAnimation}
       initial="rest"
-      animate={isHovered ? 'hover' : 'rest'}
+      animate={isHovered ? "hover" : "rest"}
       className="relative whitespace-nowrap"
     >
       {title
-        .split('')
+        .split("")
         .map((character, i) =>
-          character === ' ' ? (
+          character === " " ? (
             <span key={`space-${i}`}>&nbsp;</span>
           ) : (
             <AnimatedLetter
@@ -34,7 +36,7 @@ export const AnimatedWord: React.FC<AnimatedWordProps> = ({
               character={character}
               animation={animation}
             />
-          )
+          ),
         )}
     </motion.span>
   );

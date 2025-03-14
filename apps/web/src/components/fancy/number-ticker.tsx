@@ -1,19 +1,16 @@
-import { cn } from '@/lib/utils';
-import {
-  useMotionValue,
-  useTransform,
-  motion,
-  animate,
+import type {
+  AnimationPlaybackControls,
   ValueAnimationTransition,
-  AnimationPlaybackControls
-} from 'motion/react';
+} from "motion/react";
 import {
-  useEffect,
+  forwardRef,
   useCallback,
-  useState,
+  useEffect,
   useImperativeHandle,
-  forwardRef
-} from 'react';
+  useState,
+} from "react";
+import { cn } from "@/lib/utils";
+import { animate, motion, useMotionValue, useTransform } from "motion/react";
 
 interface NumberTickerProps {
   from: number; // Starting value of the animation
@@ -37,8 +34,8 @@ const NumberTicker = forwardRef<NumberTickerRef, NumberTickerProps>(
       target = 100,
       transition = {
         duration: 3,
-        type: 'tween',
-        ease: 'easeInOut'
+        type: "tween",
+        ease: "easeInOut",
       },
       className,
       onStart,
@@ -46,12 +43,12 @@ const NumberTicker = forwardRef<NumberTickerRef, NumberTickerProps>(
       autoStart = true,
       ...props
     },
-    ref
+    ref,
   ) => {
     const count = useMotionValue(from);
     const rounded = useTransform(count, (latest) => Math.round(latest));
     const [controls, setControls] = useState<AnimationPlaybackControls | null>(
-      null
+      null,
     );
 
     // Function to start the animation
@@ -65,14 +62,14 @@ const NumberTicker = forwardRef<NumberTickerRef, NumberTickerProps>(
         ...transition,
         onComplete: () => {
           onComplete?.();
-        }
+        },
       });
       setControls(newControls);
     }, []);
 
     // Expose the startAnimation function via ref
     useImperativeHandle(ref, () => ({
-      startAnimation
+      startAnimation,
     }));
 
     useEffect(() => {
@@ -87,10 +84,10 @@ const NumberTicker = forwardRef<NumberTickerRef, NumberTickerProps>(
         {rounded}
       </motion.span>
     );
-  }
+  },
 );
 
-NumberTicker.displayName = 'NumberTicker';
+NumberTicker.displayName = "NumberTicker";
 
 export default NumberTicker;
 

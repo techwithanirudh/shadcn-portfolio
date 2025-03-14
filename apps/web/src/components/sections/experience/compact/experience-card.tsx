@@ -1,14 +1,12 @@
-import React from 'react';
-import { CardContent, CardFooter, Card } from '@repo/ui/card';
-import { buttonVariants } from '@repo/ui/button';
+import type { Experience } from "@/types/experience";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { CodeIcon } from "lucide-react";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { CodeIcon } from 'lucide-react';
-
-import { Experience } from '@/types/experience';
-
-import { cn } from '@/lib/utils';
+import { buttonVariants } from "@repo/ui/button";
+import { Card, CardContent, CardFooter } from "@repo/ui/card";
 
 interface ExperienceCardProps extends Experience {
   className?: string;
@@ -19,10 +17,10 @@ function ExperienceCard({
   name,
   duration,
   description,
-  className
+  className,
 }: ExperienceCardProps) {
   return (
-    <Card className={cn('border-none bg-transparent shadow-none', className)}>
+    <Card className={cn("border-none bg-transparent shadow-none", className)}>
       <CardContent className="p-1">
         <div className="flex items-baseline justify-between">
           <h3 className="text-2xl font-semibold">{company}</h3>
@@ -30,7 +28,7 @@ function ExperienceCard({
         </div>
         <h4 className="mt-2 text-lg font-medium uppercase">{name}</h4>
         <p className="mt-2">{description}</p>
-        <hr className="my-6 border-t border-border" />
+        <hr className="border-border my-6 border-t" />
       </CardContent>
     </Card>
   );

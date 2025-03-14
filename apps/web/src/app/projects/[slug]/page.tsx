@@ -1,23 +1,19 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
+import { HTMLAttributes } from "react";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { metadata as meta } from "@/app/config";
+import { project } from "@/app/source";
+import { Heading, headingTypes, MDXLink } from "@/lib/mdx/default-components";
+import { createMetadata } from "@/lib/metadata";
+import { cn } from "@/lib/utils";
+import { MDXContent } from "@content-collections/mdx/react";
+import defaultMdxComponents from "fumadocs-ui/mdx";
 
-import { MDXContent } from '@content-collections/mdx/react';
-
-import { notFound } from 'next/navigation';
-import { project } from '@/app/source';
-
-import Header from './header';
-import Image from 'next/image';
-
-import { createMetadata } from '@/lib/metadata';
-import { metadata as meta } from '@/app/config';
-import { Heading, headingTypes, MDXLink } from '@/lib/mdx/default-components';
-import { cn } from '@/lib/utils';
-
-import { HTMLAttributes } from 'react';
-import defaultMdxComponents from 'fumadocs-ui/mdx';
+import Header from "./header";
 
 export async function generateStaticParams({
-  params
+  params,
 }: {
   params: { slug: string };
 }) {
@@ -38,29 +34,29 @@ export async function generateMetadata(props: {
     title: page.data.title,
     description: page.data.description,
     openGraph: {
-      type: 'article',
+      type: "article",
       images: [
         {
-          alt: 'banner',
+          alt: "banner",
           width: 1200,
           height: 630,
           url: `/images/projects/${slug}/cover.jpg`,
-          type: 'image/png'
-        }
+          type: "image/png",
+        },
       ],
-      authors: meta.author.name
+      authors: meta.author.name,
       // modifiedTime: page.data.date.toISOString()
     },
     twitter: {
       images: [
         {
-          alt: 'banner',
+          alt: "banner",
           width: 1200,
           height: 630,
-          url: `/images/projects/${slug}/cover.jpg`
-        }
-      ]
-    }
+          url: `/images/projects/${slug}/cover.jpg`,
+        },
+      ],
+    },
   }) satisfies Metadata;
 }
 
@@ -73,7 +69,7 @@ export default async function ProjectPage(props0: {
   if (!page) notFound();
 
   const {
-    data: { toc, body, structuredData }
+    data: { toc, body, structuredData },
   } = page;
 
   return (
@@ -92,7 +88,7 @@ export default async function ProjectPage(props0: {
             code={body}
             components={{
               ...defaultMdxComponents,
-              a: MDXLink
+              a: MDXLink,
             }}
           />
         </div>

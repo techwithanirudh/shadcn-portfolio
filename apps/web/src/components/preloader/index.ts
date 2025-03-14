@@ -1,3 +1,3 @@
-import { Preloader } from './modern/preloader';
+import { Preloader } from "./modern/preloader";
 
 export { Preloader };

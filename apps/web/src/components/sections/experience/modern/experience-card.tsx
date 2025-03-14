@@ -1,16 +1,14 @@
-import React from 'react';
-import { CardContent, CardFooter, Card } from '@repo/ui/card';
-import { buttonVariants } from '@repo/ui/button';
+import type { Experience } from "@/types/experience";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import TextReveal from "@/components/fancy/text-reveal";
+import { cn } from "@/lib/utils";
+import { CodeIcon } from "lucide-react";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { CodeIcon } from 'lucide-react';
-
-import { Experience } from '@/types/experience';
-
-import { cn } from '@/lib/utils';
-import TextReveal from '@/components/fancy/text-reveal';
-import { Separator } from '@repo/ui/separator';
+import { buttonVariants } from "@repo/ui/button";
+import { Card, CardContent, CardFooter } from "@repo/ui/card";
+import { Separator } from "@repo/ui/separator";
 
 interface ExperienceCardProps extends Experience {
   className?: string;
@@ -21,13 +19,13 @@ function ExperienceCard({
   name,
   duration,
   description,
-  className
+  className,
 }: ExperienceCardProps) {
   return (
     <Card
       className={cn(
-        'min-h-full bg-transparent shadow-none justify-between flex flex-col ',
-        className
+        "flex min-h-full flex-col justify-between bg-transparent shadow-none",
+        className,
       )}
     >
       <CardContent className="pt-6">
@@ -45,7 +43,7 @@ function ExperienceCard({
         <TextReveal
           as="p"
           className="mt-2 max-w-2xl text-lg font-light text-zinc-700 dark:text-zinc-400"
-        > 
+        >
           {description}
         </TextReveal>
       </CardContent>

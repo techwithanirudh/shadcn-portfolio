@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
+import MotionWrap from "@/components/motion-wrap";
+import { experiences } from "@/components/sections/experience/config";
 
-import MotionWrap from '@/components/motion-wrap';
-import ExperienceCard from './experience-card';
-
-import { experiences } from '@/components/sections/experience/config';
+import ExperienceCard from "./experience-card";
 
 function Experiences() {
   return (

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useRef } from 'react';
-import { useInView, motion } from 'motion/react';
+import React, { useRef } from "react";
+import { motion, useInView } from "motion/react";
 
 interface RevealProps {
   phrases: string[];
@@ -9,17 +9,17 @@ interface RevealProps {
   as?: React.ElementType;
 }
 
-export function Reveal({ phrases, className = '', as = 'div' }: RevealProps) {
+export function Reveal({ phrases, className = "", as = "div" }: RevealProps) {
   const body = useRef(null);
-  const isInView = useInView(body, { once: true, margin: '0px' });
+  const isInView = useInView(body, { once: true, margin: "0px" });
 
   const animation = {
-    initial: { y: '100%', opacity: 0 },
+    initial: { y: "100%", opacity: 0 },
     enter: (i: number) => ({
-      y: '0',
+      y: "0",
       opacity: 1,
-      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: 0.05 * i }
-    })
+      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: 0.05 * i },
+    }),
   };
 
   const Tag = as;
@@ -35,7 +35,7 @@ export function Reveal({ phrases, className = '', as = 'div' }: RevealProps) {
             custom={index}
             variants={animation}
             initial="initial"
-            animate={isInView ? 'enter' : ''}
+            animate={isInView ? "enter" : ""}
           >
             {phrase}
           </motion.span>

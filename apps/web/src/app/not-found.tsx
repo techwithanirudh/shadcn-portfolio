@@ -1,10 +1,12 @@
-'use client';
-import React from 'react';
-import Screensaver from '@/components/fancy/screensaver';
-import { exampleImages } from '@/lib/example-images';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import { buttonVariants } from '@repo/ui/button';
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import Screensaver from "@/components/fancy/screensaver";
+import { exampleImages } from "@/lib/example-images";
+import { cn } from "@/lib/utils";
+
+import { buttonVariants } from "@repo/ui/button";
 
 const NotFoundPage: React.FC = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -20,8 +22,8 @@ const NotFoundPage: React.FC = () => {
           <Link
             href="/"
             className={cn(
-              buttonVariants({ variant: 'default' }),
-              'w-full self-center rounded-full px-8 py-2 md:self-start'
+              buttonVariants({ variant: "default" }),
+              "w-full self-center rounded-full px-8 py-2 md:self-start",
             )}
           >
             Home

@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
+import MotionWrap from "@/components/motion-wrap";
+import { skills } from "@/components/sections/skills/config";
 
-import MotionWrap from '@/components/motion-wrap';
-import SkillCard from './skill-card';
-
-import { skills } from '@/components/sections/skills/config';
+import SkillCard from "./skill-card";
 
 function Skills() {
   return (

@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import React, { type JSX } from 'react';
-import { Reveal } from '@/components/reveal';
+import type { JSX } from "react";
+import React from "react";
+import { Reveal } from "@/components/reveal";
 
 interface TextRevealProps {
   children: React.ReactNode;
@@ -11,11 +12,11 @@ interface TextRevealProps {
 
 const TextReveal: React.FC<TextRevealProps> = ({
   children,
-  className = '',
-  as = 'div'
+  className = "",
+  as = "div",
 }) => {
   const generatePhrases = (child: React.ReactNode): string[] => {
-    if (typeof child === 'string') {
+    if (typeof child === "string") {
       // Split by words but preserve natural line breaks
       return child.split(/\s+/).filter((word) => word.length > 0);
     } else if (React.isValidElement(child)) {
@@ -25,7 +26,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
         };
       };
 
-      if (element.props && 'children' in element.props) {
+      if (element.props && "children" in element.props) {
         return generatePhrases(element.props.children);
       }
       return [];

@@ -1,10 +1,11 @@
-import React from 'react';
-import MotionWrap from '@/components/motion-wrap';
-import Image from 'next/image';
-import { Button } from '@repo/ui/button';
-import Link from 'next/link';
-import { ArrowUpRightIcon } from 'lucide-react';
-import TextReveal from '@/components/fancy/text-reveal';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import TextReveal from "@/components/fancy/text-reveal";
+import MotionWrap from "@/components/motion-wrap";
+import { ArrowUpRightIcon } from "lucide-react";
+
+import { Button } from "@repo/ui/button";
 
 function About() {
   return (
@@ -14,14 +15,14 @@ function About() {
           <div className="space-y-4">
             <TextReveal
               as="h2"
-              className="text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
+              className="text-4xl leading-tight font-bold tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
             >
               About Me
             </TextReveal>
             <div className="space-y-4">
               <TextReveal
                 as="p"
-                className="max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+                className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
               >
                 I am a passionate and creative Web Developer with a love for
                 beautiful and functional websites. I have experience working
@@ -29,7 +30,7 @@ function About() {
                 always eager to learn new things and take on new challenges.
               </TextReveal>
               <div className="flex gap-2">
-                <Button asChild variant={'outline'}>
+                <Button asChild variant={"outline"}>
                   <a href="resume.pdf" target="_blank">
                     View Resume <ArrowUpRightIcon className="ml-2 size-5" />
                   </a>

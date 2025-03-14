@@ -4,6 +4,6 @@ export interface Project {
   date?: Date | string;
   website?: string;
   github?: string;
-  tags?: Array<{ label: string }>;
+  tags?: { label: string }[];
   // thumbnail: string;
 }

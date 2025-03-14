@@ -1,7 +1,10 @@
-'use client';
-import React, { ReactNode } from 'react';
-import { motion, MotionProps } from 'motion/react';
-import { cn } from '@/lib/utils';
+"use client";
+
+import type { MotionProps } from "motion/react";
+import type { ReactNode } from "react";
+import React from "react";
+import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 
 type MotionWrapProps = {
   children: ReactNode;

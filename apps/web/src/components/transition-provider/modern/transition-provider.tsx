@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { TransitionRouter } from 'next-transition-router';
-import { cn } from '@/lib/utils';
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "motion/react";
+import { TransitionRouter } from "next-transition-router";
 
 const TransitionLayer = ({
   className,
   custom,
   duration,
-  delay = 0
+  delay = 0,
 }: {
   className: string;
   custom: number;
@@ -17,14 +17,14 @@ const TransitionLayer = ({
   delay?: number;
 }) => (
   <motion.div
-    className={cn('fixed inset-0 z-30', className)}
-    initial={{ y: '100%' }}
+    className={cn("fixed inset-0 z-30", className)}
+    initial={{ y: "100%" }}
     animate={{ y: 0 }}
-    exit={{ y: '-100%' }}
+    exit={{ y: "-100%" }}
     transition={{
       duration: duration,
       ease: [0.65, 0, 0.35, 1],
-      delay: delay
+      delay: delay,
     }}
     custom={custom}
   />
@@ -32,7 +32,7 @@ const TransitionLayer = ({
 
 export function TransitionProvider({
   children,
-  speed = 1.0
+  speed = 1.0,
 }: {
   children: React.ReactNode;
   speed?: number;
@@ -43,9 +43,9 @@ export function TransitionProvider({
 
   useEffect(() => {
     if (isTransitioning) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
   }, [isTransitioning]);
 

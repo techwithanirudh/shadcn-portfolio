@@ -1,23 +1,22 @@
-import React from 'react';
-
-import MotionWrap from '@/components/motion-wrap';
-import ProjectCard from './project-card';
+import React from "react";
+import { project } from "@/app/source";
+import MotionWrap from "@/components/motion-wrap";
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
-} from '@repo/ui/carousel';
+  CarouselPrevious,
+} from "@repo/ui/carousel";
 
-import { project } from '@/app/source';
+import ProjectCard from "./project-card";
 
 function Projects() {
   const projects = [...project.getPages()].sort(
     (a, b) =>
       new Date(b.data.date ?? b.file.name).getTime() -
-      new Date(a.data.date ?? a.file.name).getTime()
+      new Date(a.data.date ?? a.file.name).getTime(),
   );
 
   return (
@@ -36,7 +35,7 @@ function Projects() {
           <div className="flex items-center justify-center overflow-hidden lg:px-12">
             <Carousel
               opts={{
-                align: 'start'
+                align: "start",
               }}
               className="w-full"
             >

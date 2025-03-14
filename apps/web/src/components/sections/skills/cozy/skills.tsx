@@ -1,9 +1,9 @@
-import React from 'react';
-import SkillCard from './skill-card';
+import React from "react";
+import TextReveal from "@/components/fancy/text-reveal";
+import MotionWrap from "@/components/motion-wrap";
+import { skills } from "@/components/sections/skills/config";
 
-import { skills } from '@/components/sections/skills/config';
-import MotionWrap from '@/components/motion-wrap';
-import TextReveal from '@/components/fancy/text-reveal';
+import SkillCard from "./skill-card";
 
 function Skills() {
   return (
@@ -13,12 +13,12 @@ function Skills() {
           <div className="flex flex-col items-center lg:items-start">
             <TextReveal
               as="h2"
-              className="flex flex-col -space-y-4 text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
+              className="flex flex-col -space-y-4 text-4xl leading-tight font-bold tracking-tighter sm:text-5xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight"
             >
               My Skills
             </TextReveal>
           </div>
-          <p className="mt-4 hidden text-gray-500 dark:text-gray-400 lg:mt-0 lg:block lg:w-[35%]">
+          <p className="mt-4 hidden text-gray-500 lg:mt-0 lg:block lg:w-[35%] dark:text-gray-400">
             Here are some of my skills where I&apos;ve turned knowledge into
             expertise, making things happen.
           </p>

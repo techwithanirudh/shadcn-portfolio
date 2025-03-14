@@ -4,20 +4,21 @@ import type { UseEmblaCarouselType } from "embla-carousel-react";
 import * as React from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 import useEmblaCarousel from "embla-carousel-react";
-import { Button } from "@repo/ui/button";
+
 import { cn } from "@repo/ui";
+import { Button } from "@repo/ui/button";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
 type CarouselPlugin = UseCarouselParameters[1];
 
-type CarouselProps = {
+interface CarouselProps {
   opts?: CarouselOptions;
   plugins?: CarouselPlugin;
   orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
-};
+}
 
 type CarouselContextProps = {
   carouselRef: ReturnType<typeof useEmblaCarousel>[0];
@@ -114,7 +115,7 @@ const Carousel = React.forwardRef<
       api.on("select", onSelect);
 
       return () => {
-        api?.off("select", onSelect);
+        api.off("select", onSelect);
       };
     }, [api, onSelect]);
 
@@ -206,7 +207,7 @@ const CarouselPrevious = React.forwardRef<
       className={cn(
         "absolute h-8 w-8 rounded-full",
         orientation === "horizontal"
-          ? "-left-12 top-1/2 -translate-y-1/2"
+          ? "top-1/2 -left-12 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className,
       )}
@@ -235,7 +236,7 @@ const CarouselNext = React.forwardRef<
       className={cn(
         "absolute h-8 w-8 rounded-full",
         orientation === "horizontal"
-          ? "-right-12 top-1/2 -translate-y-1/2"
+          ? "top-1/2 -right-12 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className,
       )}

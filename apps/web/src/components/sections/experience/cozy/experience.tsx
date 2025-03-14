@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react";
+import TextReveal from "@/components/fancy/text-reveal";
+import MotionWrap from "@/components/motion-wrap";
+import { experiences } from "@/components/sections/experience/config";
 
-import MotionWrap from '@/components/motion-wrap';
-import ExperienceCard from './experience-card';
-
-import { experiences } from '@/components/sections/experience/config';
-import TextReveal from '@/components/fancy/text-reveal';
+import ExperienceCard from "./experience-card";
 
 function Experiences() {
   return (

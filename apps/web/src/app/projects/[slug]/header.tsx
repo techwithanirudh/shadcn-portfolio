@@ -1,33 +1,33 @@
-'use client';
+"use client";
 
-import { buttonVariants } from '@repo/ui/button';
-import { cn } from '@/lib/utils';
-import { motion } from 'motion/react';
-import { ArrowUpRightIcon } from 'lucide-react';
+import type { Project } from "@/types/project";
+import React from "react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { ArrowUpRightIcon } from "lucide-react";
+import { motion } from "motion/react";
 
-import Link from 'next/link';
-import { Project } from '@/types/project';
-import { Badge } from '@repo/ui/badge';
-import React from 'react';
+import { Badge } from "@repo/ui/badge";
+import { buttonVariants } from "@repo/ui/button";
 
 const animation = {
   hide: {
     x: -30,
-    opacity: 0
+    opacity: 0,
   },
   show: {
     x: 0,
-    opacity: 1
-  }
+    opacity: 1,
+  },
 };
 
-type HeaderProps = {
+interface HeaderProps {
   metadata: Project;
-};
+}
 
 const Header = (props: HeaderProps) => {
   const {
-    metadata: { title, description, website, github, tags, date }
+    metadata: { title, description, website, github, tags, date },
   } = props;
 
   return (
@@ -54,7 +54,7 @@ const Header = (props: HeaderProps) => {
         {website && (
           <a
             href={website}
-            className={cn(buttonVariants(), 'group')}
+            className={cn(buttonVariants(), "group")}
             target="_blank"
           >
             Visit Website
@@ -64,7 +64,7 @@ const Header = (props: HeaderProps) => {
         {github && (
           <a
             href={github}
-            className={cn(buttonVariants(), 'group')}
+            className={cn(buttonVariants(), "group")}
             target="_blank"
           >
             Github
@@ -81,7 +81,7 @@ const Header = (props: HeaderProps) => {
         {tags?.map((tag, index) => (
           <Badge
             key={`project-tag_${index}`}
-            variant={'secondary'}
+            variant={"secondary"}
             className="px-3 py-1 text-sm"
           >
             {tag.label}

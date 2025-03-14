@@ -1,14 +1,15 @@
-'use client';
-import React, { useEffect, useState, useRef } from 'react';
-import styles from './style.module.scss';
+"use client";
+
+import type { MotionValue, SpringOptions } from "motion/react";
+import React, { useEffect, useRef, useState } from "react";
 import {
+  AnimationControls,
   motion,
   useMotionValue,
   useSpring,
-  MotionValue,
-  SpringOptions,
-  AnimationControls
-} from 'motion/react';
+} from "motion/react";
+
+import styles from "./style.module.scss";
 
 interface MouseMoveEvent {
   clientX: number;
@@ -28,21 +29,21 @@ export default function Cursor() {
 
   const mouse: { x: MotionValue<number>; y: MotionValue<number> } = {
     x: useMotionValue(0),
-    y: useMotionValue(0)
+    y: useMotionValue(0),
   };
 
   const smoothOptions: SpringOptions = {
     damping: 20,
     stiffness: 300,
-    mass: 0.5
+    mass: 0.5,
   };
   const smoothMouse = {
     x: useSpring(mouse.x, smoothOptions),
-    y: useSpring(mouse.y, smoothOptions)
+    y: useSpring(mouse.y, smoothOptions),
   };
 
   const manageResize = () => {
-    const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+    const isFinePointer = window.matchMedia("(pointer: fine)").matches;
     if (!isFinePointer) {
       setIsVisible(false);
       return;
@@ -50,7 +51,7 @@ export default function Cursor() {
   };
 
   const manageMouseMove = (e: MouseMoveEvent) => {
-    const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+    const isFinePointer = window.matchMedia("(pointer: fine)").matches;
     if (!isFinePointer) {
       setIsVisible(false);
       return;
@@ -78,35 +79,35 @@ export default function Cursor() {
   };
 
   useEffect(() => {
-    window.addEventListener('resize', manageResize);
+    window.addEventListener("resize", manageResize);
 
-    document.body.addEventListener('mouseleave', manageMouseLeave, {
-      passive: true
+    document.body.addEventListener("mouseleave", manageMouseLeave, {
+      passive: true,
     });
-    window.addEventListener('mousemove', manageMouseMove, {
-      passive: true
+    window.addEventListener("mousemove", manageMouseMove, {
+      passive: true,
     });
-    window.addEventListener('mousedown', handleMouseDown, {
-      passive: true
+    window.addEventListener("mousedown", handleMouseDown, {
+      passive: true,
     });
-    window.addEventListener('mouseup', handleMouseUp, {
-      passive: true
+    window.addEventListener("mouseup", handleMouseUp, {
+      passive: true,
     });
 
     return () => {
-      window.removeEventListener('resize', manageResize);
+      window.removeEventListener("resize", manageResize);
 
-      window.removeEventListener('mouseleave', manageMouseLeave);
-      window.removeEventListener('mousemove', manageMouseMove);
-      window.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener("mouseleave", manageMouseLeave);
+      window.removeEventListener("mousemove", manageMouseMove);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
 
   const template = ({
     rotate,
     scaleX,
-    scaleY
+    scaleY,
   }: {
     rotate: number;
     scaleX: number;
@@ -123,11 +124,11 @@ export default function Cursor() {
           left: smoothMouse.x,
           top: smoothMouse.y,
           scaleX: mouse.x,
-          scaleY: mouse.y
+          scaleY: mouse.y,
         }}
         animate={{
           width: cursorSize,
-          height: cursorSize
+          height: cursorSize,
         }}
         className={`${styles.cursor} ${isVisible ? styles.visible : styles.hidden}`}
         ref={cursor}

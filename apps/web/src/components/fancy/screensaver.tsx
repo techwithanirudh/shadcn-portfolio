@@ -1,22 +1,23 @@
-'use client';
-import { useDimensions } from '@/hooks/use-dimensions';
-import { cn } from '@/lib/utils';
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
+import { useDimensions } from "@/hooks/use-dimensions";
+import { cn } from "@/lib/utils";
 import {
   motion,
   useAnimationControls,
   useAnimationFrame,
-  useMotionValue
-} from 'motion/react';
-import React, { useRef, useState, useEffect } from 'react';
+  useMotionValue,
+} from "motion/react";
 
-type ScreensaverProps = {
+interface ScreensaverProps {
   children: React.ReactNode;
   containerRef: React.RefObject<HTMLElement | null>;
   speed?: number;
   startPosition?: { x: number; y: number }; // x,y as percentages (0-100)
   startAngle?: number; // in degrees
   className?: string;
-};
+}
 
 const Screensaver: React.FC<ScreensaverProps> = ({
   children,
@@ -24,7 +25,7 @@ const Screensaver: React.FC<ScreensaverProps> = ({
   startPosition = { x: 0, y: 0 },
   startAngle = 45,
   containerRef,
-  className
+  className,
 }) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
@@ -64,7 +65,7 @@ const Screensaver: React.FC<ScreensaverProps> = ({
       angle.current = Math.PI - angle.current;
       newX = Math.max(
         0,
-        Math.min(newX, containerDimensions.width - elementDimensions.width)
+        Math.min(newX, containerDimensions.width - elementDimensions.width),
       );
     }
     if (
@@ -74,7 +75,7 @@ const Screensaver: React.FC<ScreensaverProps> = ({
       angle.current = -angle.current;
       newY = Math.max(
         0,
-        Math.min(newY, containerDimensions.height - elementDimensions.height)
+        Math.min(newY, containerDimensions.height - elementDimensions.height),
       );
     }
 
@@ -86,13 +87,13 @@ const Screensaver: React.FC<ScreensaverProps> = ({
     <motion.div
       ref={elementRef}
       style={{
-        position: 'absolute',
+        position: "absolute",
         top: 0,
         left: 0,
         x,
-        y
+        y,
       }}
-      className={cn('transform will-change-transform', className)}
+      className={cn("transform will-change-transform", className)}
     >
       {children}
     </motion.div>

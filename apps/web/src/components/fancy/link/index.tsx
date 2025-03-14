@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import React, { useState, useId } from 'react';
-import { motion } from 'motion/react';
-import { AnimatedWord } from './word';
-import { letterAnimation, letterAnimationTwo } from './anim';
-import Link from 'next/link';
-import type { LinkProps } from 'next/link';
+import type { LinkProps } from "next/link";
+import React, { useId, useState } from "react";
+import Link from "next/link";
+import { motion } from "motion/react";
+
+import { letterAnimation, letterAnimationTwo } from "./anim";
+import { AnimatedWord } from "./word";
 
 type AnimatedLinkProps = Omit<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -27,8 +28,8 @@ export default function AnimatedLink({
   const [isHovered, setIsHovered] = useState(false);
 
   const processChildren = (child: React.ReactNode): React.ReactNode => {
-    if (typeof child === 'string') {
-      return child.split(' ').map((word, index, array) => (
+    if (typeof child === "string") {
+      return child.split(" ").map((word, index, array) => (
         <React.Fragment key={`word-${index}`}>
           <motion.div
             onMouseEnter={() => setIsHovered(true)}
@@ -60,11 +61,11 @@ export default function AnimatedLink({
         };
       };
 
-      if (element.props && 'children' in element.props) {
+      if (element.props && "children" in element.props) {
         return React.cloneElement(
           element,
           {},
-          processChildren(element.props.children)
+          processChildren(element.props.children),
         );
       }
       return element;
@@ -80,8 +81,8 @@ export default function AnimatedLink({
 
   return external ? (
     <a
-      href={href.toString() ?? ''}
-      target={target || '_blank'}
+      href={href.toString() ?? ""}
+      target={target || "_blank"}
       rel="noopener noreferrer"
       {...props}
     >

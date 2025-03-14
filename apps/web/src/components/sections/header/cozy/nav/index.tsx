@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { motion } from 'motion/react';
-import styles from './style.module.scss';
-import { height } from '../anim';
-import Body from './body/body';
-import Footer from './footer/footer';
-import Image from './image/image';
-import ModeToggle from '@/components/mode-toggle';
+import { useState } from "react";
+import ModeToggle from "@/components/mode-toggle";
+import { links } from "@/components/sections/header/config";
+import { motion } from "motion/react";
 
-import { links } from '@/components/sections/header/config';
+import { height } from "../anim";
+import Body from "./body/body";
+import Footer from "./footer/footer";
+import Image from "./image/image";
+import styles from "./style.module.scss";
 
 interface IndexProps {
   setIsActive: (isActive: boolean) => void;
@@ -21,7 +21,7 @@ interface SelectedLinkState {
 const Index: React.FC<IndexProps> = ({ setIsActive }) => {
   const [selectedLink, setSelectedLink] = useState<SelectedLinkState>({
     isActive: false,
-    index: 0
+    index: 0,
   });
 
   return (
@@ -46,7 +46,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           src={links[selectedLink.index].thumbnail}
           isActive={selectedLink.isActive}
         />
-        <div className="absolute bottom-0 right-0 mb-auto">
+        <div className="absolute right-0 bottom-0 mb-auto">
           <ModeToggle />
         </div>
       </div>

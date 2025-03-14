@@ -1,13 +1,14 @@
-'use client';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import MotionLink from '@/components/fancy/link';
-import { CodeIcon } from 'lucide-react';
-import styles from './style.module.scss';
-import { opacity, background } from './anim';
-import Nav from './nav';
+"use client";
 
-import { metadata as meta } from '@/app/config';
+import { useState } from "react";
+import { metadata as meta } from "@/app/config";
+import MotionLink from "@/components/fancy/link";
+import { CodeIcon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+
+import { background, opacity } from "./anim";
+import Nav from "./nav";
+import styles from "./style.module.scss";
 
 interface HeaderProps {
   loader?: boolean;
@@ -20,40 +21,43 @@ const Header = ({ loader }: HeaderProps) => {
     <motion.header
       className={styles.header}
       initial={{
-        y: -80
+        y: -80,
       }}
       animate={{
-        y: 0
+        y: 0,
       }}
       transition={{
-        duration: 0.8
+        duration: 0.8,
       }}
     >
       <div className={styles.bar}>
-        <MotionLink href="/" className="inline-flex items-center justify-center text-md font-semibold">
+        <MotionLink
+          href="/"
+          className="text-md inline-flex items-center justify-center font-semibold"
+        >
           {meta.author.name}
         </MotionLink>
         <div onClick={() => setIsActive(!isActive)} className={styles.el}>
           <div className={styles.label}>
             <motion.p
               variants={opacity}
-              animate={!isActive ? 'open' : 'closed'}
+              animate={!isActive ? "open" : "closed"}
             >
               Menu
             </motion.p>
-            <motion.p variants={opacity} animate={isActive ? 'open' : 'closed'}>
+            <motion.p variants={opacity} animate={isActive ? "open" : "closed"}>
               Close
             </motion.p>
           </div>
           <div
-            className={`${styles.burger} ${isActive ? styles.burgerActive : ''}`}
+            className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}
           ></div>
         </div>
       </div>
       <motion.div
         variants={background}
         initial="initial"
-        animate={isActive ? 'open' : 'closed'}
+        animate={isActive ? "open" : "closed"}
         className={styles.background}
       ></motion.div>
       <AnimatePresence mode="wait">

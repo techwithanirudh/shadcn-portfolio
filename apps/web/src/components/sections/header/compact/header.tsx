@@ -1,20 +1,20 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Link from '@/components/fancy/link';
-import { motion } from 'motion/react';
-import { CodeIcon, EllipsisIcon, MenuIcon, XIcon } from 'lucide-react';
-import ThemeToggle from '@/components/mode-toggle';
-import { linkLimit, links } from '@/components/sections/header/config';
+"use client";
 
-import { metadata as meta } from '@/app/config';
+import React, { useEffect, useState } from "react";
+import { metadata as meta } from "@/app/config";
+import Link from "@/components/fancy/link";
+import ThemeToggle from "@/components/mode-toggle";
+import { linkLimit, links } from "@/components/sections/header/config";
+import { CodeIcon, EllipsisIcon, MenuIcon, XIcon } from "lucide-react";
+import { motion } from "motion/react";
 
+import { Button } from "@repo/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
-} from '@repo/ui/dropdown-menu';
-import { Button } from '@repo/ui/button';
+  DropdownMenuTrigger,
+} from "@repo/ui/dropdown-menu";
 
 interface HeaderProps {
   loader?: boolean;
@@ -34,59 +34,62 @@ const Header = ({ loader }: HeaderProps) => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const menuVariants = {
     open: {
-      height: 'auto',
+      height: "auto",
       opacity: 1,
       transition: {
-        height: { duration: 0.5, ease: 'easeInOut' },
-        opacity: { duration: 1, ease: 'easeInOut' }
-      }
+        height: { duration: 0.5, ease: "easeInOut" },
+        opacity: { duration: 1, ease: "easeInOut" },
+      },
     },
     initial: {
       height: 0,
       opacity: 0,
       transition: {
-        height: { duration: 0.5, ease: 'easeInOut' },
-        opacity: { duration: 0.25, ease: 'easeInOut' }
-      }
+        height: { duration: 0.5, ease: "easeInOut" },
+        opacity: { duration: 0.25, ease: "easeInOut" },
+      },
     },
     closed: {
       height: 0,
       opacity: 0,
       transition: {
-        height: { duration: 0.5, ease: 'easeInOut' },
-        opacity: { duration: 0.25, ease: 'easeInOut' }
-      }
-    }
+        height: { duration: 0.5, ease: "easeInOut" },
+        opacity: { duration: 0.25, ease: "easeInOut" },
+      },
+    },
   };
 
   return (
     <motion.header
-      className="fixed z-20 w-full bg-background/80 backdrop-blur-lg"
+      className="bg-background/80 fixed z-20 w-full backdrop-blur-lg"
       initial={{
-        y: -80
+        y: -80,
       }}
       animate={{
-        y: 0
+        y: 0,
       }}
       transition={{
-        duration: 0.8
+        duration: 0.8,
       }}
     >
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex w-full justify-between">
-          <Link href="/" className="inline-flex items-center justify-center text-md font-semibold">
+          <Link
+            href="/"
+            className="text-md inline-flex items-center justify-center font-semibold"
+          >
             {meta.author.name}
           </Link>
 
           <button className="md:hidden" onClick={toggleMenu}>
-            <span className="sr-only">{isOpen ? 'Close' : 'Menu'}</span>
+            <span className="sr-only">{isOpen ? "Close" : "Menu"}</span>
             {isOpen ? (
               <XIcon className="h-6 w-6" />
             ) : (
@@ -139,7 +142,7 @@ const Header = ({ loader }: HeaderProps) => {
       <motion.div
         variants={menuVariants}
         initial="closed"
-        animate={isOpen ? 'open' : 'closed'}
+        animate={isOpen ? "open" : "closed"}
         className="bg-transparent md:hidden"
       >
         <div className="flex flex-col gap-4 p-4">

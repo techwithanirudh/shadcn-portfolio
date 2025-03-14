@@ -1,11 +1,13 @@
-'use client';
+"use client";
 
-import React, { RefObject } from 'react';
-import Image, { ImageProps } from 'next/image';
-import { useScroll, useTransform, motion } from 'motion/react';
-import { cn } from '@/lib/utils';
+import type { ImageProps } from "next/image";
+import type { RefObject } from "react";
+import React from "react";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { motion, useScroll, useTransform } from "motion/react";
 
-interface ParallaxImageProps extends Omit<ImageProps, 'ref'> {
+interface ParallaxImageProps extends Omit<ImageProps, "ref"> {
   className?: string;
   containerRef: RefObject<HTMLElement | null>;
   containerClassName?: string;
@@ -25,15 +27,15 @@ const ParallaxImage = ({
   ...props
 }: ParallaxImageProps) => {
   const {
-    yStart = '-10%',
-    yEnd = '10%',
+    yStart = "-10%",
+    yEnd = "10%",
     scaleStart = 1,
-    scaleEnd = 1.5
+    scaleEnd = 1.5,
   } = parallaxOptions || {};
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start end', 'end start']
+    offset: ["start end", "end start"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [yStart, yEnd]);
@@ -41,14 +43,14 @@ const ParallaxImage = ({
 
   return (
     <motion.div
-      className={cn('relative w-full overflow-hidden', containerClassName)}
+      className={cn("relative w-full overflow-hidden", containerClassName)}
       style={{ y, scale }}
     >
-      <Image className={cn('object-cover', className)} fill {...props} />
+      <Image className={cn("object-cover", className)} fill {...props} />
     </motion.div>
   );
 };
 
-ParallaxImage.displayName = 'ParallaxImage';
+ParallaxImage.displayName = "ParallaxImage";
 
 export default ParallaxImage;
