@@ -7,15 +7,14 @@
     "config": "",
     "css": "unused.css",
     "baseColor": "zinc",
-    "cssVariables": true,
-    "prefix": ""
+    "cssVariables": true
   },
+  "iconLibrary": "lucide",
   "aliases": {
-    "components": "@/.",
-    "utils": "@repo/ui",
-    "ui": "@/.",
+    "components": "@repo/ui",
+    "hooks": "@repo/ui/hooks",
     "lib": "@repo/ui",
-    "hooks": "@/hooks"
-  },
-  "iconLibrary": "lucide"
+    "utils": "@repo/ui",
+    "ui": "~/src"
+  }
 }

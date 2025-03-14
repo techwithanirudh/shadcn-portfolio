@@ -5,8 +5,9 @@
     "jsx": "preserve",
     "rootDir": ".",
     "paths": {
-      "@/*": ["./src/*"]
-    },
+      "@repo/ui/*": ["./src/*"],
+      "~/*": ["./*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules"]

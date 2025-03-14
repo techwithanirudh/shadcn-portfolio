@@ -56,7 +56,6 @@
     "superjson": "2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^11.0.5",
-    "vaul": "^1.1.1",
     "zod": "catalog:"
   },
   "devDependencies": {
