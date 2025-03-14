@@ -44,7 +44,7 @@ export const contactSubmit = actionClient
       from: EMAIL_FROM,
       to: EMAIL_TO,
       subject: `Message from ${name} on Portfolio`,
-      react: ContactEmail({ name, email, message })
+      react: Contact({ name, email, message })
     });
 
     if (error) throw new Error(JSON.stringify(error));
