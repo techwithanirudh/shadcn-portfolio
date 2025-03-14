@@ -12,6 +12,7 @@ import { InlineTOC } from "fumadocs-ui/components/inline-toc";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 
 import { buttonVariants } from "@repo/ui/button";
+import { PostComments } from "./page.client";
 
 export async function generateStaticParams({
   params,
@@ -81,6 +82,8 @@ export default async function BlogPage(props0: {
               a: MDXLink,
             }}
           />
+        <PostComments />
+
         </div>
         <div className="flex flex-col gap-4 border-l p-4 text-sm">
           <div>

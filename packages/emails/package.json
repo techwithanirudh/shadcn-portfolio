@@ -19,6 +19,8 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
+    "@types/react": "catalog:react19",
+    "@types/react-dom": "catalog:react19",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
@@ -26,7 +28,8 @@
   "prettier": "@repo/prettier-config",
   "dependencies": {
     "@react-email/components": "^0.0.33",
-    "react": "19.0.0",
+    "react": "catalog:react19",
+    "react-dom": "catalog:react19",
     "react-email": "3.0.7"
   }
 }

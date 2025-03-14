@@ -13,8 +13,8 @@
       "default": "./src/client.ts"
     },
     "./schema": {
-      "types": "./dist/schema.d.ts",
-      "default": "./src/schema.ts"
+      "types": "./dist/schema/index.d.ts",
+      "default": "./src/schema/index.ts"
     }
   },
   "license": "MIT",
@@ -30,9 +30,10 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@vercel/postgres": "^0.10.0",
+    "@neondatabase/serverless": "^0.10.4",
     "drizzle-orm": "^0.38.4",
     "drizzle-zod": "^0.6.1",
+    "sonner": "^1.7.4",
     "zod": "catalog:"
   },
   "devDependencies": {
