@@ -4,7 +4,7 @@ import Screensaver from '@/components/fancy/screensaver';
 import { exampleImages } from '@/lib/example-images';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '@repo/ui/button';
 
 const NotFoundPage: React.FC = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);

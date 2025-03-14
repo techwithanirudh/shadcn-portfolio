@@ -2,9 +2,9 @@
 
 import { useAction } from 'next-safe-action/hooks';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@repo/ui/button';
+import { Input } from '@repo/ui/input';
+import { Textarea } from '@repo/ui/textarea';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -17,7 +17,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage
-} from '@/components/ui/form';
+} from '@repo/ui/form';
 
 import { TurnstileModal } from '@/components/sections/contact/_components/turnstile-modal';
 import { LoaderCircleIcon } from 'lucide-react';

@@ -1,6 +1,6 @@
 import React from 'react';
-import { CardContent, CardFooter, Card } from '@/components/ui/card';
-import { buttonVariants } from '@/components/ui/button';
+import { CardContent, CardFooter, Card } from '@repo/ui/card';
+import { buttonVariants } from '@repo/ui/button';
 
 import Link from 'next/link';
 import Image from 'next/image';

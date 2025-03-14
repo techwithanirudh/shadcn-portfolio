@@ -8,7 +8,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from '@/components/ui/carousel';
+} from '@repo/ui/carousel';
 import TestimonialCard from './testimonial-card';
 
 import { Reveal } from '@/components/reveal';

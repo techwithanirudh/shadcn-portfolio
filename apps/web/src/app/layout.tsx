@@ -6,7 +6,7 @@ import {
 } from 'next/font/google';
 import '@/styles/globals.css';
 
-import { Toaster } from '@/components/ui/sonner';
+import { Toaster } from '@repo/ui/sonner';
 
 import { metadata as meta } from '@/app/config';
 import Loader from '@/app/loader';

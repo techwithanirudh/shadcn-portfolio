@@ -9,7 +9,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from '@/components/ui/carousel';
+} from '@repo/ui/carousel';
 
 import { project } from '@/app/source';
 

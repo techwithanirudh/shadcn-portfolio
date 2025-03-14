@@ -1,7 +1,7 @@
 import React from 'react';
 import MotionWrap from '@/components/motion-wrap';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+import { Button } from '@repo/ui/button';
 import Link from 'next/link';
 import { ArrowUpRightIcon } from 'lucide-react';
 import TextReveal from '@/components/fancy/text-reveal';

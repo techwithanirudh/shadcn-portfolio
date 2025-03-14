@@ -1,6 +1,6 @@
 import React from 'react';
-import { CardContent, CardFooter, Card } from '@/components/ui/card';
-import { buttonVariants } from '@/components/ui/button';
+import { CardContent, CardFooter, Card } from '@repo/ui/card';
+import { buttonVariants } from '@repo/ui/button';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,7 +10,7 @@ import { Experience } from '@/types/experience';
 
 import { cn } from '@/lib/utils';
 import TextReveal from '@/components/fancy/text-reveal';
-import { Separator } from '@/components/ui/separator';
+import { Separator } from '@repo/ui/separator';
 
 interface ExperienceCardProps extends Experience {
   className?: string;

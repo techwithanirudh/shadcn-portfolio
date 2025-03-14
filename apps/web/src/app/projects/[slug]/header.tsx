@@ -1,13 +1,13 @@
 'use client';
 
-import { buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '@repo/ui/button';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 import { ArrowUpRightIcon } from 'lucide-react';
 
 import Link from 'next/link';
 import { Project } from '@/types/project';
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '@repo/ui/badge';
 import React from 'react';
 
 const animation = {

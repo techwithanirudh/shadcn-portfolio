@@ -10,7 +10,7 @@ import { notFound } from 'next/navigation';
 import { blog } from '@/app/source';
 
 import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '@repo/ui/button';
 import { createMetadata } from '@/lib/metadata';
 import { metadata as meta } from '@/app/config';
 

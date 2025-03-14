@@ -1,6 +1,6 @@
 import React from 'react';
-import { CardContent, CardFooter, Card } from '@/components/ui/card';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { CardContent, CardFooter, Card } from '@repo/ui/card';
+import { Button, buttonVariants } from '@repo/ui/button';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,10 +13,10 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from '@/components/ui/tooltip';
+} from '@repo/ui/tooltip';
 
 import { cn } from '@/lib/utils';
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '@repo/ui/badge';
 import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 
 interface ProjectCardProps extends Project {

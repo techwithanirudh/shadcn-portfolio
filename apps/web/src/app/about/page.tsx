@@ -3,7 +3,7 @@ import TextReveal from '@/components/fancy/text-reveal';
 
 import React, { useRef } from 'react';
 import { ArrowUpRightIcon, ChevronDown, MailIcon } from 'lucide-react';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@repo/ui/button';
 
 import SkillCard from '@/app/about/_components/skill-card';
 import { skills } from '@/components/sections/skills/config';
@@ -13,7 +13,7 @@ import { contact } from '@/components/sections/contact/config';
 
 import Link from '@/components/fancy/link';
 import { cn } from '@/lib/utils';
-import { Separator } from '@/components/ui/separator';
+import { Separator } from '@repo/ui/separator';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { experiences } from '@/components/sections/experience/config';
 import ExperienceCard from '@/components/sections/experience/cozy/experience-card';

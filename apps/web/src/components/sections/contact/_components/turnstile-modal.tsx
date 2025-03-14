@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@repo/ui/button';
 import {
   Credenza as Dialog,
   CredenzaContent as DialogContent,
@@ -7,7 +7,7 @@ import {
   CredenzaHeader as DialogHeader,
   CredenzaTitle as DialogTitle,
   CredenzaTrigger as DialogTrigger
-} from '@/components/ui/credenza';
+} from '@repo/ui/credenza';
 
 import { Turnstile } from '@marsidev/react-turnstile';
 import { useTheme } from 'next-themes';
