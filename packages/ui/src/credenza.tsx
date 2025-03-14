@@ -1,9 +1,8 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-
-import { cn } from '@/lib/utils';
-import { useMediaQuery } from '@/hooks/use-media-query';
+import * as React from "react";
+import { useMediaQuery } from "@repo/ui/hooks/use-media-query";
+import { cn } from "@repo/ui";
 import {
   Dialog,
   DialogClose,
@@ -12,8 +11,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger
-} from '@/repo/ui/dialog';
+  DialogTrigger,
+} from "@repo/ui/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -22,8 +21,8 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger
-} from '@/repo/ui/drawer';
+  DrawerTrigger,
+} from "@repo/ui/drawer";
 
 interface BaseProps {
   children: React.ReactNode;
@@ -39,7 +38,7 @@ interface CredenzaProps extends BaseProps {
   asChild?: true;
 }
 
-const desktop = '(min-width: 768px)';
+const desktop = "(min-width: 768px)";
 
 const Credenza = ({ children, ...props }: RootCredenzaProps) => {
   const isDesktop = useMediaQuery(desktop);
@@ -120,7 +119,7 @@ const CredenzaTitle = ({ className, children, ...props }: CredenzaProps) => {
 
 const CredenzaBody = ({ className, children, ...props }: CredenzaProps) => {
   return (
-    <div className={cn('px-4 md:px-0', className)} {...props}>
+    <div className={cn("px-4 md:px-0", className)} {...props}>
       {children}
     </div>
   );
@@ -146,5 +145,5 @@ export {
   CredenzaHeader,
   CredenzaTitle,
   CredenzaBody,
-  CredenzaFooter
+  CredenzaFooter,
 };
