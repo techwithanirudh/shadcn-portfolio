@@ -6,7 +6,7 @@
   "scripts": {
     "build": "pnpm with-env next build",
     "clean": "git clean -xdf .cache .next .turbo node_modules",
-    "dev": "pnpm with-env next dev --turbopack",
+    "dev": "pnpm with-env next dev",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
     "start": "pnpm with-env next start",
@@ -27,6 +27,7 @@
     "@repo/ui": "workspace:*",
     "@repo/validators": "workspace:*",
     "@t3-oss/env-nextjs": "^0.12.0",
+    "embla-carousel-auto-scroll": "^8.5.2",
     "fumadocs-mdx": "^11.3.2",
     "fumadocs-twoslash": "^3.0.0",
     "fumadocs-ui": "^15.0.0",
@@ -50,8 +51,9 @@
     "resend": "^4.0.1",
     "schema-dts": "^1.1.2",
     "sharp": "^0.33.5",
-    "sonner": "^1.7.2",
+    "sonner": "^1.7.4",
     "superjson": "2.2.2",
+    "tailwindcss-animate": "^1.0.7",
     "uuid": "^11.0.5",
     "vaul": "^1.1.1",
     "zod": "catalog:"
@@ -59,8 +61,8 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
-    "@repo/tailwind-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
+    "@tailwindcss/postcss": "^4.0.14",
     "@types/node": "^22.10.10",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
@@ -68,6 +70,7 @@
     "dotenv-cli": "^8.0.0",
     "eslint": "catalog:",
     "jiti": "^1.21.7",
+    "postcss": "^8.5.1",
     "prettier": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"

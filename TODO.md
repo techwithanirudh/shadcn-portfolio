@@ -14,3 +14,10 @@
 - Add sitemap
 - Add og for each blog page, and project page
 - Fix zod validation errors
+
+- FIX CI/CD
+- FIX TAILWIND V4
+SPLIT INTO EMAILS AND OTHER DIRS
+SETUP API TRPC
+SETUPDB
+SETUP BETTER AUTH

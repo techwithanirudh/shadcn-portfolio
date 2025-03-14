@@ -2,7 +2,7 @@
 import 'server-only';
 
 import { Resend } from 'resend';
-import { ContactEmail } from '@/components/emails/contact-template';
+import { Contact } from '@repo/emails';
 
 import { validateTurnstileToken } from '@/lib/turnstile';
 import { actionClient, ActionError } from '@/lib/safe-action';

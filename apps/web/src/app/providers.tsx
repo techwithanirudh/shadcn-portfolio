@@ -2,8 +2,7 @@
 
 import { ThemeProvider } from '@/components/theme-provider';
 import { TransitionProvider } from '@/components/transition-provider';
-import {   unstable_addTransitionType as addTransitionType,
-} from 'react';
+import { unstable_ViewTransition as ViewTransition } from 'react'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (

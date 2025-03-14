@@ -1,0 +1,1 @@
+export { default as Contact } from './templates/contact'

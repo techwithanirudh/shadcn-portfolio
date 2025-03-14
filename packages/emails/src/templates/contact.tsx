@@ -17,6 +17,8 @@ import {
 import { Tailwind } from '@react-email/tailwind';
 import * as React from 'react';
 
+// todo: seperate into header footer aswell
+
 interface ContactEmailProps {
   name: string;
   email: string;
