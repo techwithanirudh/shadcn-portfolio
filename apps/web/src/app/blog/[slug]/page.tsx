@@ -69,21 +69,22 @@ export default async function BlogPage(props0: {
         </Link>
       </div>
       <article className="container grid grid-cols-1 px-0 py-8 lg:grid-cols-[2fr_1fr]">
-        <div className="prose flex-1 space-y-4 p-4">
-          {/*todo: refer inlinetoc from fumadocs and create custom component using fumadoc core's toc components*/}
-          <InlineTOC items={toc as TOCItemType[]} />
-          {/*todo: refer to fumadocs's content of defaultMdxComponents to add extra components which are missing*/}
-          {/*todo: add code functionality which means syntax highlighting using remark*/}
-          {/*todo: add remark-image*/}
-          <MDXContent
-            code={body}
-            components={{
-              ...defaultMdxComponents,
-              a: MDXLink,
-            }}
-          />
-        <PostComments />
-
+        <div className="flex flex-col flex-1 space-y-4 p-4">
+          <div className="prose flex-1 space-y-4">
+            {/*todo: refer inlinetoc from fumadocs and create custom component using fumadoc core's toc components*/}
+            <InlineTOC items={toc as TOCItemType[]} />
+            {/*todo: refer to fumadocs's content of defaultMdxComponents to add extra components which are missing*/}
+            {/*todo: add code functionality which means syntax highlighting using remark*/}
+            {/*todo: add remark-image*/}
+            <MDXContent
+              code={body}
+              components={{
+                ...defaultMdxComponents,
+                a: MDXLink,
+              }}
+            />
+          </div>
+          <PostComments slug={slug} />
         </div>
         <div className="flex flex-col gap-4 border-l p-4 text-sm">
           <div>

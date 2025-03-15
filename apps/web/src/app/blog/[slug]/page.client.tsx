@@ -3,11 +3,11 @@
 import { Comments } from "@fuma-comment/react";
 import { signIn } from "@repo/auth/client";
 
-export function PostComments() {
+export function PostComments({ slug }: {slug: string}) {
   return (
     <Comments
-      page="default"
-      className="w-full max-w-[800px]"
+      page={slug}
+      className="w-full"
       auth={{
         type: "api",
         signIn: () => {
