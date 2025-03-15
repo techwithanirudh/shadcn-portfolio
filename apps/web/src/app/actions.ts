@@ -2,14 +2,13 @@
 
 import "server-only";
 
+import { env } from "@/env";
 import { actionClient, ActionError } from "@/lib/safe-action";
 import { validateTurnstileToken } from "@/lib/turnstile";
 import { ContactActionSchema } from "@/lib/validators";
 import { Resend } from "resend";
 
 import { Contact } from "@repo/emails";
-
-import { env } from "@/env";
 
 const EMAIL_FROM = env.EMAIL_FROM;
 const EMAIL_TO = env.EMAIL_TO;

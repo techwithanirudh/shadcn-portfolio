@@ -6,11 +6,7 @@ import MotionWrap from "@/components/motion-wrap";
 import { testimonials } from "@/components/sections/testimonials/config";
 import Autoplay from "embla-carousel-auto-scroll";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@repo/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@repo/ui/carousel";
 
 import TestimonialCard from "./testimonial-card";
 
