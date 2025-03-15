@@ -68,10 +68,13 @@
     },
     "globalEnv": [
         "DATABASE_URL",
-        "AUTH_DISCORD_ID",
-        "AUTH_DISCORD_SECRET",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
         "AUTH_REDIRECT_PROXY_URL",
-        "AUTH_SECRET",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
         "PORT"
     ],
     "globalPassThroughEnv": [

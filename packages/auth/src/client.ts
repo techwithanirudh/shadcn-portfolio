@@ -4,7 +4,7 @@ import { toast } from 'sonner'
 import { inferAdditionalFields } from 'better-auth/client/plugins'
 import { createAuthClient } from 'better-auth/react'
 
-// see: https://github.com/better-auth/better-auth/issues/1391
+// @see https://github.com/better-auth/better-auth/issues/1391
 const authClient: ReturnType<typeof createAuthClient> = createAuthClient({
   plugins: [inferAdditionalFields<typeof auth>()],
 //   baseURL: env.BETTER_AUTH_URL,

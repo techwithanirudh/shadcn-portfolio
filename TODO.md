@@ -23,3 +23,5 @@ SETUPDB
 SETUP BETTER AUTH
 fix commit lint
 fix env
+fix ui insconstinces like contact form extra padding for links, testimonials too much gap, project card not good padding for all pages etfc compare diff and do
+add diff signin options like gogole with github

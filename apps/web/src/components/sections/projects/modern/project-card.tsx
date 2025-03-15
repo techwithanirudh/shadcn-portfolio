@@ -23,6 +23,7 @@ interface ProjectCardProps extends Project {
   className?: string;
 }
 
+// todo: update padding and spacing for all componetns as we upgraded to new york shadcn
 function ProjectCard({
   title,
   description,
@@ -35,7 +36,7 @@ function ProjectCard({
   return (
     <Card
       className={cn(
-        "relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900",
+        "relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900 p-0",
         className,
       )}
     >

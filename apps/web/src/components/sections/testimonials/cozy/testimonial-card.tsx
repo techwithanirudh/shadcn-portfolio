@@ -17,8 +17,8 @@ function TestimonialCard({
   className,
 }: TestimonialCardProps) {
   return (
-    <Card className={cn("h-full w-full rounded-xl", "bg-muted/40", className)}>
-      <div className="flex items-center p-4">
+    <Card className={cn("h-full w-full rounded-xl gap-4", "bg-muted/40", className)}>
+      <div className="flex items-center py-4">
         <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white">
           <Image
             src={image || "/placeholder.svg"}
