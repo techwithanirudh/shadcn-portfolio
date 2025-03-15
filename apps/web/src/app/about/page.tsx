@@ -5,7 +5,6 @@ import SkillCard from "@/app/about/_components/skill-card";
 import Link from "@/components/fancy/link";
 import ImageTrail from "@/components/fancy/motion-trail";
 import TextReveal from "@/components/fancy/text-reveal";
-import { Footer } from "@/components/sections";
 import { contact } from "@/components/sections/contact/config";
 import ContactForm from "@/components/sections/contact/cozy/contact-form";
 import { experiences } from "@/components/sections/experience/config";

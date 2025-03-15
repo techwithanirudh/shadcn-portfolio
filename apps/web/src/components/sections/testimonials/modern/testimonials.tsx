@@ -3,7 +3,6 @@
 import React from "react";
 import TextReveal from "@/components/fancy/text-reveal";
 import MotionWrap from "@/components/motion-wrap";
-import { Reveal } from "@/components/reveal";
 import { testimonials } from "@/components/sections/testimonials/config";
 import Autoplay from "embla-carousel-auto-scroll";
 
@@ -11,8 +10,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@repo/ui/carousel";
 
 import TestimonialCard from "./testimonial-card";

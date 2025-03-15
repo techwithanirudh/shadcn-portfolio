@@ -1,12 +1,9 @@
 import type { Skill } from "@/types/skill";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { CodeIcon } from "lucide-react";
 
-import { buttonVariants } from "@repo/ui/button";
-import { Card, CardContent, CardFooter } from "@repo/ui/card";
+import { Card, CardContent } from "@repo/ui/card";
 
 interface SkillCardProps extends Skill {
   className?: string;

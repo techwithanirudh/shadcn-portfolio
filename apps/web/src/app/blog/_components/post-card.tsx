@@ -7,8 +7,7 @@ import { cn } from "@/lib/utils";
 import { InfoIcon } from "lucide-react";
 
 import { AspectRatio } from "@repo/ui/aspect-ratio";
-import { Badge } from "@repo/ui/badge";
-import { Button, buttonVariants } from "@repo/ui/button";
+import { Button } from "@repo/ui/button";
 import { Card, CardContent, CardFooter } from "@repo/ui/card";
 import {
   Tooltip,

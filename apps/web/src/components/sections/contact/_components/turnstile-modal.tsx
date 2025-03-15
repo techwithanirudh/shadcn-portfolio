@@ -43,7 +43,7 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
         <div className="relative flex flex-col py-4 md:py-0">
           <div className={"z-10 px-4 md:px-0"}>
             <Turnstile
-              siteKey={env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+              siteKey={env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
               onWidgetLoad={() => setIsLoading(false)}
               onError={() => setTurnstileStatus("error")}
               onExpire={() => setTurnstileStatus("expired")}

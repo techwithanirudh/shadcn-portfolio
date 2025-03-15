@@ -9,8 +9,10 @@ import { Resend } from "resend";
 
 import { Contact } from "@repo/emails";
 
-const EMAIL_FROM = process.env.EMAIL_FROM;
-const EMAIL_TO = process.env.EMAIL_TO;
+import { env } from "@/env";
+
+const EMAIL_FROM = env.EMAIL_FROM;
+const EMAIL_TO = env.EMAIL_TO;
 
 export const contactSubmit = actionClient
   .use(async ({ next, clientInput }) => {

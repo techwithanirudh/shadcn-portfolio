@@ -1,6 +1,7 @@
 "use server";
 
 import "server-only";
+import { env } from "@/env";
 
 interface CloudflareTurnstileResponse {
   success: boolean;
@@ -16,7 +17,7 @@ export async function validateTurnstileToken(
     "https://challenges.cloudflare.com/turnstile/v0/siteverify",
     {
       method: "POST",
-      body: `secret=${encodeURIComponent(process.env.TURNSTILE_SECRET_KEY!)}&response=${encodeURIComponent(token)}`,
+      body: `secret=${encodeURIComponent(env.TURNSTILE_SECRET_KEY)}&response=${encodeURIComponent(token)}`,
       headers: {
         "content-type": "application/x-www-form-urlencoded",
       },

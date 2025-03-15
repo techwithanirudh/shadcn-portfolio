@@ -3,9 +3,10 @@ import { vercel } from "@t3-oss/env-nextjs/presets-zod";
 import { z } from "zod";
 
 import { env as authEnv } from "@repo/auth/env";
+import { env as emailsEnv } from "@repo/emails/env";
 
 export const env = createEnv({
-  extends: [authEnv, vercel()],
+  extends: [emailsEnv, authEnv, vercel()],
   shared: {
     NODE_ENV: z
       .enum(["development", "production", "test"])
@@ -17,6 +18,7 @@ export const env = createEnv({
    */
   server: {
     DATABASE_URL: z.string().url(),
+    TURNSTILE_SECRET_KEY: z.string().min(1).optional(),
   },
 
   /**
@@ -25,13 +27,14 @@ export const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string(),
+    NEXT_PUBLIC_CONTACT_FORM_ENABLED: z.string().min(1).optional(),
   },
   /**
    * Destructure all variables from `process.env` to make sure they aren't tree-shaken away.
    */
   experimental__runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-
+    NEXT_PUBLIC_CONTACT_FORM_ENABLED: process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   skipValidation:

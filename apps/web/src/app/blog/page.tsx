@@ -1,12 +1,10 @@
 import type { Blog, WithContext } from "schema-dts";
 import React from "react";
-import Link from "next/link";
 import PostCard from "@/app/blog/_components/post-card";
 import { metadata as meta } from "@/app/config";
 import { blog } from "@/app/source";
 import Line from "@/components/fancy/line";
 import TextReveal from "@/components/fancy/text-reveal";
-import { Footer } from "@/components/sections";
 import { contact } from "@/components/sections/contact/config";
 import { createMetadata } from "@/lib/metadata";
 
