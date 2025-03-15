@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
+
+import { cn } from "@repo/ui";
 
 interface MouseEvent {
   movementY: number;

@@ -1,7 +1,7 @@
 import type { Experience } from "@/types/experience";
 import TextReveal from "@/components/fancy/text-reveal";
-import { cn } from "@/lib/utils";
 
+import { cn } from "@repo/ui";
 import { Card, CardContent } from "@repo/ui/card";
 
 interface ExperienceCardProps extends Experience {

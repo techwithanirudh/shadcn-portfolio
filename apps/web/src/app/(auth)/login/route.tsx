@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+
+import { signIn } from "@repo/auth/client";
+import { cn } from "@repo/ui";
 import { Button } from "@repo/ui/button";
 import {
   Card,
@@ -11,11 +14,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@repo/ui/card";
-import { signIn } from "@repo/auth/client";
-import { cn } from "@/lib/utils";
 
 export default function SignIn() {
-
   return (
     <Card className="max-w-md">
       <CardHeader>

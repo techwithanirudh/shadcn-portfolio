@@ -3,8 +3,9 @@
 import type { MotionProps } from "motion/react";
 import type { ReactNode } from "react";
 import React from "react";
-import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
+
+import { cn } from "@repo/ui";
 
 type MotionWrapProps = {
   children: ReactNode;

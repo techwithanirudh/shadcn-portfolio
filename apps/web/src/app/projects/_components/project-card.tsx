@@ -2,9 +2,9 @@ import type { Project } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
 import TextReveal from "@/components/fancy/text-reveal";
-import { cn } from "@/lib/utils";
 import { InfoIcon } from "lucide-react";
 
+import { cn } from "@repo/ui";
 import { AspectRatio } from "@repo/ui/aspect-ratio";
 import { Badge } from "@repo/ui/badge";
 import { Button } from "@repo/ui/button";
@@ -33,7 +33,7 @@ function ProjectCard({
   return (
     <Card
       className={cn(
-        "relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900 p-0",
+        "relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white p-0 dark:border-zinc-50/10 dark:bg-zinc-900",
         className,
       )}
     >

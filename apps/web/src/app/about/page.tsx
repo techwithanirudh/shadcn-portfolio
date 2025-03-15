@@ -13,10 +13,10 @@ import { skills } from "@/components/sections/skills/config";
 import { technologies } from "@/components/sections/technologies/config";
 import TechnologyCard from "@/components/sections/technologies/modern/technology-card";
 import { exampleImages } from "@/lib/example-images";
-import { cn } from "@/lib/utils";
 import { ArrowUpRightIcon, ChevronDown, MailIcon } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 
+import { cn } from "@repo/ui";
 import { Button, buttonVariants } from "@repo/ui/button";
 import { Separator } from "@repo/ui/separator";
 

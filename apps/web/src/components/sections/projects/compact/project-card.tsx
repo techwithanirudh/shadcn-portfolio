@@ -1,10 +1,10 @@
 import type { Project } from "@/types/project";
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import { InfoIcon } from "lucide-react";
 
+import { cn } from "@repo/ui";
 import { Badge } from "@repo/ui/badge";
 import { Button } from "@repo/ui/button";
 import { Card, CardContent, CardFooter } from "@repo/ui/card";

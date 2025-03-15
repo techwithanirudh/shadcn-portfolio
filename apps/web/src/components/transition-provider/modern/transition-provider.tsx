@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { TransitionRouter } from "next-transition-router";
+
+import { cn } from "@repo/ui";
 
 const TransitionLayer = ({
   className,

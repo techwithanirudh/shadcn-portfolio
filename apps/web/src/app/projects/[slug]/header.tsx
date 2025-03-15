@@ -2,10 +2,10 @@
 
 import type { Project } from "@/types/project";
 import React from "react";
-import { cn } from "@/lib/utils";
 import { ArrowUpRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 
+import { cn } from "@repo/ui";
 import { Badge } from "@repo/ui/badge";
 import { buttonVariants } from "@repo/ui/button";
 

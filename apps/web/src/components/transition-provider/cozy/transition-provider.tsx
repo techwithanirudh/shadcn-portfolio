@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import AnimatedPathText from "@/components/fancy/text/text-along-path";
-import { cn } from "@/lib/utils";
 import { AnimatePresence } from "motion/react";
 import { TransitionRouter } from "next-transition-router";
+
+import { cn } from "@repo/ui";
 
 /**
  * Loader component that displays animated circular text.

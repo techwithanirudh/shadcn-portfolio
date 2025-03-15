@@ -2,8 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { Teko } from "next/font/google";
-import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
+
+import { cn } from "@repo/ui";
 
 import { opacity, slideUp } from "./anim";
 

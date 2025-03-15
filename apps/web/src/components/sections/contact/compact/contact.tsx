@@ -3,8 +3,8 @@
 import React from "react";
 import MotionWrap from "@/components/motion-wrap";
 import { contact } from "@/components/sections/contact/config";
-import { cn } from "@/lib/utils";
 
+import { cn } from "@repo/ui";
 import { buttonVariants } from "@repo/ui/button";
 
 import ContactForm from "./contact-form";

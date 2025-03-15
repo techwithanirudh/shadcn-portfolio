@@ -9,8 +9,9 @@ import {
   useImperativeHandle,
   useState,
 } from "react";
-import { cn } from "@/lib/utils";
 import { animate, motion, useMotionValue, useTransform } from "motion/react";
+
+import { cn } from "@repo/ui";
 
 interface NumberTickerProps {
   from: number; // Starting value of the animation

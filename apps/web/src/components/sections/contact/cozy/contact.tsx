@@ -5,8 +5,8 @@ import Link from "@/components/fancy/link";
 import TextReveal from "@/components/fancy/text-reveal";
 import MotionWrap from "@/components/motion-wrap";
 import { contact } from "@/components/sections/contact/config";
-import { cn } from "@/lib/utils";
 
+import { cn } from "@repo/ui";
 import { buttonVariants } from "@repo/ui/button";
 
 import ContactForm from "./contact-form";

@@ -2,8 +2,9 @@
 
 import type { Transition, Variants } from "motion/react";
 import { Children, useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
+
+import { cn } from "@repo/ui";
 
 interface TextLoopProps {
   children: React.ReactNode[];

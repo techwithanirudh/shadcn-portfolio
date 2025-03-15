@@ -11,10 +11,11 @@ import React, {
   useState,
 } from "react";
 import useClickOutside from "@/hooks/use-click-outside";
-import { cn } from "@/lib/utils";
 import { XIcon } from "lucide-react";
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
 import { createPortal } from "react-dom";
+
+import { cn } from "@repo/ui";
 
 interface MorphingDialogContextType {
   isOpen: boolean;

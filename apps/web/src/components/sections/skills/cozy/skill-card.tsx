@@ -13,7 +13,8 @@ import {
 import TextReveal from "@/components/fancy/text-reveal";
 import { MemoizedReactMarkdown } from "@/components/markdown";
 import { trimLen } from "@/components/sections/skills/config";
-import { cn, trimString } from "@/lib/utils";
+import { trimString } from "@/lib/utils";
+import { cn } from "@repo/ui";
 import { PlusIcon } from "lucide-react";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";

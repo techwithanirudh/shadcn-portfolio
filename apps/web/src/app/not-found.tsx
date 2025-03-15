@@ -4,8 +4,8 @@ import React from "react";
 import Link from "next/link";
 import Screensaver from "@/components/fancy/screensaver";
 import { exampleImages } from "@/lib/example-images";
-import { cn } from "@/lib/utils";
 
+import { cn } from "@repo/ui";
 import { buttonVariants } from "@repo/ui/button";
 
 const NotFoundPage: React.FC = () => {

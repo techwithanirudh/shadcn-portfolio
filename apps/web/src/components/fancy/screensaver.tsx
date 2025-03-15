@@ -2,8 +2,9 @@
 
 import React, { useEffect, useRef } from "react";
 import { useDimensions } from "@/hooks/use-dimensions";
-import { cn } from "@/lib/utils";
 import { motion, useAnimationFrame, useMotionValue } from "motion/react";
+
+import { cn } from "@repo/ui";
 
 interface ScreensaverProps {
   children: React.ReactNode;

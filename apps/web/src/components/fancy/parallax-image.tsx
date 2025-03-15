@@ -4,8 +4,9 @@ import type { ImageProps } from "next/image";
 import type { RefObject } from "react";
 import React from "react";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { motion, useScroll, useTransform } from "motion/react";
+
+import { cn } from "@repo/ui";
 
 interface ParallaxImageProps extends Omit<ImageProps, "ref"> {
   className?: string;

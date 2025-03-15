@@ -1,7 +1,8 @@
+import type { Technology } from "@/types/technology";
 import React from "react";
 import VariableFontCursorProximity from "@/components/fancy/variable-font-cursor-proximity";
-import { cn } from "@/lib/utils";
-import type { Technology } from "@/types/technology";
+
+import { cn } from "@repo/ui";
 
 interface TechnologyCardProps extends Technology {
   className?: string;

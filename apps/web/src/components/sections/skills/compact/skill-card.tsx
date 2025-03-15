@@ -1,8 +1,8 @@
 import type { Skill } from "@/types/skill";
 import React from "react";
-import { cn } from "@/lib/utils";
 import { CodeIcon } from "lucide-react";
 
+import { cn } from "@repo/ui";
 import { Card, CardContent } from "@repo/ui/card";
 
 interface SkillCardProps extends Skill {

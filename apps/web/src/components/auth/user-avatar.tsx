@@ -2,7 +2,7 @@ import type { ComponentProps } from "react";
 import { UserIcon } from "lucide-react";
 
 import type { User } from "../types/user";
-import { cn } from "@r";
+import { cn } from "@repo/ui";
 import { Avatar, AvatarFallback, AvatarImage } from "@repo/ui/avatar";
 
 export interface UserAvatarClassNames {
