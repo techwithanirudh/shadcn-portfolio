@@ -35,7 +35,7 @@ export const contactSubmit = actionClient
   })
   .schema(ContactActionSchema)
   .action(async ({ parsedInput: { name, email, message } }) => {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(env.RESEND_API_KEY);
 
     // todo: replace hook form of contact with https://github.com/next-safe-action/adapter-react-hook-form
     if (!EMAIL_FROM || !EMAIL_TO) {
@@ -49,9 +49,6 @@ export const contactSubmit = actionClient
       react: Contact({ name, email, message }),
     });
 
+    if (res) return { success: "Thank you for reaching out! Your message has been successfully sent." };
     if (error) throw new Error(JSON.stringify(error));
-
-    return {
-      success: "Thank you for reaching out! Your message has been sent.",
-    };
   });

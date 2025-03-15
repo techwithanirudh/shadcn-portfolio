@@ -63,7 +63,8 @@ export function TransitionProvider({
           setIsTransitioning(false);
           next();
         }, transitionTiming);
-        return () => {};
+        // return () => {};
+        return;
       }}
     >
       <div>{children}</div>

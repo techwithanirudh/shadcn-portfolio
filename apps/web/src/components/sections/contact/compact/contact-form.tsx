@@ -40,12 +40,11 @@ export default function ContactForm() {
 
   // todo: probably refactor this, setIsOpen is not clean
   // values: ContactFormType
-  async function onSubmit() {
+  function onSubmit() {
     setIsOpen(true);
-    // execute(values);
   }
 
-  async function onVerify(token?: string) {
+  function onVerify(token?: string) {
     setIsOpen(false);
     if (!token) {
       toast.error(

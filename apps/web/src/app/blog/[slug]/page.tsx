@@ -53,7 +53,7 @@ export default async function BlogPage(props0: {
   if (!page) notFound();
 
   const {
-    data: { toc, body, structuredData },
+    data: { toc, body },
   } = page;
 
   return (

@@ -75,6 +75,7 @@
         "AUTH_REDIRECT_PROXY_URL",
         "BETTER_AUTH_SECRET",
         "BETTER_AUTH_URL",
+        "RESEND_API_KEY",
         "PORT"
     ],
     "globalPassThroughEnv": [

@@ -11,11 +11,6 @@ interface MouseMoveEvent {
   clientY: number;
 }
 
-interface Distance {
-  x: number;
-  y: number;
-}
-
 export default function Cursor() {
   const [isPressed, setIsPressed] = useState<boolean>(false);
   const cursor = useRef<HTMLDivElement>(null);

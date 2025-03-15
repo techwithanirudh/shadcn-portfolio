@@ -42,7 +42,7 @@ export default function ContactForm() {
 
   // todo: probably refactor this, setIsOpen is not clean
   // values: ContactFormType
-  async function onSubmit(values: ContactFormType) {
+  function onSubmit(values: ContactFormType) {
     if (env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === "true") {
       setIsOpen(true);
     } else {
@@ -52,11 +52,12 @@ export default function ContactForm() {
         `&body=${encodeURIComponent(
           `Name: ${values.name}\nMessage: ${values.message}`,
         )}`;
+      // @eslint-disable-next-line no-alert
       window.location.href = mailto;
     }
   }
 
-  async function onVerify(token?: string) {
+  function onVerify(token?: string) {
     setIsOpen(false);
     if (!token) {
       toast.error(

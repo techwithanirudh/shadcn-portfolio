@@ -1,14 +1,14 @@
-import type { Testimonial } from "@/types/testimonial";
 import React from "react";
 import VariableFontCursorProximity from "@/components/fancy/variable-font-cursor-proximity";
 import { cn } from "@/lib/utils";
+import type { Technology } from "@/types/technology";
 
-interface TechnologyCardProps extends Testimonial {
+interface TechnologyCardProps extends Technology {
   className?: string;
   containerRef: React.RefObject<HTMLDivElement | null>;
 }
 
-function TechnologyCard({ image, name, containerRef }: TechnologyCardProps) {
+function TechnologyCard({ name, containerRef }: TechnologyCardProps) {
   return (
     <VariableFontCursorProximity
       label={name ?? ""}
