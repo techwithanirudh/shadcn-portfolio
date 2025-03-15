@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { User } from "@repo/auth/types";
 import { signOut, useSession } from "@repo/auth/client";
 import { cn } from "@repo/ui";
+import { Button } from "@repo/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@repo/ui/dropdown-menu";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 import { Skeleton } from "@repo/ui/skeleton";
 
 import type { UserAvatarClassNames } from "./user-avatar";
@@ -49,28 +50,35 @@ export function UserButton({ className, classNames }: UserButtonProps) {
     <DropdownMenu>
       <DropdownMenuTrigger
         className={cn(
-          "hover:bg-accent/50 rounded-md",
+          "hover:bg-accent/50 rounded-md bg-transparent",
           classNames?.trigger?.base,
         )}
-        disabled={isPending}
+        asChild
       >
-        {isPending ? (
-          <Skeleton
-            className={cn(
-              "size-8 rounded-md",
-              className,
-              classNames?.base,
-              classNames?.skeleton,
-              classNames?.trigger?.skeleton,
-            )}
-          />
-        ) : (
-          <UserAvatar
-            className={cn("size-8", className, classNames?.base)}
-            classNames={classNames?.trigger?.avatar}
-            user={user}
-          />
-        )}
+        <Button
+          variant="outline"
+          size="icon"
+          className="border-none bg-transparent"
+          disabled={isPending}
+        >
+          {isPending ? (
+            <Skeleton
+              className={cn(
+                "size-full rounded-md",
+                className,
+                classNames?.base,
+                classNames?.skeleton,
+                classNames?.trigger?.skeleton,
+              )}
+            />
+          ) : (
+            <UserAvatar
+              className={cn("size-full", className, classNames?.base)}
+              classNames={classNames?.trigger?.avatar}
+              user={user}
+            />
+          )}
+        </Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent
