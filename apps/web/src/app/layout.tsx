@@ -14,7 +14,6 @@ import { createMetadata } from "@/lib/metadata";
 
 import { Toaster } from "@repo/ui/sonner";
 
-
 // https://iamsteve.me/blog/the-best-ink-trap-typefaces-for-websites
 const bricolage_grotesque = Bricolage_Grotesque({ subsets: ["latin"] });
 

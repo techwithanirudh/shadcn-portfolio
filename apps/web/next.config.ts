@@ -1,7 +1,6 @@
+import { fileURLToPath } from "url";
 import type { NextConfig } from "next";
 import { withContentCollections } from "@content-collections/next";
-
-import { fileURLToPath } from "url";
 import createJiti from "jiti";
 
 createJiti(fileURLToPath(import.meta.url))("./src/env");

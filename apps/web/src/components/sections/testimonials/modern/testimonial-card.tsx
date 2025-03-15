@@ -20,7 +20,7 @@ function TestimonialCard({
     <Card
       className={cn(
         "h-full w-full rounded-xl",
-        "bg-muted/40 hover:bg-muted p-0 gap-4",
+        "bg-muted/40 hover:bg-muted gap-4 p-0",
         className,
       )}
     >
