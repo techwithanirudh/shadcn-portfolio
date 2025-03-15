@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 import { UserIcon } from "lucide-react";
 
-import type { User } from "../types/user";
+import type { User } from "@repo/auth/types";
 import { cn } from "@repo/ui";
 import { Avatar, AvatarFallback, AvatarImage } from "@repo/ui/avatar";
 
@@ -23,23 +23,19 @@ export function UserAvatar({
   className,
   ...props
 }: UserAvatarProps & ComponentProps<typeof Avatar>) {
-  const name = user?.name || user?.fullName || user?.firstName || user?.email;
-  const src = (user?.image || user?.avatar || user?.avatarUrl) as string;
+  const name = user?.name || user?.email;
+  const src = user?.image;
 
   return (
-    <Avatar key={src} className={cn(className, classNames?.base)} {...props}>
+    <Avatar key={src} className={cn("rounded-md", className, classNames?.base)} {...props}>
       <AvatarImage
         alt={name || "Avatar"}
-        className={classNames?.image}
-        src={
-          user && !user.isAnonymous
-            ? ((user.image || user.avatar || user.avatarUrl) as string)
-            : undefined
-        }
+        className={cn("rounded-md", classNames?.image)}
+        src={src ?? undefined}
       />
 
       <AvatarFallback
-        className={cn("uppercase", classNames?.fallback)}
+        className={cn("rounded-md uppercase", classNames?.fallback)}
         delayMs={src ? 200 : 0}
       >
         {firstTwoCharacters(name) || (

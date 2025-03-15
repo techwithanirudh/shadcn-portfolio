@@ -8,6 +8,7 @@
       "default": "./src/index.ts"
     },
     "./client": "./src/client.ts",
+    "./types": "./src/types.ts",
     "./env": "./env.ts"
   },
   "license": "MIT",

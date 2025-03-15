@@ -7,6 +7,7 @@ import { height } from "../anim";
 import Body from "./body/body";
 import Image from "./image/image";
 import styles from "./style.module.scss";
+import { UserButton } from "@/components/auth/user-button";
 
 interface IndexProps {
   setIsActive: (isActive: boolean) => void;
@@ -46,6 +47,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           isActive={selectedLink.isActive}
         />
         <div className="absolute right-0 bottom-0 mb-auto flex gap-2 items-center">
+          <UserButton />
           <ModeToggle />
         </div>
       </div>

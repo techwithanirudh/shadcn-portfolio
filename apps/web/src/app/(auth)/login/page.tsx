@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
 
 import { signIn } from "@repo/auth/client";
 import { cn } from "@repo/ui";
@@ -9,19 +7,17 @@ import { Button } from "@repo/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+  CardDescription, CardHeader,
+  CardTitle
 } from "@repo/ui/card";
 
-export default function SignIn() {
+function SignInCard() {
   return (
-    <Card className="max-w-md">
+    <Card className="max-w-xl w-full">
       <CardHeader>
         <CardTitle className="text-lg md:text-xl">Sign In</CardTitle>
         <CardDescription className="text-xs md:text-sm">
-          Enter your email below to login to your account
+          Sign in with your account
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -38,7 +34,7 @@ export default function SignIn() {
               onClick={async () => {
                 await signIn.social({
                   provider: "google",
-                  callbackURL: "/dashboard",
+                  callbackURL: "/",
                 });
               }}
             >
@@ -94,5 +90,13 @@ export default function SignIn() {
         </div>
       </CardContent>
     </Card>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <main className="flex-1 px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24 flex justify-center items-center min-h-dvh">
+      <SignInCard />
+    </main>
   );
 }
