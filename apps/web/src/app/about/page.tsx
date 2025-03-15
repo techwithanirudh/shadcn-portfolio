@@ -13,11 +13,11 @@ import { skills } from "@/components/sections/skills/config";
 import { technologies } from "@/components/sections/technologies/config";
 import TechnologyCard from "@/components/sections/technologies/modern/technology-card";
 import { exampleImages } from "@/lib/example-images";
-import { ArrowUpRightIcon, ChevronDown, MailIcon } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 
 import { cn } from "@repo/ui";
 import { Button, buttonVariants } from "@repo/ui/button";
+import { Icons } from "@repo/ui/icons"
 import { Separator } from "@repo/ui/separator";
 
 export default function About() {
@@ -65,7 +65,7 @@ export default function About() {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <ChevronDown className="h-8 w-8" />
+            <Icons.chevronDown className="h-8 w-8" />
           </motion.div>
         </div>
       </section>
@@ -103,7 +103,7 @@ export default function About() {
               </TextReveal>
               <Button asChild variant={"outline"} className="rounded-full px-6">
                 <a href="resume.pdf" target="_blank">
-                  View Resume <ArrowUpRightIcon className="ml-2 size-5" />
+                  View Resume <Icons.arrowUpRight className="ml-2 size-5" />
                 </a>
               </Button>
             </div>
@@ -204,7 +204,7 @@ export default function About() {
                 )}
                 href={`mailto:${contact.email}`}
               >
-                <MailIcon className="h-4 w-4" />
+                <Icons.mail className="h-4 w-4" />
                 {contact.email}
               </Link>
               {contact.socials.map(({ Icon, name, href }, index) => (

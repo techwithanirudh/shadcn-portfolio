@@ -8,7 +8,6 @@ import { FormSuccess } from "@/components/sections/contact/_components/form-succ
 import { TurnstileModal } from "@/components/sections/contact/_components/turnstile-modal";
 import { ContactFormSchema } from "@/lib/validators";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { LoaderCircleIcon } from "lucide-react";
 import { useAction } from "next-safe-action/hooks";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -22,6 +21,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@repo/ui/form";
+import { Icons } from "@repo/ui/icons"
 import { Input } from "@repo/ui/input";
 import { Textarea } from "@repo/ui/textarea";
 
@@ -125,7 +125,7 @@ export default function ContactForm() {
             className={"w-full"}
           >
             {status === "executing" && (
-              <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />
+              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
             Submit
           </Button>

@@ -11,11 +11,11 @@ import React, {
   useState,
 } from "react";
 import useClickOutside from "@/hooks/use-click-outside";
-import { XIcon } from "lucide-react";
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
 import { createPortal } from "react-dom";
 
 import { cn } from "@repo/ui";
+import { Icons } from "@repo/ui/icons"
 
 interface MorphingDialogContextType {
   isOpen: boolean;
@@ -395,7 +395,7 @@ function MorphingDialogClose({
       exit="exit"
       variants={variants}
     >
-      {children || <XIcon size={24} />}
+      {children || <Icons.close size={24} />}
     </motion.button>
   );
 }

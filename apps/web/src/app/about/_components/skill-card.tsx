@@ -14,10 +14,11 @@ import TextReveal from "@/components/fancy/text-reveal";
 import { MemoizedReactMarkdown } from "@/components/markdown";
 import { trimLen } from "@/components/sections/skills/config";
 import { trimString } from "@/lib/utils";
-import { cn } from "@repo/ui";
-import { PlusIcon } from "lucide-react";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
+
+import { cn } from "@repo/ui";
+import { Icons } from "@repo/ui/icons"
 
 interface SkillCardProps extends Skill {
   index: number;
@@ -70,7 +71,7 @@ export default function SkillCard({
                 className="relative ml-1 flex h-10 w-10 shrink-0 scale-100 appearance-none items-center justify-center rounded-full border border-zinc-950/10 text-zinc-500 transition-colors select-none hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:bg-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:focus-visible:ring-zinc-500"
                 aria-label="Open dialog"
               >
-                <PlusIcon size={18} />
+                <Icons.add size={18} />
               </button>
             </div>
             <DialogTitle className="text-3xl leading-8 font-bold tracking-tight text-zinc-950 dark:text-zinc-50">

@@ -18,22 +18,31 @@ import {
   Loader2,
   LucideProps,
   Mail,
+  Menu,
   Moon,
   MoreVertical,
   Pizza,
   Plus,
   Settings,
+  Sun,
   SunMedium,
   Trash,
   User,
   X,
+  LogIn,
+  LogOut,
+  Code,
+  CheckCircle
 } from "lucide-react";
 
 export type Icon = LucideIcon;
 
 export const Icons = {
-  logo: Command,
+  logo: Code,
   close: X,
+  menu: Menu,
+  code: Code,
+  success: CheckCircle,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
@@ -45,6 +54,8 @@ export const Icons = {
   billing: CreditCard,
   ellipsis: MoreVertical,
   add: Plus,
+  logIn: LogIn,
+  logOut: LogOut,
   warning: AlertTriangle,
   user: User,
   arrowRight: ArrowRight,

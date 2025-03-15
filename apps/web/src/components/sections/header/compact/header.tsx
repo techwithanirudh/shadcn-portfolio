@@ -5,7 +5,6 @@ import { metadata as meta } from "@/app/config";
 import Link from "@/components/fancy/link";
 import ThemeToggle from "@/components/mode-toggle";
 import { linkLimit, links } from "@/components/sections/header/config";
-import { EllipsisIcon, MenuIcon, XIcon } from "lucide-react";
 import { motion } from "motion/react";
 
 import { Button } from "@repo/ui/button";
@@ -15,6 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@repo/ui/dropdown-menu";
+import { Icons } from "@repo/ui/icons"
 
 interface HeaderProps {
   loader?: boolean;
@@ -92,9 +92,9 @@ const Header = ({ loader }: HeaderProps) => {
           <button className="md:hidden" onClick={toggleMenu}>
             <span className="sr-only">{isOpen ? "Close" : "Menu"}</span>
             {isOpen ? (
-              <XIcon className="h-6 w-6" />
+              <Icons.close className="h-6 w-6" />
             ) : (
-              <MenuIcon className="h-6 w-6" />
+              <Icons.menu className="h-6 w-6" />
             )}
           </button>
           <div className="hidden md:flex md:w-auto md:items-center">
@@ -118,7 +118,7 @@ const Header = ({ loader }: HeaderProps) => {
                         size="icon"
                         className="m-0 h-8 w-8"
                       >
-                        <EllipsisIcon className="h-4 w-4" />
+                        <Icons.ellipsis className="h-4 w-4" />
                         <span className="sr-only">Toggle menu</span>
                       </Button>
                     </DropdownMenuTrigger>

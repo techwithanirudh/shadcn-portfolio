@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { env } from "@/env";
 import { Turnstile } from "@marsidev/react-turnstile";
-import { LoaderCircleIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import {
@@ -11,6 +10,7 @@ import {
   CredenzaHeader as DialogHeader,
   CredenzaTitle as DialogTitle,
 } from "@repo/ui/credenza";
+import { Icons } from "@repo/ui/icons"
 
 interface TurnstileModalProps {
   open: boolean;
@@ -70,7 +70,7 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
                     "bg-background inline-flex h-[30px] w-[30px] items-center justify-center rounded-full p-1"
                   }
                 >
-                  <LoaderCircleIcon className="h-7 w-7 animate-spin" />
+                  <Icons.spinner className="h-7 w-7 animate-spin" />
                 </div>
                 Loading
               </div>

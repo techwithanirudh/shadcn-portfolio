@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import TextReveal from "@/components/fancy/text-reveal";
 import MotionWrap from "@/components/motion-wrap";
-import { ArrowUpRightIcon } from "lucide-react";
 
 import { Button } from "@repo/ui/button";
+import { Icons } from "@repo/ui/icons"
 
 function About() {
   return (
@@ -31,7 +31,7 @@ function About() {
               <div className="flex gap-2">
                 <Button asChild variant={"outline"}>
                   <a href="resume.pdf" target="_blank">
-                    View Resume <ArrowUpRightIcon className="ml-2 size-5" />
+                    View Resume <Icons.arrowUpRight className="ml-2 size-5" />
                   </a>
                 </Button>
                 <Button asChild>

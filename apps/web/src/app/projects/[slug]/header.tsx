@@ -2,12 +2,12 @@
 
 import type { Project } from "@/types/project";
 import React from "react";
-import { ArrowUpRightIcon } from "lucide-react";
 import { motion } from "motion/react";
 
 import { cn } from "@repo/ui";
 import { Badge } from "@repo/ui/badge";
 import { buttonVariants } from "@repo/ui/button";
+import { Icons } from "@repo/ui/icons"
 
 const animation = {
   hide: {
@@ -57,7 +57,7 @@ const Header = (props: HeaderProps) => {
             target="_blank"
           >
             Visit Website
-            <ArrowUpRightIcon className="ml-2 size-5" />
+            <Icons.arrowUpRight className="ml-2 size-5" />
           </a>
         )}
         {github && (
@@ -67,7 +67,7 @@ const Header = (props: HeaderProps) => {
             target="_blank"
           >
             Github
-            <ArrowUpRightIcon className="ml-2 size-5" />
+            <Icons.arrowUpRight className="ml-2 size-5" />
           </a>
         )}
       </motion.div>

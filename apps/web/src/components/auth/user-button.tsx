@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { LogInIcon, LogOutIcon } from "lucide-react";
 
 import type { User } from "@repo/auth/types";
 import { signOut, useSession } from "@repo/auth/client";
@@ -13,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@repo/ui/dropdown-menu";
+import { Icons } from "@repo/ui/icons"
 import { Skeleton } from "@repo/ui/skeleton";
 
 import type { UserAvatarClassNames } from "./user-avatar";
@@ -94,9 +94,7 @@ export function UserButton({ className, classNames }: UserButtonProps) {
             </div>
           </div>
         ) : (
-          <div className="text-muted-foreground px-2 py-1 text-xs">
-            Account
-          </div>
+          <div className="text-muted-foreground px-2 py-1 text-xs">Account</div>
         )}
 
         <DropdownMenuSeparator className={classNames?.content?.separator} />
@@ -105,7 +103,7 @@ export function UserButton({ className, classNames }: UserButtonProps) {
           <>
             <DropdownMenuItem className={classNames?.content?.menuItem} asChild>
               <Link href={`/login`}>
-                <LogInIcon />
+                <Icons.logIn />
                 Sign In
               </Link>
             </DropdownMenuItem>
@@ -116,7 +114,7 @@ export function UserButton({ className, classNames }: UserButtonProps) {
               className={classNames?.content?.menuItem}
               onClick={() => signOut()}
             >
-              <LogOutIcon />
+              <Icons.logOut />
               Log Out
             </DropdownMenuItem>
           </>
