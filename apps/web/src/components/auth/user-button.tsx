@@ -82,8 +82,9 @@ export function UserButton({ className, classNames }: UserButtonProps) {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent
-        className={cn("me-3 max-w-64", classNames?.content?.base)}
+        className={cn("max-w-64", classNames?.content?.base)}
         onCloseAutoFocus={(e) => e.preventDefault()}
+        align="end"
       >
         {user ? (
           <div className="flex items-center gap-2 p-2">
