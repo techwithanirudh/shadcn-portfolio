@@ -23,7 +23,9 @@ function SmoothScroll({ children }: LenisProps) {
     <ReactLenis
       root
       options={{
-        duration: 2,
+        lerp: 0.125,
+        duration: 1.5,
+        anchors: true,
       }}
     >
       {children}

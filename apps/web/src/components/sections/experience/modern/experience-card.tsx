@@ -18,7 +18,7 @@ function ExperienceCard({
   return (
     <Card
       className={cn(
-        "flex min-h-full flex-col justify-between bg-transparent shadow-none",
+        "flex min-h-full flex-col justify-between shadow-none",
         className,
       )}
     >
