@@ -1,7 +1,7 @@
 "use client";
 
 import type { LinkProps } from "next/link";
-import React, { useId, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 

@@ -5,7 +5,6 @@ import { motion } from "motion/react";
 
 import { height } from "../anim";
 import Body from "./body/body";
-import Footer from "./footer/footer";
 import Image from "./image/image";
 import styles from "./style.module.scss";
 

@@ -1,6 +1,5 @@
 import type { CollectionPage, WithContext } from "schema-dts";
 import React from "react";
-import Link from "next/link";
 import { metadata as meta } from "@/app/config";
 import ProjectCard from "@/app/projects/_components/project-card";
 import { project } from "@/app/source";

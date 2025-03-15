@@ -1,14 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDimensions } from "@/hooks/use-dimensions";
 import { cn } from "@/lib/utils";
-import {
-  motion,
-  useAnimationControls,
-  useAnimationFrame,
-  useMotionValue,
-} from "motion/react";
+import { motion, useAnimationFrame, useMotionValue } from "motion/react";
 
 interface ScreensaverProps {
   children: React.ReactNode;

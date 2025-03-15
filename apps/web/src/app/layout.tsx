@@ -1,9 +1,4 @@
-import type { Metadata } from "next";
-import {
-  Bricolage_Grotesque,
-  Instrument_Sans,
-  Montserrat,
-} from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 
 import "@/styles/globals.css";
 

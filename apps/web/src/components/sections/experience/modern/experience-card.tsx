@@ -1,14 +1,8 @@
 import type { Experience } from "@/types/experience";
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import TextReveal from "@/components/fancy/text-reveal";
 import { cn } from "@/lib/utils";
-import { CodeIcon } from "lucide-react";
 
-import { buttonVariants } from "@repo/ui/button";
-import { Card, CardContent, CardFooter } from "@repo/ui/card";
-import { Separator } from "@repo/ui/separator";
+import { Card, CardContent } from "@repo/ui/card";
 
 interface ExperienceCardProps extends Experience {
   className?: string;

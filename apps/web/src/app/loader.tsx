@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import NumberTicker from "@/components/fancy/number-ticker";
 import { Preloader } from "@/components/preloader";
 import { AnimatePresence } from "motion/react";

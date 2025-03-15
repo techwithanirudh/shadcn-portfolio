@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-import Loader from "@/app/loader";
 import Cursor from "@/components/cursor/cursor";
 import { Footer, Header } from "@/components/sections";
 import SmoothScroll from "@/components/smooth-scroll";

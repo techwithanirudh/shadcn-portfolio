@@ -1,5 +1,4 @@
 import type { Project } from "@/types/project";
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import TextReveal from "@/components/fancy/text-reveal";
@@ -8,7 +7,7 @@ import { InfoIcon } from "lucide-react";
 
 import { AspectRatio } from "@repo/ui/aspect-ratio";
 import { Badge } from "@repo/ui/badge";
-import { Button, buttonVariants } from "@repo/ui/button";
+import { Button } from "@repo/ui/button";
 import { Card, CardContent, CardFooter } from "@repo/ui/card";
 import {
   Tooltip,

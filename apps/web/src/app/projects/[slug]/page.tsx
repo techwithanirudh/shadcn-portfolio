@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { HTMLAttributes } from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { metadata as meta } from "@/app/config";
 import { project } from "@/app/source";
-import { Heading, headingTypes, MDXLink } from "@/lib/mdx/default-components";
+import { MDXLink } from "@/lib/mdx/default-components";
 import { createMetadata } from "@/lib/metadata";
-import { cn } from "@/lib/utils";
 import { MDXContent } from "@content-collections/mdx/react";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 

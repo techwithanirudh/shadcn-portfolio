@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { metadata as meta } from "@/app/config";
 import MotionLink from "@/components/fancy/link";
-import { CodeIcon } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 import { background, opacity } from "./anim";

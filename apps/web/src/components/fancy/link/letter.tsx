@@ -1,7 +1,6 @@
 "use client";
 
 import type { Variants } from "motion/react";
-import React, { useState } from "react";
 import { motion } from "motion/react";
 
 interface AnimatedLetterProps {

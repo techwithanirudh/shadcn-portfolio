@@ -1,13 +1,8 @@
 "use client";
 
 import type { MotionValue, SpringOptions } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
-import {
-  AnimationControls,
-  motion,
-  useMotionValue,
-  useSpring,
-} from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 import styles from "./style.module.scss";
 

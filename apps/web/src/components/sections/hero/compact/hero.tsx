@@ -1,6 +1,4 @@
-import React from "react";
 import Image from "next/image";
-import { metadata as meta } from "@/app/config";
 import MotionWrap from "@/components/motion-wrap";
 import { hero } from "@/components/sections/hero/config";
 

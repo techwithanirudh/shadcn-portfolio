@@ -7,13 +7,13 @@ import { FormError } from "@/components/sections/contact/_components/form-error"
 import { FormSuccess } from "@/components/sections/contact/_components/form-success";
 import { TurnstileModal } from "@/components/sections/contact/_components/turnstile-modal";
 import { contact } from "@/components/sections/contact/config";
+import { env } from "@/env";
 import { ContactFormSchema } from "@/lib/validators";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoaderCircleIcon } from "lucide-react";
 import { useAction } from "next-safe-action/hooks";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { z } from "zod";
 
 import { Button } from "@repo/ui/button";
 import {
@@ -43,7 +43,7 @@ export default function ContactForm() {
   // todo: probably refactor this, setIsOpen is not clean
   // values: ContactFormType
   async function onSubmit(values: ContactFormType) {
-    if (process.env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === "true") {
+    if (env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === "true") {
       setIsOpen(true);
     } else {
       const mailto =

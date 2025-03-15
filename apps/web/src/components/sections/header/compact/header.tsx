@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { metadata as meta } from "@/app/config";
 import Link from "@/components/fancy/link";
 import ThemeToggle from "@/components/mode-toggle";
 import { linkLimit, links } from "@/components/sections/header/config";
-import { CodeIcon, EllipsisIcon, MenuIcon, XIcon } from "lucide-react";
+import { EllipsisIcon, MenuIcon, XIcon } from "lucide-react";
 import { motion } from "motion/react";
 
 import { Button } from "@repo/ui/button";
