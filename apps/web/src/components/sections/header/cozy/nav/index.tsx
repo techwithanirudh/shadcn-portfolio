@@ -45,7 +45,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           src={links[selectedLink.index].thumbnail}
           isActive={selectedLink.isActive}
         />
-        <div className="absolute right-0 bottom-0 mb-auto">
+        <div className="absolute right-0 bottom-0 mb-auto flex gap-2 items-center">
           <ModeToggle />
         </div>
       </div>

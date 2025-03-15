@@ -1,8 +1,7 @@
 "use client";
 
 import { Comments } from "@fuma-comment/react";
-
-import { signIn } from "@repo/auth/client";
+import { redirect } from "next/navigation";
 
 export function PostComments({ slug }: { slug: string }) {
   return (
@@ -12,10 +11,8 @@ export function PostComments({ slug }: { slug: string }) {
       auth={{
         type: "api",
         signIn: () => {
-          void signIn.social({
-            provider: "github",
-          });
-        },
+          redirect('/login');
+        }
       }}
     />
   );

@@ -19,6 +19,7 @@ import {
 interface HeaderProps {
   loader?: boolean;
 }
+// todo: add auth btn
 
 const Header = ({ loader }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
