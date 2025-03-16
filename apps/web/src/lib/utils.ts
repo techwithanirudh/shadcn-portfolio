@@ -1,6 +1,3 @@
-import type { ClassValue } from "clsx";
-import { clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
 
 export function trimString(len: number, str: string) {
   if (str.length > len) {

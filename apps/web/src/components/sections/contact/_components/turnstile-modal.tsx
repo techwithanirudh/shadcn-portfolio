@@ -10,7 +10,7 @@ import {
   CredenzaHeader as DialogHeader,
   CredenzaTitle as DialogTitle,
 } from "@repo/ui/credenza";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 
 interface TurnstileModalProps {
   open: boolean;

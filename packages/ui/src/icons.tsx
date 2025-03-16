@@ -1,4 +1,5 @@
-import type { Icon as LucideIcon } from "lucide-react";
+import type { Icon as LucideIcon ,
+  LucideProps} from "lucide-react";
 import {
   AlertTriangle,
   ArrowRight,
@@ -9,7 +10,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Code,
-  Command,
   CreditCard,
   File,
   FileText,
@@ -20,7 +20,6 @@ import {
   Loader2,
   LogIn,
   LogOut,
-  LucideProps,
   Mail,
   Menu,
   Moon,
@@ -28,7 +27,6 @@ import {
   Pizza,
   Plus,
   Settings,
-  Sun,
   SunMedium,
   Trash,
   User,

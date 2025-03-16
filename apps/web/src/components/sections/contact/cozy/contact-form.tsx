@@ -1,6 +1,5 @@
 "use client";
 
-import type { ContactForm as ContactFormType } from "@/lib/validators";
 import { useState } from "react";
 import { contactSubmit } from "@/app/actions";
 import { FormError } from "@/components/sections/contact/_components/form-error";
@@ -8,12 +7,12 @@ import { FormSuccess } from "@/components/sections/contact/_components/form-succ
 import { TurnstileModal } from "@/components/sections/contact/_components/turnstile-modal";
 import { contact } from "@/components/sections/contact/config";
 import { env } from "@/env";
-import { ContactFormSchema } from "@/lib/validators";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAction } from "next-safe-action/hooks";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
+import type { ContactForm as ContactFormType } from "@repo/validators";
 import { Button } from "@repo/ui/button";
 import {
   Form,
@@ -23,9 +22,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@repo/ui/form";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 import { Input } from "@repo/ui/input";
 import { Textarea } from "@repo/ui/textarea";
+import { ContactFormSchema } from "@repo/validators";
 
 export default function ContactForm() {
   const form = useForm<ContactFormType>({

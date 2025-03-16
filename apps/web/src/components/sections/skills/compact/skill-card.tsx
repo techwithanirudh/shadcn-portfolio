@@ -3,7 +3,7 @@ import React from "react";
 
 import { cn } from "@repo/ui";
 import { Card, CardContent } from "@repo/ui/card";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 
 interface SkillCardProps extends Skill {
   className?: string;

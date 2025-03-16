@@ -8,7 +8,7 @@ import { AspectRatio } from "@repo/ui/aspect-ratio";
 import { Badge } from "@repo/ui/badge";
 import { Button } from "@repo/ui/button";
 import { Card, CardContent, CardFooter } from "@repo/ui/card";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 import {
   Tooltip,
   TooltipContent,

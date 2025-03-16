@@ -18,7 +18,7 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 
 import { cn } from "@repo/ui";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 
 interface SkillCardProps extends Skill {
   index: number;

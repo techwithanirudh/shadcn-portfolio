@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import ParallaxImage from "@/components/fancy/parallax-image";
-import { TextLoop } from "@/components/fancy/text-loop";
 
 // const heroContent = [
 //   { role: "developer", action: "code", emoji: "❤️", bgColor: "bg-green-100" },

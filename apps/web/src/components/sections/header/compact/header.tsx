@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@repo/ui/dropdown-menu";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 
 interface HeaderProps {
   loader?: boolean;

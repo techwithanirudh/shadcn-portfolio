@@ -1,20 +1,20 @@
 "use client";
 
-
 import { signIn } from "@repo/auth/client";
 import { cn } from "@repo/ui";
 import { Button } from "@repo/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription, CardHeader,
-  CardTitle
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from "@repo/ui/card";
 import { Icons } from "@repo/ui/icons";
 
 function SignInCard() {
   return (
-    <Card className="max-w-xl w-full">
+    <Card className="w-full max-w-xl">
       <CardHeader>
         <CardTitle className="text-lg md:text-xl">Sign In</CardTitle>
         <CardDescription className="text-xs md:text-sm">
@@ -64,7 +64,7 @@ function SignInCard() {
 
 export default function LoginPage() {
   return (
-    <main className="flex-1 px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24 flex justify-center items-center min-h-dvh">
+    <main className="flex min-h-dvh flex-1 items-center justify-center px-4 sm:px-8 md:px-12 lg:px-16 2xl:px-24">
       <SignInCard />
     </main>
   );

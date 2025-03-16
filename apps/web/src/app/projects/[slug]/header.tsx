@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 import { cn } from "@repo/ui";
 import { Badge } from "@repo/ui/badge";
 import { buttonVariants } from "@repo/ui/button";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 
 const animation = {
   hide: {

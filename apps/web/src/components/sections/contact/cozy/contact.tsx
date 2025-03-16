@@ -51,7 +51,7 @@ function Contact() {
                     href={href}
                     className={cn(
                       buttonVariants({ variant: "link" }),
-                      "text-md h-min w-min gap-1 p-0",
+                      "text-md h-min w-min gap-1 !p-0",
                     )}
                     key={`contact-social_${index}`}
                   >

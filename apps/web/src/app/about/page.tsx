@@ -17,7 +17,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 
 import { cn } from "@repo/ui";
 import { Button, buttonVariants } from "@repo/ui/button";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 import { Separator } from "@repo/ui/separator";
 
 export default function About() {

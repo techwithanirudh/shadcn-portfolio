@@ -67,7 +67,7 @@ export default async function ProjectPage(props0: {
   if (!page) notFound();
 
   const {
-    data: { body, },
+    data: { body },
   } = page;
 
   return (

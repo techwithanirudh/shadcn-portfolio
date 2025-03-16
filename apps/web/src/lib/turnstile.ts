@@ -14,6 +14,15 @@ interface CloudflareTurnstileResponse {
 export async function validateTurnstileToken(
   token: string,
 ): Promise<CloudflareTurnstileResponse> {
+  if (!env.TURNSTILE_SECRET_KEY) {
+    return {
+      success: false,
+      "error-codes": ["TURNSTILE_SECRET_KEY not set"],
+      challenge_ts: "",
+      hostname: "",
+    };
+  }
+
   const req = await fetch(
     "https://challenges.cloudflare.com/turnstile/v0/siteverify",
     {

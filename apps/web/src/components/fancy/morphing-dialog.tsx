@@ -15,7 +15,7 @@ import { AnimatePresence, motion, MotionConfig } from "motion/react";
 import { createPortal } from "react-dom";
 
 import { cn } from "@repo/ui";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 
 interface MorphingDialogContextType {
   isOpen: boolean;

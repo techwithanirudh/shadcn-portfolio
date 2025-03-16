@@ -3,12 +3,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import TextReveal from "@/components/fancy/text-reveal";
-import { InfoIcon } from "lucide-react";
 
 import { cn } from "@repo/ui";
 import { AspectRatio } from "@repo/ui/aspect-ratio";
 import { Button } from "@repo/ui/button";
 import { Card, CardContent, CardFooter } from "@repo/ui/card";
+import { Icons } from "@repo/ui/icons";
 import {
   Tooltip,
   TooltipContent,
@@ -82,7 +82,7 @@ function PostCard({
                 asChild
               >
                 <Link href={href}>
-                  <InfoIcon />
+                  <Icons.info />
                 </Link>
               </Button>
             </TooltipTrigger>

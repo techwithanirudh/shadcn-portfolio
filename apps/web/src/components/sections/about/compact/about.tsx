@@ -4,7 +4,7 @@ import Link from "next/link";
 import MotionWrap from "@/components/motion-wrap";
 
 import { Button } from "@repo/ui/button";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 
 function About() {
   return (

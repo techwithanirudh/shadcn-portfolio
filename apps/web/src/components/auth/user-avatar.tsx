@@ -3,7 +3,7 @@ import type { ComponentProps } from "react";
 import type { User } from "@repo/auth/types";
 import { cn } from "@repo/ui";
 import { Avatar, AvatarFallback, AvatarImage } from "@repo/ui/avatar";
-import { Icons } from "@repo/ui/icons"
+import { Icons } from "@repo/ui/icons";
 
 export interface UserAvatarClassNames {
   base?: string;

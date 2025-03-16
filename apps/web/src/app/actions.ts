@@ -5,10 +5,10 @@ import "server-only";
 import { env } from "@/env";
 import { actionClient, ActionError } from "@/lib/safe-action";
 import { validateTurnstileToken } from "@/lib/turnstile";
-import { ContactActionSchema } from "@/lib/validators";
 import { Resend } from "resend";
 
 import { Contact } from "@repo/emails";
+import { ContactActionSchema } from "@repo/validators";
 
 const EMAIL_FROM = env.EMAIL_FROM;
 const EMAIL_TO = env.EMAIL_TO;
@@ -49,6 +49,10 @@ export const contactSubmit = actionClient
       react: Contact({ name, email, message }),
     });
 
-    if (res) return { success: "Thank you for reaching out! Your message has been successfully sent." };
+    if (res)
+      return {
+        success:
+          "Thank you for reaching out! Your message has been successfully sent.",
+      };
     if (error) throw new Error(JSON.stringify(error));
   });

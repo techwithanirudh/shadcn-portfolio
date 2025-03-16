@@ -1,7 +1,7 @@
 "use client";
 
-import { Comments } from "@fuma-comment/react";
 import { redirect } from "next/navigation";
+import { Comments } from "@fuma-comment/react";
 
 export function PostComments({ slug }: { slug: string }) {
   return (
@@ -11,8 +11,8 @@ export function PostComments({ slug }: { slug: string }) {
       auth={{
         type: "api",
         signIn: () => {
-          redirect('/login');
-        }
+          redirect("/login");
+        },
       }}
     />
   );
