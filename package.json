@@ -25,13 +25,28 @@
     "knip": "knip"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@repo/prettier-config": "workspace:*",
     "@turbo/gen": "^2.3.4",
     "@types/node": "^22.13.10",
+    "cz-git": "^1.11.1",
     "knip": "^5.46.0",
+    "lint-staged": "^15.5.0",
     "prettier": "catalog:",
     "turbo": "^2.3.4",
     "typescript": "catalog:"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix",
+    "**/*": [
+      "prettier --write --ignore-unknown"
+    ]
   },
   "prettier": "@repo/prettier-config"
 }

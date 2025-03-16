@@ -31,7 +31,9 @@ const TextReveal: React.FC<TextRevealProps> = ({
       }
       return [];
     } else if (Array.isArray(child)) {
-      return child.flatMap((nestedChild) => generatePhrases(nestedChild));
+      return child.flatMap((nestedChild: React.ReactNode) =>
+        generatePhrases(nestedChild),
+      );
     }
     return [];
   };

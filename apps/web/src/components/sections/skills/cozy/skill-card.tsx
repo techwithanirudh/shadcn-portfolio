@@ -74,9 +74,7 @@ export default function SkillCard({
               <TextReveal>{name}</TextReveal>
             </DialogTitle>
             <DialogSubtitle className="text-md text-muted-foreground text-zinc-700 dark:text-zinc-400">
-              <TextReveal>
-                {description ?? ""}
-              </TextReveal>
+              <TextReveal>{description ?? ""}</TextReveal>
             </DialogSubtitle>
           </div>
         </div>

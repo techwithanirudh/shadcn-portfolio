@@ -17,7 +17,7 @@ import { createPortal } from "react-dom";
 import { cn } from "@repo/ui";
 import { Icons } from "@repo/ui/icons";
 
-interface MorphingDialogContextType {
+export interface MorphingDialogContextType {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   uniqueId: string;
@@ -37,7 +37,7 @@ function useMorphingDialog() {
   return context;
 }
 
-interface MorphingDialogProviderProps {
+export interface MorphingDialogProviderProps {
   children: React.ReactNode;
   transition?: Transition;
 }
@@ -51,7 +51,12 @@ function MorphingDialogProvider({
   const triggerRef = useRef<HTMLDivElement>(null);
 
   const contextValue = useMemo(
-    () => ({ isOpen, setIsOpen, uniqueId, triggerRef }),
+    () => ({
+      isOpen,
+      setIsOpen,
+      uniqueId,
+      triggerRef,
+    }),
     [isOpen, uniqueId],
   );
 
@@ -62,7 +67,7 @@ function MorphingDialogProvider({
   );
 }
 
-interface MorphingDialogProps {
+export interface MorphingDialogProps {
   children: React.ReactNode;
   transition?: Transition;
 }
@@ -75,7 +80,7 @@ function MorphingDialog({ children, transition }: MorphingDialogProps) {
   );
 }
 
-interface MorphingDialogTriggerProps {
+export interface MorphingDialogTriggerProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -116,13 +121,14 @@ function MorphingDialogTrigger({
       aria-haspopup="dialog"
       aria-expanded={isOpen}
       aria-controls={`motion-ui-morphing-dialog-content-${uniqueId}`}
+      aria-label={`Open dialog ${uniqueId}`}
     >
       {children}
     </motion.div>
   );
 }
 
-interface MorphingDialogContent {
+export interface MorphingDialogContentProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -132,9 +138,9 @@ function MorphingDialogContent({
   children,
   className,
   style,
-}: MorphingDialogContent) {
+}: MorphingDialogContentProps) {
   const { setIsOpen, isOpen, uniqueId, triggerRef } = useMorphingDialog();
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [firstFocusableElement, setFirstFocusableElement] =
     useState<HTMLElement | null>(null);
   const [lastFocusableElement, setLastFocusableElement] =
@@ -210,7 +216,7 @@ function MorphingDialogContent({
   );
 }
 
-interface MorphingDialogContainerProps {
+export interface MorphingDialogContainerProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -248,7 +254,7 @@ function MorphingDialogContainer({ children }: MorphingDialogContainerProps) {
   );
 }
 
-interface MorphingDialogTitleProps {
+export interface MorphingDialogTitleProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -273,7 +279,7 @@ function MorphingDialogTitle({
   );
 }
 
-interface MorphingDialogSubtitleProps {
+export interface MorphingDialogSubtitleProps {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -297,7 +303,7 @@ function MorphingDialogSubtitle({
   );
 }
 
-interface MorphingDialogDescriptionProps {
+export interface MorphingDialogDescriptionProps {
   children: React.ReactNode;
   className?: string;
   disableLayoutAnimation?: boolean;
@@ -336,7 +342,7 @@ function MorphingDialogDescription({
   );
 }
 
-interface MorphingDialogImageProps {
+export interface MorphingDialogImageProps {
   src: string;
   alt: string;
   className?: string;
@@ -362,7 +368,7 @@ function MorphingDialogImage({
   );
 }
 
-interface MorphingDialogCloseProps {
+export interface MorphingDialogCloseProps {
   children?: React.ReactNode;
   className?: string;
   variants?: {
