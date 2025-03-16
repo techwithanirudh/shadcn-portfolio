@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 import { cn } from "@repo/ui";
-import { Card, CardContent } from "@repo/ui/card";
+import { Card, CardContent, CardHeader } from "@repo/ui/card";
 
 interface TestimonialCardProps extends Testimonial {
   className?: string;
@@ -18,9 +18,13 @@ function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <Card
-      className={cn("h-full w-full gap-4 rounded-xl", "bg-muted/40", className)}
+      className={cn(
+        "h-full w-full gap-4 rounded-xl",
+        "bg-muted/40",
+        className,
+      )}
     >
-      <div className="flex items-center py-4">
+      <CardHeader className="flex items-center gap-3">
         <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white">
           <Image
             src={image || "/placeholder.svg"}
@@ -30,12 +34,12 @@ function TestimonialCard({
             width={40}
           />
         </div>
-        <div className="ml-4">
+        <div>
           <p className="font-semibold">{name || "Anonymous"}</p>
           {username && <p className="text-sm text-gray-500">{username}</p>}
         </div>
-      </div>
-      <CardContent className="p-4">
+      </CardHeader>
+      <CardContent>
         <p className="text-sm leading-loose">
           {testimonial || "No testimonial provided."}
         </p>

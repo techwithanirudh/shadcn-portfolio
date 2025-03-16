@@ -23,7 +23,7 @@ function ExperienceCard({
       )}
     >
       <CardContent className="pt-6">
-        <div className="flex items-baseline justify-between">
+        <div className="flex items-baseline justify-between flex-wrap gap-2">
           <TextReveal as="h3" className="text-3xl font-semibold">
             {company}
           </TextReveal>

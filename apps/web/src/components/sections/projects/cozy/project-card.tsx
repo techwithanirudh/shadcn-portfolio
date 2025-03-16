@@ -51,7 +51,7 @@ function ProjectCard({
           />
         </AspectRatio>
       </CardContent>
-      <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6">
+      <CardFooter className="grid grid-cols-1 items-center gap-4">
         <div>
           <TextReveal as="h3" className="text-xl font-bold">
             {title}
