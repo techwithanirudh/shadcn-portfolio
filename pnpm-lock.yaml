@@ -6,6 +6,9 @@ settings:
 
 catalogs:
   default:
+    better-auth:
+      specifier: ^1.2.3
+      version: 1.2.4
     eslint:
       specifier: ^9.19.0
       version: 9.22.0
