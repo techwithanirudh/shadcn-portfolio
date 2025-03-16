@@ -12,7 +12,7 @@ interface SkillCardProps extends Skill {
 function SkillCard({ name, description, className }: SkillCardProps) {
   return (
     <Card className={cn("bg-muted/40", className)}>
-      <CardContent className="p-4 md:p-6">
+      <CardContent>
         <div className="flex items-center gap-4">
           <Icons.code className="min-h-8 min-w-8" />
           <div className="grid gap-0.5">

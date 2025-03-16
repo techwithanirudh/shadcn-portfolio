@@ -37,7 +37,7 @@ function PostCard({
         className,
       )}
     >
-      <CardContent className="p-4 md:p-6">
+      <CardContent>
         <div className="grid gap-2">
           <AspectRatio
             ratio={16 / 9}
