@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@repo/ui/dropdown-menu";
 import { Icons } from "@repo/ui/icons";
+import { UserButton } from "@/components/auth/user-button";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -130,7 +131,10 @@ export default function Header() {
                   </DropdownMenu>
                 )}
               </div>
-              <ThemeToggle />
+              <div className="flex items-center gap-2">
+                <UserButton />
+                <ThemeToggle />
+              </div>
             </nav>
           </div>
         </div>

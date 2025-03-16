@@ -37,7 +37,7 @@ export const useMouseVector = (
 
     const handleTouchMove = (ev: TouchEvent) => {
       const touch = ev.touches[0];
-      updatePosition(touch.clientX, touch.clientY);
+      updatePosition(touch?.clientX ?? 0, touch?.clientY ?? 0);
     };
 
     // Listen for both mouse and touch events

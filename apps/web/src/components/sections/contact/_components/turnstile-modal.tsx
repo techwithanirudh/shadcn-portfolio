@@ -25,6 +25,14 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
     "success" | "error" | "expired" | "required"
   >("required");
 
+  if (!env.NEXT_PUBLIC_CONTACT_FORM_ENABLED || !env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) {
+    return (
+      <>
+        Oops... Misconfig in the environment variables. Please check the configuration.
+      </>
+    );
+  }
+
   return (
     <Dialog
       open={open}
@@ -43,7 +51,7 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
         <div className="relative flex flex-col py-4 md:py-0">
           <div className={"z-10 px-4 md:px-0"}>
             <Turnstile
-              siteKey={env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+              siteKey={env.NEXT_PUBLIC_TURNSTILE_SITE_KEY }
               onWidgetLoad={() => setIsLoading(false)}
               onError={() => setTurnstileStatus("error")}
               onExpire={() => setTurnstileStatus("expired")}
