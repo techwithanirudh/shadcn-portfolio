@@ -75,5 +75,8 @@
     "react": "catalog:react19",
     "zod": "catalog:"
   },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
+  },
   "prettier": "@repo/prettier-config"
 }
