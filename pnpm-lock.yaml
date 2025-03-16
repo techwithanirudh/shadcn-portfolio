@@ -78,9 +78,6 @@ importers:
 
   apps/web:
     dependencies:
-      '@fumadocs/content-collections':
-        specifier: ^1.1.8
-        version: 1.1.8(@content-collections/core@0.8.2(typescript@5.8.2))(@content-collections/mdx@0.2.2(@content-collections/core@0.8.2(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(fumadocs-core@15.0.18(@types/react@19.0.10)(next@15.2.2(@babel/core@7.26.10)(babel-plugin-react-compiler@19.0.0-beta-bafa41b-20250307)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.85.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@hookform/resolvers':
         specifier: ^3.10.0
         version: 3.10.0(react-hook-form@7.54.2(react@19.0.0))
@@ -223,6 +220,9 @@ importers:
       '@content-collections/next':
         specifier: ^0.2.6
         version: 0.2.6(@content-collections/core@0.8.2(typescript@5.8.2))(next@15.2.2(@babel/core@7.26.10)(babel-plugin-react-compiler@19.0.0-beta-bafa41b-20250307)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.85.1))
+      '@fumadocs/content-collections':
+        specifier: ^1.1.8
+        version: 1.1.8(@content-collections/core@0.8.2(typescript@5.8.2))(@content-collections/mdx@0.2.2(@content-collections/core@0.8.2(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(fumadocs-core@15.0.18(@types/react@19.0.10)(next@15.2.2(@babel/core@7.26.10)(babel-plugin-react-compiler@19.0.0-beta-bafa41b-20250307)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.85.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint

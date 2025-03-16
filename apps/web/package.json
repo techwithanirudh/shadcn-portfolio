@@ -14,7 +14,6 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@fumadocs/content-collections": "^1.1.8",
     "@hookform/resolvers": "^3.10.0",
     "@icons-pack/react-simple-icons": "^10.2.0",
     "@marsidev/react-turnstile": "^1.1.0",
@@ -64,6 +63,7 @@
     "@content-collections/core": "^0.8.2",
     "@content-collections/mdx": "^0.2.2",
     "@content-collections/next": "^0.2.6",
+    "@fumadocs/content-collections": "^1.1.8",
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
