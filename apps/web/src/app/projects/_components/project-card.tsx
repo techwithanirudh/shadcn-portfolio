@@ -37,7 +37,7 @@ function ProjectCard({
         className,
       )}
     >
-      <CardContent className="p-4 md:p-6">
+      <CardContent>
         <div className="grid gap-2">
           <AspectRatio
             ratio={16 / 9}
@@ -66,7 +66,7 @@ function ProjectCard({
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex items-center justify-end p-4 md:p-6">
+      <CardFooter className="flex items-center justify-end">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
