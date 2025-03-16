@@ -9,11 +9,7 @@ import { background, opacity } from "./anim";
 import Nav from "./nav";
 import styles from "./style.module.scss";
 
-interface HeaderProps {
-  loader?: boolean;
-}
-
-const Header = ({ loader }: HeaderProps) => {
+const Header = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   return (

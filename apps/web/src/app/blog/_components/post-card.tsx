@@ -57,7 +57,7 @@ function PostCard({
             as="p"
             className="text-sm text-gray-500 dark:text-gray-400"
           >
-            {description || ""}
+            {description ?? ""}
           </TextReveal>
           <TextReveal
             as="p"

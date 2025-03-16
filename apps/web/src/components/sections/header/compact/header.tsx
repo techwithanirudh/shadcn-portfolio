@@ -16,12 +16,7 @@ import {
 } from "@repo/ui/dropdown-menu";
 import { Icons } from "@repo/ui/icons";
 
-interface HeaderProps {
-  loader?: boolean;
-}
-// todo: add auth btn
-
-const Header = ({ loader }: HeaderProps) => {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -164,6 +159,4 @@ const Header = ({ loader }: HeaderProps) => {
       </motion.div>
     </motion.header>
   );
-};
-
-export default Header;
+}

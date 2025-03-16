@@ -42,7 +42,7 @@ export interface UserButtonProps {
 
 export function UserButton({ className, classNames }: UserButtonProps) {
   const { data: sessionData, isPending: sessionPending } = useSession();
-  const user = sessionData?.user as User;
+  const user = sessionData?.user as User | null;
 
   const isPending = sessionPending;
 
@@ -108,7 +108,14 @@ export function UserButton({ className, classNames }: UserButtonProps) {
 
         <DropdownMenuSeparator className={classNames?.content?.separator} />
 
-        {!user ? (
+        {user ? (
+          <DropdownMenuItem className={classNames?.content?.menuItem} asChild>
+            <Link href="/profile">
+              <Icons.user />
+              Profile
+            </Link>
+          </DropdownMenuItem>
+        ) : (
           <>
             <DropdownMenuItem className={classNames?.content?.menuItem} asChild>
               <Link href={`/login`}>
@@ -117,7 +124,9 @@ export function UserButton({ className, classNames }: UserButtonProps) {
               </Link>
             </DropdownMenuItem>
           </>
-        ) : (
+        )}
+
+        {!user ? (
           <>
             <DropdownMenuItem
               className={classNames?.content?.menuItem}
@@ -125,6 +134,15 @@ export function UserButton({ className, classNames }: UserButtonProps) {
             >
               <Icons.logOut />
               Log Out
+            </DropdownMenuItem>
+          </>
+        ) : (
+          <>
+            <DropdownMenuItem className={classNames?.content?.menuItem} asChild>
+              <Link href="/profile">
+                <Icons.user />
+                Profile
+              </Link>
             </DropdownMenuItem>
           </>
         )}

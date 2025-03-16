@@ -12,8 +12,6 @@ import {
 } from "@/components/fancy/morphing-dialog";
 import TextReveal from "@/components/fancy/text-reveal";
 import { MemoizedReactMarkdown } from "@/components/markdown";
-import { trimLen } from "@/components/sections/skills/config";
-import { trimString } from "@/lib/utils";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 
@@ -78,11 +76,7 @@ export default function SkillCard({
               <TextReveal>{name}</TextReveal>
             </DialogTitle>
             <DialogSubtitle className="text-md text-muted-foreground text-zinc-700 dark:text-zinc-400">
-              <TextReveal>
-                {trimLen != -1
-                  ? trimString(trimLen, description || "")
-                  : (description ?? "")}
-              </TextReveal>
+              <TextReveal>{description ?? ""}</TextReveal>
             </DialogSubtitle>
           </div>
         </div>

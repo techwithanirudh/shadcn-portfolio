@@ -1,5 +1,4 @@
-import type { Icon as LucideIcon ,
-  LucideProps} from "lucide-react";
+import type { Icon as LucideIcon, LucideProps } from "lucide-react";
 import {
   AlertTriangle,
   ArrowRight,
@@ -33,7 +32,7 @@ import {
   X,
 } from "lucide-react";
 
-export type Icon = LucideIcon;
+export type Icon = typeof LucideIcon;
 
 export const Icons = {
   logo: Code,
