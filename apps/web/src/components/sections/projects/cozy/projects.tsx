@@ -7,9 +7,7 @@ import ProjectCard from "./project-card";
 
 function Projects() {
   const projects = [...project.getPages()].sort(
-    (a, b) =>
-      new Date(b.data.date ?? b.file.name).getTime() -
-      new Date(a.data.date ?? a.file.name).getTime(),
+    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
   );
 
   return (
