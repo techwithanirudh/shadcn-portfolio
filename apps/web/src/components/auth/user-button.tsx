@@ -42,7 +42,7 @@ export interface UserButtonProps {
 
 export function UserButton({ className, classNames }: UserButtonProps) {
   const { data: sessionData, isPending: sessionPending } = useSession();
-  const user = sessionData?.user as User;
+  const user = sessionData?.user as User | null;
 
   const isPending = sessionPending;
 

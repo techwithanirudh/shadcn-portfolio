@@ -70,7 +70,7 @@ export default function AnimatedLink({
       }
       return element;
     } else if (Array.isArray(child)) {
-      return child.map((nestedChild, index) => (
+      return child.map((nestedChild: React.ReactNode, index) => (
         <React.Fragment key={`nested-${index}`}>
           {processChildren(nestedChild)}
         </React.Fragment>
@@ -81,8 +81,8 @@ export default function AnimatedLink({
 
   return external ? (
     <a
-      href={href.toString() ?? ""}
-      target={target || "_blank"}
+      href={typeof href === "object" ? (href as URL).toString() : String(href)}
+      target={target ?? "_blank"}
       rel="noopener noreferrer"
       {...props}
     >

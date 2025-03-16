@@ -52,8 +52,7 @@ export default function ContactForm() {
         `&body=${encodeURIComponent(
           `Name: ${values.name}\nMessage: ${values.message}`,
         )}`;
-      // @eslint-disable-next-line no-alert
-      window.location.href = mailto;
+      window.open(mailto);
     }
   }
 

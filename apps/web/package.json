@@ -73,9 +73,13 @@
     "eslint": "catalog:",
     "jiti": "^1.21.7",
     "postcss": "^8.5.1",
+    "postcss-load-config": "^6.0.1",
     "prettier": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
+  },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
   },
   "prettier": "@repo/prettier-config"
 }

@@ -51,7 +51,7 @@ function ProjectCard({
           />
         </AspectRatio>
       </CardContent>
-      <CardFooter className="grid grid-cols-1 items-center gap-4 p-4 md:p-6">
+      <CardFooter className="grid grid-cols-1 items-center gap-4">
         <div>
           <TextReveal as="h3" className="text-xl font-bold">
             {title}
@@ -60,7 +60,7 @@ function ProjectCard({
             as="p"
             className="text-sm text-gray-500 dark:text-gray-400"
           >
-            {description || ""}
+            {description ?? ""}
           </TextReveal>
 
           <div className="mt-2 flex flex-wrap gap-2">

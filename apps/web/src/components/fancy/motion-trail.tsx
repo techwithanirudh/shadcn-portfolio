@@ -44,8 +44,7 @@ const ImageTrail = ({
   const trailRef = useRef<TrailItem[]>([]);
 
   const lastAddedTimeRef = useRef<number>(0);
-  const { position: mousePosition, vector: mouseVector } =
-    useMouseVector(containerRef);
+  const { position: mousePosition } = useMouseVector(containerRef);
   const lastMousePosRef = useRef(mousePosition);
   const currentIndexRef = useRef(0);
   // Convert children to array for random selection
@@ -84,7 +83,7 @@ const ImageTrail = ({
     }
   }, []);
 
-  useAnimationFrame((time, delta) => {
+  useAnimationFrame((time) => {
     // Skip if mouse hasn't moved
     if (
       lastMousePosRef.current.x === mousePosition.x &&
@@ -107,6 +106,7 @@ const ImageTrail = ({
 
   return (
     <div className="pointer-events-none relative h-full w-full">
+      {/* eslint-disable-next-line react-compiler/react-compiler */}
       {trailRef.current.map((item) => (
         <TrailItem key={item.id} item={item} onComplete={removeFromTrail} />
       ))}
@@ -123,14 +123,20 @@ const TrailItem = ({ item, onComplete }: TrailItemProps) => {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
-    const sequence = item.animationSequence.map((segment: TrailSegment) => [
-      scope.current,
-      ...segment,
-    ]);
+    const sequence = item.animationSequence.map(
+      (segment: TrailSegment): [typeof scope.current, ...TrailSegment] => [
+        scope.current,
+        ...segment,
+      ],
+    );
 
-    animate(sequence as AnimationSequence).then(() => {
-      onComplete(item.id);
-    });
+    animate(sequence as AnimationSequence)
+      .then(() => {
+        onComplete(item.id);
+      })
+      .catch(() => {
+        onComplete(item.id);
+      });
   }, []);
 
   return (

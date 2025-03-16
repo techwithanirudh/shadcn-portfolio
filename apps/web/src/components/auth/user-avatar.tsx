@@ -13,7 +13,7 @@ export interface UserAvatarClassNames {
 }
 
 export interface UserAvatarProps {
-  user?: User;
+  user?: User | null;
   classNames?: UserAvatarClassNames;
 }
 
@@ -33,7 +33,7 @@ export function UserAvatar({
       {...props}
     >
       <AvatarImage
-        alt={name || "Avatar"}
+        alt={name ?? "Avatar"}
         className={cn("rounded-md", classNames?.image)}
         src={src ?? undefined}
       />
@@ -42,7 +42,7 @@ export function UserAvatar({
         className={cn("rounded-md uppercase", classNames?.fallback)}
         delayMs={src ? 200 : 0}
       >
-        {firstTwoCharacters(name) || (
+        {firstTwoCharacters(name) ?? (
           <Icons.user className={cn("w-[55%]", classNames?.fallbackIcon)} />
         )}
       </AvatarFallback>

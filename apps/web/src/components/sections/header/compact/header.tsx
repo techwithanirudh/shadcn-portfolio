@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { metadata as meta } from "@/app/config";
+import { UserButton } from "@/components/auth/user-button";
 import Link from "@/components/fancy/link";
 import ThemeToggle from "@/components/mode-toggle";
 import { linkLimit, links } from "@/components/sections/header/config";
@@ -16,12 +17,7 @@ import {
 } from "@repo/ui/dropdown-menu";
 import { Icons } from "@repo/ui/icons";
 
-interface HeaderProps {
-  loader?: boolean;
-}
-// todo: add auth btn
-
-const Header = ({ loader }: HeaderProps) => {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -135,7 +131,10 @@ const Header = ({ loader }: HeaderProps) => {
                   </DropdownMenu>
                 )}
               </div>
-              <ThemeToggle />
+              <div className="flex items-center gap-2">
+                <UserButton />
+                <ThemeToggle />
+              </div>
             </nav>
           </div>
         </div>
@@ -164,6 +163,4 @@ const Header = ({ loader }: HeaderProps) => {
       </motion.div>
     </motion.header>
   );
-};
-
-export default Header;
+}

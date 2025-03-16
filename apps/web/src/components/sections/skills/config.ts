@@ -1,7 +1,5 @@
 import type { Skill } from "@/types/skill";
 
-const trimLen = -1; // 0 is accordion only, -1 is does not restrict the length
-
 const skills: Skill[] = [
   {
     name: "Web Development",
@@ -26,4 +24,4 @@ const skills: Skill[] = [
   },
 ];
 
-export { trimLen, skills };
+export { skills };

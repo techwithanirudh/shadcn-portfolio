@@ -1,4 +1,3 @@
-import type { NextRequest } from "next/server";
 import { headers } from "next/headers";
 import { ImageResponse } from "next/og";
 import { NextResponse } from "next/server";
@@ -9,7 +8,7 @@ import LightSvg from "./patterns/light-svg";
 
 export const runtime = "edge";
 
-export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
+export async function GET(): Promise<Response | ImageResponse> {
   try {
     const headersList = await headers();
     const isLight = headersList.get("Sec-CH-Prefers-Color-Scheme") === "light";
@@ -82,7 +81,7 @@ export async function GET(req: NextRequest): Promise<Response | ImageResponse> {
         fonts: [
           {
             name: "Inter",
-            data: await inter,
+            data: inter,
             style: "normal",
             weight: 400,
           },

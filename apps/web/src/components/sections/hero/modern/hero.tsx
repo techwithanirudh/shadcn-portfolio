@@ -1,29 +1,12 @@
 "use client";
 
 import { useRef } from "react";
+import { Noto_Color_Emoji } from "next/font/google";
 import ParallaxImage from "@/components/fancy/parallax-image";
 
-// const heroContent = [
-//   { role: "developer", action: "code", emoji: "❤️", bgColor: "bg-green-100" },
-//   { role: "gamer", action: "win", emoji: "🎮", bgColor: "bg-blue-100" },
-//   { role: "thinker", action: "solve", emoji: "❤️", bgColor: "bg-yellow-100" },
-//   { role: "learner", action: "grow", emoji: "❤️", bgColor: "bg-purple-100" },
-//   { role: "teammate", action: "collab", emoji: "❤️", bgColor: "bg-orange-100" },
-//   { role: "fixer", action: "repair", emoji: "❤️", bgColor: "bg-gray-100" },
-// ];
+import { cn } from "@repo/ui";
 
-// const textLoopVariants = {
-//   initial: { y: 20, rotateX: 90, opacity: 0, filter: "blur(4px)" },
-//   animate: { y: 0, rotateX: 0, opacity: 1, filter: "blur(0px)" },
-//   exit: { y: -20, rotateX: -90, opacity: 0, filter: "blur(4px)" },
-// };
-
-// const textLoopTransition = {
-//   type: "spring",
-//   stiffness: 900,
-//   damping: 80,
-//   mass: 10,
-// };
+const notoColorEmoji = Noto_Color_Emoji({ weight: "400", subsets: ["emoji"] });
 
 function Hero() {
   const container = useRef<HTMLDivElement>(null);
@@ -42,7 +25,16 @@ function Hero() {
               <br />
               <span className="flex items-center gap-2 md:gap-4">
                 <span>Who</span>
-                <span>loves</span>
+                <span
+                  className={cn(
+                    notoColorEmoji.className,
+                    `relative mx-2 my-auto inline-block aspect-[1.5/1] h-[3.25rem] overflow-hidden rounded-full bg-linear-to-br from-pink-200 from-40% to-pink-400 md:mx-4 md:h-[7.8rem]`,
+                  )}
+                >
+                  <span className="absolute inset-0 flex items-center justify-center text-4xl select-none md:text-7xl">
+                    ❤️
+                  </span>
+                </span>
                 <span>to</span>
                 <span>code</span>
               </span>

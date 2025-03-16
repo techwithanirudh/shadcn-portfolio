@@ -14,11 +14,7 @@ import { buttonVariants } from "@repo/ui/button";
 
 import { PostComments } from "./page.client";
 
-export async function generateStaticParams({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export function generateStaticParams({ params }: { params: { slug: string } }) {
   const { slug } = params;
   // @ts-expect-error issue with fumadocs
   return blog.generateParams([slug]);

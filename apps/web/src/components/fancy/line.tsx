@@ -52,6 +52,7 @@ export default function Line({
     const pathBound = path.current?.getBoundingClientRect();
 
     if (pathBound) {
+      // eslint-disable-next-line react-compiler/react-compiler
       x = (clientX - pathBound.left) / pathBound.width;
       progress += movementY;
       setPath(progress);

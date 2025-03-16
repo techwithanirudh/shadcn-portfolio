@@ -37,7 +37,7 @@ function PostCard({
         className,
       )}
     >
-      <CardContent className="p-4 md:p-6">
+      <CardContent>
         <div className="grid gap-2">
           <AspectRatio
             ratio={16 / 9}
@@ -57,7 +57,7 @@ function PostCard({
             as="p"
             className="text-sm text-gray-500 dark:text-gray-400"
           >
-            {description || ""}
+            {description ?? ""}
           </TextReveal>
           <TextReveal
             as="p"
@@ -72,7 +72,7 @@ function PostCard({
           </div> */}
         </div>
       </CardContent>
-      <CardFooter className="flex items-center justify-end p-4 md:p-6">
+      <CardFooter className="flex items-center justify-end">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>

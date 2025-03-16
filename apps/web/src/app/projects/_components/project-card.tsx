@@ -33,11 +33,11 @@ function ProjectCard({
   return (
     <Card
       className={cn(
-        "relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white p-0 dark:border-zinc-50/10 dark:bg-zinc-900",
+        "relative flex h-full flex-col justify-between border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900",
         className,
       )}
     >
-      <CardContent className="p-4 md:p-6">
+      <CardContent>
         <div className="grid gap-2">
           <AspectRatio
             ratio={16 / 9}
@@ -57,7 +57,7 @@ function ProjectCard({
             as="p"
             className="text-sm text-gray-500 dark:text-gray-400"
           >
-            {description || ""}
+            {description ?? ""}
           </TextReveal>
           <div className="mt-2 flex flex-wrap gap-2">
             {tags?.map((tag, index) => (
@@ -66,7 +66,7 @@ function ProjectCard({
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex items-center justify-end p-4 md:p-6">
+      <CardFooter className="flex items-center justify-end">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>

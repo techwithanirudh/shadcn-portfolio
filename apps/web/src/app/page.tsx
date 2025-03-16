@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <SmoothScroll>
       <div className="flex min-h-[100dvh] flex-col">
-        <Header loader={true} />
+        <Header />
         <main className="flex-1">
           <Hero />
           <About />

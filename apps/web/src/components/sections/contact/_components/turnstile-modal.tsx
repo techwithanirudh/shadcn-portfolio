@@ -25,6 +25,18 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
     "success" | "error" | "expired" | "required"
   >("required");
 
+  if (
+    !env.NEXT_PUBLIC_CONTACT_FORM_ENABLED ||
+    !env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+  ) {
+    return (
+      <>
+        Oops... Misconfig in the environment variables. Please check the
+        configuration.
+      </>
+    );
+  }
+
   return (
     <Dialog
       open={open}
