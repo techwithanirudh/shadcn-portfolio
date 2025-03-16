@@ -43,7 +43,7 @@ const Index: React.FC<IndexProps> = ({ setIsActive }) => {
           {/* <Footer /> */}
         </div>
         <Image
-          src={links[selectedLink.index].thumbnail}
+          src={links[selectedLink.index]?.thumbnail ?? ""}
           isActive={selectedLink.isActive}
         />
         <div className="absolute right-0 bottom-0 mb-auto flex items-center gap-2">

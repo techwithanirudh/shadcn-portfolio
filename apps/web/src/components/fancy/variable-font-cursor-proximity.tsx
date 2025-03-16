@@ -38,7 +38,7 @@ const VariableFontCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
           .map((s) => s.trim())
           .map((s) => {
             const [name, value] = s.split(" ");
-            return [name.replace(/['"]/g, ""), parseFloat(value)];
+            return [name?.replace(/['"]/g, ""), parseFloat(value ?? "0")];
           }),
       );
 
@@ -48,7 +48,7 @@ const VariableFontCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
           .map((s) => s.trim())
           .map((s) => {
             const [name, value] = s.split(" ");
-            return [name.replace(/['"]/g, ""), parseFloat(value)];
+            return [name?.replace(/['"]/g, ""), parseFloat(value ?? "0")];
           }),
       );
 

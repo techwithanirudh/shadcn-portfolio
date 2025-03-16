@@ -18,7 +18,7 @@ function SkillCard({ name, description, className }: SkillCardProps) {
           <div className="grid gap-0.5">
             <h3 className="text-xl font-semibold">{name}</h3>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              {description || ""}
+              {description ?? ""}
             </p>
           </div>
         </div>

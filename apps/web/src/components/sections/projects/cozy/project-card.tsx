@@ -60,7 +60,7 @@ function ProjectCard({
             as="p"
             className="text-sm text-gray-500 dark:text-gray-400"
           >
-            {description || ""}
+            {description ?? ""}
           </TextReveal>
 
           <div className="mt-2 flex flex-wrap gap-2">
