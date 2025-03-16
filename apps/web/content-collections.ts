@@ -22,7 +22,20 @@ const projects = defineCollection({
           }),
         )
         .optional(),
-      date: z.string().date().or(z.date()).optional(),
+      date: z
+        .string()
+        .or(z.date())
+        .transform((value, context) => {
+          try {
+            return new Date(value);
+          } catch {
+            context.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: "Invalid date",
+            });
+            return z.NEVER;
+          }
+        }),
     };
   },
   transform: transformMDX,
@@ -45,7 +58,20 @@ const blog = defineCollection({
     return {
       ...docSchema,
       author: z.string(),
-      date: z.string().date().or(z.date()).optional(),
+      date: z
+        .string()
+        .or(z.date())
+        .transform((value, context) => {
+          try {
+            return new Date(value);
+          } catch {
+            context.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: "Invalid date",
+            });
+            return z.NEVER;
+          }
+        }),
     };
   },
   transform: transformMDX,

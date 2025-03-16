@@ -14,7 +14,6 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@content-collections/next": "^0.2.6",
     "@fumadocs/content-collections": "^1.1.8",
     "@hookform/resolvers": "^3.10.0",
     "@icons-pack/react-simple-icons": "^10.2.0",
@@ -29,7 +28,9 @@
     "@repo/ui": "workspace:*",
     "@repo/validators": "workspace:*",
     "@t3-oss/env-nextjs": "^0.12.0",
+    "content-collections": "^0.1.3",
     "embla-carousel-auto-scroll": "^8.5.2",
+    "fumadocs-core": "^15.0.18",
     "fumadocs-mdx": "^11.3.2",
     "fumadocs-twoslash": "^3.0.0",
     "fumadocs-ui": "^15.0.0",
@@ -61,6 +62,9 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@content-collections/core": "^0.8.2",
+    "@content-collections/mdx": "^0.2.2",
+    "@content-collections/next": "^0.2.6",
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*",
@@ -75,6 +79,7 @@
     "postcss": "^8.5.1",
     "postcss-load-config": "^6.0.1",
     "prettier": "catalog:",
+    "sass": "^1.85.1",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
