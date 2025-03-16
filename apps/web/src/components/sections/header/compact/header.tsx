@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { metadata as meta } from "@/app/config";
+import { UserButton } from "@/components/auth/user-button";
 import Link from "@/components/fancy/link";
 import ThemeToggle from "@/components/mode-toggle";
 import { linkLimit, links } from "@/components/sections/header/config";
@@ -15,7 +16,6 @@ import {
   DropdownMenuTrigger,
 } from "@repo/ui/dropdown-menu";
 import { Icons } from "@repo/ui/icons";
-import { UserButton } from "@/components/auth/user-button";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

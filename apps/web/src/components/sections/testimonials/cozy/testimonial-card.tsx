@@ -18,11 +18,7 @@ function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <Card
-      className={cn(
-        "h-full w-full gap-4 rounded-xl",
-        "bg-muted/40",
-        className,
-      )}
+      className={cn("h-full w-full gap-4 rounded-xl", "bg-muted/40", className)}
     >
       <CardHeader className="flex items-center gap-3">
         <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-white">
