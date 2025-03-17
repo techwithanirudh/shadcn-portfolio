@@ -1,0 +1,39 @@
+{
+  "name": "@repo/emails",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./env": "./env.ts"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "email dev --port 3001 --dir src/templates",
+    "export": "email export",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix .",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false",
+    "clean": "git clean -xdf .cache .turbo dist node_modules"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "@types/react": "catalog:react19",
+    "@types/react-dom": "catalog:react19",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,cts,mts,ts,tsx,json}": "eslint --fix"
+  },
+  "prettier": "@repo/prettier-config",
+  "dependencies": {
+    "@react-email/components": "^0.0.33",
+    "react": "catalog:react19",
+    "react-dom": "catalog:react19",
+    "react-email": "3.0.7"
+  }
+}

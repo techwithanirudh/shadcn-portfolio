@@ -1,0 +1,35 @@
+name: "Setup and install"
+description: "Common setup steps for Actions"
+
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: ".nvmrc"
+        cache: "pnpm"
+
+    - name: Install turbo
+      shell: bash
+      run: pnpm add -g turbo
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install
+
+    - name: Create environment variables file
+      shell: bash
+      run: |
+        cat << EOF > .env
+        DATABASE_URL=postgres://postgres:postgres@localhost:5432/neondb
+        RESEND_API_KEY=re_fake_api_key
+        BETTER_AUTH_SECRET=1234567890
+        BETTER_AUTH_URL=http://localhost:3000
+        GOOGLE_CLIENT_ID=1234567890
+        GOOGLE_CLIENT_SECRET=1234567890
+        GITHUB_CLIENT_ID=1234567890
+        GITHUB_CLIENT_SECRET=1234567890
+        NEXT_PUBLIC_CONTACT_FORM_ENABLED=true
+        NEXT_PUBLIC_CONTACT_AUTH_ENABLED=true
+        EOF
