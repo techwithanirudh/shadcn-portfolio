@@ -31,7 +31,9 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
     !env.NEXT_PUBLIC_CONTACT_FORM_ENABLED ||
     !env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
   ) {
-    return <FormError message={"Oops! This site is misconfigured"} />;
+    return <div className="mt-4">
+      <FormError message={"This contact form is misconfigured. Please check the form settings and try again."} />
+    </div>;
   }
 
   return (
