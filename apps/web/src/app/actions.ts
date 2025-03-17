@@ -2,7 +2,7 @@
 
 import "server-only";
 
-import { env, flags } from "@/env";
+import { env } from "@/env";
 import { actionClient, ActionError } from "@/lib/safe-action";
 import { validateTurnstileToken } from "@/lib/turnstile";
 import { Resend } from "resend";
@@ -35,11 +35,12 @@ export const contactSubmit = actionClient
   })
   .schema(ContactActionSchema)
   .action(async ({ parsedInput: { name, email, message } }) => {
-    if (!flags.contact) {
-      throw new Error("Contact form is disabled");
-    }
-
     const resend = new Resend(env.RESEND_API_KEY);
+
+    // todo: replace hook form of contact with https://github.com/next-safe-action/adapter-react-hook-form
+    if (!EMAIL_FROM || !EMAIL_TO) {
+      throw new Error("Contact form configuration missing");
+    }
 
     const { data: res, error } = await resend.emails.send({
       from: EMAIL_FROM,

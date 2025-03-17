@@ -1,11 +1,9 @@
 import type { AboutPage, WithContext } from "schema-dts";
-import { notFound } from "next/navigation";
 import { metadata as meta } from "@/app/config";
 import Cursor from "@/components/cursor/cursor";
 import { Footer, Header } from "@/components/sections";
 import { contact } from "@/components/sections/contact/config";
 import SmoothScroll from "@/components/smooth-scroll";
-import { flags } from "@/env";
 import { createMetadata } from "@/lib/metadata";
 
 const title = "About";
@@ -46,8 +44,6 @@ export default function AboutLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (!flags.auth) return notFound();
-
   return (
     <SmoothScroll>
       <div className="flex min-h-[100dvh] flex-col">

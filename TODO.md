@@ -15,7 +15,7 @@
 - [ ] Add og for each blog page, and project page
 - [ ] Fix zod validation errors
 - [ ] Setup TRPC (later)
-- [ ] Fix env checks not occurringf
+- [ ] Fix env checks not occurring
 - [ ] Add different signin options like Google with GitHub
 - [ ] Think about converting other things to packages, like security cloudflare
 - [ ] Add new getting started guide

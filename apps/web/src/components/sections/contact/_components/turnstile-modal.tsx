@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { env, flags } from "@/env";
+import { env } from "@/env";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { useTheme } from "next-themes";
 
@@ -27,8 +27,13 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
     "success" | "error" | "expired" | "required"
   >("required");
 
-  if (!flags.captcha) {
-    return null;
+  if (
+    !env.NEXT_PUBLIC_CONTACT_FORM_ENABLED ||
+    !env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+  ) {
+    return <div className="mt-4">
+      <FormError message={"This contact form is misconfigured. Please check the form settings and try again."} />
+    </div>;
   }
 
   return (

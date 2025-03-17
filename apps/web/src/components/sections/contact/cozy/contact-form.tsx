@@ -6,7 +6,7 @@ import { FormError } from "@/components/sections/contact/_components/form-error"
 import { FormSuccess } from "@/components/sections/contact/_components/form-success";
 import { TurnstileModal } from "@/components/sections/contact/_components/turnstile-modal";
 import { contact } from "@/components/sections/contact/config";
-import { env, flags } from "@/env";
+import { env } from "@/env";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAction } from "next-safe-action/hooks";
 import { useForm } from "react-hook-form";
@@ -43,7 +43,7 @@ export default function ContactForm() {
   // todo: probably refactor this, setIsOpen is not clean
   // values: ContactFormType
   function onSubmit(values: ContactFormType) {
-    if (flags.contact) {
+    if (env.NEXT_PUBLIC_CONTACT_FORM_ENABLED === "true") {
       setIsOpen(true);
     } else {
       const mailto =

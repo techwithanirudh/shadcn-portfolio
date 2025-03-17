@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { metadata as meta } from "@/app/config";
 import { blog } from "@/app/source";
-import { flags } from "@/env";
 import { MDXLink } from "@/lib/mdx/default-components";
 import { createMetadata } from "@/lib/metadata";
 import { MDXContent } from "@content-collections/mdx/react";
@@ -81,7 +80,7 @@ export default async function BlogPage(props0: {
               }}
             />
           </div>
-          {flags.comment && <PostComments slug={slug} />}
+          <PostComments slug={slug} />
         </div>
         <div className="flex flex-col gap-4 border-l p-4 text-sm">
           <div>
