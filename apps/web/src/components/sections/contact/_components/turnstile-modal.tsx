@@ -11,6 +11,7 @@ import {
   CredenzaTitle as DialogTitle,
 } from "@repo/ui/credenza";
 import { Icons } from "@repo/ui/icons";
+import { FormError } from "./form-error";
 
 interface TurnstileModalProps {
   open: boolean;
@@ -30,10 +31,7 @@ export function TurnstileModal({ open, callback }: TurnstileModalProps) {
     !env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
   ) {
     return (
-      <>
-        Oops... Misconfig in the environment variables. Please check the
-        configuration.
-      </>
+      <FormError message={"Oops! This site is misconfigured"} />
     );
   }
 
