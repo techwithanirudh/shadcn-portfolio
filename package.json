@@ -17,12 +17,12 @@
     "format:fix": "turbo run format --continue -- --write --cache --cache-location .cache/.prettiercache",
     "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
     "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
-    "check:knip": "dotenv -e .env -- knip",
+    "check:knip": "pnpm with-env knip",
     "lint:ws": "pnpm dlx sherif@latest",
     "postinstall": "pnpm lint:ws",
     "typecheck": "turbo run typecheck",
     "ui-add": "turbo run ui-add",
-    "knip": "knip"
+    "with-env": "dotenv -e .env --"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
