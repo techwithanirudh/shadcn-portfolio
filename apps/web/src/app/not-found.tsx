@@ -13,12 +13,12 @@ const NotFoundPage: React.FC = () => {
 
   return (
     <div
-      className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden bg-[#efefef]"
+      className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden bg-background-muted"
       ref={containerRef}
     >
       <div className="z-30 flex flex-col items-center justify-center gap-4">
         <h1 className="text-3xl md:text-6xl">page not found</h1>
-        <div className="w-full rounded-full bg-[#efefef]">
+        <div className="w-full rounded-full bg-background-muted">
           <Link
             href="/"
             className={cn(

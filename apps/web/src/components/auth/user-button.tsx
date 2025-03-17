@@ -18,6 +18,7 @@ import { Skeleton } from "@repo/ui/skeleton";
 
 import type { UserAvatarClassNames } from "./user-avatar";
 import { UserAvatar } from "./user-avatar";
+import { flags } from "@/env";
 
 export interface UserButtonClassNames {
   base?: string;
@@ -45,6 +46,10 @@ export function UserButton({ className, classNames }: UserButtonProps) {
   const user = sessionData?.user as User | null;
 
   const isPending = sessionPending;
+
+  if (!flags.auth) {
+    return null;
+  }
 
   return (
     <DropdownMenu>

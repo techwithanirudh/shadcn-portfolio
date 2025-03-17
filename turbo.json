@@ -1,89 +1,76 @@
 {
-    "$schema": "https://turborepo.org/schema.json",
-    "ui": "tui",
-    "tasks": {
-        "topo": {
-            "dependsOn": [
-                "^topo"
-            ]
-        },
-        "build": {
-            "dependsOn": [
-                "^build"
-            ],
-            "outputs": [
-                ".cache/tsbuildinfo.json",
-                "dist/**"
-            ]
-        },
-        "dev": {
-            "dependsOn": [
-                "^dev"
-            ],
-            "cache": false,
-            "persistent": false
-        },
-        "format": {
-            "outputs": [
-                ".cache/.prettiercache"
-            ],
-            "outputLogs": "new-only"
-        },
-        "lint": {
-            "dependsOn": [
-                "^topo",
-                "^build"
-            ],
-            "outputs": [
-                ".cache/.eslintcache"
-            ]
-        },
-        "typecheck": {
-            "dependsOn": [
-                "^topo",
-                "^build"
-            ],
-            "outputs": [
-                ".cache/tsbuildinfo.json"
-            ]
-        },
-        "clean": {
-            "cache": false
-        },
-        "//#clean": {
-            "cache": false
-        },
-        "push": {
-            "cache": false,
-            "interactive": true
-        },
-        "studio": {
-            "cache": false,
-            "persistent": true
-        },
-        "ui-add": {
-            "cache": false,
-            "interactive": true
-        }
+  "$schema": "https://turborepo.org/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "topo": {
+      "dependsOn": ["^topo"]
     },
-    "globalEnv": [
-        "DATABASE_URL",
-        "GOOGLE_CLIENT_ID",
-        "GOOGLE_CLIENT_SECRET",
-        "GITHUB_CLIENT_ID",
-        "GITHUB_CLIENT_SECRET",
-        "AUTH_REDIRECT_PROXY_URL",
-        "BETTER_AUTH_SECRET",
-        "BETTER_AUTH_URL",
-        "RESEND_API_KEY",
-        "PORT"
-    ],
-    "globalPassThroughEnv": [
-        "NODE_ENV",
-        "CI",
-        "VERCEL",
-        "VERCEL_ENV",
-        "VERCEL_URL",
-        "npm_lifecycle_event"
-    ]
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".cache/tsbuildinfo.json", "dist/**"]
+    },
+    "dev": {
+      "dependsOn": ["^dev"],
+      "cache": false,
+      "persistent": false
+    },
+    "format": {
+      "outputs": [".cache/.prettiercache"],
+      "outputLogs": "new-only"
+    },
+    "lint": {
+      "dependsOn": ["^topo", "^build"],
+      "outputs": [".cache/.eslintcache"]
+    },
+    "typecheck": {
+      "dependsOn": ["^topo", "^build"],
+      "outputs": [".cache/tsbuildinfo.json"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "//#clean": {
+      "cache": false
+    },
+    "push": {
+      "cache": false,
+      "interactive": true
+    },
+    "studio": {
+      "cache": false,
+      "persistent": true
+    },
+    "ui-add": {
+      "cache": false,
+      "interactive": true
+    }
+  },
+  "globalEnv": [
+    "DATABASE_URL",
+    "GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET",
+    "GITHUB_CLIENT_ID",
+    "GITHUB_CLIENT_SECRET",
+    "AUTH_REDIRECT_PROXY_URL",
+    "BETTER_AUTH_SECRET",
+    "BETTER_AUTH_URL",
+    "RESEND_API_KEY",
+    "PORT",
+    "EMAIL_FROM",
+    "EMAIL_TO",
+    "NEXT_PUBLIC_FLAG_AUTH",
+    "NEXT_PUBLIC_FLAG_COMMENTS",
+    "NEXT_PUBLIC_FLAG_CONTACT",
+    "NEXT_PUBLIC_FLAG_TURNSTILE",
+    "NEXT_PUBLIC_TURNSTILE_SITE_KEY",
+    "TURNSTILE_SECRET_KEY"
+  ],
+  "globalPassThroughEnv": [
+    "NODE_ENV",
+    "CI",
+    "VERCEL",
+    "VERCEL_ENV",
+    "VERCEL_URL",
+    "npm_lifecycle_event"
+  ]
 }

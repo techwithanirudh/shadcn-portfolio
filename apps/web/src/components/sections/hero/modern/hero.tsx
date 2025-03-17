@@ -21,9 +21,7 @@ function Hero() {
               <span className="flex items-center gap-2 md:gap-4">
                 <span>Who</span>
                 <span
-                  className={
-                  `relative mx-2 my-auto inline-block aspect-[1.5/1] h-[3.25rem] overflow-hidden rounded-full bg-linear-to-br from-pink-200 from-40% to-pink-400 md:mx-4 md:h-[7.8rem]`
-                  }
+                  className={`relative mx-2 my-auto inline-block aspect-[1.5/1] h-[3.25rem] overflow-hidden rounded-full bg-linear-to-br from-pink-200 from-40% to-pink-400 md:mx-4 md:h-[7.8rem]`}
                 >
                   <span className="absolute inset-0 flex items-center justify-center text-4xl select-none md:text-7xl">
                     ❤️
