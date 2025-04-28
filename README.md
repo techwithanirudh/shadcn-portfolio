@@ -16,6 +16,11 @@
   </a>
 </p>
 
+<p align="center"><i>
+  ⚡ This version is re-structured using TurboRepo.<br />
+  To use the old version, check out the <a href="https://github.com/techwithanirudh/shadcn-portfolio/tree/tailwind-v4">tailwind-v4 branch</a>.
+</i></p>
+
 ## 📋 Table of Contents
 
 1. 🤖 [Introduction](#introduction)
