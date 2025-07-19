@@ -194,7 +194,9 @@ function MorphingDialogContent({
     }
 
     return () => {
-      document.body.classList.remove("overflow-hidden");
+      if (isOpen) {
+        document.body.classList.remove("overflow-hidden");
+      }
     };
   }, [isOpen, triggerRef]);
 
